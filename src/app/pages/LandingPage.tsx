@@ -7,9 +7,10 @@ import {
   Search, MapPin, Home, Smartphone, ChevronRight,
   TrendingUp, Bell, FileText, Play,
   Sun, Moon, Lock, Eye, Key, Database, Activity,
-  Users, X, UserPlus, LogIn,
+  Users, X, UserPlus, LogIn, Globe,
 } from "lucide-react";
 import { ChatWidget } from "../components/ChatWidget";
+import { useLang } from "../../hooks/useLang";
 
 // ─── Listing images ────────────────────────────────────────────────────
 const IMG_APT_1 = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=75&fit=crop";
@@ -449,6 +450,7 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
 
 export function LandingPage() {
   const navigate = useNavigate();
+  const { lang, toggleLang, t } = useLang("landing");
   const [scrolled, setScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
@@ -577,13 +579,23 @@ export function LandingPage() {
               {isDark ? <Sun size={15} /> : <Moon size={15} />}
             </button>
 
+            {/* Language toggle */}
+            <button
+              onClick={toggleLang}
+              className="hidden sm:flex items-center gap-1 w-8 h-8 rounded-lg justify-center text-white/45 hover:text-white/80 hover:bg-white/6 transition-all"
+              style={{ border: "1px solid rgba(255,255,255,0.09)", fontSize: "0.68rem", fontWeight: 700 }}
+              title={lang === "vi" ? "Switch to English" : "Chuyển sang Tiếng Việt"}
+            >
+              {lang === "vi" ? "EN" : "VI"}
+            </button>
+
             {/* Tenant login */}
             <button
               onClick={() => navigate("/tenant/login")}
               className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full text-white/70 hover:text-white transition-all"
               style={{ fontSize: "0.8rem", border: "1px solid rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.05)" }}
             >
-              Cư dân
+              {t("Cư dân", "Tenant")}
             </button>
 
             {/* Landlord login */}
@@ -592,8 +604,38 @@ export function LandingPage() {
               className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full text-violet-300 hover:text-white transition-all"
               style={{ fontSize: "0.8rem", border: "1px solid rgba(139,92,246,0.3)", background: "rgba(139,92,246,0.08)" }}
             >
-              Quản lý
+              {t("Chủ nhà", "Landlord")}
             </button>
+
+            {/* Portal dropdown — Manager / Dev / Admin */}
+            <div className="relative group hidden sm:block">
+              <button
+                className="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/40 hover:text-white/70 transition-all"
+                style={{ fontSize: "0.78rem", border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.03)" }}
+              >
+                <Globe size={12} />
+                {t("Cổng khác", "Portals")}
+              </button>
+              <div
+                className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-white/10 shadow-2xl overflow-hidden opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all"
+                style={{ background: "rgba(8,16,28,0.97)", backdropFilter: "blur(16px)" }}
+              >
+                {[
+                  { label: t("Quản lý toà nhà", "Building Manager"), sub: "manager.nestaviet.vn", path: "/manager/login", color: "text-emerald-400" },
+                  { label: t("Developer Portal", "Developer Portal"), sub: "dev.nestaviet.vn",     path: "/dev/login",     color: "text-blue-400" },
+                  { label: t("Admin Portal", "Admin Portal"),         sub: "admin.nestaviet.vn",   path: "/admin/login",   color: "text-violet-400" },
+                ].map((p) => (
+                  <button
+                    key={p.path}
+                    onClick={() => navigate(p.path)}
+                    className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/6 last:border-0"
+                  >
+                    <p className={`font-semibold ${p.color}`} style={{ fontSize: "0.8rem" }}>{p.label}</p>
+                    <p className="text-white/25 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>{p.sub}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {/* Main CTA */}
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
