@@ -6,7 +6,7 @@ import {
   MessageSquare, CheckCircle2, ArrowRight,
   Search, MapPin, Home,
   FileText, Play,
-  Sun, Moon, Lock, Eye, Key, Database, Activity,
+  Lock, Eye, Key, Database, Activity,
   X, UserPlus, LogIn, Globe, ChevronRight,
   BarChart3, Smartphone, QrCode,
 } from "lucide-react";
@@ -479,12 +479,22 @@ export function LandingPage() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
   const [chatTrigger, setChatTrigger] = useState<{ query: string; id: number } | undefined>();
-  const [isDark, setIsDark] = useState(() => {
-    try { return localStorage.getItem("nv-theme") !== "light"; } catch { return true; }
-  });
 
   const { scrollY } = useScroll();
   const heroBgY = useTransform(scrollY, [0, 600], [0, -80]);
+
+  // Force dark mode always — page is always dark
+  useEffect(() => {
+    document.documentElement.removeAttribute("data-theme");
+    return () => {
+      // On unmount, restore from localStorage if available
+      try {
+        const saved = localStorage.getItem("nv-theme");
+        if (saved === "light") document.documentElement.setAttribute("data-theme", "light");
+        else document.documentElement.removeAttribute("data-theme");
+      } catch {}
+    };
+  }, []);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -492,26 +502,20 @@ export function LandingPage() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  useEffect(() => {
-    if (isDark) document.documentElement.removeAttribute("data-theme");
-    else document.documentElement.setAttribute("data-theme", "light");
-    try { localStorage.setItem("nv-theme", isDark ? "dark" : "light"); } catch {}
-  }, [isDark]);
-
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "var(--nv-bg)" }}>
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "#030B14" }}>
       <AnimatePresence>{showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}</AnimatePresence>
       <ChatWidget trigger={chatTrigger} />
 
       {/* ── FIXED BACKGROUND ─────────────────────────────────────── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Radial orbs */}
-        <motion.div style={{ y: heroBgY, top: "-10%", left: "-5%", width: "60%", height: "70%", background: "radial-gradient(ellipse, rgba(34,211,238,0.055) 0%, transparent 65%)", filter: "blur(40px)" }} className="absolute" />
-        <motion.div style={{ y: heroBgY, top: "20%", right: "-10%", width: "55%", height: "65%", background: "radial-gradient(ellipse, rgba(139,92,246,0.055) 0%, transparent 65%)", filter: "blur(50px)" }} className="absolute" />
-        <div className="absolute" style={{ bottom: "10%", left: "25%", width: "50%", height: "45%", background: "radial-gradient(ellipse, rgba(52,211,153,0.04) 0%, transparent 65%)", filter: "blur(60px)" }} />
+        {/* Radial orbs — vivid */}
+        <motion.div style={{ y: heroBgY, top: "-10%", left: "-5%", width: "70%", height: "80%", background: "radial-gradient(ellipse, rgba(34,211,238,0.14) 0%, transparent 65%)", filter: "blur(40px)" }} className="absolute" />
+        <motion.div style={{ y: heroBgY, top: "20%", right: "-10%", width: "65%", height: "75%", background: "radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 65%)", filter: "blur(50px)" }} className="absolute" />
+        <div className="absolute" style={{ bottom: "10%", left: "25%", width: "55%", height: "50%", background: "radial-gradient(ellipse, rgba(52,211,153,0.08) 0%, transparent 65%)", filter: "blur(60px)" }} />
         {/* Dot grid */}
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(${isDark ? "rgba(148,163,184,0.022)" : "rgba(7,16,32,0.03)"} 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(148,163,184,0.022) 1px, transparent 1px)`,
           backgroundSize: "36px 36px",
         }} />
         {/* Horizontal accent line */}
@@ -549,7 +553,7 @@ export function LandingPage() {
               { label: t("Bảo mật","Security"), href: "/security" },
               { label: t("Tải app","Download"), href: null },
             ].map(({ label, href }) => (
-              <button key={label} onClick={() => href && navigate(href)}
+              <button key={label} onClick={() => href ? navigate(href) : setShowGetStarted(true)}
                 className="px-4 py-2 rounded-lg text-white/45 hover:text-white/80 hover:bg-white/5 transition-all"
                 style={{ fontSize: "0.85rem" }}>
                 {label}
@@ -557,13 +561,8 @@ export function LandingPage() {
             ))}
           </nav>
 
-          {/* Controls */}
+          {/* Controls — no theme toggle, force dark always */}
           <div className="flex items-center gap-1.5 flex-shrink-0">
-            <button onClick={() => setIsDark(d => !d)}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white/40 hover:text-white/75 hover:bg-white/6 transition-all"
-              style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
-              {isDark ? <Sun size={14} /> : <Moon size={14} />}
-            </button>
             <button onClick={toggleLang}
               className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg text-white/40 hover:text-white/75 hover:bg-white/6 transition-all"
               style={{ border: "1px solid rgba(255,255,255,0.08)", fontSize: "0.67rem", fontWeight: 700 }}>
@@ -610,13 +609,37 @@ export function LandingPage() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-visible">
+
+        {/* Sparkle orbs inside hero */}
+        <div className="absolute top-[20%] left-[8%] w-48 h-48 rounded-full pointer-events-none nv-orb-1"
+          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.22) 0%, transparent 70%)", filter: "blur(12px)" }} />
+        <div className="absolute bottom-[25%] right-[10%] w-64 h-64 rounded-full pointer-events-none nv-orb-2"
+          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%)", filter: "blur(16px)" }} />
+        <div className="absolute top-[55%] left-[45%] w-32 h-32 rounded-full pointer-events-none nv-orb-3"
+          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2) 0%, transparent 70%)", filter: "blur(10px)" }} />
+        <div className="absolute top-[15%] right-[20%] w-40 h-40 rounded-full pointer-events-none nv-orb-1"
+          style={{ background: "radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%)", filter: "blur(18px)" }} />
+        <div className="absolute bottom-[15%] left-[30%] w-36 h-36 rounded-full pointer-events-none nv-orb-2"
+          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 70%)", filter: "blur(14px)" }} />
+
+        {/* Glow rings */}
+        <div className="absolute top-[10%] left-[5%] w-[200px] h-[200px] rounded-full pointer-events-none nv-orb-1"
+          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.28) 0%, transparent 60%)", filter: "blur(8px)", opacity: 0.3 }} />
+        <div className="absolute bottom-[20%] right-[8%] w-[150px] h-[150px] rounded-full pointer-events-none nv-orb-2"
+          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.32) 0%, transparent 60%)", filter: "blur(6px)", opacity: 0.32 }} />
+        <div className="absolute top-[50%] left-[50%] w-[100px] h-[100px] rounded-full pointer-events-none nv-orb-3"
+          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.35) 0%, transparent 60%)", filter: "blur(5px)", opacity: 0.25 }} />
+
         {/* Floating live widget — desktop only */}
         <div className="relative w-full max-w-5xl mx-auto">
           <HeroLiveWidget />
         </div>
 
-        {/* Tag chip */}
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
+        {/* Tag chip — dramatic entrance */}
+        <motion.div
+          initial={{ opacity: 0, y: 24, scale: 0.88 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.08, type: "spring", stiffness: 280, damping: 22 }}
           className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.035]">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-white/55" style={{ fontSize: "0.76rem", fontWeight: 500 }}>
@@ -624,8 +647,11 @@ export function LandingPage() {
           </span>
         </motion.div>
 
-        {/* Main headline */}
-        <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, type: "spring", stiffness: 220, damping: 26 }}
+        {/* Main headline — blur-in */}
+        <motion.h1
+          initial={{ opacity: 0, y: 60, filter: "blur(16px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-white relative z-10 max-w-5xl"
           style={{ fontSize: "clamp(3rem,8.5vw,7.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.045em" }}>
           {t("Thuê căn hộ","Rent smarter")}
@@ -637,8 +663,11 @@ export function LandingPage() {
           <span className="text-white/50" style={{ fontWeight: 800 }}>{t("với AI.","Manage better.")}</span>
         </motion.h1>
 
-        {/* Subheadline */}
-        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }}
+        {/* Subheadline — blur-in */}
+        <motion.p
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.32, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-white/40 mt-8 max-w-xl mx-auto"
           style={{ fontSize: "clamp(0.95rem,1.8vw,1.1rem)", lineHeight: 1.75 }}>
           {t(
@@ -648,7 +677,10 @@ export function LandingPage() {
         </motion.p>
 
         {/* Search bar */}
-        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
+        <motion.div
+          initial={{ opacity: 0, y: 24, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.44, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="relative mt-10 w-full max-w-2xl">
           <div className="flex gap-2">
             <div className="flex items-center gap-3 flex-1 rounded-2xl px-5 py-3.5 border transition-all"
@@ -738,7 +770,10 @@ export function LandingPage() {
         </motion.div>
 
         {/* Trust stats row */}
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.58, duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-6 mt-10">
           {[
             { val: "12,400+", label: t("Căn hộ đã xác thực","Verified listings"), color: "#22d3ee" },
@@ -752,20 +787,27 @@ export function LandingPage() {
           ))}
         </motion.div>
 
-        {/* CTA buttons */}
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <button onClick={() => setShowGetStarted(true)}
+        {/* CTA buttons — staggered */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.45 }}
+            onClick={() => setShowGetStarted(true)}
             className="flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-white hover:opacity-90 transition-opacity"
             style={{ fontSize: "0.92rem", background: "linear-gradient(135deg,#34d399,#22d3ee)", boxShadow: "0 0 24px rgba(52,211,153,0.22)" }}>
             {t("Đăng ký miễn phí","Sign up free")}<ArrowRight size={16} />
-          </button>
-          <button onClick={() => navigate("/tenant")}
+          </motion.button>
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.58, duration: 0.45 }}
+            onClick={() => navigate("/tenant")}
             className="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
             style={{ fontSize: "0.9rem" }}>
             <Play size={14} className="text-violet-400" />{t("Xem demo","Watch demo")}
-          </button>
-        </motion.div>
+          </motion.button>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
@@ -781,8 +823,8 @@ export function LandingPage() {
       {/* ── MARQUEE STRIP ────────────────────────────────────────── */}
       <div className="border-y overflow-hidden relative select-none" style={{ borderColor: "rgba(255,255,255,0.05)", background: "rgba(255,255,255,0.018)" }}>
         {/* Gradient fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 pointer-events-none z-10" style={{ background: "linear-gradient(90deg, var(--nv-bg) 0%, transparent 100%)" }} />
-        <div className="absolute right-0 top-0 bottom-0 w-24 pointer-events-none z-10" style={{ background: "linear-gradient(270deg, var(--nv-bg) 0%, transparent 100%)" }} />
+        <div className="absolute left-0 top-0 bottom-0 w-24 pointer-events-none z-10" style={{ background: "linear-gradient(90deg, #030B14 0%, transparent 100%)" }} />
+        <div className="absolute right-0 top-0 bottom-0 w-24 pointer-events-none z-10" style={{ background: "linear-gradient(270deg, #030B14 0%, transparent 100%)" }} />
         {/* Forward marquee */}
         <div className="flex py-4 nv-marquee-track">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
@@ -808,7 +850,12 @@ export function LandingPage() {
       {/* ── BENTO FEATURES ───────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-14">
             <p className="text-cyan-400 mb-3" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em" }}>
               {t("TÍNH NĂNG NỔI BẬT","PLATFORM FEATURES")}
             </p>
@@ -828,7 +875,11 @@ export function LandingPage() {
             <BentoAICard t={t} />
 
             {/* Card 2: Stats — col-span-5 */}
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
               className="col-span-12 lg:col-span-5 rounded-3xl p-7 relative overflow-hidden"
               style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(34,211,238,0.06) 100%)", border: "1px solid rgba(139,92,246,0.18)" }}>
               <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.2)" }}>
@@ -848,8 +899,12 @@ export function LandingPage() {
             </motion.div>
 
             {/* Card 3: Smart Search */}
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
-              whileHover={{ y: -4 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+              whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4" style={{ background: "rgba(34,211,238,0.12)", border: "1px solid rgba(34,211,238,0.18)" }}>
@@ -862,8 +917,12 @@ export function LandingPage() {
             </motion.div>
 
             {/* Card 4: VietQR */}
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.18 }}
-              whileHover={{ y: -4 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+              whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4" style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.18)" }}>
@@ -876,8 +935,12 @@ export function LandingPage() {
             </motion.div>
 
             {/* Card 5: E-Contract */}
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.24 }}
-              whileHover={{ y: -4 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
+              whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4" style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.18)" }}>
@@ -890,7 +953,11 @@ export function LandingPage() {
             </motion.div>
 
             {/* Card 6: Security — full width */}
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.28 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
               className="col-span-12 rounded-3xl px-8 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
               style={{ background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.12)" }}>
               <div className="flex items-center gap-4">
@@ -917,7 +984,11 @@ export function LandingPage() {
       {/* ── FEATURED LISTINGS ────────────────────────────────────── */}
       <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
         <div className="max-w-7xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-3" style={{ background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.18)" }}>
@@ -945,7 +1016,7 @@ export function LandingPage() {
                   onClick={() => navigate("/tenant")}
                   className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group"
                   style={{ width: "280px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px ${apt.badgeHex}44`; (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${apt.badgeHex}60`; (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.09)"; }}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -1008,7 +1079,12 @@ export function LandingPage() {
       {/* ── HOW IT WORKS ─────────────────────────────────────────── */}
       <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
         <div className="max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16">
             <p className="text-violet-400 mb-3" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em" }}>
               {t("QUY TRÌNH 3 BƯỚC","3 SIMPLE STEPS")}
             </p>
@@ -1051,7 +1127,12 @@ export function LandingPage() {
       {/* ── SECURITY GRID ─────────────────────────────────────────── */}
       <section className="py-24 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-14">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4" style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.18)" }}>
               <Shield size={13} className="text-red-400" />
               <span className="text-red-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>WEB SECURITY</span>
@@ -1269,10 +1350,14 @@ export function LandingPage() {
               {t("Kết hợp với AI Super Broker để chuẩn hoá thông tin căn hộ nơi bạn ở. Quản lý mọi thứ từ một nơi.","Combine with AI Super Broker to standardize your apartment info. Manage everything from one place.")}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <motion.button whileHover={{ scale: 1.04, boxShadow: "0 0 44px rgba(34,211,238,0.38)" }} whileTap={{ scale: 0.97 }}
+              <motion.button
+                whileHover={{ scale: 1.04, boxShadow: "0 0 44px rgba(34,211,238,0.38)" }}
+                whileTap={{ scale: 0.97 }}
+                animate={{ boxShadow: ["0 0 30px rgba(34,211,238,0.22)", "0 0 60px rgba(34,211,238,0.45)", "0 0 30px rgba(34,211,238,0.22)"] }}
+                transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
                 onClick={() => setShowGetStarted(true)}
                 className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white"
-                style={{ fontSize: "0.95rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)", boxShadow: "0 0 30px rgba(34,211,238,0.22)" }}>
+                style={{ fontSize: "0.95rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)" }}>
                 {t("Bắt đầu ngay — miễn phí","Get started — free")}<ArrowRight size={17} />
               </motion.button>
               <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
@@ -1309,29 +1394,32 @@ export function LandingPage() {
             </div>
             {[
               { title: t("Sản phẩm","Product"), links: [
-                { label: t("Tìm căn hộ","Find apartments"), href: "/tenant" },
-                { label: "AI Chatbot",                      href: null        },
-                { label: t("Hợp đồng điện tử","E-Contracts"), href: null     },
-                { label: t("Thanh toán","Payments"),         href: null       },
+                { label: t("Tìm căn hộ","Find apartments"),   href: "/tenant",    action: null                         },
+                { label: "AI Chatbot",                          href: "/tenant",    action: null                         },
+                { label: t("Hợp đồng điện tử","E-Contracts"),  href: "/contracts", action: null                         },
+                { label: t("Thanh toán","Payments"),            href: "/payments",  action: null                         },
               ]},
               { title: t("Công ty","Company"), links: [
-                { label: t("Về chúng tôi","About"),          href: null },
-                { label: "Blog",                              href: null },
-                { label: t("Tuyển dụng","Careers"),          href: null },
-                { label: t("Đối tác","Partners"),             href: null },
+                { label: t("Về chúng tôi","About"),          href: null, action: "modal" },
+                { label: "Blog",                              href: null, action: "modal" },
+                { label: t("Tuyển dụng","Careers"),          href: null, action: "modal" },
+                { label: t("Đối tác","Partners"),             href: null, action: "modal" },
               ]},
               { title: t("Hỗ trợ","Support"), links: [
-                { label: t("Trợ giúp","Help center"),         href: null       },
-                { label: t("Liên hệ","Contact"),              href: null       },
-                { label: t("Bảo mật","Security"),             href: "/security" },
-                { label: t("Chính sách","Privacy policy"),    href: null       },
+                { label: t("Trợ giúp","Help center"),         href: null,         action: "modal"  },
+                { label: t("Liên hệ","Contact"),              href: null,         action: "modal"  },
+                { label: t("Bảo mật","Security"),             href: "/security",  action: null     },
+                { label: t("Chính sách","Privacy policy"),    href: null,         action: "modal"  },
               ]},
             ].map(({ title, links }) => (
               <div key={title}>
                 <p className="text-white/55 font-semibold mb-4" style={{ fontSize: "0.85rem" }}>{title}</p>
                 <div className="space-y-3">
-                  {links.map(({ label, href }) => (
-                    <button key={label} onClick={() => href && navigate(href)}
+                  {links.map(({ label, href, action }) => (
+                    <button key={label} onClick={() => {
+                      if (href) navigate(href);
+                      else if (action === "modal") setShowGetStarted(true);
+                    }}
                       className="block text-white/30 hover:text-white/65 transition-colors text-left"
                       style={{ fontSize: "0.82rem" }}>{label}</button>
                   ))}
