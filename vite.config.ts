@@ -32,6 +32,19 @@ export default defineConfig(({ mode }) => {
       },
     },
     assetsInclude: ['**/*.svg', '**/*.csv'],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-core': ['react', 'react-dom'],
+            'motion':     ['motion'],
+            'router':     ['react-router'],
+            'icons':      ['lucide-react'],
+            'charts':     ['recharts'],
+          },
+        },
+      },
+    },
     server: {
       proxy: {
         '/api/chat': {

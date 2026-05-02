@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, CSSProperties } from "react";
 import { useNavigate } from "react-router";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "motion/react";
 import {
@@ -81,6 +81,28 @@ const MARQUEE_ITEMS = [
   { text: "Phản hồi trong 1.2s",      dot: "#22d3ee" },
 ];
 
+// ─── Animation variants ───────────────────────────────────────────────────────
+const bentoContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
+};
+const bentoCardVariants = {
+  hidden:   { opacity: 0, y: 60, scale: 0.94 },
+  visible:  { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 120, damping: 20 } },
+};
+const bentoAICardVariants = {
+  hidden:   { opacity: 0, x: -30, y: 40, scale: 0.94 },
+  visible:  { opacity: 1, x: 0, y: 0, scale: 1, transition: { type: "spring", stiffness: 120, damping: 20 } },
+};
+const securityContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.03 } },
+};
+const securityCardVariants = {
+  hidden:   { opacity: 0, y: 32, scale: 0.95 },
+  visible:  { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 130, damping: 22 } },
+};
+
 // ─── StatCounter — animates only when in view ─────────────────────────────
 function StatCounter({ target, suffix = "", prefix = "", color, label, duration = 1200 }: {
   target: number; suffix?: string; prefix?: string; color: string; label: string; duration?: number;
@@ -94,6 +116,15 @@ function StatCounter({ target, suffix = "", prefix = "", color, label, duration 
         {prefix}{count.toLocaleString()}{suffix}
       </p>
       <p className="text-white/38" style={{ fontSize: "0.75rem" }}>{label}</p>
+      <div className="mt-2 h-px rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+        <motion.div
+          className="h-full rounded-full"
+          style={{ background: color }}
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        />
+      </div>
     </div>
   );
 }
@@ -195,7 +226,7 @@ function BentoAICard({ t }: { t: (vi: string, en: string) => string }) {
   const visibleLog = miniLogs[(logTick) % miniLogs.length];
 
   return (
-    <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
+    <motion.div variants={bentoAICardVariants}
       className="col-span-12 lg:col-span-7 rounded-3xl relative overflow-hidden group cursor-pointer"
       style={{ background: "rgba(3,7,18,0.85)", border: "1px solid rgba(255,255,255,0.08)" }}
       whileHover={{ borderColor: "rgba(34,211,238,0.25)" }}>
@@ -470,6 +501,33 @@ function AgentControlRoom() {
   );
 }
 
+// ─── useScrollSection ─────────────────────────────────────────────────────────
+function useScrollSection<T extends HTMLElement = HTMLElement>() {
+  const ref = useRef<T>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  return { ref, scrollYProgress };
+}
+
+// ─── WordReveal ───────────────────────────────────────────────────────────────
+function WordReveal({ text, className, style }: { text: string; className?: string; style?: CSSProperties }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <span ref={ref} className={className} style={style}>
+      {text.split(" ").map((word, i) => (
+        <span key={i} className="nv-word" style={{ marginRight: "0.25em" }}>
+          <span className="nv-word-inner" style={{
+            animationPlayState: inView ? "running" : "paused",
+            animationDelay: `${i * 0.08}s`,
+          }}>
+            {word}
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 // ─── LandingPage ──────────────────────────────────────────────────────────────
 export function LandingPage() {
   const navigate = useNavigate();
@@ -479,9 +537,36 @@ export function LandingPage() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
   const [chatTrigger, setChatTrigger] = useState<{ query: string; id: number } | undefined>();
+  const [contactListing, setContactListing] = useState<null | { id: string; title: string; price: string; area: string; district: string; description: string; type: string }>(null);
 
-  const { scrollY } = useScroll();
+  // Page-level scroll
+  const { scrollY, scrollYProgress: pageScrollProgress } = useScroll();
   const heroBgY = useTransform(scrollY, [0, 600], [0, -80]);
+  const progressWidth = useTransform(pageScrollProgress, [0, 1], ["0%", "100%"]);
+
+  // Section refs for scroll-linked animations
+  const heroRef = useRef<HTMLElement>(null);
+  const howRef = useRef<HTMLElement>(null);
+  const listingsRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress: heroScrollProgress } = useScroll({ target: heroRef, offset: ["start end", "end start"] });
+  const { scrollYProgress: howScrollProgress }  = useScroll({ target: howRef,  offset: ["start end", "end start"] });
+  const { scrollYProgress: listingsScrollProgress } = useScroll({ target: listingsRef, offset: ["start end", "end start"] });
+  const { scrollYProgress: ctaScrollProgress }  = useScroll({ target: ctaRef,  offset: ["start end", "end start"] });
+
+  // Hero parallax transforms
+  const headlineY     = useTransform(heroScrollProgress, [0, 0.6], [0, -120]);
+  const subTextY      = useTransform(heroScrollProgress, [0, 0.6], [0, -60]);
+  const widgetY       = useTransform(heroScrollProgress, [0, 0.6], [0, 40]);
+  const widgetOpacity = useTransform(heroScrollProgress, [0, 0.4], [1, 0]);
+  const heroBlobAY    = useTransform(heroScrollProgress, [0, 1], [0, -160]);
+  const heroBlobBY    = useTransform(heroScrollProgress, [0, 1], [0, -70]);
+
+  // Section-specific transforms
+  const connectorScale = useTransform(howScrollProgress,      [0.1, 0.5], [0, 1]);
+  const listingsDrift  = useTransform(listingsScrollProgress, [0, 1],     [0, -40]);
+  const ctaGlowX       = useTransform(ctaScrollProgress,      [0, 1],     ["-20%", "20%"]);
 
   // Force dark mode always — page is always dark
   useEffect(() => {
@@ -504,14 +589,63 @@ export function LandingPage() {
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "#030B14" }}>
+      {/* Scroll progress line */}
+      <motion.div className="nv-scroll-line" style={{ width: progressWidth }} />
       <AnimatePresence>{showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}</AnimatePresence>
+      <AnimatePresence>
+        {contactListing && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+            style={{ background: "rgba(0,0,0,0.8)", backdropFilter: "blur(16px)" }}
+            onClick={() => setContactListing(null)}>
+            <motion.div initial={{ opacity: 0, scale: 0.92, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 12 }}
+              transition={{ type: "spring", stiffness: 300, damping: 28 }}
+              onClick={e => e.stopPropagation()}
+              className="w-full max-w-md rounded-3xl overflow-hidden border border-white/10"
+              style={{ background: "rgba(5,10,24,0.97)", backdropFilter: "blur(24px)" }}>
+              <div className="p-6 border-b border-white/7">
+                <div className="flex items-start justify-between gap-3 mb-1">
+                  <h3 className="text-white font-bold" style={{ fontSize: "1rem", lineHeight: 1.4 }}>{contactListing.title}</h3>
+                  <button onClick={() => setContactListing(null)} className="text-white/30 hover:text-white/60 transition-colors flex-shrink-0"><X size={18} /></button>
+                </div>
+                <p className="text-emerald-400 font-bold" style={{ fontSize: "1.05rem" }}>{contactListing.price}</p>
+                <p className="text-white/38 mt-0.5" style={{ fontSize: "0.78rem" }}>{contactListing.area} · {contactListing.district}</p>
+              </div>
+              <div className="p-6 space-y-3">
+                <p className="text-white/50 text-sm mb-4" style={{ lineHeight: 1.65 }}>{contactListing.description}</p>
+                {[
+                  { icon: MessageSquare, label: t("Hỏi AI Super Broker","Ask AI Super Broker"), sub: t("Tư vấn 24/7 · Phản hồi trong 1.2s","24/7 advisory · Response in 1.2s"), color: "#22d3ee", action: () => { setChatTrigger({ query: `Tôi muốn hỏi về tin đăng: "${contactListing.title}" — ${contactListing.price}, ${contactListing.area}, ${contactListing.district}. Có thể tư vấn cho tôi không?`, id: Date.now() }); setContactListing(null); } },
+                  { icon: UserPlus, label: t("Đăng ký để liên hệ chủ nhà","Register to contact landlord"), sub: t("Miễn phí · Bảo mật thông tin","Free · Privacy protected"), color: "#a78bfa", action: () => { setContactListing(null); setShowGetStarted(true); } },
+                ].map(({ icon: Icon, label, sub, color, action }) => (
+                  <motion.button key={label} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                    onClick={action}
+                    className="w-full flex items-center gap-4 p-4 rounded-2xl border text-left transition-all"
+                    style={{ background: `${color}0a`, borderColor: `${color}22` }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = `${color}44`; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = `${color}22`; }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${color}18` }}>
+                      <Icon size={18} style={{ color }} />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold" style={{ fontSize: "0.88rem" }}>{label}</p>
+                      <p className="text-white/38 mt-0.5" style={{ fontSize: "0.72rem" }}>{sub}</p>
+                    </div>
+                    <ChevronRight size={15} className="ml-auto text-white/20" />
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <ChatWidget trigger={chatTrigger} />
 
       {/* ── FIXED BACKGROUND ─────────────────────────────────────── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Radial orbs — vivid */}
-        <motion.div style={{ y: heroBgY, top: "-10%", left: "-5%", width: "70%", height: "80%", background: "radial-gradient(ellipse, rgba(34,211,238,0.14) 0%, transparent 65%)", filter: "blur(40px)" }} className="absolute" />
-        <motion.div style={{ y: heroBgY, top: "20%", right: "-10%", width: "65%", height: "75%", background: "radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 65%)", filter: "blur(50px)" }} className="absolute" />
+        {/* Radial orbs — scroll-driven parallax */}
+        <motion.div style={{ y: heroBlobAY, top: "-10%", left: "-5%", width: "70%", height: "80%", background: "radial-gradient(ellipse, rgba(34,211,238,0.14) 0%, transparent 65%)", filter: "blur(40px)" }} className="absolute" />
+        <motion.div style={{ y: heroBlobBY, top: "20%", right: "-10%", width: "65%", height: "75%", background: "radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 65%)", filter: "blur(50px)" }} className="absolute" />
         <div className="absolute" style={{ bottom: "10%", left: "25%", width: "55%", height: "50%", background: "radial-gradient(ellipse, rgba(52,211,153,0.08) 0%, transparent 65%)", filter: "blur(60px)" }} />
         {/* Dot grid */}
         <div className="absolute inset-0" style={{
@@ -608,32 +742,23 @@ export function LandingPage() {
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-visible">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-visible">
 
-        {/* Sparkle orbs inside hero */}
+        {/* Sparkle orbs — reduced to 4 for performance */}
         <div className="absolute top-[20%] left-[8%] w-48 h-48 rounded-full pointer-events-none nv-orb-1"
           style={{ background: "radial-gradient(circle, rgba(34,211,238,0.22) 0%, transparent 70%)", filter: "blur(12px)" }} />
         <div className="absolute bottom-[25%] right-[10%] w-64 h-64 rounded-full pointer-events-none nv-orb-2"
           style={{ background: "radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%)", filter: "blur(16px)" }} />
-        <div className="absolute top-[55%] left-[45%] w-32 h-32 rounded-full pointer-events-none nv-orb-3"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2) 0%, transparent 70%)", filter: "blur(10px)" }} />
-        <div className="absolute top-[15%] right-[20%] w-40 h-40 rounded-full pointer-events-none nv-orb-1"
-          style={{ background: "radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%)", filter: "blur(18px)" }} />
-        <div className="absolute bottom-[15%] left-[30%] w-36 h-36 rounded-full pointer-events-none nv-orb-2"
-          style={{ background: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 70%)", filter: "blur(14px)" }} />
-
         {/* Glow rings */}
         <div className="absolute top-[10%] left-[5%] w-[200px] h-[200px] rounded-full pointer-events-none nv-orb-1"
           style={{ background: "radial-gradient(circle, rgba(34,211,238,0.28) 0%, transparent 60%)", filter: "blur(8px)", opacity: 0.3 }} />
         <div className="absolute bottom-[20%] right-[8%] w-[150px] h-[150px] rounded-full pointer-events-none nv-orb-2"
           style={{ background: "radial-gradient(circle, rgba(139,92,246,0.32) 0%, transparent 60%)", filter: "blur(6px)", opacity: 0.32 }} />
-        <div className="absolute top-[50%] left-[50%] w-[100px] h-[100px] rounded-full pointer-events-none nv-orb-3"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.35) 0%, transparent 60%)", filter: "blur(5px)", opacity: 0.25 }} />
 
-        {/* Floating live widget — desktop only */}
-        <div className="relative w-full max-w-5xl mx-auto">
+        {/* Floating live widget — scroll-driven */}
+        <motion.div className="relative w-full max-w-5xl mx-auto" style={{ y: widgetY, opacity: widgetOpacity }}>
           <HeroLiveWidget />
-        </div>
+        </motion.div>
 
         {/* Tag chip — dramatic entrance */}
         <motion.div
@@ -647,13 +772,13 @@ export function LandingPage() {
           </span>
         </motion.div>
 
-        {/* Main headline — blur-in */}
+        {/* Main headline — blur-in + scroll parallax */}
         <motion.h1
           initial={{ opacity: 0, y: 60, filter: "blur(16px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-white relative z-10 max-w-5xl"
-          style={{ fontSize: "clamp(3rem,8.5vw,7.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.045em" }}>
+          style={{ y: headlineY, fontSize: "clamp(3rem,8.5vw,7.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.045em" }}>
           {t("Thuê căn hộ","Rent smarter")}
           <br />
           <span className="nv-hero-gradient">
@@ -663,13 +788,13 @@ export function LandingPage() {
           <span className="text-white/50" style={{ fontWeight: 800 }}>{t("với AI.","Manage better.")}</span>
         </motion.h1>
 
-        {/* Subheadline — blur-in */}
+        {/* Subheadline — blur-in + scroll parallax */}
         <motion.p
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.32, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-white/40 mt-8 max-w-xl mx-auto"
-          style={{ fontSize: "clamp(0.95rem,1.8vw,1.1rem)", lineHeight: 1.75 }}>
+          style={{ y: subTextY, fontSize: "clamp(0.95rem,1.8vw,1.1rem)", lineHeight: 1.75 }}>
           {t(
             "Hệ thống Multi-Agent AI tự động hóa toàn bộ — từ kiểm duyệt, tư vấn đến quản lý hợp đồng và thu tiền.",
             "Multi-Agent AI automates the entire rental lifecycle — verification, advisory, contracts, and payments."
@@ -698,7 +823,7 @@ export function LandingPage() {
                 onChange={e => setSearchQuery(e.target.value)}
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
-                onKeyDown={e => { if (e.key === "Enter") navigate("/tenant"); }}
+                onKeyDown={e => { if (e.key === "Enter") { const q = searchQuery.trim(); if (q) { setChatTrigger({ query: `Tôi đang tìm căn hộ: ${q}. Bạn có thể tư vấn giúp tôi không?`, id: Date.now() }); setSearchFocused(false); } else setShowGetStarted(true); } }}
                 className="bg-transparent flex-1 text-white placeholder-white/22 outline-none"
                 style={{ fontSize: "0.92rem" }}
               />
@@ -708,7 +833,7 @@ export function LandingPage() {
                 </button>
               )}
             </div>
-            <button onClick={() => navigate("/tenant")}
+            <button onClick={() => { const q = searchQuery.trim(); if (q) { setChatTrigger({ query: `Tôi đang tìm căn hộ: ${q}. Bạn có thể tư vấn giúp tôi không?`, id: Date.now() }); setSearchFocused(false); } else setShowGetStarted(true); }}
               className="flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-white hover:opacity-90 transition-opacity flex-shrink-0"
               style={{ fontSize: "0.88rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)", boxShadow: "0 0 20px rgba(34,211,238,0.22)" }}>
               <Search size={15} />{t("Tìm","Search")}
@@ -733,7 +858,7 @@ export function LandingPage() {
                       <span className="text-white/35" style={{ fontSize: "0.72rem" }}>{results.length} kết quả</span>
                     </div>
                     {results.map(apt => (
-                      <button key={apt.id} onClick={() => { setSearchQuery(apt.name); navigate("/tenant"); }}
+                      <button key={apt.id} onClick={() => { setSearchQuery(apt.name); setChatTrigger({ query: `Tôi quan tâm đến ${apt.name} tại ${apt.district}. Giá ${apt.priceFrom}–${apt.priceTo}M/tháng. Bạn có thể tư vấn thêm không?`, id: Date.now() }); setSearchFocused(false); }}
                         className="w-full flex items-center gap-4 px-4 py-3 hover:bg-white/5 transition-colors text-left border-b border-white/5 last:border-0">
                         <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
                           <img src={apt.img} alt={apt.name} className="w-full h-full object-cover" loading="lazy" />
@@ -802,7 +927,7 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.58, duration: 0.45 }}
-            onClick={() => navigate("/tenant")}
+            onClick={() => setShowGetStarted(true)}
             className="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
             style={{ fontSize: "0.9rem" }}>
             <Play size={14} className="text-violet-400" />{t("Xem demo","Watch demo")}
@@ -851,8 +976,8 @@ export function LandingPage() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-14">
@@ -860,26 +985,28 @@ export function LandingPage() {
               {t("TÍNH NĂNG NỔI BẬT","PLATFORM FEATURES")}
             </p>
             <h2 className="text-white max-w-3xl mx-auto" style={{ fontSize: "clamp(2rem,4.5vw,3.4rem)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.1 }}>
-              {t("Mọi thứ bạn cần,","Everything you need,")}
+              <WordReveal text={t("Mọi thứ bạn cần,","Everything you need,")} />
               <br />
               <span style={{ background: "linear-gradient(110deg,#22d3ee,#818cf8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                {t("trong một nền tảng.","in one platform.")}
+                <WordReveal text={t("trong một nền tảng.","in one platform.")} />
               </span>
             </h2>
           </motion.div>
 
-          {/* Bento grid */}
-          <div className="grid grid-cols-12 gap-4">
+          {/* Bento grid — staggered variants */}
+          <motion.div
+            className="grid grid-cols-12 gap-4"
+            variants={bentoContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}>
 
             {/* Card 1: AI Agents — large, col-span-7 */}
             <BentoAICard t={t} />
 
             {/* Card 2: Stats — col-span-5 */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+              variants={bentoCardVariants}
               className="col-span-12 lg:col-span-5 rounded-3xl p-7 relative overflow-hidden"
               style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(34,211,238,0.06) 100%)", border: "1px solid rgba(139,92,246,0.18)" }}>
               <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.2)" }}>
@@ -900,10 +1027,7 @@ export function LandingPage() {
 
             {/* Card 3: Smart Search */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+              variants={bentoCardVariants}
               whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -918,10 +1042,7 @@ export function LandingPage() {
 
             {/* Card 4: VietQR */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+              variants={bentoCardVariants}
               whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -936,10 +1057,7 @@ export function LandingPage() {
 
             {/* Card 5: E-Contract */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
+              variants={bentoCardVariants}
               whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 28 } }}
               className="col-span-12 md:col-span-4 rounded-3xl p-6 relative overflow-hidden cursor-pointer nv-bento-card nv-inner-shimmer"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -954,10 +1072,7 @@ export function LandingPage() {
 
             {/* Card 6: Security — full width */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
+              variants={bentoCardVariants}
               className="col-span-12 rounded-3xl px-8 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
               style={{ background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.12)" }}>
               <div className="flex items-center gap-4">
@@ -977,16 +1092,16 @@ export function LandingPage() {
                 ))}
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── FEATURED LISTINGS ────────────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
+      <section ref={listingsRef} className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
@@ -1002,18 +1117,18 @@ export function LandingPage() {
                 {t("Kiểm duyệt bởi AI — cập nhật thời gian thực","AI-verified listings — updated in real-time")}
               </p>
             </div>
-            <button onClick={() => navigate("/tenant")} className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors" style={{ fontSize: "0.875rem" }}>
+            <button onClick={() => setShowGetStarted(true)} className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors" style={{ fontSize: "0.875rem" }}>
               {t("Xem tất cả","View all")}<ArrowRight size={15} />
             </button>
           </motion.div>
 
           <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
-            <div className="flex gap-5" style={{ minWidth: "max-content" }}>
+            <motion.div className="flex gap-5" style={{ minWidth: "max-content", x: listingsDrift }}>
               {LISTINGS.map((apt, i) => (
                 <motion.div key={apt.id}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i,3) * 0.08 }}
                   whileHover={{ y: -10, scale: 1.015 }}
-                  onClick={() => navigate("/tenant")}
+                  onClick={() => setShowGetStarted(true)}
                   className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group"
                   style={{ width: "280px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${apt.badgeHex}60`; (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
@@ -1055,16 +1170,16 @@ export function LandingPage() {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex items-center justify-center gap-4 mt-10">
-            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => navigate("/tenant/register")}
+            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => setShowGetStarted(true)}
               className="flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white hover:opacity-90 transition-opacity"
               style={{ fontSize: "0.9rem", background: "linear-gradient(135deg,#34d399,#22d3ee)", boxShadow: "0 0 24px rgba(52,211,153,0.2)" }}>
               {t("Đăng ký vào hệ thống","Create an account")}<ArrowRight size={16} />
             </motion.button>
-            <button onClick={() => navigate("/tenant")} className="flex items-center gap-1.5 text-white/40 hover:text-white/70 transition-colors" style={{ fontSize: "0.875rem" }}>
+            <button onClick={() => setShowGetStarted(true)} className="flex items-center gap-1.5 text-white/40 hover:text-white/70 transition-colors" style={{ fontSize: "0.875rem" }}>
               {t("Duyệt tất cả","Browse all")}<ChevronRight size={14} />
             </button>
           </div>
@@ -1077,11 +1192,11 @@ export function LandingPage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
+      <section ref={howRef} className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-16">
@@ -1089,21 +1204,27 @@ export function LandingPage() {
               {t("QUY TRÌNH 3 BƯỚC","3 SIMPLE STEPS")}
             </p>
             <h2 className="text-white" style={{ fontSize: "clamp(1.8rem,4vw,3rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
-              {t("Đơn giản từ đầu đến cuối","Simple from start to finish")}
+              <WordReveal text={t("Đơn giản từ đầu đến cuối","Simple from start to finish")} />
             </h2>
           </motion.div>
 
           <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Connector line (desktop only) */}
-            <div className="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px pointer-events-none"
-              style={{ background: "linear-gradient(90deg, transparent 0%, rgba(34,211,238,0.2) 30%, rgba(139,92,246,0.2) 70%, transparent 100%)" }} />
+            {/* Scroll-driven connector line */}
+            <motion.div
+              className="nv-step-connector hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px pointer-events-none"
+              style={{ scaleX: connectorScale, originX: 0 }}
+            />
 
-            {[
-              { step: "01", title: t("Mô tả nhu cầu","Describe your needs"), desc: t("Nhắn tin cho AI Super Broker như nói chuyện bình thường — AI hiểu ngữ cảnh, lọc chính xác.","Chat with AI Super Broker naturally — it understands context and filters precisely."), icon: MessageSquare, color: "#22d3ee" },
-              { step: "02", title: t("Xem & Đặt lịch","View & Schedule"), desc: t("Nhận đề xuất cá nhân hóa, xem virtual tour hoặc đặt lịch thực tế ngay trong app.","Get personalized suggestions, virtual tours or schedule in-person visits in the app."), icon: Home, color: "#34d399" },
-              { step: "03", title: t("Ký HĐ & Quản lý","Sign & Manage"), desc: t("Ký hợp đồng điện tử, thanh toán VietQR, theo dõi sự cố và hóa đơn mọi lúc.","Sign e-contracts, pay via VietQR, track maintenance and invoices anytime."), icon: FileText, color: "#a78bfa" },
-            ].map((h, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }}
+            {([
+              { step: "01", title: t("Mô tả nhu cầu","Describe your needs"), desc: t("Nhắn tin cho AI Super Broker như nói chuyện bình thường — AI hiểu ngữ cảnh, lọc chính xác.","Chat with AI Super Broker naturally — it understands context and filters precisely."), icon: MessageSquare, color: "#22d3ee", entrance: { x: -40, y: 0 } },
+              { step: "02", title: t("Xem & Đặt lịch","View & Schedule"), desc: t("Nhận đề xuất cá nhân hóa, xem virtual tour hoặc đặt lịch thực tế ngay trong app.","Get personalized suggestions, virtual tours or schedule in-person visits in the app."), icon: Home, color: "#34d399", entrance: { x: 0, y: 40 } },
+              { step: "03", title: t("Ký HĐ & Quản lý","Sign & Manage"), desc: t("Ký hợp đồng điện tử, thanh toán VietQR, theo dõi sự cố và hóa đơn mọi lúc.","Sign e-contracts, pay via VietQR, track maintenance and invoices anytime."), icon: FileText, color: "#a78bfa", entrance: { x: 40, y: 0 } },
+            ] as const).map((h, i) => (
+              <motion.div key={i}
+                initial={{ opacity: 0, ...h.entrance }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, type: "spring", stiffness: 140, damping: 20 }}
                 whileHover={{ y: -4 }}
                 className="relative rounded-3xl p-7 border transition-all"
                 style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.07)" }}
@@ -1128,8 +1249,8 @@ export function LandingPage() {
       <section className="py-24 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.94, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-14">
@@ -1138,16 +1259,21 @@ export function LandingPage() {
               <span className="text-red-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>WEB SECURITY</span>
             </div>
             <h2 className="text-white mb-3" style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
-              {t("Bảo mật cấp doanh nghiệp","Enterprise-grade security")}
+              <WordReveal text={t("Bảo mật cấp doanh nghiệp","Enterprise-grade security")} />
             </h2>
             <p className="text-white/38 max-w-xl mx-auto" style={{ fontSize: "0.9rem", lineHeight: 1.75 }}>
               {t("Kiểm thử xâm nhập định kỳ, tuân thủ OWASP Top 10. Dữ liệu người dùng bảo vệ đa lớp.","Regular penetration testing, OWASP Top 10 compliance. Multi-layered user data protection.")}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+            variants={securityContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}>
             {SECURITY_FEATURES.map((f, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+              <motion.div key={i} variants={securityCardVariants}
                 whileHover={{ y: -3 }}
                 className="rounded-2xl p-5 border transition-all cursor-default"
                 style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.07)" }}
@@ -1164,7 +1290,7 @@ export function LandingPage() {
                 <p className="text-white/38" style={{ fontSize: "0.8rem", lineHeight: 1.7 }}>{f.desc}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* OWASP badge */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -1307,7 +1433,7 @@ export function LandingPage() {
                           <p className="text-emerald-400 font-bold" style={{ fontSize: "0.95rem" }}>{listing.price}</p>
                           <p className="text-white/30" style={{ fontSize: "0.68rem" }}>{listing.area} · {listing.district}</p>
                         </div>
-                        <button onClick={() => navigate("/tenant/register")}
+                        <button onClick={e => { e.stopPropagation(); setContactListing(listing); }}
                           className="px-3 py-1.5 rounded-xl text-white font-semibold hover:opacity-90 transition-opacity"
                           style={{ fontSize: "0.72rem", background: "linear-gradient(135deg,#a78bfa,#22d3ee)" }}>
                           {t("Liên hệ","Contact")}
@@ -1332,8 +1458,12 @@ export function LandingPage() {
       </section>
 
       {/* ── CTA BAND ─────────────────────────────────────────────── */}
-      <section className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(34,211,238,0.055) 0%, transparent 70%)" }} />
+      <section ref={ctaRef} className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
+        {/* Scroll-driven spotlight */}
+        <motion.div
+          className="absolute pointer-events-none"
+          style={{ x: ctaGlowX, inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(34,211,238,0.06) 0%, transparent 70%)" }}
+        />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
@@ -1341,9 +1471,9 @@ export function LandingPage() {
               <span className="text-white/50" style={{ fontSize: "0.75rem" }}>{t("Miễn phí đăng ký — không cần thẻ tín dụng","Free to join — no credit card needed")}</span>
             </div>
             <h2 className="text-white mb-5" style={{ fontSize: "clamp(2rem,5vw,3.8rem)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.05 }}>
-              {t("Bắt đầu ngay hôm nay","Start today,")}<br />
+              <WordReveal text={t("Bắt đầu ngay hôm nay","Start today,")} /><br />
               <span style={{ background: "linear-gradient(110deg,#34d399 0%,#22d3ee 50%,#818cf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                {t("hoàn toàn miễn phí","completely free.")}
+                <WordReveal text={t("hoàn toàn miễn phí","completely free.")} />
               </span>
             </h2>
             <p className="text-white/38 mb-10 max-w-lg mx-auto" style={{ fontSize: "1rem", lineHeight: 1.75 }}>

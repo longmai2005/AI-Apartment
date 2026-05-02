@@ -1,22 +1,24 @@
 import { createBrowserRouter, Navigate, Outlet, useLocation } from "react-router";
+import { lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LandingPage } from "./pages/LandingPage";
-import { TenantApp } from "./pages/TenantApp";
 import { TenantRegister } from "./pages/TenantRegister";
 import { TenantLogin } from "./pages/TenantLogin";
-import { LandlordApp } from "./pages/LandlordApp";
 import { LandlordRegister } from "./pages/LandlordRegister";
 import { LandlordLogin } from "./pages/LandlordLogin";
-import { AdminPanel } from "./pages/AdminPanel";
 import { AdminLogin, isAdminAuthenticated } from "./pages/AdminLogin";
 import { ManagerLogin, isManagerAuthenticated } from "./pages/ManagerLogin";
-import { ManagerApp } from "./pages/ManagerApp";
 import { DevLogin, isDevAuthenticated } from "./pages/DevLogin";
-import { DevApp } from "./pages/DevApp";
-import { SecurityPage } from "./pages/SecurityPage";
-import { ContractsPage } from "./pages/ContractsPage";
-import { PaymentsPage } from "./pages/PaymentsPage";
-import { ReportsPage } from "./pages/ReportsPage";
+
+const TenantApp     = lazy(() => import("./pages/TenantApp").then(m => ({ default: m.TenantApp })));
+const LandlordApp   = lazy(() => import("./pages/LandlordApp").then(m => ({ default: m.LandlordApp })));
+const AdminPanel    = lazy(() => import("./pages/AdminPanel").then(m => ({ default: m.AdminPanel })));
+const ManagerApp    = lazy(() => import("./pages/ManagerApp").then(m => ({ default: m.ManagerApp })));
+const DevApp        = lazy(() => import("./pages/DevApp").then(m => ({ default: m.DevApp })));
+const ContractsPage = lazy(() => import("./pages/ContractsPage").then(m => ({ default: m.ContractsPage })));
+const PaymentsPage  = lazy(() => import("./pages/PaymentsPage").then(m => ({ default: m.PaymentsPage })));
+const ReportsPage   = lazy(() => import("./pages/ReportsPage").then(m => ({ default: m.ReportsPage })));
+const SecurityPage  = lazy(() => import("./pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
 
 function isLandlordAuthenticated() {
   try { return localStorage.getItem("nv-landlord-logged-in") === "true"; } catch { return false; }
@@ -33,6 +35,9 @@ function ManagerGuard() {
 }
 function DevGuard() {
   return isDevAuthenticated() ? <DevApp /> : <Navigate to="/dev/login" replace />;
+}
+function SecurityGuard() {
+  return (isAdminAuthenticated() || isDevAuthenticated()) ? <SecurityPage /> : <Navigate to="/admin/login" replace />;
 }
 function ContractsGuard() {
   return isLandlordAuthenticated() ? <ContractsPage /> : <Navigate to="/landlord/login" replace />;
@@ -57,7 +62,13 @@ function PageTransition() {
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         style={{ minHeight: "100vh" }}
       >
-        <Outlet />
+        <Suspense fallback={
+          <div className="min-h-screen flex items-center justify-center" style={{ background: "#030B14" }}>
+            <div className="w-8 h-8 rounded-full border-2 border-cyan-500/30 border-t-cyan-400 animate-spin" />
+          </div>
+        }>
+          <Outlet />
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );
@@ -86,7 +97,7 @@ export const router = createBrowserRouter([
       { path: "/dev/login",           Component: DevLogin },
       { path: "/dev/*",               Component: DevGuard },
       // Sub-pages
-      { path: "/security",            Component: SecurityPage },
+      { path: "/security",            Component: SecurityGuard },
       { path: "/contracts",           Component: ContractsGuard },
       { path: "/payments",            Component: PaymentsGuard },
       { path: "/reports",             Component: ReportsGuard },
