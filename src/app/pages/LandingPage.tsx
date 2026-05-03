@@ -8,7 +8,7 @@ import {
   FileText, Play,
   Lock, Eye, Key, Database, Activity,
   X, UserPlus, LogIn, Globe, ChevronRight,
-  BarChart3, Smartphone, QrCode,
+  BarChart3, Smartphone, QrCode, Sliders, TrendingUp,
 } from "lucide-react";
 import { ChatWidget } from "../components/ChatWidget";
 import { useLang } from "../../hooks/useLang";
@@ -79,6 +79,77 @@ const MARQUEE_ITEMS = [
   { text: "VietQR Tích hợp",          dot: "#10b981" },
   { text: "Hợp đồng điện tử",         dot: "#8b5cf6" },
   { text: "Phản hồi trong 1.2s",      dot: "#22d3ee" },
+];
+
+// ─── Neighborhood heatmap data ────────────────────────────────────────────────
+const HCMC_DISTRICTS = [
+  [
+    { id: "binh-tan",  name: "Bình Tân",  avg: 8  },
+    { id: "tan-phu",   name: "Tân Phú",   avg: 10 },
+    { id: "tan-binh",  name: "Tân Bình",  avg: 12 },
+    { id: "go-vap",    name: "Gò Vấp",    avg: 9  },
+    { id: "binh-thanh-top", name: "B. Thạnh", avg: 14 },
+  ],
+  [
+    { id: "q8",        name: "Quận 8",    avg: 9  },
+    { id: "q6",        name: "Quận 6",    avg: 11 },
+    { id: "phu-nhuan", name: "Phú Nhuận", avg: 15 },
+    { id: "binh-thanh",name: "Bình Thạnh",avg: 14 },
+    { id: "thu-duc",   name: "Thủ Đức",   avg: 12 },
+  ],
+  [
+    { id: "q4",        name: "Quận 4",    avg: 13 },
+    { id: "q1",        name: "Quận 1",    avg: 28 },
+    { id: "q3",        name: "Quận 3",    avg: 20 },
+    { id: "q2",        name: "Quận 2",    avg: 18 },
+    { id: "q9",        name: "Quận 9",    avg: 11 },
+  ],
+  [
+    { id: "nha-be",    name: "Nhà Bè",    avg: 8  },
+    { id: "q7",        name: "Quận 7",    avg: 16 },
+    { id: "q5",        name: "Quận 5",    avg: 15 },
+    { id: "binh-chanh",name: "B. Chánh",  avg: 7  },
+  ],
+];
+
+// ─── Market insights articles ─────────────────────────────────────────────────
+const MARKET_ARTICLES = [
+  {
+    category: "Market Report",
+    title: "Thị trường cho thuê Q1/2025: Nhu cầu tăng 18% so với cùng kỳ",
+    excerpt: "Phân khúc 10–15M/tháng tiếp tục dẫn đầu với tỷ lệ lấp đầy 94%. TP. Thủ Đức và Bình Thạnh ghi nhận mức tăng cao nhất.",
+    readTime: "4 phút đọc",
+    date: "28/04/2025",
+    tag: "#market",
+    color: "#22d3ee",
+  },
+  {
+    category: "AI & PropTech",
+    title: "AI thay đổi cách tìm kiếm bất động sản cho thuê tại Việt Nam",
+    excerpt: "Multi-Agent AI rút ngắn thời gian tìm phòng từ 2 tuần xuống 2 ngày. Tỷ lệ khớp chính xác đạt 89% theo khảo sát NPS.",
+    readTime: "6 phút đọc",
+    date: "24/04/2025",
+    tag: "#AI",
+    color: "#a78bfa",
+  },
+  {
+    category: "Legal Update",
+    title: "Hợp đồng điện tử có giá trị pháp lý đầy đủ từ 01/07/2025",
+    excerpt: "Bộ Tư pháp xác nhận hợp đồng thuê nhà ký số tương đương bản giấy, tạo nền tảng cho PropTech phát triển mạnh.",
+    readTime: "3 phút đọc",
+    date: "20/04/2025",
+    tag: "#legal",
+    color: "#34d399",
+  },
+];
+
+const DISTRICTS_FILTER = ["Tất cả quận", "TP. Thủ Đức", "Quận 7", "Bình Thạnh", "Tân Bình", "Quận 1", "Quận 3"];
+
+const TOUR_STEPS = [
+  { title: "Tìm kiếm bằng AI", desc: "Nhắn tin tự nhiên — AI Super Broker hiểu ngữ cảnh và lọc căn hộ phù hợp trong giây lát.", icon: Search },
+  { title: "4 AI Agents · 24/7", desc: "Mỗi agent chuyên một nghiệp vụ: duyệt tin, tư vấn, quản lý sự cố, xuất hóa đơn.", icon: Bot },
+  { title: "Căn hộ đã xác thực", desc: "Listing Verifier AI kiểm tra hình ảnh, giá và thông tin trước khi đăng lên sàn.", icon: Shield },
+  { title: "Đăng ký miễn phí", desc: "Không cần thẻ tín dụng. Trải nghiệm đầy đủ tính năng PropTech ngay hôm nay.", icon: ArrowRight },
 ];
 
 // ─── Animation variants ───────────────────────────────────────────────────────
@@ -501,11 +572,293 @@ function AgentControlRoom() {
   );
 }
 
+// ─── CommandPalette ───────────────────────────────────────────────────────────
+function CommandPalette({ onClose, onLang, onGetStarted, t, navigate }: {
+  onClose: () => void;
+  onLang: () => void;
+  onGetStarted: () => void;
+  t: (vi: string, en: string) => string;
+  navigate: (path: string) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const [activeIdx, setActiveIdx] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+
+  const navCommands = [
+    { type: "nav",    icon: Home,         label: t("Trang chủ","Home"),                      action: () => window.scrollTo({ top: 0, behavior: "smooth" }) },
+    { type: "nav",    icon: UserPlus,     label: t("Đăng ký cư dân","Tenant signup"),         action: () => navigate("/tenant/register") },
+    { type: "nav",    icon: LogIn,        label: t("Đăng nhập cư dân","Tenant login"),         action: () => navigate("/tenant/login") },
+    { type: "nav",    icon: Building2,    label: t("Đăng ký chủ nhà","Landlord signup"),       action: () => navigate("/landlord/register") },
+    { type: "nav",    icon: Globe,        label: "Manager Portal",                             action: () => navigate("/manager/login") },
+    { type: "nav",    icon: Globe,        label: "Developer Portal",                           action: () => navigate("/dev/login") },
+    { type: "nav",    icon: Shield,       label: t("Trang bảo mật","Security page"),           action: () => navigate("/security") },
+    { type: "action", icon: Globe,        label: t("Đổi ngôn ngữ EN ↔ VI","Toggle EN ↔ VI"), action: () => { onLang(); onClose(); } },
+    { type: "action", icon: ArrowRight,   label: t("Bắt đầu ngay","Get started free"),         action: () => { onGetStarted(); onClose(); } },
+  ];
+
+  const listingHits = query.trim().length >= 1
+    ? LISTINGS.filter(l =>
+        l.name.toLowerCase().includes(query.toLowerCase()) ||
+        l.district.toLowerCase().includes(query.toLowerCase()) ||
+        l.amenities.some(a => a.toLowerCase().includes(query.toLowerCase()))
+      ).slice(0, 4)
+    : [];
+
+  const navHits = query.trim().length >= 1
+    ? navCommands.filter(c => c.label.toLowerCase().includes(query.toLowerCase()))
+    : navCommands;
+
+  type Result = { type: string; label: string; sub: string; icon: typeof Home; action: () => void };
+  const allResults: Result[] = [
+    ...listingHits.map(l => ({ type: "listing", label: l.name, sub: `${l.district} · ${l.priceFrom}–${l.priceTo}M/tháng`, icon: Home, action: () => { onGetStarted(); onClose(); } })),
+    ...navHits.map(c => ({ ...c, sub: "" })),
+  ];
+
+  const go = (i: number) => { allResults[i]?.action(); onClose(); };
+
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[9998] flex items-start justify-center pt-[16vh] px-4"
+      style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)" }}
+      onClick={onClose}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.93, y: -24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.93, y: -12 }}
+        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+        className="w-full max-w-xl rounded-2xl overflow-hidden"
+        style={{ background: "rgba(4,9,20,0.98)", border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 40px 100px rgba(0,0,0,0.9), 0 0 0 1px rgba(34,211,238,0.06)" }}
+        onClick={e => e.stopPropagation()}>
+        <div className="flex items-center gap-3 px-5 py-4 border-b" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+          <Search size={16} className="text-white/28 flex-shrink-0" />
+          <input ref={inputRef} type="text"
+            placeholder={t("Tìm căn hộ, tính năng, điều hướng...","Search apartments, features, navigate...")}
+            value={query}
+            onChange={e => { setQuery(e.target.value); setActiveIdx(0); }}
+            onKeyDown={e => {
+              if (e.key === "ArrowDown") { e.preventDefault(); setActiveIdx(i => Math.min(i + 1, allResults.length - 1)); }
+              if (e.key === "ArrowUp")   { e.preventDefault(); setActiveIdx(i => Math.max(i - 1, 0)); }
+              if (e.key === "Enter")     { go(activeIdx); }
+              if (e.key === "Escape")    { onClose(); }
+            }}
+            className="flex-1 bg-transparent text-white placeholder-white/22 outline-none"
+            style={{ fontSize: "0.95rem" }} />
+          <span className="text-white/18 font-mono border border-white/10 px-1.5 py-0.5 rounded flex-shrink-0" style={{ fontSize: "0.65rem" }}>ESC</span>
+        </div>
+        <div className="max-h-80 overflow-y-auto py-2">
+          {listingHits.length > 0 && (
+            <p className="px-5 py-1.5 text-white/22" style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.1em" }}>
+              {t("CĂN HỘ","LISTINGS")}
+            </p>
+          )}
+          {allResults.length === 0 && (
+            <div className="py-10 text-center">
+              <p className="text-white/25" style={{ fontSize: "0.85rem" }}>{t("Không tìm thấy","No results")}</p>
+            </div>
+          )}
+          {allResults.map((r, i) => {
+            const Icon = r.icon;
+            const isListing = r.type === "listing";
+            return (
+              <button key={i}
+                onClick={() => go(i)}
+                onMouseEnter={() => setActiveIdx(i)}
+                className="w-full flex items-center gap-3 px-5 py-3 text-left transition-colors nv-cmd-result"
+                style={{ background: i === activeIdx ? "rgba(34,211,238,0.07)" : undefined }}>
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ background: isListing ? "rgba(16,185,129,0.12)" : "rgba(255,255,255,0.05)" }}>
+                  <Icon size={13} className={isListing ? "text-emerald-400" : "text-white/35"} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white/80" style={{ fontSize: "0.85rem" }}>{r.label}</p>
+                  {r.sub && <p className="text-white/28 truncate" style={{ fontSize: "0.7rem" }}>{r.sub}</p>}
+                </div>
+                {i === activeIdx && <ChevronRight size={13} className="text-white/22 flex-shrink-0" />}
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-4 px-5 py-3 border-t" style={{ background: "rgba(0,0,0,0.25)", borderColor: "rgba(255,255,255,0.06)" }}>
+          {([["↑↓", t("điều hướng","navigate")], ["↵", t("chọn","select")], ["esc", t("đóng","close")]] as [string, string][]).map(([key, label]) => (
+            <div key={key} className="flex items-center gap-1.5">
+              <span className="text-white/18 font-mono border border-white/10 px-1.5 py-0.5 rounded" style={{ fontSize: "0.6rem" }}>{key}</span>
+              <span className="text-white/20" style={{ fontSize: "0.66rem" }}>{label}</span>
+            </div>
+          ))}
+          <div className="ml-auto flex items-center gap-1.5">
+            <div className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-white/18 font-mono" style={{ fontSize: "0.6rem" }}>NestaVietAI</span>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 // ─── useScrollSection ─────────────────────────────────────────────────────────
 function useScrollSection<T extends HTMLElement = HTMLElement>() {
   const ref = useRef<T>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   return { ref, scrollYProgress };
+}
+
+// ─── ProductTour ──────────────────────────────────────────────────────────────
+function ProductTour({ step, total, onNext, onSkip, t }: {
+  step: number; total: number;
+  onNext: () => void; onSkip: () => void;
+  t: (vi: string, en: string) => string;
+}) {
+  const curr = TOUR_STEPS[step];
+  const Icon = curr.icon;
+  const isLast = step === total - 1;
+  const positions: CSSProperties[] = [
+    { top: "18vh", left: "50%", transform: "translateX(-50%)" },
+    { top: "50vh", left: "50%", transform: "translateX(-50%)" },
+    { top: "40vh", left: "50%", transform: "translateX(-50%)" },
+    { bottom: "14vh", left: "50%", transform: "translateX(-50%)" },
+  ];
+  return (
+    <>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[9985] pointer-events-none"
+        style={{ background: "rgba(0,0,0,0.52)" }} />
+      <div className="fixed inset-0 z-[9985]" onClick={onSkip} />
+      <motion.div
+        key={step}
+        initial={{ opacity: 0, scale: 0.88, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.88 }}
+        transition={{ type: "spring", stiffness: 320, damping: 28 }}
+        className="fixed z-[9986] pointer-events-auto"
+        style={positions[step] as CSSProperties}>
+        <div className="w-72 rounded-2xl p-5"
+          style={{ background: "rgba(4,9,20,0.98)", border: "1px solid rgba(34,211,238,0.3)", boxShadow: "0 24px 64px rgba(0,0,0,0.85), 0 0 0 1px rgba(34,211,238,0.08)" }}>
+          <div className="flex items-center gap-2 mb-3">
+            {Array.from({ length: total }, (_, i) => (
+              <div key={i} className="h-1 rounded-full transition-all duration-300"
+                style={{ background: i <= step ? "#22d3ee" : "rgba(255,255,255,0.12)", width: i === step ? "20px" : "6px" }} />
+            ))}
+            <span className="ml-auto text-white/28" style={{ fontSize: "0.6rem" }}>{step + 1}/{total}</span>
+          </div>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 nv-tour-ring"
+              style={{ background: "rgba(34,211,238,0.12)", border: "1px solid rgba(34,211,238,0.3)" }}>
+              <Icon size={18} style={{ color: "#22d3ee" }} />
+            </div>
+            <h3 className="text-white font-bold" style={{ fontSize: "0.95rem" }}>{curr.title}</h3>
+          </div>
+          <p className="text-white/45 mb-4" style={{ fontSize: "0.8rem", lineHeight: 1.65 }}>{curr.desc}</p>
+          <div className="flex items-center gap-2">
+            <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
+              onClick={e => { e.stopPropagation(); onNext(); }}
+              className="flex-1 py-2 rounded-xl text-white font-semibold flex items-center justify-center gap-1.5"
+              style={{ background: "linear-gradient(135deg,#22d3ee,#3b82f6)", fontSize: "0.82rem" }}>
+              {isLast ? t("Bắt đầu!","Let's go!") : t("Tiếp theo","Next")}<ArrowRight size={13} />
+            </motion.button>
+            <button onClick={e => { e.stopPropagation(); onSkip(); }}
+              className="px-3 py-2 text-white/28 hover:text-white/55 transition-colors" style={{ fontSize: "0.78rem" }}>
+              {t("Bỏ qua","Skip")}
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </>
+  );
+}
+
+// ─── LazyImage — skeleton + IntersectionObserver ──────────────────────────────
+function LazyImage({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setRevealed(true); obs.disconnect(); } },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className="relative w-full h-full">
+      {!loaded && <div className="absolute inset-0 nv-skeleton" />}
+      <img src={revealed ? src : undefined} alt={alt} className={className}
+        style={{ ...style, opacity: loaded ? 1 : 0, transition: "opacity 0.35s ease" }}
+        onLoad={() => setLoaded(true)} />
+    </div>
+  );
+}
+
+// ─── SocialProofBadge ─────────────────────────────────────────────────────────
+function SocialProofBadge({ t }: { t: (vi: string, en: string) => string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true });
+  const avatars = [
+    "from-emerald-400 to-teal-500",
+    "from-violet-400 to-purple-500",
+    "from-cyan-400 to-blue-500",
+    "from-orange-400 to-amber-500",
+    "from-pink-400 to-rose-500",
+  ];
+  const initials = ["TH","ML","KN","VL","BT"];
+  return (
+    <motion.div ref={ref} initial={{ opacity: 0, x: -16 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="flex items-center gap-3">
+      <div className="flex -space-x-2.5">
+        {avatars.map((bg, i) => (
+          <motion.div key={i}
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: i * 0.06, type: "spring", stiffness: 400, damping: 22 }}
+            className={`w-8 h-8 rounded-full bg-gradient-to-br ${bg} flex items-center justify-center text-white font-bold border-2`}
+            style={{ fontSize: "0.58rem", borderColor: "#030B14" }}>
+            {initials[i]}
+          </motion.div>
+        ))}
+      </div>
+      <div>
+        <p className="text-white/65 font-medium" style={{ fontSize: "0.8rem" }}>
+          <motion.span key="count" initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.4 }}>
+            +124{" "}
+          </motion.span>
+          {t("người đang xem hôm nay","people viewing today")}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── MobileBottomNav ──────────────────────────────────────────────────────────
+function MobileBottomNav({ onGetStarted, t }: { onGetStarted: () => void; t: (vi: string, en: string) => string }) {
+  const navigate = useNavigate();
+  const items = [
+    { icon: Home,         label: t("Trang chủ","Home"),    action: () => window.scrollTo({ top: 0, behavior: "smooth" }) },
+    { icon: Search,       label: t("Tìm kiếm","Search"),   action: () => { const el = document.querySelector("input[type=text]"); if (el) (el as HTMLElement).focus(); else window.scrollTo({ top: 400, behavior: "smooth" }); } },
+    { icon: MessageSquare,label: "AI Chat",                action: onGetStarted, highlight: true },
+    { icon: UserPlus,     label: t("Đăng ký","Sign up"),   action: onGetStarted },
+  ];
+  void navigate; // navigate available if needed later
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden"
+      style={{ background: "rgba(3,7,18,0.94)", backdropFilter: "blur(20px) saturate(180%)", borderTop: "1px solid rgba(255,255,255,0.07)", paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
+      <div className="flex items-center py-2 px-4">
+        {items.map(({ icon: Icon, label, action, highlight }) => (
+          <button key={label} onClick={action} className="nv-mobile-nav-item">
+            <div className={`w-6 h-6 flex items-center justify-center rounded-xl ${highlight ? "bg-gradient-to-br from-cyan-400 to-blue-500" : ""}`}
+              style={highlight ? { boxShadow: "0 0 12px rgba(34,211,238,0.4)" } : undefined}>
+              <Icon size={15} className={highlight ? "text-white" : "text-white/38"} />
+            </div>
+            <span style={{ fontSize: "0.56rem", fontWeight: 600, color: highlight ? "#22d3ee" : "rgba(255,255,255,0.28)" }}>{label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 // ─── WordReveal ───────────────────────────────────────────────────────────────
@@ -528,6 +881,524 @@ function WordReveal({ text, className, style }: { text: string; className?: stri
   );
 }
 
+// ─── RentalCalculator ────────────────────────────────────────────────────────
+function RentalCalculator({ t, onGetStarted }: { t: (vi: string, en: string) => string; onGetStarted: () => void }) {
+  const [budget, setBudget] = useState(15);
+  const [area, setArea] = useState(55);
+  const [district, setDistrict] = useState("Tất cả quận");
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const matching = LISTINGS.filter(l => {
+    const inBudget = l.priceFrom <= budget;
+    const inDistrict = district === "Tất cả quận" || l.district === district;
+    const inArea = parseInt(l.area.split("–")[0]) <= area;
+    return inBudget && inDistrict && inArea;
+  });
+
+  return (
+    <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.012)" }}>
+      <div className="max-w-5xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4"
+            style={{ background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.18)" }}>
+            <Sliders size={13} className="text-emerald-400" />
+            <span className="text-emerald-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>
+              {t("MÁY TÍNH THUÊ NHÀ AI","AI RENTAL CALCULATOR")}
+            </span>
+          </div>
+          <h2 className="text-white mb-2" style={{ fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
+            {t("Tìm căn hộ phù hợp","Find your perfect match")}
+          </h2>
+          <p className="text-white/35" style={{ fontSize: "0.88rem" }}>
+            {t("Kéo slider — xem ngay căn hộ phù hợp ngân sách của bạn","Adjust sliders to instantly see matching apartments")}
+          </p>
+        </motion.div>
+
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Controls */}
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-2xl p-6 space-y-7"
+            style={{ background: "rgba(255,255,255,0.035)", border: "1px solid rgba(255,255,255,0.08)" }}>
+
+            {/* Budget */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <label className="text-white/55 font-semibold" style={{ fontSize: "0.82rem" }}>{t("Ngân sách tối đa","Max budget")}</label>
+                <motion.span key={budget} initial={{ scale: 1.2 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="text-cyan-400 font-bold" style={{ fontSize: "1.1rem" }}>
+                  {budget}M<span className="text-white/30 font-normal text-sm">/tháng</span>
+                </motion.span>
+              </div>
+              <input type="range" min="5" max="40" step="1" value={budget} onChange={e => setBudget(+e.target.value)}
+                className="w-full h-1.5 rounded-full"
+                style={{ background: `linear-gradient(90deg, #22d3ee ${((budget - 5) / 35) * 100}%, rgba(255,255,255,0.1) 0%)` }} />
+              <div className="flex justify-between mt-1.5">
+                <span className="text-white/22" style={{ fontSize: "0.62rem" }}>5M</span>
+                <span className="text-white/22" style={{ fontSize: "0.62rem" }}>40M</span>
+              </div>
+            </div>
+
+            {/* Area */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <label className="text-white/55 font-semibold" style={{ fontSize: "0.82rem" }}>{t("Diện tích tối thiểu","Min area")}</label>
+                <motion.span key={area} initial={{ scale: 1.2 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="text-violet-400 font-bold" style={{ fontSize: "1.1rem" }}>
+                  {area}m²
+                </motion.span>
+              </div>
+              <input type="range" min="20" max="150" step="5" value={area} onChange={e => setArea(+e.target.value)}
+                className="w-full h-1.5 rounded-full"
+                style={{ background: `linear-gradient(90deg, #a78bfa ${((area - 20) / 130) * 100}%, rgba(255,255,255,0.1) 0%)` }} />
+              <div className="flex justify-between mt-1.5">
+                <span className="text-white/22" style={{ fontSize: "0.62rem" }}>20m²</span>
+                <span className="text-white/22" style={{ fontSize: "0.62rem" }}>150m²</span>
+              </div>
+            </div>
+
+            {/* District */}
+            <div>
+              <label className="text-white/55 font-semibold mb-2.5 block" style={{ fontSize: "0.82rem" }}>{t("Khu vực","District")}</label>
+              <div className="flex flex-wrap gap-2">
+                {DISTRICTS_FILTER.map(d => (
+                  <button key={d} onClick={() => setDistrict(d)}
+                    className="px-3 py-1.5 rounded-full transition-all"
+                    style={{
+                      fontSize: "0.72rem", fontWeight: 600,
+                      background: district === d ? "rgba(34,211,238,0.15)" : "rgba(255,255,255,0.05)",
+                      border: `1px solid ${district === d ? "rgba(34,211,238,0.4)" : "rgba(255,255,255,0.1)"}`,
+                      color: district === d ? "#22d3ee" : "rgba(255,255,255,0.42)",
+                    }}>
+                    {d}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Match count badge */}
+            <div className="rounded-xl px-5 py-4" style={{ background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.18)" }}>
+              <div className="flex items-center gap-4">
+                <motion.span key={matching.length} initial={{ scale: 1.4, color: "#22d3ee" }} animate={{ scale: 1, color: "#34d399" }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="font-black" style={{ fontSize: "2.2rem", letterSpacing: "-0.04em" }}>
+                  {matching.length}
+                </motion.span>
+                <div>
+                  <p className="text-white font-semibold" style={{ fontSize: "0.88rem" }}>{t("căn hộ phù hợp","matching apartments")}</p>
+                  <p className="text-white/30" style={{ fontSize: "0.72rem" }}>{t("theo bộ lọc hiện tại","with current filters")}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Results */}
+          <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}>
+            <p className="text-white/40 font-semibold mb-4" style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+              {t("KẾT QUẢ PHÙ HỢP NHẤT","BEST MATCHES")}
+            </p>
+            <div className="space-y-3">
+              <AnimatePresence>
+                {matching.slice(0, 3).map((apt, i) => (
+                  <motion.div key={apt.id} layout
+                    initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+                    transition={{ delay: i * 0.05 }}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-4 rounded-2xl p-4 cursor-pointer"
+                    style={{ background: "rgba(255,255,255,0.035)", border: "1px solid rgba(255,255,255,0.07)" }}>
+                    <img src={apt.img} alt={apt.name} loading="lazy" className="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white font-semibold truncate" style={{ fontSize: "0.85rem" }}>{apt.name}</p>
+                      <p className="text-white/38 flex items-center gap-1 mt-0.5" style={{ fontSize: "0.72rem" }}>
+                        <MapPin size={9} />{apt.district}
+                      </p>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <p className="text-cyan-400 font-bold" style={{ fontSize: "0.9rem" }}>{apt.priceFrom}M</p>
+                      <p className="text-white/25" style={{ fontSize: "0.62rem" }}>/tháng</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+              {matching.length === 0 && (
+                <div className="flex flex-col items-center justify-center h-44 text-center rounded-2xl"
+                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
+                  <Search size={26} className="text-white/12 mb-3" />
+                  <p className="text-white/28" style={{ fontSize: "0.85rem" }}>{t("Không có căn hộ phù hợp","No matches found")}</p>
+                  <p className="text-white/18 mt-1" style={{ fontSize: "0.72rem" }}>{t("Thử tăng ngân sách","Try increasing budget")}</p>
+                </div>
+              )}
+              {matching.length > 3 && (
+                <button onClick={onGetStarted}
+                  className="w-full py-2.5 rounded-xl border border-white/8 text-white/38 hover:text-white/65 hover:border-white/18 transition-all text-center"
+                  style={{ fontSize: "0.78rem" }}>
+                  +{matching.length - 3} {t("căn hộ nữa","more apartments")} →
+                </button>
+              )}
+            </div>
+            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+              onClick={onGetStarted}
+              className="w-full mt-4 py-3.5 rounded-xl text-white font-semibold flex items-center justify-center gap-2"
+              style={{ background: "linear-gradient(135deg,#22d3ee,#3b82f6)", fontSize: "0.875rem", boxShadow: "0 0 20px rgba(34,211,238,0.18)" }}>
+              <Bot size={15} />{t("Hỏi AI Super Broker","Ask AI Super Broker")}<ArrowRight size={14} />
+            </motion.button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── StickyCompareBar ─────────────────────────────────────────────────────────
+function StickyCompareBar({ selectedIds, onCompare, onClear, t }: {
+  selectedIds: number[];
+  onCompare: () => void;
+  onClear: () => void;
+  t: (vi: string, en: string) => string;
+}) {
+  const selected = LISTINGS.filter(l => selectedIds.includes(l.id));
+  return (
+    <motion.div
+      initial={{ y: 80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 80, opacity: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="fixed bottom-0 left-0 right-0 z-[8000] md:bottom-5 md:left-1/2 md:right-auto md:w-auto md:-translate-x-1/2">
+      <div className="flex items-center gap-3 px-5 py-3.5 md:rounded-2xl"
+        style={{ background: "rgba(3,7,18,0.97)", backdropFilter: "blur(20px)", border: "1px solid rgba(34,211,238,0.18)", borderBottom: "none", borderRadius: "20px 20px 0 0", boxShadow: "0 -4px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(34,211,238,0.06)" }}>
+        <div className="flex -space-x-2">
+          {selected.map(l => (
+            <img key={l.id} src={l.img} alt={l.name} className="w-9 h-9 rounded-xl object-cover border-2" style={{ borderColor: "#030B14" }} />
+          ))}
+          {selectedIds.length < 3 && (
+            <div className="w-9 h-9 rounded-xl border-2 border-dashed border-white/18 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <span className="text-white/22" style={{ fontSize: "1.1rem", lineHeight: 1 }}>+</span>
+            </div>
+          )}
+        </div>
+        <div className="min-w-0 flex-shrink-0">
+          <p className="text-white/55 font-semibold whitespace-nowrap" style={{ fontSize: "0.78rem" }}>
+            {selectedIds.length} {t("đã chọn","selected")} · {t("tối đa 3","max 3")}
+          </p>
+        </div>
+        <button onClick={onCompare}
+          className="px-4 py-2 rounded-xl text-white font-semibold flex-shrink-0"
+          style={{ background: "linear-gradient(135deg,#22d3ee,#3b82f6)", fontSize: "0.8rem", boxShadow: "0 0 16px rgba(34,211,238,0.25)" }}>
+          {t("So sánh","Compare")}
+        </button>
+        <button onClick={onClear} className="text-white/25 hover:text-white/55 transition-colors flex-shrink-0"><X size={16} /></button>
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── ComparisonDrawer ─────────────────────────────────────────────────────────
+function ComparisonDrawer({ selectedIds, onClose, t, onGetStarted }: {
+  selectedIds: number[];
+  onClose: () => void;
+  t: (vi: string, en: string) => string;
+  onGetStarted: () => void;
+}) {
+  const selected = LISTINGS.filter(l => selectedIds.includes(l.id));
+  const criteria: { key: keyof typeof LISTINGS[0]; label: string; fmt: (v: unknown) => string }[] = [
+    { key: "priceFrom", label: t("Giá từ","Price from"), fmt: v => `${v}M/tháng` },
+    { key: "priceTo",   label: t("Giá đến","Price to"),  fmt: v => `${v}M/tháng` },
+    { key: "area",      label: t("Diện tích","Area"),     fmt: v => `${v}` },
+    { key: "rating",    label: t("Đánh giá","Rating"),    fmt: v => `${v}★` },
+    { key: "available", label: t("Còn trống","Available"),fmt: v => `${v} phòng` },
+  ];
+  const cols = selected.length;
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[9000] flex flex-col justify-end"
+      style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(16px)" }}
+      onClick={onClose}>
+      <motion.div
+        initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 32 }}
+        onClick={e => e.stopPropagation()}
+        className="rounded-t-3xl overflow-hidden overflow-y-auto"
+        style={{ background: "rgba(3,7,18,0.98)", border: "1px solid rgba(255,255,255,0.1)", maxHeight: "85vh" }}>
+        <div className="flex justify-center pt-4 pb-2">
+          <div className="w-10 h-1 rounded-full bg-white/15 nv-drawer-handle" />
+        </div>
+        <div className="px-6 pb-4 flex items-center justify-between border-b border-white/7">
+          <div>
+            <h3 className="text-white font-bold" style={{ fontSize: "1.1rem" }}>{t("So sánh căn hộ","Compare Apartments")}</h3>
+            <p className="text-white/35" style={{ fontSize: "0.78rem" }}>{selected.length} {t("căn hộ đã chọn","apartments selected")}</p>
+          </div>
+          <button onClick={onClose} className="text-white/30 hover:text-white/65 transition-colors"><X size={22} /></button>
+        </div>
+
+        <div className="p-6">
+          {/* Images + names */}
+          <div className="grid gap-4 mb-6" style={{ gridTemplateColumns: `160px repeat(${cols}, 1fr)` }}>
+            <div />
+            {selected.map(apt => (
+              <div key={apt.id} className="text-center">
+                <div className="rounded-2xl overflow-hidden mb-3" style={{ height: "120px" }}>
+                  <img src={apt.img} alt={apt.name} loading="lazy" className="w-full h-full object-cover" />
+                </div>
+                <p className="text-white font-bold" style={{ fontSize: "0.78rem", lineHeight: 1.3 }}>{apt.name}</p>
+                <p className="text-cyan-400 font-semibold mt-0.5" style={{ fontSize: "0.82rem" }}>{apt.priceFrom}–{apt.priceTo}M</p>
+                <p className="text-white/30" style={{ fontSize: "0.65rem" }}>{apt.district}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Rows */}
+          {criteria.map(({ key, label, fmt }) => (
+            <div key={key} className="grid gap-4 py-3.5" style={{ gridTemplateColumns: `160px repeat(${cols}, 1fr)`, borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+              <p className="text-white/35 flex items-center" style={{ fontSize: "0.78rem" }}>{label}</p>
+              {selected.map(apt => (
+                <div key={apt.id} className="text-center">
+                  <p className="text-white font-semibold" style={{ fontSize: "0.82rem" }}>{fmt(apt[key])}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Amenities */}
+          <div className="grid gap-4 py-3.5" style={{ gridTemplateColumns: `160px repeat(${cols}, 1fr)`, borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+            <p className="text-white/35 flex items-start pt-0.5" style={{ fontSize: "0.78rem" }}>{t("Tiện ích","Amenities")}</p>
+            {selected.map(apt => (
+              <div key={apt.id} className="flex flex-wrap gap-1 justify-center">
+                {apt.amenities.map(a => (
+                  <span key={a} className="px-1.5 py-0.5 rounded-md text-white/40"
+                    style={{ fontSize: "0.58rem", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>{a}</span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* AI Summary */}
+          <div className="mt-5 rounded-2xl p-5" style={{ background: "rgba(34,211,238,0.05)", border: "1px solid rgba(34,211,238,0.15)" }}>
+            <div className="flex items-center gap-2 mb-3">
+              <Bot size={14} className="text-cyan-400" />
+              <span className="text-cyan-400 font-semibold" style={{ fontSize: "0.78rem" }}>AI {t("phân tích","analysis")}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
+            </div>
+            <p className="text-white/48" style={{ fontSize: "0.8rem", lineHeight: 1.7 }}>
+              {selected.length >= 2
+                ? `${selected[0]?.name} ${t("phù hợp hơn với ngân sách hẹp và số phòng trống cao hơn. Trong khi","is better for tighter budgets with more availability. Meanwhile,")} ${selected[1]?.name} ${t("nổi bật với rating cao hơn và tiện ích cao cấp.","stands out with a higher rating and premium amenities.")}`
+                : t("Chọn thêm căn hộ để AI tổng hợp điểm mạnh và yếu chi tiết.", "Select more apartments for detailed AI pros & cons analysis.")}
+            </p>
+          </div>
+
+          <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+            onClick={() => { onGetStarted(); onClose(); }}
+            className="w-full mt-5 py-3.5 rounded-xl text-white font-bold flex items-center justify-center gap-2"
+            style={{ background: "linear-gradient(135deg,#22d3ee,#3b82f6)", fontSize: "0.9rem" }}>
+            {t("Đặt lịch xem ngay","Schedule a tour")}<ArrowRight size={15} />
+          </motion.button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// ─── NeighborhoodHeatmap ──────────────────────────────────────────────────────
+function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
+  const [hovered, setHovered] = useState<string | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const getTheme = (avg: number) => {
+    const ratio = Math.min((avg - 5) / 25, 1);
+    if (ratio < 0.2) return { bg: "#10b981", glow: "rgba(16,185,129,0.35)" };
+    if (ratio < 0.4) return { bg: "#22d3ee", glow: "rgba(34,211,238,0.35)" };
+    if (ratio < 0.6) return { bg: "#8b5cf6", glow: "rgba(139,92,246,0.35)" };
+    if (ratio < 0.8) return { bg: "#f59e0b", glow: "rgba(245,158,11,0.35)" };
+    return { bg: "#ef4444", glow: "rgba(239,68,68,0.35)" };
+  };
+
+  const allDistricts = HCMC_DISTRICTS.flat();
+  const hoveredData = allDistricts.find(d => d.id === hovered);
+
+  return (
+    <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.01)" }}>
+      <div className="max-w-6xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4"
+            style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.18)" }}>
+            <MapPin size={13} className="text-cyan-400" />
+            <span className="text-cyan-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>
+              {t("GIÁ THUÊ THEO QUẬN","RENTAL PRICES BY DISTRICT")}
+            </span>
+          </div>
+          <h2 className="text-white mb-3" style={{ fontSize: "clamp(1.6rem,3.5vw,2.6rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
+            <WordReveal text={t("Heatmap giá thuê TP.HCM","HCMC Rental Heatmap")} />
+          </h2>
+          <p className="text-white/35 max-w-xl mx-auto" style={{ fontSize: "0.87rem", lineHeight: 1.7 }}>
+            {t("Hover vào quận để xem giá trung bình và thống kê thực tế từ dữ liệu AI.","Hover over districts to see average rents and AI-powered market stats.")}
+          </p>
+        </motion.div>
+
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Grid */}
+          <div className="space-y-2">
+            {HCMC_DISTRICTS.map((row, ri) => (
+              <motion.div key={ri} className="flex gap-2 justify-center flex-wrap"
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: ri * 0.08 }}>
+                {row.map((d, ci) => {
+                  const { bg, glow } = getTheme(d.avg);
+                  const isHot = hovered === d.id;
+                  return (
+                    <motion.div key={d.id}
+                      initial={{ opacity: 0, scale: 0.7 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: ri * 0.08 + ci * 0.04, type: "spring", stiffness: 200, damping: 20 }}
+                      whileHover={{ scale: 1.1, zIndex: 2 }}
+                      className="nv-heatmap-cell rounded-xl flex flex-col items-center justify-center text-center select-none"
+                      style={{
+                        width: "88px", height: "68px",
+                        background: `${bg}${isHot ? "25" : "14"}`,
+                        border: `1px solid ${bg}${isHot ? "70" : "28"}`,
+                        boxShadow: isHot ? `0 8px 24px ${glow}` : "none",
+                        transition: "background 0.2s, border 0.2s, box-shadow 0.2s",
+                      }}
+                      onMouseEnter={() => setHovered(d.id)}
+                      onMouseLeave={() => setHovered(null)}>
+                      <p className="font-bold leading-tight" style={{ fontSize: "0.72rem", color: bg }}>{d.name}</p>
+                      <p className="text-white/40 mt-0.5" style={{ fontSize: "0.58rem" }}>{d.avg}M</p>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            ))}
+            {/* Legend */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{t("Rẻ","Low")}</span>
+              <div className="h-1.5 w-36 rounded-full" style={{ background: "linear-gradient(90deg,#10b981,#22d3ee,#8b5cf6,#f59e0b,#ef4444)" }} />
+              <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{t("Đắt","High")}</span>
+            </div>
+          </div>
+
+          {/* Info panel */}
+          <div className="rounded-2xl p-6"
+            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", minHeight: "240px" }}>
+            <AnimatePresence mode="wait">
+              {hoveredData ? (
+                <motion.div key={hoveredData.id}
+                  initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.18 }}>
+                  {(() => {
+                    const { bg } = getTheme(hoveredData.avg);
+                    return (
+                      <>
+                        <div className="flex items-center gap-3 mb-5">
+                          <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${bg}20`, border: `1px solid ${bg}30` }}>
+                            <MapPin size={18} style={{ color: bg }} />
+                          </div>
+                          <div>
+                            <h3 className="text-white font-bold" style={{ fontSize: "1.1rem" }}>{hoveredData.name}</h3>
+                            <p className="text-white/35" style={{ fontSize: "0.72rem" }}>TP. Hồ Chí Minh</p>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 mb-5">
+                          {[
+                            { label: t("Giá trung bình","Avg. rent"), val: `${hoveredData.avg}M/tháng`, color: bg },
+                            { label: t("Khoảng giá","Range"), val: `${Math.round(hoveredData.avg * 0.75)}–${Math.round(hoveredData.avg * 1.45)}M`, color: "#a78bfa" },
+                            { label: t("Căn hộ AI","AI listings"), val: `${Math.round(hoveredData.avg * 16)}+`, color: "#22d3ee" },
+                            { label: t("Đánh giá","Avg. rating"), val: `${(4.2 + (hoveredData.avg % 6) * 0.1).toFixed(1)}★`, color: "#fbbf24" },
+                          ].map(({ label, val, color }) => (
+                            <div key={label} className="rounded-xl p-3" style={{ background: `${color}0a`, border: `1px solid ${color}18` }}>
+                              <p className="font-bold" style={{ color, fontSize: "0.95rem" }}>{val}</p>
+                              <p className="text-white/32 mt-0.5" style={{ fontSize: "0.65rem" }}>{label}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                          className="w-full py-2.5 rounded-xl text-white font-semibold"
+                          style={{ background: `linear-gradient(135deg,${bg},${bg}aa)`, fontSize: "0.82rem" }}>
+                          {t("Xem căn hộ tại","View listings in")} {hoveredData.name} →
+                        </motion.button>
+                      </>
+                    );
+                  })()}
+                </motion.div>
+              ) : (
+                <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <div className="flex flex-col items-center justify-center h-52 text-center">
+                    <MapPin size={32} className="text-white/10 mb-3" />
+                    <p className="text-white/25" style={{ fontSize: "0.88rem" }}>
+                      {t("Hover vào quận để xem thống kê giá","Hover over a district to see stats")}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── MarketInsights ───────────────────────────────────────────────────────────
+function MarketInsights({ t }: { t: (vi: string, en: string) => string }) {
+  return (
+    <section className="py-20 px-6 border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="flex items-end justify-between mb-10 gap-4 flex-wrap">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-3"
+              style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.16)" }}>
+              <TrendingUp size={12} className="text-cyan-400" />
+              <span className="text-cyan-400" style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>
+                {t("THÔNG TIN THỊ TRƯỜNG","MARKET INSIGHTS")}
+              </span>
+            </div>
+            <h2 className="text-white" style={{ fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
+              {t("Góc nhìn AI về thị trường","AI-powered market view")}
+            </h2>
+          </div>
+          <button className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors" style={{ fontSize: "0.875rem" }}>
+            {t("Tất cả bài viết","All articles")}<ArrowRight size={15} />
+          </button>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {MARKET_ARTICLES.map((a, i) => (
+            <motion.div key={i}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ delay: i * 0.1, type: "spring", stiffness: 120, damping: 20 }}
+              whileHover={{ y: -6 }}
+              className="rounded-2xl overflow-hidden cursor-pointer group"
+              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+              <div className="h-1" style={{ background: `linear-gradient(90deg,${a.color},transparent)` }} />
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2.5 py-0.5 rounded-full font-semibold"
+                    style={{ fontSize: "0.62rem", background: `${a.color}18`, color: a.color, border: `1px solid ${a.color}25` }}>
+                    {a.category}
+                  </span>
+                  <span className="text-white/20" style={{ fontSize: "0.62rem" }}>{a.date}</span>
+                </div>
+                <h3 className="text-white font-bold mb-3 group-hover:text-cyan-400/80 transition-colors"
+                  style={{ fontSize: "0.9rem", lineHeight: 1.5 }}>{a.title}</h3>
+                <p className="text-white/35 mb-5"
+                  style={{ fontSize: "0.78rem", lineHeight: 1.7, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                  {a.excerpt}
+                </p>
+                <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                  <span className="text-white/22" style={{ fontSize: "0.68rem" }}>{a.readTime}</span>
+                  <span className="font-mono" style={{ fontSize: "0.64rem", color: a.color }}>{a.tag}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── LandingPage ──────────────────────────────────────────────────────────────
 export function LandingPage() {
   const navigate = useNavigate();
@@ -538,6 +1409,18 @@ export function LandingPage() {
   const [showGetStarted, setShowGetStarted] = useState(false);
   const [chatTrigger, setChatTrigger] = useState<{ query: string; id: number } | undefined>();
   const [contactListing, setContactListing] = useState<null | { id: string; title: string; price: string; area: string; district: string; description: string; type: string }>(null);
+
+  // New feature state
+  const [showCommandPalette, setShowCommandPalette] = useState(false);
+  const [selectedListings, setSelectedListings] = useState<number[]>([]);
+  const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
+  const [tourStep, setTourStep] = useState<number | null>(null);
+
+  const toggleCompare = (id: number) => {
+    setSelectedListings(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : prev.length < 3 ? [...prev, id] : prev
+    );
+  };
 
   // Page-level scroll
   const { scrollY, scrollYProgress: pageScrollProgress } = useScroll();
@@ -585,6 +1468,27 @@ export function LandingPage() {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  // ⌘K / Ctrl+K command palette
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); setShowCommandPalette(v => !v); }
+      if (e.key === "Escape") { setShowCommandPalette(false); setShowComparisonDrawer(false); }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  // Product tour — trigger once for first-time visitors
+  useEffect(() => {
+    try {
+      const done = localStorage.getItem("nv-tour-done");
+      if (!done) {
+        const timer = setTimeout(() => setTourStep(0), 2000);
+        return () => clearTimeout(timer);
+      }
+    } catch { /* noop */ }
   }, []);
 
   return (
@@ -640,6 +1544,57 @@ export function LandingPage() {
         )}
       </AnimatePresence>
       <ChatWidget trigger={chatTrigger} />
+
+      {/* Command Palette */}
+      <AnimatePresence>
+        {showCommandPalette && (
+          <CommandPalette
+            onClose={() => setShowCommandPalette(false)}
+            onLang={toggleLang}
+            onGetStarted={() => { setShowGetStarted(true); setShowCommandPalette(false); }}
+            t={t}
+            navigate={navigate}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Product Tour */}
+      <AnimatePresence>
+        {tourStep !== null && (
+          <ProductTour
+            step={tourStep}
+            total={TOUR_STEPS.length}
+            t={t}
+            onNext={() => {
+              if (tourStep < TOUR_STEPS.length - 1) { setTourStep(tourStep + 1); }
+              else { setTourStep(null); try { localStorage.setItem("nv-tour-done","true"); } catch { /**/ } setShowGetStarted(true); }
+            }}
+            onSkip={() => { setTourStep(null); try { localStorage.setItem("nv-tour-done","true"); } catch { /**/ } }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Comparison Drawer */}
+      <AnimatePresence>
+        {showComparisonDrawer && (
+          <ComparisonDrawer selectedIds={selectedListings} onClose={() => setShowComparisonDrawer(false)} t={t} onGetStarted={() => setShowGetStarted(true)} />
+        )}
+      </AnimatePresence>
+
+      {/* Sticky Compare Bar */}
+      <AnimatePresence>
+        {selectedListings.length > 0 && !showComparisonDrawer && (
+          <StickyCompareBar
+            selectedIds={selectedListings}
+            onCompare={() => setShowComparisonDrawer(true)}
+            onClear={() => setSelectedListings([])}
+            t={t}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Bottom Nav */}
+      <MobileBottomNav onGetStarted={() => setShowGetStarted(true)} t={t} />
 
       {/* ── FIXED BACKGROUND ─────────────────────────────────────── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -697,6 +1652,13 @@ export function LandingPage() {
 
           {/* Controls — no theme toggle, force dark always */}
           <div className="flex items-center gap-1.5 flex-shrink-0">
+            {/* ⌘K hint */}
+            <button onClick={() => setShowCommandPalette(true)}
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-white/28 hover:text-white/55 transition-all"
+              style={{ fontSize: "0.72rem", border: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.03)" }}>
+              <Search size={11} className="text-white/25" />
+              <span>⌘K</span>
+            </button>
             <button onClick={toggleLang}
               className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg text-white/40 hover:text-white/75 hover:bg-white/6 transition-all"
               style={{ border: "1px solid rgba(255,255,255,0.08)", fontSize: "0.67rem", fontWeight: 700 }}>
@@ -1117,59 +2079,81 @@ export function LandingPage() {
                 {t("Kiểm duyệt bởi AI — cập nhật thời gian thực","AI-verified listings — updated in real-time")}
               </p>
             </div>
-            <button onClick={() => setShowGetStarted(true)} className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors" style={{ fontSize: "0.875rem" }}>
-              {t("Xem tất cả","View all")}<ArrowRight size={15} />
-            </button>
+            <div className="flex flex-col items-end gap-3">
+              <button onClick={() => setShowGetStarted(true)} className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors" style={{ fontSize: "0.875rem" }}>
+                {t("Xem tất cả","View all")}<ArrowRight size={15} />
+              </button>
+              <SocialProofBadge t={t} />
+            </div>
           </motion.div>
 
           <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
             <motion.div className="flex gap-5" style={{ minWidth: "max-content", x: listingsDrift }}>
-              {LISTINGS.map((apt, i) => (
-                <motion.div key={apt.id}
-                  initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i,3) * 0.08 }}
-                  whileHover={{ y: -10, scale: 1.015 }}
-                  onClick={() => setShowGetStarted(true)}
-                  className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group"
-                  style={{ width: "280px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${apt.badgeHex}60`; (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.09)"; }}
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img src={apt.img} alt={apt.name} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-white" style={{ fontSize: "0.6rem", fontWeight: 700, background: apt.badgeHex, boxShadow: `0 0 10px ${apt.badgeHex}80` }}>{apt.badge}</span>
-                    <div className="absolute top-3 right-3 rounded-full px-2 py-1 flex items-center gap-1" style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)" }}>
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-white" style={{ fontSize: "0.6rem", fontWeight: 600 }}>{apt.available} trống</span>
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h3 className="text-white font-bold" style={{ fontSize: "0.9rem" }}>{apt.name}</h3>
-                      <p className="text-white/60 flex items-center gap-1" style={{ fontSize: "0.7rem" }}><MapPin size={9} />{apt.district}</p>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-baseline gap-1 mb-3">
-                      <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceFrom}M</span>
-                      <span className="text-white/20 text-xs">–</span>
-                      <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceTo}M</span>
-                      <span className="text-white/30" style={{ fontSize: "0.68rem" }}>/tháng</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {apt.amenities.map(a => (
-                        <span key={a} className="text-white/50 px-2 py-0.5 rounded-md"
-                          style={{ fontSize: "0.6rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>{a}</span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                      <div className="flex items-center gap-1">
-                        <Star size={11} className="text-yellow-400" style={{ fill: "#facc15" }} />
-                        <span className="text-white/50" style={{ fontSize: "0.72rem" }}>{apt.rating}</span>
+              {LISTINGS.map((apt, i) => {
+                const isCompared = selectedListings.includes(apt.id);
+                const tickerMsgs = [`${apt.available} trống`, `${2 + (i % 4)} đang xem`, "Vừa được quan tâm", `${apt.available} phòng còn`];
+                const tickerIdx = Math.floor(Date.now() / 4000 + i) % tickerMsgs.length;
+                return (
+                  <motion.div key={apt.id}
+                    initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i,3) * 0.08 }}
+                    whileHover={{ y: -10, scale: 1.015 }}
+                    onClick={() => setShowGetStarted(true)}
+                    className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group relative"
+                    style={{ width: "280px", background: isCompared ? `${apt.badgeHex}0d` : "rgba(255,255,255,0.04)", border: `1px solid ${isCompared ? apt.badgeHex + "50" : "rgba(255,255,255,0.09)"}`, boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${apt.badgeHex}60`; if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)"; if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.09)"; }}
+                  >
+                    {/* Compare toggle button */}
+                    <button
+                      onClick={e => { e.stopPropagation(); toggleCompare(apt.id); }}
+                      className="absolute top-3 left-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
+                      style={{
+                        background: isCompared ? apt.badgeHex : "rgba(0,0,0,0.55)",
+                        backdropFilter: "blur(8px)",
+                        border: `1px solid ${isCompared ? apt.badgeHex : "rgba(255,255,255,0.2)"}`,
+                        boxShadow: isCompared ? `0 0 12px ${apt.badgeHex}80` : "none",
+                      }}>
+                      <span className="text-white font-bold" style={{ fontSize: "0.85rem", lineHeight: 1 }}>{isCompared ? "✓" : "+"}</span>
+                    </button>
+
+                    <div className="relative h-48 overflow-hidden">
+                      <LazyImage src={apt.img} alt={apt.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-white" style={{ fontSize: "0.6rem", fontWeight: 700, background: apt.badgeHex, boxShadow: `0 0 10px ${apt.badgeHex}80` }}>{apt.badge}</span>
+                      {/* Real-time ticker */}
+                      <div className="absolute top-12 right-3 rounded-full px-2 py-1 flex items-center gap-1" style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)" }}>
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="text-white" style={{ fontSize: "0.58rem", fontWeight: 600 }}>{tickerMsgs[tickerIdx]}</span>
                       </div>
-                      <span className="text-white/28" style={{ fontSize: "0.68rem" }}>{apt.area}</span>
+                      <div className="absolute bottom-3 left-3 right-3">
+                        <h3 className="text-white font-bold" style={{ fontSize: "0.9rem" }}>{apt.name}</h3>
+                        <p className="text-white/60 flex items-center gap-1" style={{ fontSize: "0.7rem" }}><MapPin size={9} />{apt.district}</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                    <div className="p-4">
+                      <div className="flex items-baseline gap-1 mb-3">
+                        <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceFrom}M</span>
+                        <span className="text-white/20 text-xs">–</span>
+                        <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceTo}M</span>
+                        <span className="text-white/30" style={{ fontSize: "0.68rem" }}>/tháng</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {apt.amenities.map(a => (
+                          <span key={a} className="text-white/50 px-2 py-0.5 rounded-md"
+                            style={{ fontSize: "0.6rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>{a}</span>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                        <div className="flex items-center gap-1">
+                          <Star size={11} className="text-yellow-400" style={{ fill: "#facc15" }} />
+                          <span className="text-white/50" style={{ fontSize: "0.72rem" }}>{apt.rating}</span>
+                        </div>
+                        <span className="text-white/28" style={{ fontSize: "0.68rem" }}>{apt.area}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
 
@@ -1307,6 +2291,9 @@ export function LandingPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ── RENTAL CALCULATOR ────────────────────────────────────── */}
+      <RentalCalculator t={t} onGetStarted={() => setShowGetStarted(true)} />
 
       {/* ── APP DOWNLOAD ──────────────────────────────────────────── */}
       <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.015)" }}>
@@ -1456,6 +2443,12 @@ export function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── NEIGHBORHOOD HEATMAP ─────────────────────────────────── */}
+      <NeighborhoodHeatmap t={t} />
+
+      {/* ── MARKET INSIGHTS ──────────────────────────────────────── */}
+      <MarketInsights t={t} />
 
       {/* ── CTA BAND ─────────────────────────────────────────────── */}
       <section ref={ctaRef} className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
