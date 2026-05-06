@@ -49,18 +49,73 @@ function PaymentsGuard() {
   return isTenantAuthenticated() ? <PaymentsPage /> : <Navigate to="/tenant/login" replace />;
 }
 
+type RouteVariant = {
+  initial: Record<string, unknown>;
+  animate: Record<string, unknown>;
+  exit: Record<string, unknown>;
+  transition: Record<string, unknown>;
+  style?: Record<string, unknown>;
+};
+
+function getRouteVariant(pathname: string): RouteVariant {
+  // Landing — iris circle expand (Option 4)
+  if (pathname === "/") return {
+    initial:    { clipPath: "circle(0% at 50% 50%)", opacity: 0 },
+    animate:    { clipPath: "circle(150% at 50% 50%)", opacity: 1 },
+    exit:       { opacity: 0, scale: 1.03, filter: "blur(10px)" },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  };
+
+  // Portal routes — clip curtain reveal (Option 3)
+  if (
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/manager") ||
+    pathname.startsWith("/dev")
+  ) return {
+    initial:    { clipPath: "inset(0 0 100% 0)" },
+    animate:    { clipPath: "inset(0 0 0% 0)" },
+    exit:       { clipPath: "inset(100% 0 0% 0)" },
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  };
+
+  // Auth pages — page flip (Option 5)
+  if (pathname.endsWith("/login") || pathname.endsWith("/register")) return {
+    initial:    { opacity: 0, rotateY: 9, scale: 0.97 },
+    animate:    { opacity: 1, rotateY: 0, scale: 1 },
+    exit:       { opacity: 0, rotateY: -6, scale: 0.97 },
+    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
+    style:      { perspective: "1200px", transformStyle: "preserve-3d" },
+  };
+
+  // App routes — directional slide + scale (Option 1 + 2)
+  if (pathname.startsWith("/tenant") || pathname.startsWith("/landlord")) return {
+    initial:    { opacity: 0, x: -30, scale: 0.985 },
+    animate:    { opacity: 1, x: 0,   scale: 1 },
+    exit:       { opacity: 0, x: 26,  scale: 0.99 },
+    transition: { duration: 0.38, ease: [0.22, 1, 0.36, 1] },
+  };
+
+  // Sub-pages — enhanced morph scale + blur (Option 2 boosted)
+  return {
+    initial:    { opacity: 0, scale: 0.96, y: 20, filter: "blur(10px)" },
+    animate:    { opacity: 1, scale: 1,    y: 0,  filter: "blur(0px)" },
+    exit:       { opacity: 0, scale: 1.03, y: -16, filter: "blur(8px)" },
+    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
+  };
+}
+
 function PageTransition() {
   const location = useLocation();
-  const isPortal = location.pathname.startsWith("/admin") || location.pathname.startsWith("/manager") || location.pathname.startsWith("/dev");
+  const variant = getRouteVariant(location.pathname);
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}
-        initial={{ opacity: 0, scale: 0.985, filter: "blur(6px)", y: isPortal ? 0 : 12 }}
-        animate={{ opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }}
-        exit={{ opacity: 0, scale: 1.01, filter: "blur(4px)", y: isPortal ? 0 : -8 }}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        style={{ minHeight: "100vh" }}
+        initial={variant.initial as never}
+        animate={variant.animate as never}
+        exit={variant.exit as never}
+        transition={variant.transition as never}
+        style={{ minHeight: "100vh", ...(variant.style ?? {}) }}
       >
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center" style={{ background: "#030B14" }}>

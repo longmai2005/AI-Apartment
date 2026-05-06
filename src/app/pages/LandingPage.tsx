@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, CSSProperties } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "motion/react";
 import {
@@ -1557,7 +1558,10 @@ export function LandingPage() {
     <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "#030B14" }}>
       {/* Scroll progress line */}
       <motion.div className="nv-scroll-line" style={{ width: progressWidth }} />
-      <AnimatePresence>{showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}</AnimatePresence>
+      {createPortal(
+        <AnimatePresence>{showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}</AnimatePresence>,
+        document.body
+      )}
       <AnimatePresence>
         {contactListing && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
