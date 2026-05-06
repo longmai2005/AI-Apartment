@@ -82,47 +82,54 @@ const MARQUEE_ITEMS = [
 ];
 
 // ─── Vietnam 34-province heatmap data (định danh mới từ 01/07/2025) ──────────
-type ProvinceEntry = { id: string; name: string; avg: number; sub: string };
+// Sáp nhập: Bắc Giang→Bắc Ninh, Hải Dương→Hưng Yên, Vĩnh Phúc→Phú Thọ,
+// Bắc Kạn→Thái Nguyên, Hà Giang→Tuyên Quang, Yên Bái→Lào Cai, Sơn La→Điện Biên,
+// Hòa Bình+Hà Nam+Nam Định→Ninh Bình, Quảng Bình→Hà Tĩnh, Quảng Trị→Huế,
+// Phú Yên→Bình Định, Ninh Thuận→Khánh Hòa, Đắk Nông→Đắk Lắk, Kon Tum→Gia Lai,
+// Bình Thuận→Lâm Đồng, Bình Phước+Tây Ninh→Bình Dương, Bà Rịa-VT→Đồng Nai,
+// Tiền Giang+Bến Tre→Long An, Hậu Giang+Sóc Trăng→Cần Thơ, Kiên Giang→An Giang,
+// Vĩnh Long+Trà Vinh→Đồng Tháp, Bạc Liêu→Cà Mau
+type ProvinceEntry = { id: string; name: string; avg: number; sub: string; wards?: number };
 const VIETNAM_PROVINCES: Record<"north" | "central" | "south", ProvinceEntry[]> = {
   north: [
-    { id: "ha-noi",      name: "Hà Nội",       avg: 15, sub: "TP. Trực thuộc TW" },
-    { id: "hai-phong",   name: "Hải Phòng",    avg: 8,  sub: "TP. Trực thuộc TW" },
-    { id: "quang-ninh",  name: "Quảng Ninh",   avg: 6,  sub: "Tỉnh" },
-    { id: "lang-son",    name: "Lạng Sơn",     avg: 4,  sub: "Tỉnh" },
-    { id: "thai-nguyen", name: "Thái Nguyên",  avg: 5,  sub: "Tỉnh" },
-    { id: "ha-giang",    name: "Hà Giang",     avg: 3,  sub: "Tỉnh" },
-    { id: "lao-cai",     name: "Lào Cai",      avg: 5,  sub: "Tỉnh" },
-    { id: "son-la",      name: "Sơn La",       avg: 3,  sub: "Tỉnh" },
-    { id: "dien-bien",   name: "Điện Biên",    avg: 3,  sub: "Tỉnh" },
-    { id: "phu-tho",     name: "Phú Thọ",      avg: 4,  sub: "Tỉnh" },
-    { id: "hoa-binh",    name: "Hòa Bình",     avg: 4,  sub: "Tỉnh" },
-    { id: "ha-nam-ninh", name: "Hà Nam Ninh",  avg: 5,  sub: "Tỉnh" },
+    { id: "ha-noi",      name: "Hà Nội",      avg: 15, sub: "TP. Trực thuộc TW",          wards: 126 },
+    { id: "hai-phong",   name: "Hải Phòng",   avg: 8,  sub: "TP. Trực thuộc TW",          wards: 114 },
+    { id: "quang-ninh",  name: "Quảng Ninh",  avg: 7,  sub: "Tỉnh",                       wards: 54  },
+    { id: "bac-ninh",    name: "Bắc Ninh",    avg: 6,  sub: "Tỉnh (+ Bắc Giang)",         wards: 99  },
+    { id: "hung-yen",    name: "Hưng Yên",    avg: 5,  sub: "Tỉnh (+ Hải Dương)",         wards: 104 },
+    { id: "phu-tho",     name: "Phú Thọ",     avg: 5,  sub: "Tỉnh (+ Vĩnh Phúc)",        wards: 148 },
+    { id: "thai-nguyen", name: "Thái Nguyên", avg: 5,  sub: "Tỉnh (+ Bắc Kạn)",          wards: 92  },
+    { id: "tuyen-quang", name: "Tuyên Quang", avg: 4,  sub: "Tỉnh (+ Hà Giang)",          wards: 124 },
+    { id: "cao-bang",    name: "Cao Bằng",    avg: 3,  sub: "Tỉnh",                       wards: 56  },
+    { id: "lang-son",    name: "Lạng Sơn",    avg: 4,  sub: "Tỉnh",                       wards: 65  },
+    { id: "lao-cai",     name: "Lào Cai",     avg: 5,  sub: "Tỉnh (+ Yên Bái)",           wards: 99  },
+    { id: "lai-chau",    name: "Lai Châu",    avg: 3,  sub: "Tỉnh",                       wards: 38  },
+    { id: "dien-bien",   name: "Điện Biên",   avg: 3,  sub: "Tỉnh (+ Sơn La)",            wards: 45  },
+    { id: "ninh-binh",   name: "Ninh Bình",   avg: 5,  sub: "Tỉnh (+ Hà Nam + Nam Định)", wards: 129 },
+    { id: "thanh-hoa",   name: "Thanh Hóa",   avg: 5,  sub: "Tỉnh",                       wards: 166 },
+    { id: "nghe-an",     name: "Nghệ An",     avg: 5,  sub: "Tỉnh",                       wards: 130 },
+    { id: "ha-tinh",     name: "Hà Tĩnh",     avg: 4,  sub: "Tỉnh (+ Quảng Bình)",        wards: 69  },
   ],
   central: [
-    { id: "thanh-hoa",   name: "Thanh Hóa",    avg: 5,  sub: "Tỉnh" },
-    { id: "nghe-an",     name: "Nghệ An",       avg: 5,  sub: "Tỉnh" },
-    { id: "quang-binh",  name: "Quảng Bình",   avg: 4,  sub: "Tỉnh" },
-    { id: "hue",         name: "Huế",           avg: 6,  sub: "Tỉnh" },
-    { id: "da-nang",     name: "Đà Nẵng",       avg: 10, sub: "TP. Trực thuộc TW" },
-    { id: "quang-nam",   name: "Quảng Nam",     avg: 4,  sub: "Tỉnh" },
-    { id: "quang-ngai",  name: "Quảng Ngãi",   avg: 4,  sub: "Tỉnh" },
-    { id: "binh-dinh",   name: "Bình Định",     avg: 5,  sub: "Tỉnh" },
-    { id: "khanh-hoa",   name: "Khánh Hòa",    avg: 7,  sub: "Tỉnh" },
-    { id: "dak-lak",     name: "Đắk Lắk",      avg: 5,  sub: "Tỉnh" },
-    { id: "lam-dong",    name: "Lâm Đồng",     avg: 6,  sub: "Tỉnh" },
+    { id: "hue",        name: "Huế",        avg: 6,  sub: "Tỉnh (+ Quảng Trị)",   wards: 40  },
+    { id: "da-nang",    name: "Đà Nẵng",    avg: 10, sub: "TP. Trực thuộc TW",    wards: 94  },
+    { id: "quang-nam",  name: "Quảng Nam",  avg: 4,  sub: "Tỉnh",                 wards: 96  },
+    { id: "quang-ngai", name: "Quảng Ngãi", avg: 4,  sub: "Tỉnh",                 wards: 96  },
+    { id: "binh-dinh",  name: "Bình Định",  avg: 5,  sub: "Tỉnh (+ Phú Yên)",     wards: 88  },
+    { id: "khanh-hoa",  name: "Khánh Hòa",  avg: 7,  sub: "Tỉnh (+ Ninh Thuận)",  wards: 65  },
+    { id: "dak-lak",    name: "Đắk Lắk",   avg: 5,  sub: "Tỉnh (+ Đắk Nông)",   wards: 102 },
+    { id: "gia-lai",    name: "Gia Lai",    avg: 4,  sub: "Tỉnh (+ Kon Tum)",     wards: 135 },
+    { id: "lam-dong",   name: "Lâm Đồng",   avg: 6,  sub: "Tỉnh (+ Bình Thuận)", wards: 124 },
   ],
   south: [
-    { id: "hcm",         name: "Hồ Chí Minh",  avg: 16, sub: "TP. Trực thuộc TW" },
-    { id: "binh-duong",  name: "Bình Dương",    avg: 7,  sub: "Tỉnh" },
-    { id: "dong-nai",    name: "Đồng Nai",      avg: 6,  sub: "Tỉnh" },
-    { id: "ba-ria",      name: "Bà Rịa-VT",    avg: 7,  sub: "Tỉnh" },
-    { id: "can-tho",     name: "Cần Thơ",       avg: 6,  sub: "TP. Trực thuộc TW" },
-    { id: "long-an",     name: "Long An",        avg: 5,  sub: "Tỉnh" },
-    { id: "tien-giang",  name: "Tiền Giang",    avg: 4,  sub: "Tỉnh" },
-    { id: "an-giang",    name: "An Giang",       avg: 4,  sub: "Tỉnh" },
-    { id: "kien-giang",  name: "Kiên Giang",    avg: 5,  sub: "Tỉnh" },
-    { id: "dong-thap",   name: "Đồng Tháp",     avg: 4,  sub: "Tỉnh" },
-    { id: "ca-mau",      name: "Cà Mau",        avg: 4,  sub: "Tỉnh" },
+    { id: "hcm",        name: "Hồ Chí Minh", avg: 16, sub: "TP. Trực thuộc TW",                    wards: 168 },
+    { id: "binh-duong", name: "Bình Dương",   avg: 7,  sub: "Tỉnh (+ Bình Phước + Tây Ninh)",       wards: 96  },
+    { id: "dong-nai",   name: "Đồng Nai",     avg: 7,  sub: "Tỉnh (+ Bà Rịa-VT)",                  wards: 95  },
+    { id: "long-an",    name: "Long An",      avg: 5,  sub: "Tỉnh (+ Tiền Giang + Bến Tre)",        wards: 108 },
+    { id: "can-tho",    name: "Cần Thơ",      avg: 6,  sub: "TP. Trực thuộc TW (+ Hậu Giang + Sóc Trăng)", wards: 103 },
+    { id: "an-giang",   name: "An Giang",     avg: 4,  sub: "Tỉnh (+ Kiên Giang)",                  wards: 102 },
+    { id: "dong-thap",  name: "Đồng Tháp",   avg: 4,  sub: "Tỉnh (+ Vĩnh Long + Trà Vinh)",        wards: 102 },
+    { id: "ca-mau",     name: "Cà Mau",      avg: 4,  sub: "Tỉnh (+ Bạc Liêu)",                    wards: 64  },
   ],
 };
 
@@ -410,7 +417,7 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
       style={{ background: "rgba(0,0,0,0.8)", backdropFilter: "blur(16px)" }}
       onClick={onClose}
     >
@@ -1350,7 +1357,7 @@ function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
                           {[
                             { label: t("Giá trung bình","Avg. rent"), val: `${hoveredData.avg}M/tháng`, color: bg },
                             { label: t("Khoảng giá","Range"), val: `${Math.round(hoveredData.avg * 0.72)}–${Math.round(hoveredData.avg * 1.5)}M`, color: "#a78bfa" },
-                            { label: t("Căn hộ AI","AI listings"), val: `${Math.round(hoveredData.avg * 14)}+`, color: "#22d3ee" },
+                            { label: t("Phường/xã (mới)","Wards (new)"), val: hoveredData.wards ? `${hoveredData.wards} đơn vị` : `${Math.round(hoveredData.avg * 14)}+`, color: "#22d3ee" },
                             { label: t("Đánh giá","Avg. rating"), val: `${(4.1 + (hoveredData.avg % 7) * 0.1).toFixed(1)}★`, color: "#fbbf24" },
                           ].map(({ label, val, color }) => (
                             <div key={label} className="rounded-xl p-3" style={{ background: `${color}0a`, border: `1px solid ${color}18` }}>
@@ -1466,6 +1473,12 @@ export function LandingPage() {
   const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
 
+  const openGetStarted = () => {
+    setShowGetStarted(true);
+    setTourStep(null);
+    try { localStorage.setItem("nv-tour-done", "true"); } catch { /* noop */ }
+  };
+
   const toggleCompare = (id: number) => {
     setSelectedListings(prev =>
       prev.includes(id) ? prev.filter(x => x !== id) : prev.length < 3 ? [...prev, id] : prev
@@ -1473,8 +1486,7 @@ export function LandingPage() {
   };
 
   // Page-level scroll
-  const { scrollY, scrollYProgress: pageScrollProgress } = useScroll();
-  const heroBgY = useTransform(scrollY, [0, 600], [0, -80]);
+  const { scrollYProgress: pageScrollProgress } = useScroll();
   const progressWidth = useTransform(pageScrollProgress, [0, 1], ["0%", "100%"]);
 
   // Section refs for scroll-linked animations
@@ -1744,7 +1756,7 @@ export function LandingPage() {
             </div>
 
             <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-              onClick={() => setShowGetStarted(true)}
+              onClick={() => openGetStarted()}
               className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-semibold"
               style={{ fontSize: "0.83rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)", boxShadow: "0 0 18px rgba(34,211,238,0.25)" }}>
               {t("Bắt đầu","Get Started")}<ArrowRight size={13} />
