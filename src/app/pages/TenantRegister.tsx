@@ -16,45 +16,84 @@ const PRICE_MARKS = [3, 5, 8, 12, 18, 25, 35, 50];
 const ALL_PROVINCES = getProvinceNames();
 
 const BUILDINGS = [
+  // ── TP. Hồ Chí Minh ─────────────────────────────────────────────────────────
   {
-    id: "B01", name: "Sunrise City North", district: "Quận 7",
+    id: "B01", name: "Sunrise City North", city: "Hồ Chí Minh", district: "Quận 7",
     address: "117 Nguyễn Hữu Thọ, Quận 7, TP.HCM", rating: 4.8,
     units: ["1201", "1204", "1305", "1402", "1501", "1605", "1708", "1901"],
     price: "10–15M/tháng", img: "https://images.unsplash.com/photo-1638454795595-0a0abf68614d?w=200",
   },
   {
-    id: "B02", name: "Vinhomes Grand Park", district: "TP. Thủ Đức",
+    id: "B02", name: "Vinhomes Grand Park", city: "Hồ Chí Minh", district: "TP. Thủ Đức",
     address: "Nguyễn Xiển, Long Bình, TP. Thủ Đức", rating: 4.7,
     units: ["A101", "A205", "B301", "B402", "C205", "C310", "D501"],
     price: "8–14M/tháng", img: "https://images.unsplash.com/photo-1585128792103-0b591f96512e?w=200",
   },
   {
-    id: "B03", name: "The River Thủ Thiêm", district: "Quận 2",
-    address: "Đảo Thủ Thiêm, Quận 2, TP.HCM", rating: 4.9,
+    id: "B03", name: "The River Thủ Thiêm", city: "Hồ Chí Minh", district: "TP. Thủ Đức",
+    address: "Đảo Thủ Thiêm, TP. Thủ Đức, TP.HCM", rating: 4.9,
     units: ["01A", "03B", "05C", "07A", "09B", "11C"],
     price: "14–22M/tháng", img: "https://images.unsplash.com/photo-1763401929055-43fd29000be3?w=200",
   },
   {
-    id: "B04", name: "Masteri Centre Point", district: "TP. Thủ Đức",
+    id: "B04", name: "Masteri Centre Point", city: "Hồ Chí Minh", district: "TP. Thủ Đức",
     address: "36 Nguyễn Xiển, TP. Thủ Đức", rating: 4.6,
     units: ["T01-01", "T01-05", "T02-08", "T03-12", "T04-03"],
     price: "9–13M/tháng", img: "https://images.unsplash.com/photo-1774716925810-e923c8206ed5?w=200",
   },
   {
-    id: "B05", name: "Sunwah Pearl", district: "Bình Thạnh",
-    address: "90 Nguyễn Hữu Cảnh, Bình Thạnh", rating: 4.8,
+    id: "B05", name: "Sunwah Pearl", city: "Hồ Chí Minh", district: "Bình Thạnh",
+    address: "90 Nguyễn Hữu Cảnh, Bình Thạnh, TP.HCM", rating: 4.8,
     units: ["P01-10", "P02-15", "P03-08", "P04-22", "P05-06"],
     price: "13–25M/tháng", img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=200",
   },
   {
-    id: "B06", name: "Botanica Premier", district: "Tân Bình",
+    id: "B06", name: "Botanica Premier", city: "Hồ Chí Minh", district: "Tân Bình",
     address: "Phổ Quang, Tân Bình, TP.HCM", rating: 4.5,
     units: ["S01", "S02", "S05", "S08", "S12", "S15", "S18"],
     price: "8–12M/tháng", img: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=200",
   },
+  // ── Hà Nội ──────────────────────────────────────────────────────────────────
+  {
+    id: "B07", name: "Vinhomes Smart City", city: "Hà Nội", district: "Nam Từ Liêm",
+    address: "Tây Mỗ, Nam Từ Liêm, Hà Nội", rating: 4.8,
+    units: ["SA1-01", "SA1-05", "SB2-08", "SB3-12", "SC1-03", "SC2-07"],
+    price: "12–20M/tháng", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200",
+  },
+  {
+    id: "B08", name: "Masteri West Heights", city: "Hà Nội", district: "Nam Từ Liêm",
+    address: "Đại lộ Thăng Long, Nam Từ Liêm, Hà Nội", rating: 4.7,
+    units: ["W1-101", "W1-205", "W2-310", "W3-402", "W3-508"],
+    price: "14–22M/tháng", img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=200",
+  },
+  {
+    id: "B09", name: "The Zei", city: "Hà Nội", district: "Nam Từ Liêm",
+    address: "8 Lê Đức Thọ, Mỹ Đình, Nam Từ Liêm, Hà Nội", rating: 4.6,
+    units: ["Z01-05", "Z02-08", "Z03-11", "Z04-14", "Z05-03"],
+    price: "11–18M/tháng", img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=200",
+  },
+  // ── Đà Nẵng ─────────────────────────────────────────────────────────────────
+  {
+    id: "B10", name: "Monarchy Da Nang", city: "Đà Nẵng", district: "Sơn Trà",
+    address: "Bạch Đằng, Sơn Trà, Đà Nẵng", rating: 4.7,
+    units: ["A-01", "A-05", "B-08", "B-12", "C-03", "C-09"],
+    price: "9–16M/tháng", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200",
+  },
+  {
+    id: "B11", name: "Ariyana Smart Condotel", city: "Đà Nẵng", district: "Ngũ Hành Sơn",
+    address: "Trường Sa, Ngũ Hành Sơn, Đà Nẵng", rating: 4.5,
+    units: ["AR-101", "AR-205", "AR-308", "AR-412", "AR-506"],
+    price: "8–14M/tháng", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200",
+  },
 ];
 
-const DISTRICTS = ["Tất cả", "Quận 2", "Quận 7", "Bình Thạnh", "Tân Bình", "TP. Thủ Đức"];
+const CITIES = ["Tất cả", "Hồ Chí Minh", "Hà Nội", "Đà Nẵng"];
+const DISTRICTS_BY_CITY: Record<string, string[]> = {
+  "Hồ Chí Minh": ["Tất cả", "TP. Thủ Đức", "Quận 7", "Bình Thạnh", "Tân Bình"],
+  "Hà Nội":       ["Tất cả", "Nam Từ Liêm", "Hoàng Mai", "Cầu Giấy", "Đống Đa"],
+  "Đà Nẵng":      ["Tất cả", "Sơn Trà", "Ngũ Hành Sơn", "Hải Châu", "Liên Chiểu"],
+};
+const DISTRICTS = ["Tất cả", "TP. Thủ Đức", "Quận 7", "Bình Thạnh", "Tân Bình"];
 
 type RegistrationMode = "none" | "ai" | "building";
 
@@ -210,7 +249,7 @@ function DoneScreen({
     : "Nv2025Abc!";
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12" style={{ backgroundColor: "var(--nv-bg)" }}>
+    <div className="min-h-screen flex items-center justify-center px-6 py-12" style={{ backgroundColor: "#030B14" }}>
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="max-w-md w-full">
         <div className="text-center mb-8">
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center mx-auto mb-5 shadow-2xl shadow-emerald-500/30">
@@ -536,16 +575,20 @@ function BuildingFlow({ onBack }: { onBack: () => void }) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [attempted, setAttempted] = useState(false);
   const [done, setDone] = useState(false);
+  const [selectedCity, setSelectedCity] = useState("Tất cả");
   const [selectedDistrict, setSelectedDistrict] = useState("Tất cả");
   const [buildingSearch, setBuildingSearch] = useState("");
   const [selectedBuilding, setSelectedBuilding] = useState<typeof BUILDINGS[number] | null>(null);
   const [selectedUnit, setSelectedUnit] = useState("");
   const [info, setInfo] = useState<PersonalInfo>({ fullName: "", phone: "", email: "", password: "", confirmPassword: "" });
 
+  const districtOptions = selectedCity !== "Tất cả" ? (DISTRICTS_BY_CITY[selectedCity] ?? ["Tất cả"]) : ["Tất cả"];
+
   const filteredBuildings = BUILDINGS.filter((b) => {
+    const matchCity = selectedCity === "Tất cả" || b.city === selectedCity;
     const matchDistrict = selectedDistrict === "Tất cả" || b.district === selectedDistrict;
     const matchSearch = !buildingSearch || b.name.toLowerCase().includes(buildingSearch.toLowerCase()) || b.address.toLowerCase().includes(buildingSearch.toLowerCase());
-    return matchDistrict && matchSearch;
+    return matchCity && matchDistrict && matchSearch;
   });
 
   const canNext = () => {
@@ -563,7 +606,7 @@ function BuildingFlow({ onBack }: { onBack: () => void }) {
         localStorage.setItem("nv-tenant-user", JSON.stringify({
           name: info.fullName, email: info.email,
           unit: selectedUnit, buildingName: selectedBuilding?.name,
-          district: selectedBuilding?.district,
+          city: selectedBuilding?.city, district: selectedBuilding?.district,
         }));
       } catch {}
 
@@ -634,14 +677,27 @@ function BuildingFlow({ onBack }: { onBack: () => void }) {
                   style={{ fontSize: "0.875rem" }} />
               </div>
 
-              {/* District filter */}
+              {/* City tabs */}
               <div className="flex gap-2 flex-wrap">
-                {DISTRICTS.map((d) => (
-                  <button key={d} onClick={() => setSelectedDistrict(d)}
-                    className={`px-3 py-1.5 rounded-full border transition-all ${selectedDistrict === d ? "bg-violet-500/20 border-violet-500 text-violet-400" : "bg-white/5 border-white/15 text-white/50 hover:border-white/30"}`}
-                    style={{ fontSize: "0.78rem" }}>{d}</button>
+                {CITIES.map((c) => (
+                  <button key={c} onClick={() => { setSelectedCity(c); setSelectedDistrict("Tất cả"); setSelectedBuilding(null); setSelectedUnit(""); }}
+                    className={`px-3.5 py-1.5 rounded-full border transition-all font-semibold ${selectedCity === c ? "bg-violet-600/25 border-violet-500 text-violet-300" : "bg-white/5 border-white/12 text-white/45 hover:border-white/28"}`}
+                    style={{ fontSize: "0.78rem" }}>
+                    {c === "Tất cả" ? "🇻🇳 Tất cả" : c === "Hồ Chí Minh" ? "🏙 TP.HCM" : c === "Hà Nội" ? "🏛 Hà Nội" : "🌊 Đà Nẵng"}
+                  </button>
                 ))}
               </div>
+
+              {/* District filter (shown when a city is selected) */}
+              {selectedCity !== "Tất cả" && (
+                <div className="flex gap-2 flex-wrap">
+                  {districtOptions.map((d) => (
+                    <button key={d} onClick={() => setSelectedDistrict(d)}
+                      className={`px-3 py-1 rounded-full border transition-all ${selectedDistrict === d ? "bg-violet-500/15 border-violet-500/60 text-violet-400" : "bg-white/4 border-white/10 text-white/38 hover:border-white/22"}`}
+                      style={{ fontSize: "0.73rem" }}>{d}</button>
+                  ))}
+                </div>
+              )}
 
               {/* Building list */}
               <div className="space-y-3">
@@ -769,15 +825,11 @@ export function TenantRegister() {
   const [mode, setMode] = useState<RegistrationMode>("none");
 
   useEffect(() => {
-    try {
-      const t = localStorage.getItem("nv-theme");
-      if (t === "light") document.documentElement.setAttribute("data-theme", "light");
-      else document.documentElement.removeAttribute("data-theme");
-    } catch {}
+    document.documentElement.removeAttribute("data-theme");
   }, []);
 
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: "var(--nv-bg)" }}>
+    <div className="min-h-screen text-white" style={{ backgroundColor: "#030B14" }}>
       <div className="fixed inset-0 pointer-events-none"
         style={{ backgroundImage: "radial-gradient(rgba(148,163,184,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -801,83 +853,115 @@ export function TenantRegister() {
 
       <AnimatePresence mode="wait">
         {mode === "none" && (
-          <motion.div key="mode-select" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }}
+          <motion.div key="mode-select" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 max-w-2xl mx-auto px-6 py-12">
+
             {/* Title */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-3 py-1 mb-4">
-                <Home size={13} className="text-cyan-400" />
-                <span className="text-cyan-400" style={{ fontSize: "0.72rem", fontWeight: 700 }}>ĐĂNG KÝ CƯ DÂN</span>
+            <motion.div className="text-center mb-12"
+              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }}>
+              <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
+                style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.2)" }}>
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-cyan-400" style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em" }}>ĐĂNG KÝ CƯ DÂN · MIỄN PHÍ</span>
               </div>
-              <h1 className="text-white mb-3" style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.02em" }}>
-                Bạn muốn làm gì?
+              <h1 className="text-white mb-3" style={{ fontSize: "clamp(1.8rem,4vw,2.6rem)", fontWeight: 900, letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+                Bạn đã có phòng chưa?
               </h1>
-              <p className="text-white/50" style={{ fontSize: "0.95rem" }}>
-                Chọn phương thức đăng ký phù hợp với nhu cầu của bạn
+              <p className="text-white/45 max-w-sm mx-auto" style={{ fontSize: "0.92rem", lineHeight: 1.65 }}>
+                Chọn hướng phù hợp — AI sẽ đồng hành cùng bạn trong cả hai trường hợp
               </p>
-            </div>
+            </motion.div>
 
             {/* Mode cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {/* AI search */}
-              <motion.button whileHover={{ y: -4, scale: 1.01 }} whileTap={{ scale: 0.98 }}
+              {/* Not yet found — AI search */}
+              <motion.button
+                initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.18, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6, scale: 1.02 }} whileTap={{ scale: 0.97 }}
                 onClick={() => setMode("ai")}
-                className="text-left rounded-3xl border border-white/12 p-6 transition-all hover:border-emerald-500/40 group"
-                style={{ background: "rgba(16,185,129,0.06)" }}>
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center mb-5 shadow-xl shadow-emerald-500/20 group-hover:shadow-emerald-500/35 transition-shadow">
-                  <Bot size={26} className="text-white" />
+                className="text-left rounded-3xl p-7 transition-all group relative overflow-hidden"
+                style={{ background: "rgba(16,185,129,0.07)", border: "1px solid rgba(16,185,129,0.2)" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(16,185,129,0.45)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(16,185,129,0.12)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(16,185,129,0.2)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}>
+                {/* Ambient glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ background: "radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center shadow-xl shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-shadow">
+                    <Bot size={26} className="text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full font-bold" style={{ fontSize: "0.6rem", background: "rgba(16,185,129,0.2)", color: "#34d399", border: "1px solid rgba(16,185,129,0.3)", letterSpacing: "0.06em" }}>
+                    ĐỀ XUẤT
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-white font-bold" style={{ fontSize: "1.05rem" }}>Tìm nhà với AI</h3>
-                  <span className="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full" style={{ fontSize: "0.62rem", fontWeight: 700 }}>Đề xuất</span>
-                </div>
-                <p className="text-white/50 mb-5" style={{ fontSize: "0.82rem", lineHeight: 1.7 }}>
-                  Mô tả nhu cầu của bạn — AI Super Broker sẽ tự động tìm các căn hộ phù hợp nhất và gợi ý theo sở thích cá nhân.
+                <h3 className="text-white font-bold mb-2" style={{ fontSize: "1.1rem" }}>Chưa chọn được phòng</h3>
+                <p className="text-white/48 mb-5" style={{ fontSize: "0.82rem", lineHeight: 1.7 }}>
+                  Cho AI biết nhu cầu của bạn — Super Broker sẽ gợi ý những căn hộ tốt nhất và gửi về email trong 5 phút.
                 </p>
-                <ul className="space-y-1.5">
-                  {["Tìm theo khu vực, ngân sách, loại phòng", "AI phân tích & gợi ý cá nhân hoá", "Nhận danh sách trong 5 phút qua email"].map((t) => (
-                    <li key={t} className="flex items-center gap-2 text-emerald-400/80" style={{ fontSize: "0.75rem" }}>
-                      <Sparkles size={11} />{t}
+                <ul className="space-y-2 mb-6">
+                  {["Tìm theo khu vực, ngân sách, loại phòng", "AI phân tích & gợi ý cá nhân hoá", "Nhận danh sách phù hợp qua email"].map((item) => (
+                    <li key={item} className="flex items-center gap-2" style={{ fontSize: "0.75rem", color: "rgba(52,211,153,0.8)" }}>
+                      <Sparkles size={10} className="flex-shrink-0" />{item}
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center gap-1 mt-5 text-emerald-400" style={{ fontSize: "0.8rem", fontWeight: 600 }}>
-                  Bắt đầu <ChevronRight size={15} />
+                <div className="flex items-center gap-1.5 font-semibold" style={{ fontSize: "0.82rem", color: "#34d399" }}>
+                  Để AI tìm giúp <ChevronRight size={15} />
                 </div>
               </motion.button>
 
-              {/* Building registration */}
-              <motion.button whileHover={{ y: -4, scale: 1.01 }} whileTap={{ scale: 0.98 }}
+              {/* Already has a building in mind */}
+              <motion.button
+                initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.24, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6, scale: 1.02 }} whileTap={{ scale: 0.97 }}
                 onClick={() => setMode("building")}
-                className="text-left rounded-3xl border border-white/12 p-6 transition-all hover:border-violet-500/40 group"
-                style={{ background: "rgba(139,92,246,0.06)" }}>
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-5 shadow-xl shadow-violet-500/20 group-hover:shadow-violet-500/35 transition-shadow">
-                  <Building2 size={26} className="text-white" />
+                className="text-left rounded-3xl p-7 transition-all group relative overflow-hidden"
+                style={{ background: "rgba(139,92,246,0.07)", border: "1px solid rgba(139,92,246,0.2)" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(139,92,246,0.45)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(139,92,246,0.12)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(139,92,246,0.2)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}>
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-xl shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
+                    <Building2 size={26} className="text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full font-bold" style={{ fontSize: "0.6rem", background: "rgba(139,92,246,0.15)", color: "#a78bfa", border: "1px solid rgba(139,92,246,0.25)", letterSpacing: "0.06em" }}>
+                    CÓ TÒA NHÀ
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-white font-bold" style={{ fontSize: "1.05rem" }}>Đăng ký vào tòa nhà</h3>
-                </div>
-                <p className="text-white/50 mb-5" style={{ fontSize: "0.82rem", lineHeight: 1.7 }}>
-                  Đã biết tòa nhà muốn ở? Chọn từ danh sách, chọn căn hộ cụ thể và đăng ký trực tiếp với quản lý.
+                <h3 className="text-white font-bold mb-2" style={{ fontSize: "1.1rem" }}>Đã biết tòa nhà muốn ở</h3>
+                <p className="text-white/48 mb-5" style={{ fontSize: "0.82rem", lineHeight: 1.7 }}>
+                  Chọn căn hộ cụ thể trong tòa nhà và đăng ký vào — AI sẽ tự động thông báo tới quản lý và xử lý hồ sơ.
                 </p>
-                <ul className="space-y-1.5">
-                  {["Chọn tòa nhà từ danh sách có sẵn", "Xem phòng trống và chọn căn hộ", "AI thông báo tự động tới quản lý"].map((t) => (
-                    <li key={t} className="flex items-center gap-2 text-violet-400/80" style={{ fontSize: "0.75rem" }}>
-                      <CheckCircle2 size={11} />{t}
+                <ul className="space-y-2 mb-6">
+                  {["Chọn tòa nhà từ danh sách có sẵn", "Xem phòng trống, chọn căn hộ cụ thể", "AI thông báo & theo dõi hồ sơ tự động"].map((item) => (
+                    <li key={item} className="flex items-center gap-2" style={{ fontSize: "0.75rem", color: "rgba(167,139,250,0.85)" }}>
+                      <CheckCircle2 size={10} className="flex-shrink-0" />{item}
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center gap-1 mt-5 text-violet-400" style={{ fontSize: "0.8rem", fontWeight: 600 }}>
+                <div className="flex items-center gap-1.5 font-semibold" style={{ fontSize: "0.82rem", color: "#a78bfa" }}>
                   Chọn tòa nhà <ChevronRight size={15} />
                 </div>
               </motion.button>
             </div>
 
-            {/* Already have account */}
-            <p className="text-center text-white/35 mt-8" style={{ fontSize: "0.82rem" }}>
-              Đã có tài khoản?{" "}
-              <button onClick={() => navigate("/tenant/login")} className="text-cyan-400 hover:text-cyan-300 transition-colors">Đăng nhập ngay</button>
-            </p>
+            {/* Divider + login */}
+            <motion.div className="mt-10 text-center"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+                <span className="text-white/25" style={{ fontSize: "0.72rem" }}>hoặc</span>
+                <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+              </div>
+              <p className="text-white/35" style={{ fontSize: "0.82rem" }}>
+                Đã có tài khoản?{" "}
+                <button onClick={() => navigate("/tenant/login")} className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">Đăng nhập ngay →</button>
+              </p>
+            </motion.div>
           </motion.div>
         )}
 

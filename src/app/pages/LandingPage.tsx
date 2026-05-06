@@ -81,36 +81,50 @@ const MARQUEE_ITEMS = [
   { text: "Phản hồi trong 1.2s",      dot: "#22d3ee" },
 ];
 
-// ─── Neighborhood heatmap data ────────────────────────────────────────────────
-const HCMC_DISTRICTS = [
-  [
-    { id: "binh-tan",  name: "Bình Tân",  avg: 8  },
-    { id: "tan-phu",   name: "Tân Phú",   avg: 10 },
-    { id: "tan-binh",  name: "Tân Bình",  avg: 12 },
-    { id: "go-vap",    name: "Gò Vấp",    avg: 9  },
-    { id: "binh-thanh-top", name: "B. Thạnh", avg: 14 },
+// ─── Vietnam 34-province heatmap data (định danh mới từ 01/07/2025) ──────────
+type ProvinceEntry = { id: string; name: string; avg: number; sub: string };
+const VIETNAM_PROVINCES: Record<"north" | "central" | "south", ProvinceEntry[]> = {
+  north: [
+    { id: "ha-noi",      name: "Hà Nội",       avg: 15, sub: "TP. Trực thuộc TW" },
+    { id: "hai-phong",   name: "Hải Phòng",    avg: 8,  sub: "TP. Trực thuộc TW" },
+    { id: "quang-ninh",  name: "Quảng Ninh",   avg: 6,  sub: "Tỉnh" },
+    { id: "lang-son",    name: "Lạng Sơn",     avg: 4,  sub: "Tỉnh" },
+    { id: "thai-nguyen", name: "Thái Nguyên",  avg: 5,  sub: "Tỉnh" },
+    { id: "ha-giang",    name: "Hà Giang",     avg: 3,  sub: "Tỉnh" },
+    { id: "lao-cai",     name: "Lào Cai",      avg: 5,  sub: "Tỉnh" },
+    { id: "son-la",      name: "Sơn La",       avg: 3,  sub: "Tỉnh" },
+    { id: "dien-bien",   name: "Điện Biên",    avg: 3,  sub: "Tỉnh" },
+    { id: "phu-tho",     name: "Phú Thọ",      avg: 4,  sub: "Tỉnh" },
+    { id: "hoa-binh",    name: "Hòa Bình",     avg: 4,  sub: "Tỉnh" },
+    { id: "ha-nam-ninh", name: "Hà Nam Ninh",  avg: 5,  sub: "Tỉnh" },
   ],
-  [
-    { id: "q8",        name: "Quận 8",    avg: 9  },
-    { id: "q6",        name: "Quận 6",    avg: 11 },
-    { id: "phu-nhuan", name: "Phú Nhuận", avg: 15 },
-    { id: "binh-thanh",name: "Bình Thạnh",avg: 14 },
-    { id: "thu-duc",   name: "Thủ Đức",   avg: 12 },
+  central: [
+    { id: "thanh-hoa",   name: "Thanh Hóa",    avg: 5,  sub: "Tỉnh" },
+    { id: "nghe-an",     name: "Nghệ An",       avg: 5,  sub: "Tỉnh" },
+    { id: "quang-binh",  name: "Quảng Bình",   avg: 4,  sub: "Tỉnh" },
+    { id: "hue",         name: "Huế",           avg: 6,  sub: "Tỉnh" },
+    { id: "da-nang",     name: "Đà Nẵng",       avg: 10, sub: "TP. Trực thuộc TW" },
+    { id: "quang-nam",   name: "Quảng Nam",     avg: 4,  sub: "Tỉnh" },
+    { id: "quang-ngai",  name: "Quảng Ngãi",   avg: 4,  sub: "Tỉnh" },
+    { id: "binh-dinh",   name: "Bình Định",     avg: 5,  sub: "Tỉnh" },
+    { id: "khanh-hoa",   name: "Khánh Hòa",    avg: 7,  sub: "Tỉnh" },
+    { id: "dak-lak",     name: "Đắk Lắk",      avg: 5,  sub: "Tỉnh" },
+    { id: "lam-dong",    name: "Lâm Đồng",     avg: 6,  sub: "Tỉnh" },
   ],
-  [
-    { id: "q4",        name: "Quận 4",    avg: 13 },
-    { id: "q1",        name: "Quận 1",    avg: 28 },
-    { id: "q3",        name: "Quận 3",    avg: 20 },
-    { id: "q2",        name: "Quận 2",    avg: 18 },
-    { id: "q9",        name: "Quận 9",    avg: 11 },
+  south: [
+    { id: "hcm",         name: "Hồ Chí Minh",  avg: 16, sub: "TP. Trực thuộc TW" },
+    { id: "binh-duong",  name: "Bình Dương",    avg: 7,  sub: "Tỉnh" },
+    { id: "dong-nai",    name: "Đồng Nai",      avg: 6,  sub: "Tỉnh" },
+    { id: "ba-ria",      name: "Bà Rịa-VT",    avg: 7,  sub: "Tỉnh" },
+    { id: "can-tho",     name: "Cần Thơ",       avg: 6,  sub: "TP. Trực thuộc TW" },
+    { id: "long-an",     name: "Long An",        avg: 5,  sub: "Tỉnh" },
+    { id: "tien-giang",  name: "Tiền Giang",    avg: 4,  sub: "Tỉnh" },
+    { id: "an-giang",    name: "An Giang",       avg: 4,  sub: "Tỉnh" },
+    { id: "kien-giang",  name: "Kiên Giang",    avg: 5,  sub: "Tỉnh" },
+    { id: "dong-thap",   name: "Đồng Tháp",     avg: 4,  sub: "Tỉnh" },
+    { id: "ca-mau",      name: "Cà Mau",        avg: 4,  sub: "Tỉnh" },
   ],
-  [
-    { id: "nha-be",    name: "Nhà Bè",    avg: 8  },
-    { id: "q7",        name: "Quận 7",    avg: 16 },
-    { id: "q5",        name: "Quận 5",    avg: 15 },
-    { id: "binh-chanh",name: "B. Chánh",  avg: 7  },
-  ],
-];
+};
 
 // ─── Market insights articles ─────────────────────────────────────────────────
 const MARKET_ARTICLES = [
@@ -905,7 +919,7 @@ function RentalCalculator({ t, onGetStarted }: { t: (vi: string, en: string) => 
             style={{ background: "rgba(52,211,153,0.08)", border: "1px solid rgba(52,211,153,0.18)" }}>
             <Sliders size={13} className="text-emerald-400" />
             <span className="text-emerald-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>
-              {t("MÁY TÍNH THUÊ NHÀ AI","AI RENTAL CALCULATOR")}
+              {t("Công Cụ Tự Động Tìm Kiếm Nhà Bằng AI","AI AUTO FIND RENTAL TOOL")}
             </span>
           </div>
           <h2 className="text-white mb-2" style={{ fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
@@ -1199,13 +1213,20 @@ function ComparisonDrawer({ selectedIds, onClose, t, onGetStarted }: {
 }
 
 // ─── NeighborhoodHeatmap ──────────────────────────────────────────────────────
+const REGION_TABS = [
+  { key: "north"   as const, vi: "Miền Bắc",  en: "North",   color: "#22d3ee" },
+  { key: "central" as const, vi: "Miền Trung", en: "Central", color: "#a78bfa" },
+  { key: "south"   as const, vi: "Miền Nam",   en: "South",   color: "#34d399" },
+];
+
 function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [activeRegion, setActiveRegion] = useState<"north" | "central" | "south">("south");
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: false, margin: "-60px" });
 
   const getTheme = (avg: number) => {
-    const ratio = Math.min((avg - 5) / 25, 1);
+    const ratio = Math.min((avg - 3) / 14, 1);
     if (ratio < 0.2) return { bg: "#10b981", glow: "rgba(16,185,129,0.35)" };
     if (ratio < 0.4) return { bg: "#22d3ee", glow: "rgba(34,211,238,0.35)" };
     if (ratio < 0.6) return { bg: "#8b5cf6", glow: "rgba(139,92,246,0.35)" };
@@ -1213,74 +1234,100 @@ function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
     return { bg: "#ef4444", glow: "rgba(239,68,68,0.35)" };
   };
 
-  const allDistricts = HCMC_DISTRICTS.flat();
-  const hoveredData = allDistricts.find(d => d.id === hovered);
+  const provinces = VIETNAM_PROVINCES[activeRegion];
+  const hoveredData = provinces.find(d => d.id === hovered) ?? null;
+  const activeTab = REGION_TABS.find(r => r.key === activeRegion)!;
 
   return (
     <section className="py-20 px-6 border-t border-white/5" style={{ background: "rgba(255,255,255,0.01)" }}>
       <div className="max-w-6xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-center mb-12">
+          className="text-center mb-10">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-4"
             style={{ background: "rgba(34,211,238,0.08)", border: "1px solid rgba(34,211,238,0.18)" }}>
             <MapPin size={13} className="text-cyan-400" />
             <span className="text-cyan-400" style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em" }}>
-              {t("GIÁ THUÊ THEO QUẬN","RENTAL PRICES BY DISTRICT")}
+              {t("GIÁ THUÊ THEO TỈNH THÀNH · 34 TỈNH THÀNH TỪ 01/07/2025","RENTAL PRICES · 34 PROVINCES FROM 01/07/2025")}
             </span>
           </div>
           <h2 className="text-white mb-3" style={{ fontSize: "clamp(1.6rem,3.5vw,2.6rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
-            <WordReveal text={t("Heatmap giá thuê TP.HCM","HCMC Rental Heatmap")} />
+            <WordReveal text={t("Heatmap giá thuê Việt Nam","Vietnam Rental Heatmap")} />
           </h2>
           <p className="text-white/35 max-w-xl mx-auto" style={{ fontSize: "0.87rem", lineHeight: 1.7 }}>
-            {t("Hover vào quận để xem giá trung bình và thống kê thực tế từ dữ liệu AI.","Hover over districts to see average rents and AI-powered market stats.")}
+            {t("Dữ liệu 34 tỉnh thành theo định danh mới từ 01/07/2025. Hover để xem thống kê AI.","Data for all 34 provinces per new Jul 2025 admin divisions. Hover for AI stats.")}
           </p>
         </motion.div>
 
+        {/* Region tabs */}
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="flex justify-center gap-2 mb-8">
+          {REGION_TABS.map(tab => {
+            const active = tab.key === activeRegion;
+            return (
+              <button key={tab.key}
+                onClick={() => { setActiveRegion(tab.key); setHovered(null); }}
+                className="px-5 py-2 rounded-full font-semibold transition-all"
+                style={{
+                  fontSize: "0.82rem",
+                  background: active ? `${tab.color}18` : "rgba(255,255,255,0.04)",
+                  border: `1px solid ${active ? tab.color + "55" : "rgba(255,255,255,0.08)"}`,
+                  color: active ? tab.color : "rgba(255,255,255,0.38)",
+                  boxShadow: active ? `0 0 16px ${tab.color}20` : "none",
+                }}>
+                {t(tab.vi, tab.en)}
+              </button>
+            );
+          })}
+        </motion.div>
+
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Grid */}
-          <div className="space-y-2">
-            {HCMC_DISTRICTS.map((row, ri) => (
-              <motion.div key={ri} className="flex gap-2 justify-center flex-wrap"
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: ri * 0.08 }}>
-                {row.map((d, ci) => {
+          {/* Province grid */}
+          <div>
+            <AnimatePresence mode="wait">
+              <motion.div key={activeRegion}
+                initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 16 }}
+                transition={{ duration: 0.22 }}
+                className="flex flex-wrap gap-2 justify-center">
+                {provinces.map((d, i) => {
                   const { bg, glow } = getTheme(d.avg);
                   const isHot = hovered === d.id;
                   return (
                     <motion.div key={d.id}
-                      initial={{ opacity: 0, scale: 0.7 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: ri * 0.08 + ci * 0.04, type: "spring", stiffness: 200, damping: 20 }}
+                      initial={{ opacity: 0, scale: 0.75 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.75 }}
+                      transition={{ delay: i * 0.03, type: "spring", stiffness: 220, damping: 22 }}
                       whileHover={{ scale: 1.1, zIndex: 2 }}
-                      className="nv-heatmap-cell rounded-xl flex flex-col items-center justify-center text-center select-none"
+                      className="nv-heatmap-cell rounded-xl flex flex-col items-center justify-center text-center select-none cursor-pointer"
                       style={{
-                        width: "88px", height: "68px",
-                        background: `${bg}${isHot ? "25" : "14"}`,
-                        border: `1px solid ${bg}${isHot ? "70" : "28"}`,
+                        width: "90px", height: "68px",
+                        background: `${bg}${isHot ? "28" : "12"}`,
+                        border: `1px solid ${bg}${isHot ? "75" : "28"}`,
                         boxShadow: isHot ? `0 8px 24px ${glow}` : "none",
                         transition: "background 0.2s, border 0.2s, box-shadow 0.2s",
                       }}
                       onMouseEnter={() => setHovered(d.id)}
                       onMouseLeave={() => setHovered(null)}>
-                      <p className="font-bold leading-tight" style={{ fontSize: "0.72rem", color: bg }}>{d.name}</p>
+                      <p className="font-bold leading-tight px-1" style={{ fontSize: "0.68rem", color: bg, lineHeight: 1.2 }}>{d.name}</p>
                       <p className="text-white/40 mt-0.5" style={{ fontSize: "0.58rem" }}>{d.avg}M</p>
                     </motion.div>
                   );
                 })}
               </motion.div>
-            ))}
+            </AnimatePresence>
             {/* Legend */}
-            <div className="flex items-center justify-center gap-2 mt-4">
+            <div className="flex items-center justify-center gap-2 mt-5">
               <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{t("Rẻ","Low")}</span>
               <div className="h-1.5 w-36 rounded-full" style={{ background: "linear-gradient(90deg,#10b981,#22d3ee,#8b5cf6,#f59e0b,#ef4444)" }} />
               <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{t("Đắt","High")}</span>
             </div>
+            <p className="text-center text-white/18 mt-2" style={{ fontSize: "0.6rem" }}>
+              {t("* Theo định danh hành chính mới từ 01/07/2025","* Based on new administrative divisions from 01/07/2025")}
+            </p>
           </div>
 
           {/* Info panel */}
           <div className="rounded-2xl p-6"
-            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", minHeight: "240px" }}>
+            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", minHeight: "260px" }}>
             <AnimatePresence mode="wait">
               {hoveredData ? (
                 <motion.div key={hoveredData.id}
@@ -1296,15 +1343,15 @@ function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
                           </div>
                           <div>
                             <h3 className="text-white font-bold" style={{ fontSize: "1.1rem" }}>{hoveredData.name}</h3>
-                            <p className="text-white/35" style={{ fontSize: "0.72rem" }}>TP. Hồ Chí Minh</p>
+                            <p className="text-white/35" style={{ fontSize: "0.72rem" }}>{hoveredData.sub} · {t(activeTab.vi, activeTab.en)}</p>
                           </div>
                         </div>
                         <div className="grid grid-cols-2 gap-3 mb-5">
                           {[
                             { label: t("Giá trung bình","Avg. rent"), val: `${hoveredData.avg}M/tháng`, color: bg },
-                            { label: t("Khoảng giá","Range"), val: `${Math.round(hoveredData.avg * 0.75)}–${Math.round(hoveredData.avg * 1.45)}M`, color: "#a78bfa" },
-                            { label: t("Căn hộ AI","AI listings"), val: `${Math.round(hoveredData.avg * 16)}+`, color: "#22d3ee" },
-                            { label: t("Đánh giá","Avg. rating"), val: `${(4.2 + (hoveredData.avg % 6) * 0.1).toFixed(1)}★`, color: "#fbbf24" },
+                            { label: t("Khoảng giá","Range"), val: `${Math.round(hoveredData.avg * 0.72)}–${Math.round(hoveredData.avg * 1.5)}M`, color: "#a78bfa" },
+                            { label: t("Căn hộ AI","AI listings"), val: `${Math.round(hoveredData.avg * 14)}+`, color: "#22d3ee" },
+                            { label: t("Đánh giá","Avg. rating"), val: `${(4.1 + (hoveredData.avg % 7) * 0.1).toFixed(1)}★`, color: "#fbbf24" },
                           ].map(({ label, val, color }) => (
                             <div key={label} className="rounded-xl p-3" style={{ background: `${color}0a`, border: `1px solid ${color}18` }}>
                               <p className="font-bold" style={{ color, fontSize: "0.95rem" }}>{val}</p>
@@ -1314,7 +1361,7 @@ function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
                         </div>
                         <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                           className="w-full py-2.5 rounded-xl text-white font-semibold"
-                          style={{ background: `linear-gradient(135deg,${bg},${bg}aa)`, fontSize: "0.82rem" }}>
+                          style={{ background: `linear-gradient(135deg,${bg},${bg}99)`, fontSize: "0.82rem" }}>
                           {t("Xem căn hộ tại","View listings in")} {hoveredData.name} →
                         </motion.button>
                       </>
@@ -1323,10 +1370,13 @@ function NeighborhoodHeatmap({ t }: { t: (vi: string, en: string) => string }) {
                 </motion.div>
               ) : (
                 <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <div className="flex flex-col items-center justify-center h-52 text-center">
+                  <div className="flex flex-col items-center justify-center h-56 text-center">
                     <MapPin size={32} className="text-white/10 mb-3" />
                     <p className="text-white/25" style={{ fontSize: "0.88rem" }}>
-                      {t("Hover vào quận để xem thống kê giá","Hover over a district to see stats")}
+                      {t("Hover vào tỉnh thành để xem thống kê giá","Hover over a province to see AI stats")}
+                    </p>
+                    <p className="text-white/13 mt-2" style={{ fontSize: "0.72rem" }}>
+                      {provinces.length} {t("tỉnh thành","provinces")} · {activeTab.vi}
                     </p>
                   </div>
                 </motion.div>
@@ -1433,7 +1483,7 @@ export function LandingPage() {
   const listingsRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
 
-  const { scrollYProgress: heroScrollProgress } = useScroll({ target: heroRef, offset: ["start end", "end start"] });
+  const { scrollYProgress: heroScrollProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const { scrollYProgress: howScrollProgress }  = useScroll({ target: howRef,  offset: ["start end", "end start"] });
   const { scrollYProgress: listingsScrollProgress } = useScroll({ target: listingsRef, offset: ["start end", "end start"] });
   const { scrollYProgress: ctaScrollProgress }  = useScroll({ target: ctaRef,  offset: ["start end", "end start"] });
@@ -1612,7 +1662,7 @@ export function LandingPage() {
       </div>
 
       {/* ── NAVBAR ───────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      <header className="fixed top-0 left-0 right-0 z-[9990] transition-all duration-300"
         style={{
           background: scrolled ? "rgba(3,7,18,0.8)" : "rgba(3,7,18,0.45)",
           backdropFilter: "blur(28px) saturate(180%)",
@@ -1734,34 +1784,38 @@ export function LandingPage() {
           </span>
         </motion.div>
 
-        {/* Main headline — blur-in + scroll parallax */}
-        <motion.h1
-          initial={{ opacity: 0, y: 60, filter: "blur(16px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-white relative z-10 max-w-5xl"
-          style={{ y: headlineY, fontSize: "clamp(3rem,8.5vw,7.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.045em" }}>
-          {t("Thuê căn hộ","Rent smarter")}
-          <br />
-          <span className="nv-hero-gradient">
-            {t("thông minh hơn","with AI.")}
-          </span>
-          <br />
-          <span className="text-white/50" style={{ fontWeight: 800 }}>{t("với AI.","Manage better.")}</span>
-        </motion.h1>
+        {/* Main headline — blur-in entrance + scroll parallax (separate layers) */}
+        <motion.div style={{ y: headlineY }} className="relative z-10 max-w-5xl w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 60, filter: "blur(16px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-white text-center"
+            style={{ fontSize: "clamp(3rem,8.5vw,7.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.045em" }}>
+            {t("Thuê căn hộ","Rent smarter")}
+            <br />
+            <span className="nv-hero-gradient">
+              {t("thông minh hơn","with AI.")}
+            </span>
+            <br />
+            <span className="text-white/50" style={{ fontWeight: 800 }}>{t("với AI.","Manage better.")}</span>
+          </motion.h1>
+        </motion.div>
 
-        {/* Subheadline — blur-in + scroll parallax */}
-        <motion.p
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.32, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-white/40 mt-8 max-w-xl mx-auto"
-          style={{ y: subTextY, fontSize: "clamp(0.95rem,1.8vw,1.1rem)", lineHeight: 1.75 }}>
+        {/* Subheadline — blur-in entrance + scroll parallax (separate layers) */}
+        <motion.div style={{ y: subTextY }} className="mt-8 max-w-xl mx-auto w-full">
+          <motion.p
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ delay: 0.32, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-white/40 text-center"
+            style={{ fontSize: "clamp(0.95rem,1.8vw,1.1rem)", lineHeight: 1.75 }}>
           {t(
             "Hệ thống Multi-Agent AI tự động hóa toàn bộ — từ kiểm duyệt, tư vấn đến quản lý hợp đồng và thu tiền.",
             "Multi-Agent AI automates the entire rental lifecycle — verification, advisory, contracts, and payments."
           )}
-        </motion.p>
+          </motion.p>
+        </motion.div>
 
         {/* Search bar */}
         <motion.div
