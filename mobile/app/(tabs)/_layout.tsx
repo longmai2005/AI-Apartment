@@ -14,6 +14,7 @@ const TABS: {
 }[] = [
   { name: "index",   label: "Trang chủ", icon: "home-outline",         iconActive: "home"          },
   { name: "search",  label: "Tìm kiếm",  icon: "search-outline",       iconActive: "search"        },
+  { name: "map",     label: "Bản đồ",    icon: "map-outline",           iconActive: "map"           },
   { name: "chat",    label: "AI Chat",   icon: "chatbubble-outline",    iconActive: "chatbubble"    },
   { name: "saved",   label: "Đã lưu",    icon: "heart-outline",         iconActive: "heart"         },
   { name: "profile", label: "Tôi",       icon: "person-circle-outline", iconActive: "person-circle" },

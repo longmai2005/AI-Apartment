@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View, Text, Image, ScrollView, Pressable, StyleSheet, Dimensions, Modal, TextInput } from "react-native";
 import { useLocalSearchParams, router } from "expo-router";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
@@ -6,11 +6,23 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colors, Font, Radius } from "../../constants/theme";
 import { LISTINGS } from "../../constants/listings";
 import { toggleSave, useSaved } from "../../constants/savedStore";
+import { trackViewed } from "../../constants/recentStore";
 
 const { width } = Dimensions.get("window");
-
-const DATES = ["Thứ 7\n10/05", "Chủ nhật\n11/05", "Thứ 2\n12/05", "Thứ 3\n13/05"];
 const TIMES = ["9:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
+
+function getNextDates(): string[] {
+  const result: string[] = [];
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  while (result.length < 4) {
+    const label   = d.toLocaleDateString("vi-VN", { weekday: "short" });
+    const dateStr = `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}`;
+    result.push(`${label}\n${dateStr}`);
+    d.setDate(d.getDate() + 1);
+  }
+  return result;
+}
 
 export default function ListingDetailScreen() {
   const { id }    = useLocalSearchParams<{ id: string }>();
@@ -22,6 +34,11 @@ export default function ListingDetailScreen() {
   const [selTime,   setSelTime]   = useState("");
   const [note,      setNote]      = useState("");
   const [scheduled, setScheduled] = useState(false);
+  const DATES = getNextDates();
+
+  useEffect(() => {
+    if (listing) trackViewed(listing.id);
+  }, [listing?.id]);
 
   if (!listing) {
     return (

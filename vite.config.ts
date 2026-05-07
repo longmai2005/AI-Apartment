@@ -36,11 +36,22 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            'react-core': ['react', 'react-dom'],
-            'motion':     ['motion'],
-            'router':     ['react-router'],
-            'icons':      ['lucide-react'],
-            'charts':     ['recharts'],
+            'react-core':   ['react', 'react-dom'],
+            'motion':       ['motion'],
+            'router':       ['react-router'],
+            'icons':        ['lucide-react'],
+            'charts':       ['recharts'],
+            // Page-level chunks — each lazy route loads independently
+            'tenant-app':   ['./src/app/pages/TenantApp'],
+            'landlord-app': ['./src/app/pages/LandlordApp'],
+            'admin-app':    ['./src/app/pages/AdminPanel'],
+            'portals':      ['./src/app/pages/ManagerApp', './src/app/pages/DevApp'],
+            'subpages':     [
+              './src/app/pages/ContractsPage',
+              './src/app/pages/PaymentsPage',
+              './src/app/pages/ReportsPage',
+              './src/app/pages/SecurityPage',
+            ],
           },
         },
       },

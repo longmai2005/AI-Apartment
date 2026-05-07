@@ -6,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colors, Font, Radius } from "../../constants/theme";
 import { LISTINGS } from "../../constants/listings";
 import { toggleSave, useSaved } from "../../constants/savedStore";
+import { useRecent } from "../../constants/recentStore";
 
 const { width } = Dimensions.get("window");
 const CARD_W    = width * 0.56;
@@ -15,7 +16,10 @@ const FEATURED  = LISTINGS.filter(l => l.verified && l.rating >= 4.7);
 export default function HomeScreen() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("Tất cả");
-  const savedIds = useSaved();
+  const savedIds   = useSaved();
+  const recentIds  = useRecent();
+  const recentListings = LISTINGS.filter(l => recentIds.includes(l.id))
+    .sort((a, b) => recentIds.indexOf(a.id) - recentIds.indexOf(b.id));
 
   const filtered = LISTINGS.filter(l =>
     (filter === "Tất cả" || l.type === filter) &&
@@ -128,6 +132,33 @@ export default function HomeScreen() {
             </Pressable>
           ))}
         </ScrollView>
+
+        {/* ── Recently viewed ────────────────────────────── */}
+        {recentListings.length > 0 && (
+          <>
+            <View style={s.sectionHeader}>
+              <Text style={s.sectionTitle}>Đã xem gần đây</Text>
+              <Text style={s.sectionCount}>{recentListings.length} tin</Text>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingHorizontal: 20, gap: 12, paddingBottom: 4 }}
+              style={{ marginBottom: 18 }}
+            >
+              {recentListings.map(l => (
+                <Pressable key={l.id} onPress={() => router.push(`/listing/${l.id}`)} style={s.recentCard}>
+                  <Image source={{ uri: l.image }} style={s.recentImage} />
+                  <View style={s.recentBody}>
+                    <Text style={s.recentTitle} numberOfLines={1}>{l.title}</Text>
+                    <Text style={s.recentPrice}>{l.price}</Text>
+                    <Text style={s.recentMeta} numberOfLines={1}>📍 {l.district}</Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </>
+        )}
 
         {/* ── Stats row ──────────────────────────────────── */}
         <View style={s.statsRow}>
@@ -247,4 +278,10 @@ const s = StyleSheet.create({
   cardMeta:          { color: Colors.textMuted, fontSize: Font.sm },
   tag:               { paddingHorizontal: 10, paddingVertical: 4, borderRadius: Radius.full, backgroundColor: "rgba(255,255,255,0.05)", borderWidth: 1, borderColor: Colors.border },
   tagText:           { color: Colors.textMuted, fontSize: 11, fontWeight: "600" },
+  recentCard:        { width: 160, backgroundColor: Colors.bgCard, borderRadius: Radius.lg, borderWidth: 1, borderColor: Colors.border, overflow: "hidden" },
+  recentImage:       { width: "100%", height: 96 },
+  recentBody:        { padding: 10 },
+  recentTitle:       { color: Colors.white, fontWeight: "700", fontSize: Font.xs, marginBottom: 3 },
+  recentPrice:       { color: Colors.cyan, fontWeight: "800", fontSize: Font.sm, marginBottom: 2 },
+  recentMeta:        { color: Colors.textMuted, fontSize: 11 },
 });
