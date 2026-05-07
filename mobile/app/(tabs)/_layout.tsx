@@ -1,61 +1,65 @@
 import { Tabs } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import { Platform } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../../constants/theme";
 
-function TabIcon({ label, emoji, focused }: { label: string; emoji: string; focused: boolean }) {
-  return (
-    <View style={[s.tab, focused && s.tabActive]}>
-      <Text style={s.emoji}>{emoji}</Text>
-      {focused && <Text style={s.label}>{label}</Text>}
-    </View>
-  );
-}
+type IoniconName = React.ComponentProps<typeof Ionicons>["name"];
+
+const TABS: {
+  name:       string;
+  label:      string;
+  icon:       IoniconName;
+  iconActive: IoniconName;
+}[] = [
+  { name: "index",   label: "Trang chủ", icon: "home-outline",         iconActive: "home"          },
+  { name: "search",  label: "Tìm kiếm",  icon: "search-outline",       iconActive: "search"        },
+  { name: "chat",    label: "AI Chat",   icon: "chatbubble-outline",    iconActive: "chatbubble"    },
+  { name: "saved",   label: "Đã lưu",    icon: "heart-outline",         iconActive: "heart"         },
+  { name: "profile", label: "Tôi",       icon: "person-circle-outline", iconActive: "person-circle" },
+];
 
 export default function TabLayout() {
+  const insets = useSafeAreaInsets();
+  const tabBarHeight = 49 + insets.bottom;
+
   return (
     <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarStyle: s.bar,
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: Colors.cyan,
-        tabBarInactiveTintColor: Colors.textMuted,
+      screenOptions={({ route }) => {
+        const tab = TABS.find(t => t.name === route.name);
+        return {
+          headerShown: false,
+          tabBarActiveTintColor:   Colors.cyan,
+          tabBarInactiveTintColor: "rgba(255,255,255,0.38)",
+          tabBarShowLabel: true,
+          tabBarLabelStyle: {
+            fontSize:   10,
+            fontWeight: "600",
+            marginTop:  -2,
+            letterSpacing: 0.1,
+          },
+          tabBarStyle: {
+            backgroundColor: "rgba(3,10,22,0.98)",
+            borderTopWidth:  0.5,
+            borderTopColor:  "rgba(255,255,255,0.10)",
+            height:          tabBarHeight,
+            paddingBottom:   insets.bottom,
+            paddingTop:      8,
+            ...(Platform.OS === "android" ? { elevation: 0 } : {}),
+          },
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? tab!.iconActive : tab!.icon}
+              size={24}
+              color={color}
+            />
+          ),
+        };
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{ tabBarIcon: ({ focused }) => <TabIcon label="Trang chủ" emoji="🏠" focused={focused} /> }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{ tabBarIcon: ({ focused }) => <TabIcon label="Tìm kiếm" emoji="🔍" focused={focused} /> }}
-      />
-      <Tabs.Screen
-        name="chat"
-        options={{ tabBarIcon: ({ focused }) => <TabIcon label="AI Chat" emoji="🤖" focused={focused} /> }}
-      />
-      <Tabs.Screen
-        name="saved"
-        options={{ tabBarIcon: ({ focused }) => <TabIcon label="Đã lưu" emoji="❤️" focused={focused} /> }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{ tabBarIcon: ({ focused }) => <TabIcon label="Tôi" emoji="👤" focused={focused} /> }}
-      />
+      {TABS.map(t => (
+        <Tabs.Screen key={t.name} name={t.name} options={{ title: t.label }} />
+      ))}
     </Tabs>
   );
 }
-
-const s = StyleSheet.create({
-  bar: {
-    backgroundColor: "rgba(5,10,24,0.97)",
-    borderTopWidth: 1,
-    borderTopColor: "rgba(255,255,255,0.07)",
-    height: 72,
-    paddingBottom: 10,
-  },
-  tab:       { alignItems: "center", justifyContent: "center", flexDirection: "row", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 20 },
-  tabActive: { backgroundColor: "rgba(34,211,238,0.1)" },
-  emoji:     { fontSize: 20 },
-  label:     { color: Colors.cyan, fontSize: 12, fontWeight: "700" },
-});

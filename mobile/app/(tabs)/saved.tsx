@@ -1,28 +1,32 @@
 import { View, Text, StyleSheet, Pressable, ScrollView, Image } from "react-native";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
 import { Colors, Font, Radius } from "../../constants/theme";
 import { LISTINGS } from "../../constants/listings";
 import { toggleSave, useSaved } from "../../constants/savedStore";
 
 export default function SavedScreen() {
-  const savedIds = useSaved();
+  const savedIds      = useSaved();
   const savedListings = LISTINGS.filter(l => savedIds.has(l.id));
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={["top"]}>
+      {/* Header */}
       <View style={s.header}>
-        <Text style={s.title}>Đã lưu</Text>
+        <Text style={s.pageTitle}>Đã lưu</Text>
         {savedListings.length > 0 && (
-          <Text style={s.count}>{savedListings.length} tin</Text>
+          <View style={s.countBadge}>
+            <Text style={s.countText}>{savedListings.length}</Text>
+          </View>
         )}
       </View>
 
       {savedListings.length === 0 ? (
         <View style={s.empty}>
-          <Text style={s.emoji}>❤️</Text>
+          <Ionicons name="heart-outline" size={52} color={Colors.textDim} style={{ marginBottom: 16 }} />
           <Text style={s.emptyTitle}>Chưa có tin nào đã lưu</Text>
-          <Text style={s.emptySub}>Nhấn ❤️ trên tin đăng để lưu lại và so sánh sau</Text>
+          <Text style={s.emptySub}>Nhấn ♡ trên tin đăng để lưu lại và so sánh sau</Text>
           <Pressable style={s.btn} onPress={() => router.push("/(tabs)/")}>
             <Text style={s.btnText}>Khám phá ngay</Text>
           </Pressable>
@@ -41,8 +45,8 @@ export default function SavedScreen() {
                   <Text style={s.rating}>⭐ {l.rating}</Text>
                 </View>
               </View>
-              <Pressable onPress={() => toggleSave(l.id)} style={s.removeBtn}>
-                <Text style={{ fontSize: 18 }}>❤️</Text>
+              <Pressable onPress={() => toggleSave(l.id)} style={s.removeBtn} hitSlop={10}>
+                <Ionicons name="heart" size={20} color="#f87171" />
               </Pressable>
             </Pressable>
           ))}
@@ -50,10 +54,10 @@ export default function SavedScreen() {
           {/* Compare hint */}
           {savedListings.length >= 2 && (
             <View style={s.compareBanner}>
-              <Text style={s.compareEmoji}>🤖</Text>
+              <Text style={{ fontSize: 24 }}>🤖</Text>
               <View style={{ flex: 1 }}>
                 <Text style={s.compareTitle}>So sánh bằng AI</Text>
-                <Text style={s.compareSub}>Hỏi Super Broker AI để so sánh {savedListings.length} tin đã lưu</Text>
+                <Text style={s.compareSub}>Hỏi Super Broker để so sánh {savedListings.length} tin đã lưu</Text>
               </View>
               <Pressable onPress={() => router.push("/(tabs)/chat")} style={s.compareBtn}>
                 <Text style={s.compareBtnText}>Hỏi AI</Text>
@@ -70,30 +74,29 @@ export default function SavedScreen() {
 
 const s = StyleSheet.create({
   safe:         { flex: 1, backgroundColor: Colors.bg },
-  header:       { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: 20, paddingTop: 16, paddingBottom: 18 },
-  title:        { color: Colors.white, fontSize: Font.xl, fontWeight: "800", letterSpacing: -0.5 },
-  count:        { color: Colors.textMuted, fontSize: Font.sm },
+  header:       { flexDirection: "row", alignItems: "center", paddingHorizontal: 20, paddingTop: 14, paddingBottom: 18, gap: 10 },
+  pageTitle:    { color: Colors.white, fontSize: Font.xl, fontWeight: "800", letterSpacing: -0.5 },
+  countBadge:   { backgroundColor: Colors.bgCard, borderRadius: Radius.full, borderWidth: 1, borderColor: Colors.border, paddingHorizontal: 10, paddingVertical: 3 },
+  countText:    { color: Colors.textMuted, fontSize: Font.xs, fontWeight: "700" },
   empty:        { flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: 32 },
-  emoji:        { fontSize: 56, marginBottom: 16 },
   emptyTitle:   { color: Colors.white, fontWeight: "700", fontSize: Font.md, textAlign: "center" },
-  emptySub:     { color: Colors.textMuted, fontSize: Font.sm, textAlign: "center", marginTop: 8, marginBottom: 24, lineHeight: 20 },
-  btn:          { backgroundColor: Colors.cyan, paddingHorizontal: 24, paddingVertical: 14, borderRadius: Radius.full },
+  emptySub:     { color: Colors.textMuted, fontSize: Font.sm, textAlign: "center", marginTop: 8, marginBottom: 24, lineHeight: 22 },
+  btn:          { backgroundColor: Colors.cyan, paddingHorizontal: 26, paddingVertical: 14, borderRadius: Radius.full },
   btnText:      { color: Colors.bg, fontWeight: "800", fontSize: Font.sm },
-  list:         { paddingHorizontal: 20, gap: 14 },
-  card:         { flexDirection: "row", backgroundColor: Colors.bgCard, borderRadius: Radius.lg, borderWidth: 1, borderColor: Colors.border, overflow: "hidden", gap: 14 },
-  cardImage:    { width: 110, height: 110 },
-  cardBody:     { flex: 1, paddingVertical: 12, paddingRight: 10, justifyContent: "center", gap: 4 },
+  list:         { paddingHorizontal: 20, gap: 12 },
+  card:         { flexDirection: "row", backgroundColor: Colors.bgCard, borderRadius: Radius.lg, borderWidth: 1, borderColor: Colors.border, overflow: "hidden" },
+  cardImage:    { width: 106, height: 106 },
+  cardBody:     { flex: 1, paddingVertical: 12, paddingLeft: 14, justifyContent: "center", gap: 4 },
   cardTitle:    { color: Colors.white, fontWeight: "700", fontSize: Font.sm },
   cardPrice:    { color: Colors.cyan, fontWeight: "800", fontSize: Font.base },
   cardMeta:     { color: Colors.textMuted, fontSize: Font.xs },
   cardFooter:   { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 2 },
   verified:     { color: Colors.emerald, fontSize: Font.xs, fontWeight: "700" },
   rating:       { color: Colors.textMuted, fontSize: Font.xs },
-  removeBtn:    { padding: 14, alignSelf: "center", marginRight: 4 },
-  compareBanner: { flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: "rgba(34,211,238,0.06)", borderRadius: Radius.lg, borderWidth: 1, borderColor: "rgba(34,211,238,0.2)", padding: 14, marginTop: 6 },
-  compareEmoji: { fontSize: 28 },
+  removeBtn:    { width: 48, alignItems: "center", justifyContent: "center" },
+  compareBanner:{ flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: "rgba(34,211,238,0.05)", borderRadius: Radius.lg, borderWidth: 1, borderColor: "rgba(34,211,238,0.18)", padding: 16, marginTop: 4 },
   compareTitle: { color: Colors.white, fontWeight: "700", fontSize: Font.sm },
-  compareSub:   { color: Colors.textMuted, fontSize: Font.xs, marginTop: 2 },
+  compareSub:   { color: Colors.textMuted, fontSize: Font.xs, marginTop: 2, lineHeight: 18 },
   compareBtn:   { backgroundColor: Colors.cyan, paddingHorizontal: 14, paddingVertical: 8, borderRadius: Radius.full },
-  compareBtnText: { color: Colors.bg, fontWeight: "800", fontSize: Font.xs },
+  compareBtnText:{ color: Colors.bg, fontWeight: "800", fontSize: Font.xs },
 });

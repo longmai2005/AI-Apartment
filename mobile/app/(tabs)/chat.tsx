@@ -1,7 +1,11 @@
 import { useState, useRef } from "react";
-import { View, Text, TextInput, Pressable, ScrollView, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  View, Text, TextInput, Pressable, ScrollView,
+  StyleSheet, KeyboardAvoidingView, Platform,
+} from "react-native";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { Colors, Font, Radius } from "../../constants/theme";
 import {
   AGENTS, AGENT_QUICK_PROMPTS, AGENT_GREETINGS, agentReply,
@@ -20,16 +24,17 @@ function makeHistory(): Record<AgentId, Message[]> {
 }
 
 export default function ChatScreen() {
-  const params = useLocalSearchParams<{ agent?: string }>();
+  const params  = useLocalSearchParams<{ agent?: string }>();
+  const insets  = useSafeAreaInsets();
   const initial = (AGENTS.find(a => a.id === params.agent)?.id ?? "broker") as AgentId;
 
   const [activeAgent, setActiveAgent] = useState<AgentId>(initial);
-  const [histories, setHistories] = useState<Record<AgentId, Message[]>>(makeHistory);
-  const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState("");
+  const [histories,   setHistories]   = useState<Record<AgentId, Message[]>>(makeHistory);
+  const [loading,     setLoading]     = useState(false);
+  const [input,       setInput]       = useState("");
   const scrollRef = useRef<ScrollView>(null);
 
-  const agent  = AGENTS.find(a => a.id === activeAgent)!;
+  const agent    = AGENTS.find(a => a.id === activeAgent)!;
   const messages = histories[activeAgent];
 
   const switchAgent = (id: AgentId) => {
@@ -55,7 +60,7 @@ export default function ChatScreen() {
   };
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={["top"]}>
       {/* Agent selector */}
       <ScrollView
         horizontal
@@ -69,7 +74,7 @@ export default function ChatScreen() {
             <Pressable
               key={a.id}
               onPress={() => switchAgent(a.id as AgentId)}
-              style={[s.agentChip, active && { borderColor: a.color, backgroundColor: `${a.color}15` }]}
+              style={[s.agentChip, active && { borderColor: a.color, backgroundColor: `${a.color}18` }]}
             >
               <Text style={s.agentChipIcon}>{a.icon}</Text>
               <Text style={[s.agentChipName, { color: active ? a.color : Colors.textMuted }]}>
@@ -81,9 +86,9 @@ export default function ChatScreen() {
       </ScrollView>
 
       {/* Active agent header */}
-      <View style={[s.header, { borderBottomColor: `${agent.color}30` }]}>
-        <View style={[s.aiIcon, { backgroundColor: `${agent.color}15`, borderColor: `${agent.color}40` }]}>
-          <Text style={{ fontSize: 22 }}>{agent.icon}</Text>
+      <View style={[s.header, { borderBottomColor: `${agent.color}28` }]}>
+        <View style={[s.aiIcon, { backgroundColor: `${agent.color}12`, borderColor: `${agent.color}35` }]}>
+          <Text style={{ fontSize: 20 }}>{agent.icon}</Text>
         </View>
         <View style={{ flex: 1 }}>
           <Text style={s.headerTitle}>{agent.name}</Text>
@@ -116,6 +121,7 @@ export default function ChatScreen() {
         style={s.messages}
         contentContainerStyle={{ padding: 16, gap: 12 }}
         showsVerticalScrollIndicator={false}
+        keyboardDismissMode="interactive"
       >
         {messages.map((m, i) => (
           <View
@@ -152,8 +158,11 @@ export default function ChatScreen() {
       </ScrollView>
 
       {/* Input */}
-      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined}>
-        <View style={s.inputRow}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        keyboardVerticalOffset={insets.bottom + 0}
+      >
+        <View style={[s.inputRow, { paddingBottom: Math.max(insets.bottom, 16) }]}>
           <TextInput
             style={s.input}
             placeholder={`Hỏi ${agent.name}...`}
@@ -161,14 +170,22 @@ export default function ChatScreen() {
             value={input}
             onChangeText={setInput}
             multiline
+            maxLength={1000}
+            returnKeyType="send"
+            enablesReturnKeyAutomatically
             onSubmitEditing={() => send()}
+            blurOnSubmit={false}
           />
           <Pressable
-            style={[s.sendBtn, { backgroundColor: agent.color }, !input.trim() && { opacity: 0.4 }]}
+            style={[s.sendBtn, { backgroundColor: input.trim() ? agent.color : Colors.bgCard }, !input.trim() && s.sendBtnDisabled]}
             onPress={() => send()}
-            disabled={!input.trim()}
+            disabled={!input.trim() || loading}
           >
-            <Text style={s.sendText}>↑</Text>
+            <Ionicons
+              name="arrow-up"
+              size={20}
+              color={input.trim() ? Colors.bg : Colors.textDim}
+            />
           </Pressable>
         </View>
       </KeyboardAvoidingView>
@@ -178,13 +195,13 @@ export default function ChatScreen() {
 
 const s = StyleSheet.create({
   safe:            { flex: 1, backgroundColor: Colors.bg },
-  selectorScroll:  { flexGrow: 0, borderBottomWidth: 1, borderBottomColor: Colors.border },
-  selectorContent: { paddingHorizontal: 12, paddingVertical: 10, gap: 8 },
-  agentChip:       { flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 12, paddingVertical: 7, borderRadius: Radius.full, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border },
-  agentChipIcon:   { fontSize: 15 },
+  selectorScroll:  { flexGrow: 0, borderBottomWidth: 0.5, borderBottomColor: Colors.border },
+  selectorContent: { paddingHorizontal: 14, paddingVertical: 10, gap: 8 },
+  agentChip:       { flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 14, paddingVertical: 8, borderRadius: Radius.full, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border },
+  agentChipIcon:   { fontSize: 14 },
   agentChipName:   { fontSize: Font.xs, fontWeight: "700" },
-  header:          { flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: 1 },
-  aiIcon:          { width: 44, height: 44, borderRadius: 22, borderWidth: 1, alignItems: "center", justifyContent: "center" },
+  header:          { flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: 0.5 },
+  aiIcon:          { width: 42, height: 42, borderRadius: 21, borderWidth: 1, alignItems: "center", justifyContent: "center" },
   headerTitle:     { color: Colors.white, fontWeight: "700", fontSize: Font.base },
   onlineRow:       { flexDirection: "row", alignItems: "center", gap: 5, marginTop: 2 },
   onlineDot:       { width: 6, height: 6, borderRadius: 3 },
@@ -193,16 +210,16 @@ const s = StyleSheet.create({
   quickChip:       { paddingHorizontal: 14, paddingVertical: 8, borderRadius: Radius.full, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border },
   quickText:       { color: Colors.textMuted, fontSize: Font.xs },
   messages:        { flex: 1 },
-  bubble:          { maxWidth: "85%", padding: 14, borderRadius: Radius.lg },
-  aiBubble:        { backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border, alignSelf: "flex-start" },
-  userBubble:      { alignSelf: "flex-end" },
+  bubble:          { maxWidth: "85%", padding: 14, borderRadius: 18 },
+  aiBubble:        { backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border, alignSelf: "flex-start", borderBottomLeftRadius: 4 },
+  userBubble:      { alignSelf: "flex-end", borderBottomRightRadius: 4 },
   aiLabel:         { fontSize: Font.xs, fontWeight: "700", marginBottom: 6 },
-  bubbleText:      { color: Colors.text, fontSize: Font.sm, lineHeight: 20 },
+  bubbleText:      { color: Colors.text, fontSize: Font.sm, lineHeight: 22 },
   userBubbleText:  { color: Colors.bg, fontWeight: "600" },
   typingRow:       { flexDirection: "row", gap: 4, paddingVertical: 4 },
   typingDot:       { width: 7, height: 7, borderRadius: 4 },
-  inputRow:        { flexDirection: "row", gap: 10, padding: 16, borderTopWidth: 1, borderTopColor: Colors.border, alignItems: "flex-end" },
-  input:           { flex: 1, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border, borderRadius: Radius.md, paddingHorizontal: 14, paddingVertical: 12, color: Colors.text, fontSize: Font.sm, maxHeight: 100 },
-  sendBtn:         { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center" },
-  sendText:        { color: Colors.bg, fontWeight: "900", fontSize: Font.md },
+  inputRow:        { flexDirection: "row", gap: 10, paddingHorizontal: 16, paddingTop: 12, borderTopWidth: 0.5, borderTopColor: Colors.border, alignItems: "flex-end", backgroundColor: Colors.bg },
+  input:           { flex: 1, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.border, borderRadius: Radius.lg, paddingHorizontal: 16, paddingVertical: 11, color: Colors.text, fontSize: Font.sm, maxHeight: 120, lineHeight: 20 },
+  sendBtn:         { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: Colors.border },
+  sendBtnDisabled: { borderColor: Colors.border },
 });
