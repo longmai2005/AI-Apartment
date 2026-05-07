@@ -9,6 +9,7 @@ import { LandlordLogin } from "./pages/LandlordLogin";
 import { AdminLogin, isAdminAuthenticated } from "./pages/AdminLogin";
 import { ManagerLogin, isManagerAuthenticated } from "./pages/ManagerLogin";
 import { DevLogin, isDevAuthenticated } from "./pages/DevLogin";
+import { PortalDirectory } from "./pages/PortalDirectory";
 
 const TenantApp     = lazy(() => import("./pages/TenantApp").then(m => ({ default: m.TenantApp })));
 const LandlordApp   = lazy(() => import("./pages/LandlordApp").then(m => ({ default: m.LandlordApp })));
@@ -27,6 +28,12 @@ function isTenantAuthenticated() {
   try { return localStorage.getItem("nv-tenant-logged-in") === "true"; } catch { return false; }
 }
 
+function TenantGuard() {
+  return isTenantAuthenticated() ? <TenantApp /> : <Navigate to="/tenant/login" replace />;
+}
+function LandlordGuard() {
+  return isLandlordAuthenticated() ? <LandlordApp /> : <Navigate to="/landlord/login" replace />;
+}
 function AdminGuard() {
   return isAdminAuthenticated() ? <AdminPanel /> : <Navigate to="/admin/login" replace />;
 }
@@ -134,14 +141,15 @@ export const router = createBrowserRouter([
     element: <PageTransition />,
     children: [
       { path: "/",                    Component: LandingPage },
+      { path: "/portals",             Component: PortalDirectory },
       // Tenant
       { path: "/tenant/register",     Component: TenantRegister },
       { path: "/tenant/login",        Component: TenantLogin },
-      { path: "/tenant/*",            Component: TenantApp },
+      { path: "/tenant/*",            Component: TenantGuard },
       // Landlord
       { path: "/landlord/register",   Component: LandlordRegister },
       { path: "/landlord/login",      Component: LandlordLogin },
-      { path: "/landlord/*",          Component: LandlordApp },
+      { path: "/landlord/*",          Component: LandlordGuard },
       // Admin (siêu quản trị)
       { path: "/admin/login",         Component: AdminLogin },
       { path: "/admin/*",             Component: AdminGuard },

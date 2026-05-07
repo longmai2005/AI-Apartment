@@ -176,7 +176,22 @@ export function AdminLogin() {
           </div>
         </div>
 
-        <p className="text-center text-white/18 mt-4" style={{ fontSize: "0.68rem" }}>
+        {/* Demo credentials — click to fill */}
+        <button
+          type="button"
+          onClick={() => { setEmail("admin@nestaviet.vn"); setPassword("NestaViet@Admin2025"); }}
+          className="mt-4 w-full rounded-xl border border-violet-500/15 px-4 py-3 text-left hover:border-violet-500/30 transition-colors group"
+          style={{ background: "rgba(139,92,246,0.05)" }}
+        >
+          <p className="text-violet-400/60 mb-1.5 flex items-center gap-2" style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em" }}>
+            DEMO CREDENTIALS
+            <span className="text-violet-400/40 group-hover:text-violet-400/70 transition-colors" style={{ fontSize: "0.6rem", fontWeight: 400 }}>← click to fill</span>
+          </p>
+          <p className="text-white/40 font-mono" style={{ fontSize: "0.72rem" }}>admin@nestaviet.vn</p>
+          <p className="text-white/28 font-mono" style={{ fontSize: "0.68rem" }}>NestaViet@Admin2025</p>
+        </button>
+
+        <p className="text-center text-white/18 mt-3" style={{ fontSize: "0.68rem" }}>
           {t("Khu vực bảo mật — Mọi lần đăng nhập đều được ghi lại", "Secured area — All logins are logged")}
         </p>
       </motion.div>

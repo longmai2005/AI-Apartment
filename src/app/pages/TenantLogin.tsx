@@ -6,6 +6,12 @@ import {
   CheckCircle2, ArrowRight, AlertCircle, KeyRound, RefreshCw,
 } from "lucide-react";
 
+const STAFF_EMAILS = new Set([
+  "admin@nestaviet.vn",
+  "dev@nestaviet.vn", "devops@nestaviet.vn",
+  "manager@nestaviet.vn", "manager2@nestaviet.vn",
+]);
+
 export function TenantLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -29,6 +35,10 @@ export function TenantLogin() {
     setError("");
     if (!email.trim() || !password) { setError("Vui lòng nhập email và mật khẩu"); return; }
     if (!/\S+@\S+\.\S+/.test(email)) { setError("Email không hợp lệ"); return; }
+    if (STAFF_EMAILS.has(email.toLowerCase())) {
+      setError("Tài khoản nhân viên không được truy cập cổng cư dân. Vui lòng dùng đúng cổng.");
+      return;
+    }
     setLoading(true);
     await new Promise((r) => setTimeout(r, 1000));
     setLoading(false);

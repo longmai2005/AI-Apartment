@@ -1756,6 +1756,11 @@ export function LandingPage() {
                     <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>{p.sub}</p>
                   </button>
                 ))}
+                <button onClick={() => navigate("/portals")}
+                  className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-t border-white/10">
+                  <p className="font-semibold text-white/50" style={{ fontSize: "0.8rem" }}>🗂 {t("Tất cả cổng","All Portals")}</p>
+                  <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>nestaviet.vn/portals</p>
+                </button>
               </div>
             </div>
 

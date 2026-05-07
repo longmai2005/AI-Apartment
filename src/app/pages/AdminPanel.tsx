@@ -260,16 +260,19 @@ export function AdminPanel() {
   const [statusFilter, setStatusFilter] = useState("all");
 
   const session = (() => {
-    try { const s = sessionStorage.getItem("nv_admin_session"); return s ? JSON.parse(s) as { name: string; role: string } : null; }
+    try {
+      const s = sessionStorage.getItem("nv_admin_session") ?? sessionStorage.getItem("nv_manager_session") ?? sessionStorage.getItem("nv_dev_session");
+      return s ? JSON.parse(s) as { name: string; role: string } : null;
+    }
     catch { return null; }
   })();
   const role     = session?.role ?? "";
   const userName = session?.name ?? "Unknown";
 
   // ── Role config ─────────────────────────────────────────────────────────
-  const isAdmin   = role === "Siêu quản trị";
-  const isManager = role === "Quản trị viên";
-  const isDev     = role === "Developer";
+  const isAdmin   = role === "admin";
+  const isManager = role === "manager";
+  const isDev     = role === "dev";
 
   const accentColor = isAdmin ? "#ef4444" : isManager ? "#10b981" : "#8b5cf6";
   const accentGrad  = isAdmin ? "from-red-500 to-rose-700" : isManager ? "from-emerald-500 to-teal-600" : "from-violet-600 to-purple-800";
@@ -388,13 +391,18 @@ export function AdminPanel() {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-white truncate" style={{ fontSize: "0.78rem", fontWeight: 600 }}>{userName}</p>
-              <p style={{ fontSize: "0.6rem", color: accentColor, opacity: 0.8 }}>{role}</p>
+              <p style={{ fontSize: "0.6rem", color: accentColor, opacity: 0.8 }}>{roleLabel.toLowerCase()}</p>
             </div>
           </div>
           <button onClick={() => navigate("/")} className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-white/30 hover:text-white/60 hover:bg-white/5 transition-all">
             <ChevronLeft size={13} /><span style={{ fontSize: "0.72rem" }}>Trang chủ</span>
           </button>
-          <button onClick={() => { sessionStorage.removeItem("nv_admin_session"); navigate("/admin/login"); }}
+          <button onClick={() => {
+            sessionStorage.removeItem("nv_admin_session");
+            sessionStorage.removeItem("nv_manager_session");
+            sessionStorage.removeItem("nv_dev_session");
+            navigate(isAdmin ? "/admin/login" : isManager ? "/manager/login" : "/dev/login");
+          }}
             className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-white/30 hover:text-red-400 hover:bg-red-500/8 transition-all"
           >
             <LogOut size={13} /><span style={{ fontSize: "0.72rem" }}>Logout</span>

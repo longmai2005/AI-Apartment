@@ -183,7 +183,21 @@ export function DevLogin() {
             </button>
           </div>
         </div>
-        <p className="text-center text-blue-500/25 mt-4" style={{ fontSize: "0.68rem" }}>
+        {/* Demo credentials — click to fill */}
+        <button
+          type="button"
+          onClick={() => { setEmail("dev@nestaviet.vn"); setPassword("NestaViet@Dev2025"); }}
+          className="mt-4 w-full rounded-xl border border-blue-500/15 px-4 py-3 text-left hover:border-blue-500/30 transition-colors group"
+          style={{ background: "rgba(59,130,246,0.05)" }}
+        >
+          <p className="text-blue-400/60 mb-1.5 flex items-center gap-2" style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em" }}>
+            DEMO CREDENTIALS
+            <span className="text-blue-400/40 group-hover:text-blue-400/70 transition-colors" style={{ fontSize: "0.6rem", fontWeight: 400 }}>← click to fill</span>
+          </p>
+          <p className="text-white/40 font-mono" style={{ fontSize: "0.72rem" }}>dev@nestaviet.vn</p>
+          <p className="text-white/28 font-mono" style={{ fontSize: "0.68rem" }}>NestaViet@Dev2025</p>
+        </button>
+        <p className="text-center text-blue-500/25 mt-3" style={{ fontSize: "0.68rem" }}>
           {t("Mọi hoạt động đều được ghi lại • TLS 1.3", "All activity is logged • TLS 1.3")}
         </p>
       </motion.div>
