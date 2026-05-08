@@ -1,7 +1,7 @@
 // AUTO-GENERATED 2026-05-08 12:42 — 379 listings thực từ Chợ Tốt
 // Chạy lại: python scripts/fetch_listings.py
 
-export type Listing = {
+export interface Listing {
   id: string;
   title: string;
   price: string;
@@ -20,7 +20,7 @@ export type Listing = {
   sourceUrl: string;
   lat?: number;
   lng?: number;
-};
+}
 
 export const LISTINGS: Listing[] = [
   {
@@ -9838,3 +9838,18 @@ export const LISTINGS: Listing[] = [
     "lng": 106.642
   }
 ];
+
+export const getListingsByProvince = (p: string) =>
+  LISTINGS.filter(l => l.province === p);
+
+export const getFeaturedListings = () =>
+  LISTINGS.filter(l => l.verified && l.rating >= 4.7);
+
+export const searchListings = (q: string) => {
+  const lower = q.toLowerCase();
+  return LISTINGS.filter(l =>
+    l.title.toLowerCase().includes(lower) ||
+    l.district.toLowerCase().includes(lower) ||
+    l.province.toLowerCase().includes(lower)
+  );
+};

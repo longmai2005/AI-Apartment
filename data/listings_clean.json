@@ -1,28 +1,4 @@
-// AUTO-GENERATED 2026-05-08 12:42 — 379 listings thực từ Chợ Tốt
-// Chạy lại: python scripts/fetch_listings.py
-
-export type Listing = {
-  id: string;
-  title: string;
-  price: string;
-  priceNum: number;
-  area: string;
-  district: string;
-  province: string;
-  type: string;
-  image: string;
-  tags: string[];
-  verified: boolean;
-  rating: number;
-  description: string;
-  amenities: string[];
-  postedAt: string;
-  sourceUrl: string;
-  lat?: number;
-  lng?: number;
-};
-
-export const LISTINGS: Listing[] = [
+[
   {
     "id": "131019911",
     "title": "Loa JBL 4331A Studio Monitor",
@@ -9837,4 +9813,4 @@ export const LISTINGS: Listing[] = [
     "lat": 10.792579,
     "lng": 106.642
   }
-];
+]
