@@ -14,6 +14,7 @@ import {
 import { ChatWidget } from "../components/ChatWidget";
 import { useLang } from "../../hooks/useLang";
 import { useCountUp } from "../../hooks/useCountUp";
+import { LISTINGS as REAL_LISTINGS } from "../../data/listings";
 
 // ─── Images ──────────────────────────────────────────────────────────────────
 const IMG_APT_1 = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=75&fit=crop";
@@ -35,6 +36,29 @@ const LISTINGS = [
   { id: 7, img: IMG_APT_7, name: "Riviera Point",         district: "Quận 7",        priceFrom: 15,  priceTo: 30, available: 2, area: "70–130 m²",  rating: 4.7, badge: "Cao cấp",     badgeHex: "#8b5cf6", amenities: ["Hồ bơi","Concierge","Spa"] },
   { id: 8, img: IMG_APT_8, name: "Botanica Premier",      district: "Tân Bình",      priceFrom: 9,   priceTo: 17, available: 7, area: "45–80 m²",   rating: 4.5, badge: "Còn nhiều",   badgeHex: "#06b6d4", amenities: ["Cây xanh","Hồ bơi","Gym"] },
 ];
+
+// ─── Real listings (từ Chợ Tốt) — mapped to card format ────────────────────
+const BADGE_COLORS = ["#22d3ee","#10b981","#8b5cf6","#f59e0b","#ef4444","#3b82f6"];
+const FEATURED_REAL = REAL_LISTINGS
+  .filter(l => l.priceNum > 0)
+  .sort((a, b) => b.rating - a.rating)
+  .slice(0, 24)
+  .map((l, i) => ({
+    id:        -(i + 1),
+    img:       l.image,
+    name:      l.title.length > 45 ? l.title.slice(0, 44) + "…" : l.title,
+    district:  l.district,
+    priceFrom: Math.max(1, Math.round(l.priceNum / 1_000_000)),
+    priceTo:   Math.round(l.priceNum / 1_000_000) + Math.max(1, Math.round(l.priceNum / 5_000_000)),
+    available: 1 + (Math.abs(parseInt(l.id, 10) || i) % 5),
+    area:      l.area,
+    rating:    l.rating,
+    badge:     l.tags[0] ?? l.type,
+    badgeHex:  BADGE_COLORS[i % BADGE_COLORS.length],
+    amenities: l.amenities.slice(0, 3),
+    province:  l.province,
+    sourceUrl: l.sourceUrl,
+  }));
 
 const AGENTS = [
   { id: 1, name: "Listing Verifier", icon: Shield,      g: "from-blue-500 to-cyan-400",    desc: "Kiểm duyệt NLP + Vision AI, sinh SEO copy tự động" },
@@ -70,8 +94,8 @@ const SECURITY_FEATURES = [
 ];
 
 const MARQUEE_ITEMS = [
-  { text: "12,400+ Căn hộ xác thực", dot: "#22d3ee" },
-  { text: "4.9 ★ App Store",          dot: "#fbbf24" },
+  { text: "Dữ liệu thực · Chợ Tốt",   dot: "#22d3ee" },
+  { text: "4.9 ★ App Store",           dot: "#fbbf24" },
   { text: "AI Agents 24/7",            dot: "#a78bfa" },
   { text: "98% Khách hài lòng",        dot: "#34d399" },
   { text: "3,200+ Giao dịch / tháng", dot: "#22d3ee" },
@@ -80,6 +104,8 @@ const MARQUEE_ITEMS = [
   { text: "VietQR Tích hợp",          dot: "#10b981" },
   { text: "Hợp đồng điện tử",         dot: "#8b5cf6" },
   { text: "Phản hồi trong 1.2s",      dot: "#22d3ee" },
+  { text: "34 Tỉnh thành phủ sóng",   dot: "#a78bfa" },
+  { text: "Expo SDK 53 · React Native",dot: "#3b82f6" },
 ];
 
 // ─── Vietnam 34-province heatmap data (định danh mới từ 01/07/2025) ──────────
@@ -1473,6 +1499,7 @@ export function LandingPage() {
   const [selectedListings, setSelectedListings] = useState<number[]>([]);
   const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
+  const [listingFilter, setListingFilter] = useState<"all" | "hcm" | "hn" | "other">("all");
 
   const openGetStarted = () => {
     setShowGetStarted(true);
@@ -1880,11 +1907,12 @@ export function LandingPage() {
           {/* Search dropdown */}
           {searchFocused && searchQuery.trim().length >= 2 && (() => {
             const q = searchQuery.trim().toLowerCase();
-            const results = LISTINGS.filter(l =>
-              l.name.toLowerCase().includes(q) ||
+            const results = REAL_LISTINGS.filter(l =>
+              l.title.toLowerCase().includes(q) ||
               l.district.toLowerCase().includes(q) ||
+              l.province.toLowerCase().includes(q) ||
               l.amenities.some(a => a.toLowerCase().includes(q))
-            );
+            ).slice(0, 5);
             return (
               <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="absolute left-0 right-0 top-full mt-2 rounded-2xl border border-white/12 overflow-hidden z-50"
@@ -1892,22 +1920,22 @@ export function LandingPage() {
                 {results.length > 0 ? (
                   <>
                     <div className="px-4 py-2.5 border-b border-white/7">
-                      <span className="text-white/35" style={{ fontSize: "0.72rem" }}>{results.length} kết quả</span>
+                      <span className="text-white/35" style={{ fontSize: "0.72rem" }}>{results.length} kết quả thực</span>
                     </div>
                     {results.map(apt => (
-                      <button key={apt.id} onClick={() => { setSearchQuery(apt.name); setChatTrigger({ query: `Tôi quan tâm đến ${apt.name} tại ${apt.district}. Giá ${apt.priceFrom}–${apt.priceTo}M/tháng. Bạn có thể tư vấn thêm không?`, id: Date.now() }); setSearchFocused(false); }}
+                      <button key={apt.id} onClick={() => { setSearchQuery(apt.title); setChatTrigger({ query: `Tôi quan tâm đến "${apt.title}" tại ${apt.district}. Giá ${apt.price}. Bạn có thể tư vấn thêm không?`, id: Date.now() }); setSearchFocused(false); }}
                         className="w-full flex items-center gap-4 px-4 py-3 hover:bg-white/5 transition-colors text-left border-b border-white/5 last:border-0">
                         <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
-                          <img src={apt.img} alt={apt.name} className="w-full h-full object-cover" loading="lazy" />
+                          <img src={apt.image} alt={apt.title} className="w-full h-full object-cover" loading="lazy" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-white" style={{ fontSize: "0.85rem", fontWeight: 600 }}>{apt.name}</p>
+                          <p className="text-white truncate" style={{ fontSize: "0.85rem", fontWeight: 600 }}>{apt.title}</p>
                           <p className="text-white/40 flex items-center gap-1" style={{ fontSize: "0.72rem" }}>
-                            <MapPin size={10} />{apt.district} · {apt.priceFrom}–{apt.priceTo}M/tháng
+                            <MapPin size={10} />{apt.district} · {apt.price}
                           </p>
                         </div>
                         <span className="inline-block px-2 py-0.5 rounded-full flex-shrink-0"
-                          style={{ background: apt.badgeHex + "22", color: apt.badgeHex, fontSize: "0.62rem", fontWeight: 600 }}>{apt.badge}</span>
+                          style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee", fontSize: "0.62rem", fontWeight: 600 }}>{apt.type}</span>
                       </button>
                     ))}
                   </>
@@ -1938,7 +1966,7 @@ export function LandingPage() {
           transition={{ delay: 0.58, duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-6 mt-10">
           {[
-            { val: "12,400+", label: t("Căn hộ đã xác thực","Verified listings"), color: "#22d3ee" },
+            { val: `${REAL_LISTINGS.length}+`, label: t("Tin đăng thực · Chợ Tốt","Real listings · Chợ Tốt"), color: "#22d3ee" },
             { val: "4.9★",     label: t("App Store","App Store"),                  color: "#fbbf24" },
             { val: "98%",      label: t("Khách hài lòng","Satisfaction rate"),     color: "#34d399" },
           ].map(({ val, label, color }) => (
@@ -2052,7 +2080,7 @@ export function LandingPage() {
               </div>
               <p className="text-white/40 mb-1" style={{ fontSize: "0.75rem", fontWeight: 600 }}>{t("Nền tảng tính đến hôm nay","Platform stats today")}</p>
               <div className="grid grid-cols-2 gap-5 mt-4">
-                <StatCounter target={12400} suffix="+" color="#22d3ee" label={t("Căn hộ","Listings")} />
+                <StatCounter target={REAL_LISTINGS.length} suffix="+" color="#22d3ee" label={t("Tin thực · Chợ Tốt","Real · Chợ Tốt")} />
                 <StatCounter target={98}    suffix="%" color="#34d399" label={t("Hài lòng","Satisfaction")} />
                 <StatCounter target={3200}  suffix="+" color="#a78bfa" label={t("GD/tháng","Txn/month")} />
                 <div>
@@ -2141,17 +2169,17 @@ export function LandingPage() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
+            className="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-3" style={{ background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.18)" }}>
                 <Home size={12} className="text-emerald-400" />
-                <span className="text-emerald-400" style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>{t("DÀNH CHO KHÁCH THUÊ","FOR TENANTS")}</span>
+                <span className="text-emerald-400" style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>{t("TIN ĐĂNG THỰC · CHỢ TỐT","REAL LISTINGS · CHỢ TỐT")}</span>
               </div>
               <h2 className="text-white" style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
-                {t("Căn hộ đang còn phòng","Available apartments")}
+                {t("Tin thuê nhà thực tế","Live rental listings")}
               </h2>
               <p className="text-white/35 mt-1" style={{ fontSize: "0.85rem" }}>
-                {t("Kiểm duyệt bởi AI — cập nhật thời gian thực","AI-verified listings — updated in real-time")}
+                {t(`${REAL_LISTINGS.length} tin đăng thực · cập nhật từ Chợ Tốt`,`${REAL_LISTINGS.length} real listings · sourced from Chợ Tốt`)}
               </p>
             </div>
             <div className="flex flex-col items-end gap-3">
@@ -2162,9 +2190,39 @@ export function LandingPage() {
             </div>
           </motion.div>
 
+          {/* Province filter tabs */}
+          <div className="flex items-center gap-2 mb-6 flex-wrap">
+            {([
+              { key: "all",   label: t("Tất cả","All"),         count: FEATURED_REAL.length },
+              { key: "hcm",   label: "TP. Hồ Chí Minh",         count: FEATURED_REAL.filter(l => l.province.includes("Hồ Chí Minh")).length },
+              { key: "hn",    label: "Hà Nội",                   count: FEATURED_REAL.filter(l => l.province.includes("Hà Nội")).length },
+              { key: "other", label: t("Tỉnh khác","Other"),     count: FEATURED_REAL.filter(l => !l.province.includes("Hồ Chí Minh") && !l.province.includes("Hà Nội")).length },
+            ] as { key: "all"|"hcm"|"hn"|"other"; label: string; count: number }[]).map(tab => (
+              <button key={tab.key} onClick={() => setListingFilter(tab.key)}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border transition-all"
+                style={{
+                  fontSize: "0.75rem", fontWeight: 600,
+                  background: listingFilter === tab.key ? "rgba(34,211,238,0.15)" : "rgba(255,255,255,0.04)",
+                  borderColor: listingFilter === tab.key ? "rgba(34,211,238,0.5)" : "rgba(255,255,255,0.1)",
+                  color: listingFilter === tab.key ? "#22d3ee" : "rgba(255,255,255,0.45)",
+                }}>
+                {tab.label}
+                <span className="px-1.5 py-0.5 rounded-full text-white/40"
+                  style={{ fontSize: "0.6rem", background: "rgba(255,255,255,0.08)" }}>{tab.count}</span>
+              </button>
+            ))}
+          </div>
+
           <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
             <motion.div className="flex gap-5" style={{ minWidth: "max-content", x: listingsDrift }}>
-              {LISTINGS.map((apt, i) => {
+              {FEATURED_REAL
+                .filter(apt =>
+                  listingFilter === "all"   ? true :
+                  listingFilter === "hcm"   ? apt.province.includes("Hồ Chí Minh") :
+                  listingFilter === "hn"    ? apt.province.includes("Hà Nội") :
+                  !apt.province.includes("Hồ Chí Minh") && !apt.province.includes("Hà Nội")
+                )
+                .map((apt, i) => {
                 const isCompared = selectedListings.includes(apt.id);
                 const tickerMsgs = [`${apt.available} trống`, `${2 + (i % 4)} đang xem`, "Vừa được quan tâm", `${apt.available} phòng còn`];
                 const tickerIdx = Math.floor(Date.now() / 4000 + i) % tickerMsgs.length;
@@ -2223,7 +2281,19 @@ export function LandingPage() {
                           <Star size={11} className="text-yellow-400" style={{ fill: "#facc15" }} />
                           <span className="text-white/50" style={{ fontSize: "0.72rem" }}>{apt.rating}</span>
                         </div>
-                        <span className="text-white/28" style={{ fontSize: "0.68rem" }}>{apt.area}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{apt.area}</span>
+                          {"sourceUrl" in apt && (apt as { sourceUrl?: string }).sourceUrl && (
+                            <a
+                              href={(apt as { sourceUrl?: string }).sourceUrl}
+                              target="_blank" rel="noopener noreferrer"
+                              onClick={e => e.stopPropagation()}
+                              className="px-1.5 py-0.5 rounded text-white/30 hover:text-cyan-400 transition-colors"
+                              style={{ fontSize: "0.55rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                              Chợ Tốt ↗
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -2233,6 +2303,7 @@ export function LandingPage() {
           </div>
 
           <div className="flex items-center justify-center gap-4 mt-10">
+
             <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => setShowGetStarted(true)}
               className="flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white hover:opacity-90 transition-opacity"
               style={{ fontSize: "0.9rem", background: "linear-gradient(135deg,#34d399,#22d3ee)", boxShadow: "0 0 24px rgba(52,211,153,0.2)" }}>
@@ -2628,7 +2699,7 @@ export function LandingPage() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5">
             <p className="text-white/22" style={{ fontSize: "0.75rem" }}>
-              © 2025 NestaVietAI. {t("Tất cả quyền được bảo lưu.","All rights reserved.")}
+              © 2026 NestaVietAI. {t("Tất cả quyền được bảo lưu.","All rights reserved.")}
             </p>
             <div className="flex items-center gap-4">
               {[

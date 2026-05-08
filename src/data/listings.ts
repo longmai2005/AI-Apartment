@@ -1,4 +1,4 @@
-// AUTO-GENERATED 2026-05-08 12:42 — 379 listings thực từ Chợ Tốt
+// AUTO-GENERATED 2026-05-08 12:52 — 173 listings thực từ Chợ Tốt
 // Chạy lại: python scripts/fetch_listings.py
 
 export interface Listing {
@@ -24,109 +24,6 @@ export interface Listing {
 
 export const LISTINGS: Listing[] = [
   {
-    "id": "131019911",
-    "title": "Loa JBL 4331A Studio Monitor",
-    "price": "42.000.000 đ",
-    "priceNum": 42000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/-4i8vyebOwINSgSCqg6kH8YTa_Gn-Rhgb6PW3Kwa4IE/preset:listing/plain/2b53c4dbd29e1ece4c35e25862e17466-2974121669013111154.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "loa jbl 4331A monitor zin và rất đẹp . thùng loa vuông vóc . dòng loa danh tiéng dành cho kiểm âm phòng thu . 1 bass 40 và 1 mid treble kèn . chất âm rất hay .",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "17 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131019911",
-    "lat": 10.82634,
-    "lng": 106.692505
-  },
-  {
-    "id": "132259203",
-    "title": "Loa Bluetooth Harman Kardon Studio 1",
-    "price": "2.300.000 đ",
-    "priceNum": 2000000,
-    "area": "11 m²",
-    "district": "Thành phố Thuận An, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/GVTiJ5fF4HOWktDER2kosZ6X2lm9965GEJ4fT2KOU5w/preset:listing/plain/c933e08f6eeb972536fb86a7889d3cb7-2983355324584498117.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Ít dùng thanh lý loa loa harman kardon studio 1 âm thanh hay pin còn nghe 2.5h có sạc bán lại 2tr3",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "7 phút trước",
-    "sourceUrl": "https://www.chotot.com/132259203",
-    "lat": 10.947814,
-    "lng": 106.738205
-  },
-  {
-    "id": "132259075",
-    "title": "Đèn flash studio Jinbei ECV500 Đen",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/-3Ab9Ya22D1zMqCBOVjpN77IlazF8YfiiFXd8qnz89A/preset:listing/plain/444df971b51b81fa8ba5954b97e25927-2983354609179022431.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "cây đèn flash studio Jinbei caler ecv500 và softbox Jinbei , bán lại cả bộ 1tr2",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "14 phút trước",
-    "sourceUrl": "https://www.chotot.com/132259075",
-    "lat": 10.782773,
-    "lng": 106.67998
-  },
-  {
-    "id": "132165504",
-    "title": "Tai nghe Studio Buds VQ01 Trắng",
-    "price": "650.000 đ",
-    "priceNum": 650000000,
-    "area": "101 m²",
-    "district": "Quận 6, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/DWIp3Tn5_fD6hu6F0_wHMaSiWZ-Rs7eNnJnTdWoILnM/preset:listing/plain/6efba6f761dd5c2b98db7b3da95a8c4a-2982673343355891795.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.5,
-    "description": "Studio Buds VQ01 trắng. Cách âm chống ồn chủ động. Chất âm bass mạnh, âm thanh trong trẻo. Có mic, meeting tốt. Pin: - nghe nhạc tầm 1.5h liên tục trên tai nghe. Vừa sạc luôn tầm 4-5 tiếng. - meeting có dùng mic: hơn 1 tiếng liên tục pin trên tai ngh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "6 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132165504",
-    "lat": 10.745162,
-    "lng": 106.63355
-  },
-  {
     "id": "132227741",
     "title": "Sound Card PreSonus Studio 24c",
     "price": "2.300.000 đ",
@@ -141,7 +38,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.9,
     "description": "Sound Card PreSonus Studio 24c màu đen xanh, thiết kế nhỏ gọn, dễ mang theo. - Hỗ trợ thu âm chất lượng cao. - Tương thích nhiều phần mềm. - Phù hợp cho phòng thu cá nhân.",
     "amenities": [
       "Wifi",
@@ -151,56 +48,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132227741",
     "lat": 10.850668,
     "lng": 106.72051
-  },
-  {
-    "id": "132144409",
-    "title": "Đèn studio Ulanzi L023 Đen Mới",
-    "price": "950.000 đ",
-    "priceNum": 950000000,
-    "area": "121 m²",
-    "district": "Quận Nam Từ Liêm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/yZ0gVBHWoZ3xpwTnbsJnye9fLhjSOkN84Ed538I_rP4/preset:listing/plain/e0dfd370194bd6b893e6704ef08b58c3-2982491374647567188.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.7,
-    "description": "Đèn studio chụp ảnh, quay phim Ulanzi L023 40W Chỉnh được nhiệt độ màu và các chế độ. Dùng được với sạc laptop type C. Còn mới, ít sử dụng, đủ hộp, túi đựng, chụp. (Mua mới 1tr7-2tr) tiết kiệm gần 1tr, có giảm thêm.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "12 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132144409",
-    "lat": 21.027958,
-    "lng": 105.7718
-  },
-  {
-    "id": "132245322",
-    "title": "Tai nghe Beats Studio Pro Xanh",
-    "price": "900.000 đ",
-    "priceNum": 900000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/HIoBh5lEeebUbm5tyGBvPzoWykg9jUJETpAWnt-trxg/preset:listing/plain/41dfd36c901a6b028eb8febf6327eced-2983240066688357317.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.5,
-    "description": "Beats Studio Pro xanh cho anh em trải nghiệm. Pin tốt,chống ồn các thứ mướt rượt ko lẹt xẹt. Vỏ hơi xấu ae mang về dán skin hoặc đeo ốp là oke.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "19 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132245322",
-    "lat": 10.790166,
-    "lng": 106.6738
   },
   {
     "id": "129570992",
@@ -217,7 +64,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.5,
     "description": "- JBL 4429 Studio monitor - Madein : Mexico -loa bass 30cm đời cao cấp của nhà JBL - CS: 200W - 6ohm - 91dB, - Kích thước: 635 x 400 x 335mm - loa nặng 32kg - Ghép phù hợp nhiều dòng amly cao cấp , chất âm hay hoàn Mỹ nhất cả nghe lẫn nhìn. ae quan t",
     "amenities": [
       "Wifi",
@@ -243,7 +90,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.9,
     "description": "Tai nghe Beats Studio Pro Cũ Tình trạng chức năng đầy đủ không bị lỗi Bên ngoài đệm bọc đã cũ, và vênh nhẹ bên trái",
     "amenities": [
       "Wifi",
@@ -269,7 +116,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.5,
     "description": "AURA 4 GOLD FULLBOX 🌐 ZIN ĐẸP 🌐 NGUYÊN BẢN 🌐 SIÊU ẤM DECOR SANG TRỌNG ❤️ 5 CỦ 5 ❤️ GÓP 0 ĐỒNG ☎️0779.08. TỨ QUÝ 9 🕹️ 515 TRẦN CAO VÂN",
     "amenities": [
       "Wifi",
@@ -279,110 +126,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132256474",
     "lat": 16.070599,
     "lng": 108.194756
-  },
-  {
-    "id": "132253803",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9",
-    "price": "4.750.000 đ",
-    "priceNum": 4000000,
-    "area": "17 m²",
-    "district": "Quận Thanh Khê, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/T9Bg5J6lkkg4W60X5ehA5tUrjuNX2CSRNvsXtvN-l4E/preset:listing/plain/e442a03fd2de2b6b4039037b14975145-2983335990915819735.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "STUDIO 9 NEW SEAL 🌐 ĐẸP 99% FULLBOX - 4 CỦ 2 🌐 NEW SEAL PGI - 4 CỦ 750 ❤️ GÓP 0 ĐỒNG. Q. THẺ TÍN DỤNG ☎️ *** 🕹️ 515 TRẦN CAO VÂN",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132253803",
-    "lat": 16.070599,
-    "lng": 108.194756
-  },
-  {
-    "id": "131456877",
-    "title": "TUYỂN NHÂN VIÊN NỮ STUDIO EM BÉ",
-    "price": "Đến 10 triệu/tháng",
-    "priceNum": 10000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "- Hoạt náo em bé chụp ảnh - Check khách qua máy tính - 1 tuần / nghỉ 1 ngày ( Tháng 4 ngày ) - Studio Nhỏ nên lượng công việc nhàn Lương cơ bản : 5.000.000 + Thưởng + Hỗ trợ ăn trưa Không cần thử việc đi làm luôn Nhanh nhẹn . hoạt bát.trung thực. khô",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "6 phút trước",
-    "sourceUrl": "https://www.chotot.com/131456877",
-    "lat": 10.783449,
-    "lng": 106.69366
-  },
-  {
-    "id": "132038844",
-    "title": "Bộ điều khiển Elgato Stream Deck Studio",
-    "price": "5.100.000 đ",
-    "priceNum": 5000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/uKnnkbHKStIdyZ-KRdUExguAHbU045ROE_c6fSyEdyc/preset:listing/plain/84fde0483b2620d3025f5dd8dffdc700-2981485228866780315.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "Streamdeck Studio chuyên dùng cho broadcast systems 32 phím bấm LCD customs có thể kết nối qua mạng LAN điều khiển bằng Streamdeck Software hàng mới 100% bao test 6 tháng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132038844",
-    "lat": 10.833995,
-    "lng": 106.72641
-  },
-  {
-    "id": "132254004",
-    "title": "Loa Harman Kardon Onyx Studio 9 Đen",
-    "price": "4.000.000 đ",
-    "priceNum": 4000000,
-    "area": "17 m²",
-    "district": "Quận Liên Chiểu, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/EOHpzQ1cE73v6Dd4iZ--kIvuqXxGURTkh4WQ7LnUsoE/preset:listing/plain/0165d7383f493056086caf8ef7253fb2-2983336898753544838.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "Hk9 qua sd. Fullbox. Bao zin. Loa còn 97-98% bao test thoả mái. ĐÀ NẴNG nhận GIAO LƯU, THU MUA loa chính hãng. Call and Z0LA ***",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132254004",
-    "lat": 16.065733,
-    "lng": 108.16955
   },
   {
     "id": "131006781",
@@ -399,7 +142,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 5.0,
     "description": "Amply SABA Studio HiFi-8100 từ Đức, sản xuất năm 1973. - Công suất 60W, trở kháng 4-16 Ohm, điện áp 220V. - Trang bị công nghệ Stereo HiFi, chất âm sâu, ngọt ngào. - Chỉnh được Bass, Mid, Treble, tăng độ sáng tiếng cho nhạc và lời hát. - Máy zin đẹp,",
     "amenities": [
       "Wifi",
@@ -411,159 +154,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.642395
   },
   {
-    "id": "132243389",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 3",
-    "price": "3.300.000 đ",
-    "priceNum": 3000000,
-    "area": "77 m²",
-    "district": "Quận Thanh Xuân, TP. Hà Nội",
-    "province": "TP. Hà Nội",
+    "id": "132038844",
+    "title": "Bộ điều khiển Elgato Stream Deck Studio",
+    "price": "5.100.000 đ",
+    "priceNum": 5000000,
+    "area": "119 m²",
+    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/t-1H13any4LR7wvhFOiFBTx_ub0gOtq10nWCrebVglQ/preset:listing/plain/f7bbe4f9bc63f402ec710ab345e67269-2983230898746878874.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "BÁN LOA HARMAN KARDON ONYX STUDIO 3 , NHẬP KHẨU CHÍNH HÃNG PGI , CHƯA QUA SỬA CHỮA NGUYÊN ZIN",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "21 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132243389",
-    "lat": 20.988735,
-    "lng": 105.818756
-  },
-  {
-    "id": "132210268",
-    "title": "Loa Harman Kardon Onyx Studio 4",
-    "price": "3.600.000 đ",
-    "priceNum": 3000000,
-    "area": "77 m²",
-    "district": "Quận Thanh Xuân, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/upJGQVyDY1ziay4Z1drthLyFFarhUGsD8mK6HCgdSkU/preset:listing/plain/4009868c2fb981dd96879921a5c60d4c-2983037383611873668.jpg",
+    "image": "https://cdn.chotot.com/uKnnkbHKStIdyZ-KRdUExguAHbU045ROE_c6fSyEdyc/preset:listing/plain/84fde0483b2620d3025f5dd8dffdc700-2981485228866780315.jpg",
     "tags": [
       "AI Verified",
       "Cho thuê"
     ],
     "verified": true,
     "rating": 4.6,
-    "description": "Loa Bluetooth Harman Kardon Onyx Studio 4 màu xanh Navy, thiết kế sang trọng, âm thanh sống động - Thương Hiệu Mỹ ==> Mua Tại Nhật - Công suất 70w - Bluetooth 4.2 - Pin 3000mAh, dùng đến 8 giờ - Liên kết 2 loa với nhau được - Âm bass mạnh, vocal rõ, ",
+    "description": "Streamdeck Studio chuyên dùng cho broadcast systems 32 phím bấm LCD customs có thể kết nối qua mạng LAN điều khiển bằng Streamdeck Software hàng mới 100% bao test 6 tháng",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132210268",
-    "lat": 20.988735,
-    "lng": 105.818756
-  },
-  {
-    "id": "132212909",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio",
-    "price": "2.800.000 đ",
-    "priceNum": 2000000,
-    "area": "17 m²",
-    "district": "Huyện Hòa Vang, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/cKatyfu0ZTGK-MIlmaaVJrMlLYE8F0g0NLG-8TSSbh8/preset:listing/plain/b2a0578b1c163fa3dcb0191e1f97c12e-2983049024736043083.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "HK1 nội địa nhật, ngoại hình đẹp zin keng, chơi nhạc căng nét nèn nẹt, full box đầy đủ linh kiện. Gdtt Đà Nẵng Hotline: ***",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132212909",
-    "lat": 15.9845495,
-    "lng": 108.19327
-  },
-  {
-    "id": "132240531",
-    "title": "Phấn phủ MAC Studio Fix Weightless Nữ",
-    "price": "600.000 đ",
-    "priceNum": 600000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/nvtL7BDgPDkkyu5bwDc-BlappFy5pCc3KIiLvNSfR5A/preset:listing/plain/af0e93ad197284b767ee974f2a8c7d12-2983220990808298437.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.5,
-    "description": "pass pp bột 99% chỉ test màu light do mình bị tối mua 1m1 pass 6-700 lấy nhanh fix thêm ạ có túi giáy hộp giấy đi kèm",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "22 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132240531",
-    "lat": 10.72999,
-    "lng": 106.74267
-  },
-  {
-    "id": "132238867",
-    "title": "Loa Bluetooth Harman Kardon Studio 3 Đen",
-    "price": "2.300.000 đ",
-    "priceNum": 2000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/N0gH3C6_SCf-h1hDSZtrkP1zyCSPguKDowlk8j4Pmcc/preset:listing/plain/69603c19cd5b5cd83873c9eb8ce594cf-2983213535474150298.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "Loa harman/kardon sutuio 3 còn hát tốt ngoại hình còn đẹp mất chân có thể mua chân mới lắp vào vẫn được.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "24 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132238867",
-    "lat": 10.778316,
-    "lng": 106.63724
-  },
-  {
-    "id": "132259135",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9 Đen",
-    "price": "3.890.000 đ",
-    "priceNum": 3000000,
-    "area": "75 m²",
-    "district": "Quận Đống Đa, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/q5pDzhP8CavkTI-YtnJnt267CJMMIZIJnxN18z6L1Io/preset:listing/plain/8b13d30d0915fccc31bd04cedafd608b-2983354837855949919.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Ko dùng tới , mình mới mua được 6 tháng thanh lý cho bạn nào cần",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "11 phút trước",
-    "sourceUrl": "https://www.chotot.com/132259135",
-    "lat": 21.019453,
-    "lng": 105.83857
+    "postedAt": "3 giờ trước",
+    "sourceUrl": "https://www.chotot.com/132038844",
+    "lat": 10.833995,
+    "lng": 106.72641
   },
   {
     "id": "132256556",
@@ -580,7 +194,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.0,
     "description": "🌐 HARMAN KARDON STUIDO 9 🌐 FULLBOX🌐 NEW 99% 🌐 BẢO HÀNH PGI 10/2026 ❤️ 4 CỦ 2 ❤️ GÓP 0 ĐỒNG ☎️ 0779.08. TỨ QUÝ 9 🕹️ 515 TRẦN CAO VÂN",
     "amenities": [
       "Wifi",
@@ -590,58 +204,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132256556",
     "lat": 16.070599,
     "lng": 108.194756
-  },
-  {
-    "id": "132205706",
-    "title": "Loa Harman Kardon Onyx 7 Studio",
-    "price": "3.300.000 đ",
-    "priceNum": 3000000,
-    "area": "20 m²",
-    "district": "Huyện Ý Yên, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/7dzz2RCQW8IuEwedu-SCKTleR8YJLLjH4dOhGHL30CE/preset:listing/plain/f61240434227a46807effd2538877928-2982965615481399693.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "Loa Bluetooth Harman Kardon Onyx 7 Studio màu đen, thiết kế độc đáo, âm thanh sống động. - Chất liệu vải và nhựa bền bỉ. - Kết nối Bluetooth tiện lợi. - Mang đến trải nghiệm nghe nhạc tuyệt vời.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132205706",
-    "lat": 20.388481,
-    "lng": 105.99643
-  },
-  {
-    "id": "132232607",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio Đen",
-    "price": "2.100.000 đ",
-    "priceNum": 2000000,
-    "area": "73 m²",
-    "district": "Quận Hoàn Kiếm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/vkR0Vjv7hcMAkwfYAnVBK03xpwJFcFGrQx6L9CuyxDY/preset:listing/plain/9b5d5c640061cdba6d4aea332dc48af0-2983190488706705492.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "Harman Kardon Onyx Studio đen, pin trâu, bass lực nhất dòng, bao phê.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132232607",
-    "lat": 21.03759,
-    "lng": 105.84591
   },
   {
     "id": "129746828",
@@ -658,7 +220,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.7,
     "description": "Beats Studio Pro màu nâu Đã sử dụng. Ngoại hình như ảnh chụp Chỉ có tai nghe, ko kèm phụ kiện Giá 2tr5 TPHCM",
     "amenities": [
       "Wifi",
@@ -668,161 +230,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/129746828",
     "lat": 10.793186,
     "lng": 106.65008
-  },
-  {
-    "id": "132247462",
-    "title": "Bảng hiệu EN Hair Studio Đèn chớp nháy",
-    "price": "700.000 đ",
-    "priceNum": 700000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.5,
-    "description": "Bảng hiệu quảng cáo EN Hair Studio, có đèn chớp nháy, đang hoạt động bình thường. - Kích thước: ngang 80cm, cao 126cm, rộng 18cm. - Tự vận chuyển tại Gò Vấp. Giá : 700k",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "17 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132247462",
-    "lat": 10.82634,
-    "lng": 106.692505
-  },
-  {
-    "id": "132215000",
-    "title": "Loa Harman Kardon Aura Studio 3 Đen",
-    "price": "2.900.000 đ",
-    "priceNum": 2000000,
-    "area": "80 m²",
-    "district": "Quận Hoàng Mai, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/JlCWzeyhYBU0s3AVaBMJ_f-oDNNT4NaNZ0tcgIqJrTE/preset:listing/plain/7e2a4ca6014494b6ccafa5068573a3fb-2983045684813811563.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Loa Bluetooth Harman Kardon Aura Studio 3 loa xấu nhưng âm thanh bình thường giá tốt",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132215000",
-    "lat": 20.983137,
-    "lng": 105.83196
-  },
-  {
-    "id": "132221751",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio Đen",
-    "price": "3.000.000 đ",
-    "priceNum": 3000000,
-    "area": "107 m²",
-    "district": "Quận 12, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/wOeJfgLzBGLdVTE7ijD876N1Q7s1fNxbuV7e6IaySrY/preset:listing/plain/310eafe0a8c2b28e1358fde0ebd326cb-2983084960349799618.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Harman Kardon onyx studio Nguyên zin - ngoại hình trên 90% Phụ kiện sạc zin theo loa",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132221751",
-    "lat": 10.843384,
-    "lng": 106.63061
-  },
-  {
-    "id": "132185667",
-    "title": "Máy photocopy Toshiba e-STUDIO 2830",
-    "price": "5.500.000 đ",
-    "priceNum": 5000000,
-    "area": "121 m²",
-    "district": "Quận Nam Từ Liêm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/CJenH5Ng9Os_sCl9GCNWPYBLh-A8F7pHZUESk4vxdyE/preset:listing/plain/976913a77b063b78630351aeb26679b2-2982826194281184093.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Thanh lý máy photocopy do công ty dọn văn phòng Máy vẫn sử dụng tốt, full chức năng, chưa qua sửa chữa",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132185667",
-    "lat": 21.037218,
-    "lng": 105.767006
-  },
-  {
-    "id": "130770734",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio Đen",
-    "price": "2.600.000 đ",
-    "priceNum": 2000000,
-    "area": "77 m²",
-    "district": "Quận Thanh Xuân, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/F1JQ5cFyO1O-b-4_-nhuRnoNIhoLyHrhbJbJ1oMmJ2Q/preset:listing/plain/f9a7c438d4b779604807dfe0a5e70571-2971085393316933548.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Loa Harman Kardon Onyx Studio – Hàng xách tay Nhật, zin nguyên bản Cần bán loa Harman Kardon Onyx Studio xách tay Nhật, hàng nội địa chất lượng cao. Loa còn đẹp, hoạt động ổn định, âm thanh hay đúng chất Harman Kardon. 🔊 Âm thanh: Bass sâu, chắc và c",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/130770734",
-    "lat": 20.988735,
-    "lng": 105.818756
-  },
-  {
-    "id": "132230283",
-    "title": "Loa center JBL Studio 120C & Chario syntar 309 .",
-    "price": "2.200.000 đ",
-    "priceNum": 2000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/AFQUg5ZeOwFCmtLXnuBYC_ypnnqR0me5qt_kGHrjHuc/preset:listing/plain/7842980f3f826a29bdac8b6822b52f41-2983178054391986807.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "Đăng bán giảm giá cho bà con chơi Dùng trợ lời cho dàn karraoke . Làm loa trung tâm cho dàn xem phim nghe nhạc . 1/ Center jbl studio 120C : 2,2 triệu Hàng chính hãng phúc giang Kt : 165 533 265 Nặng 8,4 kg 2/ Center chario syntar 309 : 2,2 triệu Mad",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "21 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132230283",
-    "lat": 10.78958,
-    "lng": 106.67998
   },
   {
     "id": "132236829",
@@ -839,7 +246,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 5.0,
     "description": "Tai nghe Bluetooth chụp tai Beats Studio Pro USB C - Hàng newseal mới 100% nguyên hộp chưa sử dụng - Màu Nâu DEEP BROWN - Dòng tai nghe cao cấp của beats - Giá e pass lại chỉ 5.200.000đ --------------------------- - Bao test 1 tuần, bảo hành 3 tháng ",
     "amenities": [
       "Wifi",
@@ -851,30 +258,30 @@ export const LISTINGS: Listing[] = [
     "lng": 105.82829
   },
   {
-    "id": "132104797",
-    "title": "Loa Infinity Studio Monitor 100",
-    "price": "900.000 đ",
-    "priceNum": 900000000,
-    "area": "107 m²",
-    "district": "Quận 12, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
+    "id": "132185667",
+    "title": "Máy photocopy Toshiba e-STUDIO 2830",
+    "price": "5.500.000 đ",
+    "priceNum": 5000000,
+    "area": "121 m²",
+    "district": "Quận Nam Từ Liêm, TP. Hà Nội",
+    "province": "TP. Hà Nội",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ZlAA21RMauolrfrK3Gg4WcSgnZq1j28cA_1VQ66_JTA/preset:listing/plain/b43fcbe5ec96b43311eb464f3ef7bc18-2982050416852635523.jpg",
+    "image": "https://cdn.chotot.com/CJenH5Ng9Os_sCl9GCNWPYBLh-A8F7pHZUESk4vxdyE/preset:listing/plain/976913a77b063b78630351aeb26679b2-2982826194281184093.jpg",
     "tags": [
       "AI Verified",
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.7,
-    "description": "loa infinity lẽ 1 cái Rin tuyệt đối hát tốt không lưới giá 1tr ko mặc cả ko síp cod",
+    "rating": 4.4,
+    "description": "Thanh lý máy photocopy do công ty dọn văn phòng Máy vẫn sử dụng tốt, full chức năng, chưa qua sửa chữa",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132104797",
-    "lat": 10.843384,
-    "lng": 106.63061
+    "postedAt": "4 ngày trước",
+    "sourceUrl": "https://www.chotot.com/132185667",
+    "lat": 21.037218,
+    "lng": 105.767006
   },
   {
     "id": "132231560",
@@ -891,7 +298,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.8,
     "description": "Mac Studio M1 Max 32gb 512ssd MDM Ngoài hình đẹp Giao dịch trực tiếp BMT Liên hệ để ép giá Fix mạnh cho ae nhiệt tình",
     "amenities": [
       "Wifi",
@@ -901,136 +308,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132231560",
     "lat": 12.647285,
     "lng": 108.03586
-  },
-  {
-    "id": "132196552",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 3",
-    "price": "2.800.000 đ",
-    "priceNum": 2000000,
-    "area": "20 m²",
-    "district": "Huyện Mỹ Lộc, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/qnyWXritPPDmr5QMUv30tcNMVSJ5Vr0NUYw6gaDv3-g/preset:listing/plain/c1a86378a984b1cb7fec70c2f3e95444-2982921742206712669.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "Loa Bluetooth Harman Kardon Onyx Studio 3 màu đen, thiết kế độc đáo, âm thanh sống động. - Công suất lớn, bass mạnh mẽ. - Kết nối Bluetooth tiện lợi. - Pin dùng lâu, dễ dàng mang đi.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132196552",
-    "lat": 20.464218,
-    "lng": 106.11399
-  },
-  {
-    "id": "132199664",
-    "title": "Đã bán Loa TANNOY Studio Monitor England",
-    "price": "3.900.000 đ",
-    "priceNum": 3000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/THtCVcxslvpdnKdDlap91LqAWybeqcFzh2ru8gXyj9c/preset:listing/plain/601f5e9e4ee8dbf9dd08ef23ae8ed35f-2982933798772308356.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "-Hàng bãi tuyển chọn -Tất cả các chức năng hoạt động tốt Loa TANNOY Studio Monitor England series liền kề Bass 16cm Treble Dom Độ nhạy cao Thùng gỗ hình thức đẹp dễ trưng bày cao 36, ngang 22cm, sâu 23cm loa nặng. âm thanh tiếng bass dầy sâu thẳm tre",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132199664",
-    "lat": 10.805869,
-    "lng": 106.64387
-  },
-  {
-    "id": "132241583",
-    "title": "Đèn flash studio Godox F300, cây đèn, chụp đèn",
-    "price": "2.000.000 đ",
-    "priceNum": 2000000,
-    "area": "75 m²",
-    "district": "Quận Đống Đa, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/28p_iMfDO4TAEF4z62NpzqrriOTcWsa9K36U7KqzkUI/preset:listing/plain/e5ce7434cbabd8e6770c749144be4624-2983224774080337090.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "Phụ kiện ngành ảnh Godox F300 màu đen, trắng. - Hàng chính hãng Godox, chất lượng tốt. - Phù hợp cho nhiều nhu cầu chụp ảnh. - Thanh lý giá tốt.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "22 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132241583",
-    "lat": 21.015121,
-    "lng": 105.832535
-  },
-  {
-    "id": "132210823",
-    "title": "Microsoft Surface Laptop Studio 1 i5 16GB/256GB",
-    "price": "16.000.000 đ",
-    "priceNum": 16000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/h8Es5T_znhxkQ-9QKiUG1vnMXVcqucESeMi-sRI-N6c/preset:listing/plain/6ec960cba2aa8902fdb1b287688222b8-2983042338099968861.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Surface Laptop Studio 1 fullbox - Cấu hình : i5th11 /Ram 16gb/ Ssd 256 - Màn hình : 14.4inch / 120hz Touch - Ngoại hình likenew fullbox , k cấn móp, nguyên zin - Dung lượng pin 100%, o lần sạc - Bảo hành 3 tháng ( bao test 1 tuần ) - shipcod toàn quố",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132210823",
-    "lat": 10.833995,
-    "lng": 106.72641
-  },
-  {
-    "id": "132218375",
-    "title": "Đèn studio ET-300-S Đen ( 2 bộ )",
-    "price": "3.000.000 đ",
-    "priceNum": 3000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/k9FzadppQH-hy7weiU0phqWkW12fn7eAHhyRJYI8sio/preset:listing/plain/3825c23adef47053f54b836e584d8042-2983072350519704413.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Đèn studio ET-300-S màu đen, thiết kế nhỏ gọn, dễ dàng di chuyển. - Công suất 300W, ánh sáng mạnh. - Phù hợp chụp ảnh, quay phim.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132218375",
-    "lat": 21.039566,
-    "lng": 105.77407
   },
   {
     "id": "131754999",
@@ -1059,56 +336,56 @@ export const LISTINGS: Listing[] = [
     "lng": 108.194756
   },
   {
-    "id": "132180734",
-    "title": "HP Zbook Studio G3 i7 16GB/256GB",
-    "price": "6.800.000 đ",
-    "priceNum": 6000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/aGJMVIFB5_wU_2F9JreLMA8T3E-MVERis5QM415pg0I/preset:listing/plain/29deb894bc21f964484d64d723d64914-2982795158363257693.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "HP Zbook tudio G3 i7 6820HQ RAM 16gb ssd 256gb vga nvidia 1000M đẹp mạnh mẽ cần bán",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132180734",
-    "lat": 10.815832,
-    "lng": 106.59711
-  },
-  {
-    "id": "132234498",
-    "title": "HP ZBook Studio G5 I7 15.6 inch 16GB/256GB",
-    "price": "7.500.000 đ",
-    "priceNum": 7000000,
-    "area": "75 m²",
-    "district": "Quận Đống Đa, TP. Hà Nội",
+    "id": "132218375",
+    "title": "Đèn studio ET-300-S Đen ( 2 bộ )",
+    "price": "3.000.000 đ",
+    "priceNum": 3000000,
+    "area": "79 m²",
+    "district": "Quận Cầu Giấy, TP. Hà Nội",
     "province": "TP. Hà Nội",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/7ZU9kQz8q9_AlTtRkjAT-xb3W6ei2l-LVHf5pPpNkxE/preset:listing/plain/9a14c267d389af5e2abe141a77d1748c-2983196844244064671.jpg",
+    "image": "https://cdn.chotot.com/k9FzadppQH-hy7weiU0phqWkW12fn7eAHhyRJYI8sio/preset:listing/plain/3825c23adef47053f54b836e584d8042-2983072350519704413.jpg",
     "tags": [
       "AI Verified",
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.7,
-    "description": "HP ZBook studio G5 I7 8750H ram 16gb ssd 256gb vga Quadri p2000 (4gb) Màn 15,6FHd Làm việc đồ hoạ chơi game chỉnh sửa ảnh dựng video quá ok",
+    "rating": 4.4,
+    "description": "Đèn studio ET-300-S màu đen, thiết kế nhỏ gọn, dễ dàng di chuyển. - Công suất 300W, ánh sáng mạnh. - Phù hợp chụp ảnh, quay phim.",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
     "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132234498",
-    "lat": 21.004723,
-    "lng": 105.82206
+    "sourceUrl": "https://www.chotot.com/132218375",
+    "lat": 21.039566,
+    "lng": 105.77407
+  },
+  {
+    "id": "132241583",
+    "title": "Đèn flash studio Godox F300, cây đèn, chụp đèn",
+    "price": "2.000.000 đ",
+    "priceNum": 2000000,
+    "area": "75 m²",
+    "district": "Quận Đống Đa, TP. Hà Nội",
+    "province": "TP. Hà Nội",
+    "type": "Căn hộ",
+    "image": "https://cdn.chotot.com/28p_iMfDO4TAEF4z62NpzqrriOTcWsa9K36U7KqzkUI/preset:listing/plain/e5ce7434cbabd8e6770c749144be4624-2983224774080337090.jpg",
+    "tags": [
+      "AI Verified",
+      "Cho thuê"
+    ],
+    "verified": true,
+    "rating": 4.8,
+    "description": "Phụ kiện ngành ảnh Godox F300 màu đen, trắng. - Hàng chính hãng Godox, chất lượng tốt. - Phù hợp cho nhiều nhu cầu chụp ảnh. - Thanh lý giá tốt.",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "22 giờ trước",
+    "sourceUrl": "https://www.chotot.com/132241583",
+    "lat": 21.015121,
+    "lng": 105.832535
   },
   {
     "id": "132253327",
@@ -1125,7 +402,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.8,
     "description": "🇯🇵 HP ZBOOK STUDIO X360 G5 🇯🇵 là dòng máy Workstation 2-in-1 Laptop đến từ Nhật Bản, đã qua sử dụng nhưng vẫn đảm bảo chất lượng và hiệu năng hoạt động ổn định. Máy được bảo hành 3 tháng. 👉 Sử dụng bộ vi xử lý Core i7-8750H Processor (12 CPUs) mạnh m",
     "amenities": [
       "Wifi",
@@ -1137,30 +414,56 @@ export const LISTINGS: Listing[] = [
     "lng": 105.7718
   },
   {
-    "id": "132145354",
-    "title": "Tai nghe Beats Studio Buds Đen",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "13 m²",
-    "district": "Thành phố Biên Hòa, Việt Nam",
-    "province": "Việt Nam",
+    "id": "132234498",
+    "title": "HP ZBook Studio G5 I7 15.6 inch 16GB/256GB",
+    "price": "7.500.000 đ",
+    "priceNum": 7000000,
+    "area": "75 m²",
+    "district": "Quận Đống Đa, TP. Hà Nội",
+    "province": "TP. Hà Nội",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/TTwL0-vBMtDURF9rgzkYuAPc0fCbWKjDeSu1DVZuZHI/preset:listing/plain/2766da896bc8f4c6e2b8e3e9576fc520-2982497503343141716.jpg",
+    "image": "https://cdn.chotot.com/7ZU9kQz8q9_AlTtRkjAT-xb3W6ei2l-LVHf5pPpNkxE/preset:listing/plain/9a14c267d389af5e2abe141a77d1748c-2983196844244064671.jpg",
     "tags": [
       "AI Verified",
-      "Việt Nam"
+      "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
-    "description": "Beats studio buds. Full chức năng. Pin trâu đã test. Hàng apple. Chống ồn xuyên âm đầy đủ. Bán hoặc giao lưu loa ngang tầm",
+    "rating": 4.3,
+    "description": "HP ZBook studio G5 I7 8750H ram 16gb ssd 256gb vga Quadri p2000 (4gb) Màn 15,6FHd Làm việc đồ hoạ chơi game chỉnh sửa ảnh dựng video quá ok",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132145354",
-    "lat": 10.92402,
-    "lng": 106.86654
+    "postedAt": "hôm qua",
+    "sourceUrl": "https://www.chotot.com/132234498",
+    "lat": 21.004723,
+    "lng": 105.82206
+  },
+  {
+    "id": "132180734",
+    "title": "HP Zbook Studio G3 i7 16GB/256GB",
+    "price": "6.800.000 đ",
+    "priceNum": 6000000,
+    "area": "108 m²",
+    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
+    "type": "Căn hộ",
+    "image": "https://cdn.chotot.com/aGJMVIFB5_wU_2F9JreLMA8T3E-MVERis5QM415pg0I/preset:listing/plain/29deb894bc21f964484d64d723d64914-2982795158363257693.jpg",
+    "tags": [
+      "AI Verified",
+      "Cho thuê"
+    ],
+    "verified": true,
+    "rating": 4.7,
+    "description": "HP Zbook tudio G3 i7 6820HQ RAM 16gb ssd 256gb vga nvidia 1000M đẹp mạnh mẽ cần bán",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "4 ngày trước",
+    "sourceUrl": "https://www.chotot.com/132180734",
+    "lat": 10.815832,
+    "lng": 106.59711
   },
   {
     "id": "131376279",
@@ -1177,7 +480,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.6,
     "description": "💥💥 Máy trạm HP ZBOOK STUDIO 15.6 G8 Đồ Hoạ - Dựng Phim chuyên nghiệp 👉 Core i7 thế hệ 11, DDR4 32GB, Quadro T1200 4GB cực Mạnh 💲 17.990.000 ( full phụ kiện ) 🆗 Máy 98-99% zin 100% 🆗 Ưu đãi khi mua máy: ◬️ Tặng túi chống sốc ◬️ Kèm adapter zin 150W ◬️",
     "amenities": [
       "Wifi",
@@ -1187,32 +490,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131376279",
     "lat": 10.94672,
     "lng": 106.85873
-  },
-  {
-    "id": "132149871",
-    "title": "Loa Harman Kardon Onyx Studio Đen",
-    "price": "3.000.000 đ",
-    "priceNum": 3000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Jcy4ORhYUBIr8H38iz_gt4fn9noilv-m6qd9ngzIAxk/preset:listing/plain/93b3812a73bbc5e7889bbf5cd69bb752-2982527222216956232.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Loa 📣 haman kadon nghe bao phê Các bác nghe phòng 40-50m2 là Ok. Mang đi du lịch nghe trong xe hơi cực đã Công nghệ Mỹ sx riêng cho thị trường Nhật Ib e Quyên Q7 tphcm E Ship toàn quốc có cọc",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132149871",
-    "lat": 10.708131,
-    "lng": 106.738205
   },
   {
     "id": "132238214",
@@ -1229,7 +506,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.3,
     "description": "HP ZBook Studio G4 Mobile WorkStation Màn 15.6in FullHD IPS Cảm ứng VGA NVIDIA Quadro M1200 4GB Core i7-7700HQ Ram 16gb Ssd 256gb Led phím. Touch ID. Vỏ hợp kim. Ngoại hình đẹp long lanh Máy trạm cao cấp co anh em đồ hoạ Máy + sạc + chuột Giá 7tr3 fr",
     "amenities": [
       "Wifi",
@@ -1255,7 +532,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.8,
     "description": "Đèn studio Hàng thanh lý full box Giá 2tr có 2 máy, có nhận ship toàn quốc Đc 788/8 nguyễn kiệm p3 gò vấp",
     "amenities": [
       "Wifi",
@@ -1265,84 +542,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132164044",
     "lat": 10.808407,
     "lng": 106.67364
-  },
-  {
-    "id": "131113030",
-    "title": "Surface Laptop Studio – i7 / 16 256GB đẹp 90%",
-    "price": "17.500.000 đ",
-    "priceNum": 17000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/6AlTAFFVqQK-_KrW5IK_Pv67Um5p6fcPYGMZZW6vX1k/preset:listing/plain/f336512d8f7ea0bd462c0cdbd7d97379-2974837604402081351.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "HCM e sẵn : 💻 Microsoft Surface Laptop Studio – i7 / RAM 16GB / RTX 3050 Ti ⚡ RTX 3050 Ti 6GB • Màn 2.5K 120Hz cảm ứng • Thiết kế gập độc đáo 💰: 17.500.000 • Ngoại hình: ~90% • CPU: Intel Core i7-11370H (Gen 11) • GPU: NVIDIA GeForce RTX 3050 Ti Lapt",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/131113030",
-    "lat": 10.804097,
-    "lng": 106.715385
-  },
-  {
-    "id": "132179268",
-    "title": "Thiết bị studio 7 phông, 1 thùng decor",
-    "price": "2.500.000 đ",
-    "priceNum": 2000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/0Pq94eGgtrU7c381aAK7eQjCgifo_cB7bIbvrlHH2bI/preset:listing/plain/677976783432370eda04c69a8922a125-2982790008878175838.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Thanh lý studio tất thẩy - 7 bộ phông - 1 thùng decor - 1 hắc sáng cong - 1 cây đỡ phông All 2tr5",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132179268",
-    "lat": 10.822539,
-    "lng": 106.63797
-  },
-  {
-    "id": "130806148",
-    "title": "Loa Soundbar Vip Ngàn Đô Definitive Studio Advance",
-    "price": "5.600.000 đ",
-    "priceNum": 5000000,
-    "area": "101 m²",
-    "district": "Quận 6, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/KmqHLprSW42w-nre5QLQ_9DziNGwGPFCR2TmrJF0_7Q/preset:listing/plain/46f3f1f80214f5a65bf0ccefb8f8adfa-2972214663896930005.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Ông Trùm Soundbar 2018 của Definitive thương hiệu Âm Thanh Cao Cấp của Mỹ giá niêm yết 10.000đô vào thời điểm ra mắt. hàng cũ hiện tại eBay cũng có giá hơn 1000 đô. Loa thanh dài 1m với 9 củ loa trọng lượng cực nặngng tầm 5-6kg tổng công suất 170W vớ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/130806148",
-    "lat": 10.75036,
-    "lng": 106.6505
   },
   {
     "id": "132225582",
@@ -1359,7 +558,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.4,
     "description": "MS#2243 LapLan HP zbook studio g3 mobile workstation vỏ nhôm xám Giá 💥+I7 6700HQ 💥+Ram 8GB 2 khe 💥+SSD nvme 256 GB, còn trống 1 khe m2 💥+Màn 15'6 fhd ips Đẹp. 💥+Pin 3-4h sử dụng 100%, 2cổng C thuderbolt xuất hình ++Loa B&O to hay. 💥Multi Card 530+Qua",
     "amenities": [
       "Wifi",
@@ -1369,32 +568,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132225582",
     "lat": 10.8834305,
     "lng": 106.670395
-  },
-  {
-    "id": "132159593",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9 Đen",
-    "price": "4.600.000 đ",
-    "priceNum": 4000000,
-    "area": "107 m²",
-    "district": "Quận 12, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/L4oIGIpKSzoVbY3rUQppl_UkhQbL6VNWU6IrwYm2cTA/preset:listing/plain/5f4a56390d0c91d3f58c1219320f7c08-2982637911084125801.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Loa Onyx Studio 9 lướt đẹp k vết sước fullbox bảo hành 12 tháng tròn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132159593",
-    "lat": 10.843384,
-    "lng": 106.63061
   },
   {
     "id": "132178165",
@@ -1411,7 +584,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.0,
     "description": "🔧 Cấu hình chi tiết: ✅ CPU: Intel Core i7-10850H ✅ RAM: 16GB ✅ Ổ cứng: 512GB SSD ✅ VGA: NVIDIA Quadro T2000 4GB ✅ Màn hình: 15.6 inch FHD 60Hz 🛠 Chính sách bảo hành: 🔄 Bao test, đổi trả trong 15 ngày nếu phát hiện lỗi phần cứng 🛡 Bảo hành phần cứng 1",
     "amenities": [
       "Wifi",
@@ -1421,32 +594,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132178165",
     "lat": 10.799053,
     "lng": 106.69531
-  },
-  {
-    "id": "129469208",
-    "title": "Tai dây Huyền Thoại Beats Studio 1 chống ồn",
-    "price": "550.000 đ",
-    "priceNum": 550000000,
-    "area": "101 m²",
-    "district": "Quận 6, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/D_IouUC04o2L_17ttqa8PrYRmYUYqLtpz6ik4czhhPk/preset:listing/plain/f72b6c86c713b9a0eca8f06f20e4e8dc-2960877998288207229.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "Tai nghe dây Huyền Thoại một thời Beats Studio 1 dòng tai nghe dây 3.5mm nhưng có xài 2 pin AAA cho phần công suất và chống ồn của tai. phải bắt buộc có pin và mở nguồn thì mới nghe được nha anh em. Là tai có công suất riêng nên chất âm em này miễn b",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/129469208",
-    "lat": 10.75036,
-    "lng": 106.6505
   },
   {
     "id": "132074879",
@@ -1463,7 +610,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.1,
     "description": "👉 MỜI ANH CHỊ THAM KHẢO LAPTOP 👌 💻 Laptop Hp zbook studio G3 máy trạm của nhật mỏng đẹp 97,98%, thiết kế bền bỉ cho hiệu năng cao 👉 Cấu hình mạnh đáp ứng nhu cầu đồ họa 2d, 3d, autucad, render, revit, ketchup, soliword ... ✅️ Màn hình 15.6\" full hd s",
     "amenities": [
       "Wifi",
@@ -1489,7 +636,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 5.0,
     "description": "🚀💻 BÁN LAPTOP HP ZBOOK STUDIO G5 – HIỆU NĂNG ĐỈNH CAO, ĐỒ HỌA CHUYÊN NGHIỆP 💻🚀 🔥 CẤU HÌNH MẠNH MẼ: 💥 CPU: Intel Core i7-8750H – Chạy mượt mọi tác vụ nặng, render nhanh, thiết kế chuyên nghiệp ⚡ RAM: 8G DDR4 – Đa nhiệm “cân” hết mọi phần mềm đồ họa, d",
     "amenities": [
       "Wifi",
@@ -1514,7 +661,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.7,
+    "rating": 4.4,
     "description": "Sẵn hàng Mac Studio M4 Max 36/1TB 32Gpu Newseal🙈 🔸Nguyên Seal chưa mở - Máy sạch 100% 🏷️ Chỉ 68tr700 ( Cáp sạc - Balo + Túi đựng ) 📌245 Bà Hạt, Phường Vườn Lài, Quận 10 ☎️ *** ( ZL ) 🔸Bao test 10 ngày và BH 3 tháng phần cứng 🔸FreeShip / Góp / Quẹt 💳 ",
     "amenities": [
       "Wifi",
@@ -1524,6 +671,32 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132177507",
     "lat": 10.76292,
     "lng": 106.66966
+  },
+  {
+    "id": "132197995",
+    "title": "Tai nghe Beats Studio Pro FUL BOX CHÍNH HÃNG APPLE",
+    "price": "3.500.000 đ",
+    "priceNum": 3000000,
+    "area": "13 m²",
+    "district": "Thành phố Biên Hòa, Việt Nam",
+    "province": "Việt Nam",
+    "type": "Căn hộ",
+    "image": "https://cdn.chotot.com/wV9vh-8H55eBD_UdAA7eY5UYdS6GQiv9CST_d8CBw8c/preset:listing/plain/078e7dcb14b8b5f4849a0b80ec831f9d-2982927820050672013.jpg",
+    "tags": [
+      "AI Verified",
+      "Việt Nam"
+    ],
+    "verified": true,
+    "rating": 5.0,
+    "description": "Tai Nghe Beats Studio Pro ( Full Box ) MÁY CHÍNH HÃNG APPLE 99% Âm Thanh cân Bằng, Bass Tốt cực đã, Sử dụng Trong Môi trường ồn tốt Micro lọc tiếng ồn thông minh ( voice-targeting ) Thời Lượng Pin 40 Giờ Kết Nối Được Nhiều nền tảng ( Android + ios ) ",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "3 ngày trước",
+    "sourceUrl": "https://www.chotot.com/132197995",
+    "lat": 10.94672,
+    "lng": 106.85873
   },
   {
     "id": "132116542",
@@ -1540,7 +713,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.7,
+    "rating": 4.8,
     "description": "Mô hình Son Goku từ series Dragon Ball, thương hiệu DAYU STUDIO. - Chất liệu nhựa bền đẹp. - Thiết kế chi tiết, sống động. - Phù hợp cho người sưu tầm. Hãng sản xuất: DAYU Studio Series: Dragon Ball Super Chất liệu: Resin, PU Kích thước: H45 x W31 x ",
     "amenities": [
       "Wifi",
@@ -1550,31 +723,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132116542",
     "lat": 10.973842,
     "lng": 106.87997
-  },
-  {
-    "id": "131965185",
-    "title": "Loa Soundbar Mỹ Definitive studio 3D mới 900đô",
-    "price": "5.500.000 đ",
-    "priceNum": 5000000,
-    "area": "101 m²",
-    "district": "Quận 6, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/2n76ezZ1zE15UE3qPgT70WIRipNpUEUSYa_YzRDaxuM/preset:listing/plain/9c9158d23ca4b17408a90eb5ca7ec53f-2980926661365433109.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "Hàng xách tay về áo lưới che loa có rách nhẹ (anh em thích cứ tháo ra đi bọc lại nó là cái màn tháo ra gắn vào bình thường) Definitive studio 3D Mini thương hiệu âm thanh cao cấp của Mỹ giá em này lúc ra mắt 2022 gần 900usd tại Mỹ. Loa thanh nhỏ gọn ",
-    "amenities": [
-      "Wifi"
-    ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/131965185",
-    "lat": 10.75036,
-    "lng": 106.6505
   },
   {
     "id": "121726740",
@@ -1591,7 +739,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.9,
     "description": "Power phòng thu Mỹ studio ALESIS RA-500 hết số đời cao. Ngoại hình còn đẹp, nội thất cao cấp sạch đẹp hoành tráng và zin nguyên bản tuyệt đối, hiện trạng Power đang hoạt động tốt, chất âm trung tính rất hay vì là power chuyên dụng cho phòng thu. Thôn",
     "amenities": [
       "Nội thất đầy đủ"
@@ -1616,7 +764,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.0,
     "description": "JBL Aura5 hàng fullbox Likenew khách mới mua dc 2 tháng còn BH dài Pass: 6.790 fullbox Ae nhanh gọn tặng kèm đế Loa xịn 1 củ HCM Q8",
     "amenities": [
       "Wifi",
@@ -1654,83 +802,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.677795
   },
   {
-    "id": "132161570",
-    "title": "Loa Harman Kardon Onyx Studio 1 pin dung lượng cao",
-    "price": "2.490.000 đ",
-    "priceNum": 2000000,
-    "area": "121 m²",
-    "district": "Quận Nam Từ Liêm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/OhaXx9K2WtYaSuA_K3Y1fqljCq9_ALRLaNfuPbywZtM/preset:listing/plain/93d64b627122e2bab6d4ece7f81b3706-2982648472730281254.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "loa hk onyx1 nghe chất, nguyên zin, sạc zin mới thay pin dung lượng cao gần 500k ae dùng trên dưới 6 tiếng thoải mái các bac đỡ mất công thay pin quá hời giá bán để nâng đời ,mua alo e bán sẽ xoa",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132161570",
-    "lat": 20.989801,
-    "lng": 105.76153
-  },
-  {
-    "id": "132114953",
-    "title": "Màn hình Apple Studio Display XDR Bạc",
-    "price": "82.000.000 đ",
-    "priceNum": 82000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/R16eI39hqA5hxrse-YeV2wQjEFFgaEqUQxi0T7tVyBo/preset:listing/plain/7dedc23ac1ada23a814926780d0adf65-2982126142000871040.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.5,
-    "description": "Studio Display XDR mới nhất 2026 Màn mình mới mua chính hãng apple store vn đầu tháng 4 đã trải nghiệm xong giờ muốn pass lại hình thức y nguyên hàng mới tiết kiệm siêu nhiều cho các tín đồ apple. Ae quan tâm mẫu mới này cứ vào trả giá mình Các shop ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132114953",
-    "lat": 21.043877,
-    "lng": 105.80261
-  },
-  {
-    "id": "131300350",
-    "title": "Màn hình Apple Studio Display 27 inch có hóa đơn",
-    "price": "36.990.000 đ",
-    "priceNum": 36000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/OHAEH3_zfINfbUuo_Wc--owEeTBPQ5opguHHqrLjee4/preset:listing/plain/bc8ae204f71a7bb67f8b1d8c1f5fcd59-2976142768177443006.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "_Mình bán Màn hình Apple Studio Display 27 inch 5K (5120 x 2880) hiển thị cực đẹp , đúng mới 100% chưa active open box , chỉ khui hộp kiểm máy , hàng chính hãng việt nam có hóa đơn Vender - Giá rất tốt : 36.990.000 ( mới 100% , nguyên hộp full box , ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/131300350",
-    "lat": 10.800574,
-    "lng": 106.651
-  },
-  {
     "id": "131937029",
     "title": "Harman Kardon Aura Studio 4 Trắng 99",
     "price": "5.200.000 đ",
@@ -1757,186 +828,6 @@ export const LISTINGS: Listing[] = [
     "lng": 108.194756
   },
   {
-    "id": "125916343",
-    "title": "Bàn ĂN 2 Ghế cho căn hộ, studio giá rẻ, new 100%",
-    "price": "990.000 đ",
-    "priceNum": 990000000,
-    "area": "17 m²",
-    "district": "Quận Cẩm Lệ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/t-cm1SdJ7nbBoGFW0NzcVQxo5e3Dztz2CFuVLajrSTc/preset:listing/plain/66d27626e9b324c31ad30bc7b7a1a9a2-2963265398746852924.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "BÀN ĂN NHÀ Ở – CĂN HỘ MINI – STUDIO Thiết kế nhỏ gọn, tối ưu không gian, rất phù hợp chung cư nhỏ, phòng trọ cao cấp, studio. 🍽 Giá bán: Bàn ăn 2 ghế: 990.000đ Bàn ăn 4 ghế: 1.540.000đ 🎨 Màu sắc: Gỗ vàng / Cafe 📐 Kiểu bàn: Tròn hoặc Vuông – D60cm ✔ G",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/125916343",
-    "lat": 16.046818,
-    "lng": 108.17764
-  },
-  {
-    "id": "132005787",
-    "title": "Đèn studio SL250II + sofbox para như mới",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "32 m²",
-    "district": "Thành phố Tân An, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/YgNAuJ69BHQlrhTIcExoL8dmwDVhb_l_zfremdejGHQ/preset:listing/plain/f5ae2904b946549d1cf7885fe4314e2d-2981218073295303185.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Thanh lý combo đèn sl250ii + sofbox para rất ít sử dụng đẹp như new giá free ship 1tr2 (giá mua new 1tr9)",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132005787",
-    "lat": 10.54101,
-    "lng": 106.408195
-  },
-  {
-    "id": "120934122",
-    "title": "MÁY TRẠM CAO CẤP DESIGN STUDIO YOUTUBE - DELL 7540",
-    "price": "13.500.000 đ",
-    "priceNum": 13000000,
-    "area": "105 m²",
-    "district": "Quận 10, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/BSIFnkdjzrC-qftC7A78ElpBLUH4Wi2e59dHVhFsHZ8/preset:listing/plain/f695b9a74a02b7c35d63bc3b00b91713-2904918473344912456.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "💘Máy trạm DELL PRECISION 7540 xách tay Mỹ, LIKE NEW, ĐỒ HỌA CHUYÊN NGHIỆP, 💰13.500.000VND 💥DELL 7540 máy trạm di động vượt trội, tập trung sức mạnh, tối đa hóa công năng, mạnh mẽ, mát mẻ và im lặng, mang lại hiệu suất tuyệt vời trong suốt quá trình l",
-    "amenities": [
-      "Bảo vệ 24/7"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/120934122",
-    "lat": 10.781502,
-    "lng": 106.66598
-  },
-  {
-    "id": "132082215",
-    "title": "Áo khoác denim nam Maverik Studio S",
-    "price": "699.000 đ",
-    "priceNum": 699000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/LIvG3zYGG8On7skf_Q3l7TCjLROQswVyrsBnwd6m3Uk/preset:listing/plain/227f10874489813e00d1fe117fe8d25b-2981887248182747278.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.7,
-    "description": "Marverik Studio 699k Còn mới size S ( Size S tương đương size M các brand khác)",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132082215",
-    "lat": 10.781944,
-    "lng": 106.768234
-  },
-  {
-    "id": "132055493",
-    "title": "Đèn Flash Studio Hylow HE-600TC",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "107 m²",
-    "district": "Quận 12, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/aclNm3EeupRSwROL3dSGHW2NiDh36U9QwfQVhlqJWcg/preset:listing/plain/2846f7332c604dad21f37b84e8844eea-2981632939429369346.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Mình dư đèn này nên bán lại, tình trạng hoạt động tốt.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132055493",
-    "lat": 10.840958,
-    "lng": 106.62373
-  },
-  {
-    "id": "132078128",
-    "title": "Loa Bluetooth Harman Kardon Aura Studio 5",
-    "price": "7.800.000 đ",
-    "priceNum": 7000000,
-    "area": "103 m²",
-    "district": "Quận 8, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/2wZVt64a0HYnHbqA4YFGBzpcXzhecL17peGP1KETrZo/preset:listing/plain/0a37c0ed280bf4d4d8e7e660157ff1fe-2981816903941263235.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Loa Harman Kardon Aura Studio 5 (Nguyên Trạng 100%) Cổng kết nối tốt full box đủ dây cho mng thay đổi tuỳ ổ ghim. Tui ship nên là free nba",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132078128",
-    "lat": 10.704697,
-    "lng": 106.62104
-  },
-  {
-    "id": "132067672",
-    "title": "Mô hình TD Studio Ace One Piece",
-    "price": "900.000 đ",
-    "priceNum": 900000000,
-    "area": "42 m²",
-    "district": "Thành phố Phan Thiết, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/9qt0rZ3zy_gXN89AehCmK-uqUQXeWiOYsIl3rbanm6s/preset:listing/plain/32b4963a07e696700e077feb053cb12d-2981756451258742852.jpg",
-    "tags": [
-      "Việt Nam",
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.6,
-    "description": "Mô hình resin One Piece - Ace TD studio chính hãng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132067672",
-    "lat": 10.955306,
-    "lng": 108.224754
-  },
-  {
     "id": "132060814",
     "title": "Tai nghe Beats Studio Pro Đen Mới",
     "price": "5.000.000 đ",
@@ -1951,7 +842,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.8,
     "description": "Tai nghe Beats Studio Pro màu đen, âm thanh sống động, thiết kế sang trọng. - Tai nghe mới, nguyên seal, xách tay từ Mỹ về, mình mua giá bên Mỹ là 450$. Bạn nào có nhu cầu thì liên hệ với mình nhé. Cám ơn vì đã xem tin a",
     "amenities": [
       "Wifi",
@@ -1961,84 +852,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132060814",
     "lat": 10.794441,
     "lng": 106.65456
-  },
-  {
-    "id": "132058684",
-    "title": "Loa Harman Kardon Onyx Studio 7 Đen",
-    "price": "3.500.000 đ",
-    "priceNum": 3000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/g8AX5GvdGIX66AafwaiH7LGrQS2DzDldchj8bfYm9rc/preset:listing/plain/1387696936cbc54c8395c95d69604c31-2981655054311759889.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "Cần bán LOA HARMAN KARDON ONYX STUDIO 7 màu đen Tình trạng mới 100% nguyên seal Hàng chính hãng bảo hành 12 tháng 1 đổi 1 tại FPT shop có hoá đơn mua hàng đầy đủ Giá bán 3tr5 bán tại nhà cho ae test thoãi mái",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132058684",
-    "lat": 10.7986355,
-    "lng": 106.82374
-  },
-  {
-    "id": "131276203",
-    "title": "EMWIN CAFE - STUDIO TUYỂN DỤNG",
-    "price": "Đến 12 triệu/tháng",
-    "priceNum": 12000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/0zIlFEVJ_RgA1NvtJQiywMdh8RyZbcG64Vs2sAhtS84/preset:listing/plain/9b271eea13c1c65932dbf1e93f75c961-2975981630584179548.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "🎯 Vị trí: - Partime: 02 Nhân viên Pha chế - Phục vụ - Fulltime: 02 Nhân viên Pha chế - Phục vụ & 03 Nhân viên hỗ trợ Studio 🕒 Thời gian & Mức lương - Full-time: Ca 10-11 tiếng (tuần được nghỉ 1 ngày, tháng nghỉ phép 1 ngày ) - Thu nhập: 7.500.000 – 1",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131276203",
-    "lat": 10.751848,
-    "lng": 106.71244
-  },
-  {
-    "id": "131595554",
-    "title": "Surface Laptop Studio i7 16 512gb 3050ti mượt mà",
-    "price": "19.500.000 đ",
-    "priceNum": 19000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/En6u-lE4KTkK8PpsEKSIs_cfPrpL4tmVGTdXkOo1Z48/preset:listing/plain/3f1e102e0a5f0bc1bc414adfe6c90190-2978272198807607944.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Surface Laptop Studio còn đẹp, full chức năng không lỗi lầm Cấu hình: I7-16-512gb Vga rời Nvidia 3050ti Pin dùng tầm 7 tiếng, ngoại hình đẹp Bảo Hành 3 tháng Tặng chuột và túi chống sốc 👉 Thiết kế sang trọng, hiệu năng mạnh, cực gọn nhẹ cho học tập –",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131595554",
-    "lat": 10.842226,
-    "lng": 106.665596
   },
   {
     "id": "132091472",
@@ -2055,7 +868,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.3,
     "description": "Surface Studio 1 Cấu hình: I5 11300H 16G Ram 500G ssd GPU Xe Graphic 8G Màn 14,4 inch 2400 x 1600 Ngoại hình cũ. Xước vỏ ngoài. Tặng túi xách",
     "amenities": [
       "Wifi",
@@ -2081,7 +894,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.5,
     "description": "#_HP_Zbook_Studio_G10 🌈 🍀 💥 hp_zbook_studio_ G10 - RTX A1000 6Gb 💥Máy Us, nguyên zin , máy mới 99%. 💥 Dòng laptop máy trạm Workstation chuyên cho đồ hoạ , thiết kế , xây dựng , công trình cad , photoshop, revit , sketchup , Render , 2D , 3D ... chạy ",
     "amenities": [
       "Wifi",
@@ -2091,32 +904,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131262278",
     "lat": 10.763908,
     "lng": 106.614395
-  },
-  {
-    "id": "132039191",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 1",
-    "price": "3.500.000 đ",
-    "priceNum": 3000000,
-    "area": "77 m²",
-    "district": "Quận Thanh Xuân, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ztb0gRzW-5EkBE3coOw687R9QXIItkH6JbORGdHDj_s/preset:listing/plain/0fe7238e93d940b6b4b9a66b9d2ab083-2981486037713704575.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "🔥 Loa Harman Kardon Onyx Studio Chính Hãng Nhật – Full Hộp, Âm Thanh Cực Hay 🔥 Bán loa Harman Kardon Onyx Studio chính hãng – hàng nội địa Nhật, full hộp đầy đủ phụ kiện, chất âm cực hay, bass mạnh, thuộc dòng loa Bluetooth Harman Kardon cao cấp đáng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132039191",
-    "lat": 20.988735,
-    "lng": 105.818756
   },
   {
     "id": "132112963",
@@ -2133,7 +920,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.2,
     "description": "Cơ hội *** trong năm để sở hữu không gian sống \"triệu đô\" với chi phí cực rẻ! Bên em đang có chương trình ƯU ĐÃI 20% cho dòng tủ Tivi MDF cao cấp – Đẹp không tì vết, sang trọng đến từng chi tiết. Visual đỉnh cao: Thiết kế hệ tủ đứng kết hợp kệ treo t",
     "amenities": [
       "Wifi",
@@ -2143,32 +930,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132112963",
     "lat": 10.790694,
     "lng": 106.64952
-  },
-  {
-    "id": "132008581",
-    "title": "MIDI Studio Controller Korg microKONTROL Bạc",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "96 m²",
-    "district": "Quận 1, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/O76YBnaLLuYwPH4KpAsWbQRbGRtppz-VxHNJJIkiWyk/preset:listing/plain/9136f0377e772112e9d5873799bb4bdd-2981237110951369963.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "Mọi chức năng hoàn hảo Ae chỉ mua về sử dụng Mình mua 2,5 tr nhưng ko có thời gian Để lại anh em tặng kèm dây nguồn 300k",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132008581",
-    "lat": 10.793097,
-    "lng": 106.69029
   },
   {
     "id": "126967324",
@@ -2185,7 +946,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 5.0,
     "description": "💥Sale mạnh, Máy trạm, mỏng nhẹ💥 HP ZBook Studio 16 inch G10 Mobile Workstation/ Core i9 13900H/16GB/1TB/16 FHD / RTX 2000Ada 8GB / Used Ship From USA/ Check Warranty 7/2027, chiếc máy trạm cao cấp, hiệu năng cao, mỏng nhẹ chỉ 1,73Kg 💥 Thông tin chi t",
     "amenities": [
       "Wifi",
@@ -2195,32 +956,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/126967324",
     "lat": 10.786331,
     "lng": 106.627655
-  },
-  {
-    "id": "132047770",
-    "title": "Loa Bluetooth Harman Kardon Aura Studio 3 Đen",
-    "price": "3.600.000 đ",
-    "priceNum": 3000000,
-    "area": "13 m²",
-    "district": "Huyện Xuân Lộc, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/yBRJFA73j1SKSBKmAJ0HjuRe58RST86XjphSjL0W6o0/preset:listing/plain/452c06f0109385877541903a94091cd7-2981588073468058859.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "mình có aura 3 lướt 99% fullbox . nghe lướt vài lần trải nghiệm. mình có ship cod.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132047770",
-    "lat": 10.925972,
-    "lng": 107.40558
   },
   {
     "id": "131948487",
@@ -2237,7 +972,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.9,
     "description": "Ghế đơn chụp studio, chất liệu vải,nhựa,gỗ thiết kế hiện đại, phù hợp nhiều không gian. - Dễ dàng kết hợp với nội thất khác. Có bán lẻ",
     "amenities": [
       "Nội thất đầy đủ"
@@ -2246,56 +981,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131948487",
     "lat": 21.033953,
     "lng": 105.785
-  },
-  {
-    "id": "132045922",
-    "title": "Phấn phủ MAC Studio Fix Nữ NC 05",
-    "price": "700.000 đ",
-    "priceNum": 700000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/onmh3k-iUrZKxwufkVJHIGc9DVksLWgInJdl6XotmP4/preset:listing/plain/163d3eec6710d7d34671c1761cb8d91a-2981531244829906434.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 5.0,
-    "description": "Phấn phủ mac nc 05 sử dụng 2 lần vì không hợp màu da pass 700k ạ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132045922",
-    "lat": 10.786331,
-    "lng": 106.627655
-  },
-  {
-    "id": "131991561",
-    "title": "Tai nghe Beats Studio Buds Đỏ",
-    "price": "850.000 đ",
-    "priceNum": 850000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/yY4OeTDrbmL2qfrp3yAnnqZhasGeUMn2aWlaU3Mn96Y/preset:listing/plain/bf8c0288f407d923ba59179537a991fc-2981127501709368555.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.3,
-    "description": "Mình thanh lý tai nghe Beats studio buds chính hãng . #850k . Mình mua mới chính hãng giá cao Mất 1 bên tai trái các b có thể về mua thêm 1 bên hoặc đeo 1 bên nghe vẫn ok nhé. Ggtt q9 hoặc book ship giao",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131991561",
-    "lat": 10.890938,
-    "lng": 106.828316
   },
   {
     "id": "129768713",
@@ -2312,7 +997,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.2,
     "description": "💥 DELL PRECISION 3560 – workstation đúng nghĩa, cấu hình mạnh, bền bỉ nhưng giá “mềm nhất trong phân khúc”, thì Precision 3560 chính là lựa chọn đáng tiền nhất hiện tại. NHẸ 1.76KG – ĐẸP LIKE NEW – GIÁ CHỈ 10.500.000đ 💥 Vỏ hợp kim nhôm – magie cao cấ",
     "amenities": [
       "Wifi",
@@ -2338,7 +1023,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.4,
+    "rating": 4.9,
     "description": "Diện tích thông thủy: 34m2 (rộng, thoáng – top studio đẹp) Pháp lý: chuyển nhượng Giấy chứng nhận Giá: có thương lượng cho khách thiện chí 💬 “Mình đã đầu tư nội thất chỉnh chu để ở lâu dài, không làm sơ sài. Căn rất thoáng, không bị nắng gắt buổi chi",
     "amenities": [
       "Nội thất đầy đủ"
@@ -2363,7 +1048,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.7,
+    "rating": 4.1,
     "description": "Tai nghe sử dụng ít tình trạng rat mới đầy đủ túi và phụ kiện Mình xách tay từ Mỹ về hầu như không sử dụng nhiều",
     "amenities": [
       "Wifi",
@@ -2373,83 +1058,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131958383",
     "lat": 10.761883,
     "lng": 106.663765
-  },
-  {
-    "id": "131228063",
-    "title": "Surface Laptop Studio i5 11300H 16/256Gb đẹp",
-    "price": "14.300.000 đ",
-    "priceNum": 14000000,
-    "area": "103 m²",
-    "district": "Quận 8, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Uqia6V4RLJp4DXf7BBRZA18THr94rqXDHnDMcLP4z34/preset:listing/plain/76608a72c3165d779dec2273bd933a47-2977838857918947097.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "👉 Màn hình : 14.4 inch 2K+, 120Hz hiển thị đẹp không ám ố, full cảm ứng, đẹp 98% ko cấn móp 👉 CPU : i5 11300H 👉 RAM : 16Gb 👉 ROM : SSD 256Gb 14.300K 👉 VGA : Onboard 👉 Đang chạy ổn định, pin cao ngoại đẹp, 98% xước nhẹ, màn trầy dán màn sẽ đẹp khó thấ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131228063",
-    "lat": 10.748271,
-    "lng": 106.663765
-  },
-  {
-    "id": "131984586",
-    "title": "Đèn flash studio HD 600V Đen",
-    "price": "800.000 đ",
-    "priceNum": 800000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/_ByY8E7oJitP3LCFNLgX5q444mXBq-BqLVLHZgqXnAo/preset:listing/plain/a7a937b8d6d7ef3de38f0b419da2321e-2981066999143577613.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.6,
-    "description": "Đèn flash studio HD 600V màu đen, công suất mạnh, ánh sáng đều. - Thiết kế nhỏ gọn, dễ mang theo. - Phù hợp chụp ảnh chuyên nghiệp.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131984586",
-    "lat": 10.793186,
-    "lng": 106.65008
-  },
-  {
-    "id": "132032049",
-    "title": "Loa Harman Kardon Studio 2 Đen Đã sử dụng",
-    "price": "2.800.000 đ",
-    "priceNum": 2000000,
-    "area": "94 m²",
-    "district": "Huyện Phú Xuyên, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/jNXcj-vRmL6aXhRaZmb2dEeLd4PM0qdYCJE-zLcaUQU/preset:listing/plain/b061e54ff8015b847f13a0ddd590d760-2981453481242082239.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "Loa Harman kardon studio 2. Hãng cũ. Nghe còn oke. Ngoại hình tương đối ae nhé.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132032049",
-    "lat": 20.738377,
-    "lng": 105.9083
   },
   {
     "id": "132069338",
@@ -2466,7 +1074,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": false,
-    "rating": 4.4,
+    "rating": 5.0,
     "description": "Dự án: Thông tin chi tiết: “} 💥 STUDIO OPAL SKYLINE – ĐẦU TƯ CHO THUÊ / Ở ĐỀU ĐẸP – FULL NỘI THẤT 💥 Bạn đang tìm căn nhỏ xinh, giá tốt, có thể ở ngay hoặc cho thuê liền? Đây là lựa chọn rất đáng cân nhắc: 🏡 Thông tin căn: * 40,1m² – B32-20 * Ban công",
     "amenities": [
       "Máy lạnh",
@@ -2496,7 +1104,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.9,
     "description": "KT :: rộng 70 x dài 1m95 x cao 1m Ngăn để đàn dài 1m42 Chất liệu : - Ván MDF phủ melamine 2 mặt -Hàng có sẵn alo em giao nhanh trong ngày ------------- NỘI THẤT TRẦN QUỐC ĐC: 295 PHẠM VĂN BẠCH, PHƯỜNG 15, TÂN BÌNH, HỒ CHÍ MINH",
     "amenities": [
       "Nội thất đầy đủ"
@@ -2505,32 +1113,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131996690",
     "lat": 10.82634,
     "lng": 106.692505
-  },
-  {
-    "id": "132020470",
-    "title": "Surface Laptop Studio i7 11370H 32/1Tb A2000 4GB",
-    "price": "23.999.000 đ",
-    "priceNum": 23000000,
-    "area": "103 m²",
-    "district": "Quận 8, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/fFXY2InQyzm2Dlwh5kd7I_atrfEX896SHUn1ZZd5_7U/preset:listing/plain/7f219b1f6f86318745f0b86ccd3518a1-2981338275753344155.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Surface Laptop Studio i7 11370H 32/1Tb A2000 4GB 👉 Màn hình : 14.4 inch 2K+, 120Hz hiển thị đẹp không ám ố, full cảm ứng 👉 CPU : i7 11370H 👉 RAM : 32GB 👉 ROM : SSD 1Tb 👉 VGA : A2000 4Gb 👉 Đang chạy ổn định, pin cao ngoại đẹp, 99% 👉 Phụ kiện : Fullbox",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132020470",
-    "lat": 10.748271,
-    "lng": 106.663765
   },
   {
     "id": "131891964",
@@ -2547,7 +1129,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.6,
     "description": "Máy vẫn chạy khoẻ, hiện tại ít dùng, máy xách tay từ Nhật về Full box, cáp nguồn đầy đủ. Giao dịch trực tiếp HCM",
     "amenities": [
       "Wifi",
@@ -2573,7 +1155,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.2,
     "description": "Bán amply saba studio ii hàng nổi tiếng của Đức. Suất âm biến thế đảo pha nghe ngọt như đèn. Amply đã thay bộ cầu loa và rca cho dễ sử dụng. Đã thay tụ xịn của châu Âu. Ai mua gọi điện cho tôi",
     "amenities": [
       "Wifi",
@@ -2599,7 +1181,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.4,
     "description": "Laptop HP Zbook Studio G3 Cpu: Intel Core i7-6700HQ (dòng chíp HQ chuyên xử lý tốc độ mạnh) Ram: DDR4 16G Ssd: 256G nvme Hdd: 500G SATA III 6G/s Vga: Quadro M1000 4GD5 chuyên đồ hoạ render Màn hình 15.6inch full HD, tấm nền ips chống chói và đặc biệt",
     "amenities": [
       "Bảo vệ 24/7"
@@ -2624,7 +1206,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.7,
     "description": "Laptop HP Zbook Studio G3 chuyên đồ hoạ ✅Cpu: core i7-6700HQ ✅Ram: 16GB ✅Ssd: 2 ổ Samsung 256G+500G ✅Vga: M1000M 4G ✅Màn hình: 15.6” Full HD có dán miếng dán chống nhìn trộm. ✅Ngoại hình máy mỏng nhẹ hơn so với các máy chuyên đồ hoạ cùng phân khúc. G",
     "amenities": [
       "Wifi",
@@ -2650,7 +1232,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.8,
     "description": "Hp zbook studio g3 I7-6Hq/16/512 Vga quadro m1000m 4G Pin hẹo Chí Hướng Group Sài Gòn Em Huy Zl/SĐT: *** Hàng Sẵn Sài Gòn Ship Toàn Quốc",
     "amenities": [
       "Wifi",
@@ -2676,7 +1258,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.4,
     "description": "Dự án: Thông tin chi tiết: Chính chủ bán căn Studio cho thuê 15tr/tháng, view pháo hoa Diện tích 35m2 Giá 1.496 tỷ Liên hệ làm việc",
     "amenities": [
       "Wifi",
@@ -2686,58 +1268,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131892561",
     "lat": 16.001999,
     "lng": 108.219955
-  },
-  {
-    "id": "131857296",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9",
-    "price": "5.111.111 đ",
-    "priceNum": 5000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/okt75c973QZ7Nr_dpR7O_0QAneJbQWV9EQvahgM4AQU/preset:listing/plain/d7108a103a09ea8af7efa1528dc220c1-2980157261894316567.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "loa ONYX STUDIO 9 mới mua được máy ngày, trầy nhẹ xíu xíu",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131857296",
-    "lat": 10.813185,
-    "lng": 106.708725
-  },
-  {
-    "id": "131854885",
-    "title": "Loa kiểm âm Yamaha NS10M Studio Đen",
-    "price": "11.000.000 đ",
-    "priceNum": 11000000,
-    "area": "50 m²",
-    "district": "Huyện Quỳnh Lưu, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/xxhlbnzpbhP1TMchNgPkvgiY1IvMcxjM8FGMDvcs9Jw/preset:listing/plain/1b10399b77f141571f0376bb5337aae7-2980149210616857365.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Yamaha NS10M Studio zin nguyên bản. đôi loa huyền thoại tất cả phòng thu săn đón",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131854885",
-    "lat": 19.14167,
-    "lng": 105.62806
   },
   {
     "id": "131841545",
@@ -2754,7 +1284,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 5.0,
     "description": "Tai nghe Apple Beats Studio Pro Wireless (Giá thị trường hiện khoản 7 triệu) Note: - Hàng chính hãng check Apple - Nghe bình thường, ANC full chức năng - Đầy đủ hộp sạc và cáp sạc",
     "amenities": [
       "Wifi",
@@ -2764,32 +1294,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131841545",
     "lat": 10.7736,
     "lng": 106.69442
-  },
-  {
-    "id": "129699548",
-    "title": "Loa Harman Kardon Aura Studio 3 Trắng",
-    "price": "3.900.000 đ",
-    "priceNum": 3000000,
-    "area": "76 m²",
-    "district": "Quận Hai Bà Trưng, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ECqB3SBYG9RwyFwFLSaT6Y_mAB7U842cyKm0aDITEHc/preset:listing/plain/2b250dfdb0b3b68d29f044c8e2cc34fd-2962512118321011157.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Loa Bluetooth Harman Kardon Aura Studio 3 màu trắng, thiết kế độc đáo, âm thanh 360 độ sống động. - Chất liệu vải và kim loại cao cấp. - Đèn LED hiệu ứng gợn sóng đẹp mắt. - Kết nối Bluetooth ổn định.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/129699548",
-    "lat": 20.993782,
-    "lng": 105.84669
   },
   {
     "id": "131751212",
@@ -2806,7 +1310,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.2,
     "description": "💡 Đèn MARS M200Bi – ánh sáng chuẩn, chỉnh nhiệt màu • Công suất: ~200W • Có chỉnh nhiệt màu (Bi-color) → quay đẹp hơn ET-300S • Ánh sáng mềm, chuyên nghiệp 🔥 Phù hợp: quay review, quay mặt, studio nhỏ ✅ Tình trạng: đẹp, hoạt động ổn định 💰 Giá: 1.900",
     "amenities": [
       "Wifi",
@@ -2816,58 +1320,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131751212",
     "lat": 10.823866,
     "lng": 106.5643
-  },
-  {
-    "id": "131751208",
-    "title": "Đèn studio ET-300S",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "115 m²",
-    "district": "Huyện Bình Chánh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/u69QPlo3JiJo9owNudZWjLp1jXLrMKaUVmMJwUVlczA/preset:listing/plain/f42fb1590006fd829e61be7e1354d4fd-2979374028499683957.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "🔥 1. ĐÈN ET-300S 🎥 Đèn LED Studio ET-300S – công suất mạnh, quay TikTok cực đẹp • Công suất: ~200–300W (ánh sáng rất mạnh) • Ánh sáng đều, dễ setup quay video / chụp sản phẩm • Phù hợp: quay TikTok, YouTube, livestream ✅ Tình trạng: hoạt động tốt, kh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131751208",
-    "lat": 10.823866,
-    "lng": 106.5643
-  },
-  {
-    "id": "131832532",
-    "title": "Tai nghe Beats Studio Buds+ Trắng kem",
-    "price": "1.500.000 đ",
-    "priceNum": 1000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/VDy0DsKkS2lcXi_fXbOSP0zFaeCxuqfhlsiE8g9523s/preset:listing/plain/188651d3dc8c35f799f346f1505d5c31-2979999505018781525.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Tai nghe không dây Beats studio budz+ màu trắng kem, thiết kế thời trang, âm thanh sống động. - Kết nối ổn định, pin dùng lâu. - Phù hợp nhiều dòng nhạc. trước mua hơn 4 củ nay thanh lý lại",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131832532",
-    "lat": 10.850746,
-    "lng": 106.64534
   },
   {
     "id": "131794732",
@@ -2884,7 +1336,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.9,
     "description": "GUITAR ĐIỆN LP EPIPHONE STUDIO Dáng LES PAUL 22 phím Cấu hình HH 2 Volume, 2 Tone Switch 3 way 🛠️ Đã được vệ sinh, cân chỉnh, dây thấp bấm êm tay Mua kèm Ampli MINI đủ chức năng chỉ vài trăm (new) 🎁 Tặng kèm bao đàn, dây line handmade, dây đeo, phím ",
     "amenities": [
       "Wifi",
@@ -2910,7 +1362,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.1,
     "description": "𝐕𝐚̣̂𝐧 𝐜𝐡𝐮𝐲𝐞̂̉𝐧 𝐛𝐞̂𝐧 𝐞 𝐥𝐨̛̃ 𝐯𝐚 𝐜𝐚̣𝐧𝐡 𝐧𝐮̛̣𝐭 𝐧𝐡𝐞̣ 𝐱𝐢́𝐮 𝐤𝐡𝐨́ 𝐭𝐡𝐚̂́𝐲 𝐥𝐚̆́𝐦 𝐚̣, 𝐀𝐩𝐩𝐥𝐞𝐃𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐚̉𝐨 𝐡𝐚̀𝐧𝐡 𝐜𝐡𝐢́𝐧𝐡 𝐡𝐚̃𝐧𝐠 𝐕𝐢𝐞̣̂𝐭 𝐍𝐚𝐦 🥲 Màn AppleStudio Display 27 inch (Likenew) ♦️Chân cố định / Màn 5K Retina ♦️Bảo hành AppleCare 12/2026 ♦️Chính hãng Việt Nam Gi",
     "amenities": [
       "Wifi",
@@ -2920,32 +1372,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131869707",
     "lat": 10.76292,
     "lng": 106.66966
-  },
-  {
-    "id": "131817917",
-    "title": "Loa di động Alpha Works Studio 110",
-    "price": "2.200.000 đ",
-    "priceNum": 2000000,
-    "area": "106 m²",
-    "district": "Quận 11, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/xtjW5mUtflXOd6utNHmkak-UqvaCCaBZ7lZa_fOguSM/preset:listing/plain/d541ce3b878c41e584b2de3506211bf7-2979878209040732757.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Loa di động Alpha Works Studio 110 màu đen, hàng chính hãng PGI. - Bảo hành đến tháng 4/2027. - Bass sâu, lực, hát nhẹ. - Có thể chỉnh bass to nhỏ, tiện lợi. - Giá 2 triệu 200 nghìn. - Giao dịch trực tiếp tại Lữ Gia - TP.HCM. Ship COD toàn quốc",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131817917",
-    "lat": 10.776194,
-    "lng": 106.65487
   },
   {
     "id": "131707512",
@@ -2962,7 +1388,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 5.0,
     "description": "Cần bán nhanh căn hộ Studio Saigon Mia - 39m2 1 phòng 1 toilet - Có kệ bếp bồn rửa, ban công - Vị trí tầng đẹp thuận tiện di chuyển - Nội khu cao cấp sang trọng: Hồ Bơi, Gym, Spa, bảo vệ lễ tân 24/7 - Ban quản lý chuyên nghiệp - Khu vực an ninh dân t",
     "amenities": [
       "Hồ bơi",
@@ -2991,7 +1417,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.6,
     "description": "🔥 CỰC HIẾM – Mô hình Goku SSJ cao 85cm Owl Studio chính hãng – Có đầu Chi-Chi thay thế! 🔥 ✅ Tình trạng: like new 99,9%, Fullbox (chỉ mở ra lắp kiểm tra) ✅ Kích thước: Cao 85cm × Rộng 38cm × Sâu 33cm (siêu to, để bàn rất đẹp) ✅ Đặc điểm nổi bật: Goku ",
     "amenities": [
       "Wifi",
@@ -3001,84 +1427,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131838547",
     "lat": 10.803335,
     "lng": 106.59082
-  },
-  {
-    "id": "131233539",
-    "title": "TUYỂN THỢ MAY SẢN XUẤT",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "THU NHẬP TỪ 7.000.000 ĐẾN 13.000.000 MÔ TẢ CÔNG VIỆC Thực hiện may các công đoạn theo chuyền hoặc may hoàn thiện sản phẩm theo yêu cầu đơn hàng May đúng kỹ thuật, đúng quy trình và tiêu chuẩn chất lượng đã được hướng dẫn Đảm bảo tiến độ sản xuất theo",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/131233539",
-    "lat": 10.790694,
-    "lng": 106.64952
-  },
-  {
-    "id": "131677269",
-    "title": "*** Công Nhân May",
-    "price": "Đến 12 triệu/tháng",
-    "priceNum": 12000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "🚨 TUYỂN GẤP – NHẬN VIỆC NGAY TRONG NGÀY 🚨 ❌ Không ép tăng ca ❌ Không nợ lương ✅ Có BHXH đầy đủ ✅ Việc ổn định quanh năm 👉 Xưởng đang cần gấp: 🧵 May 1 kim 🧵 Vắt sổ 🧵 Kansai (k-sai) 🧵 Ủi 🧵 May mẫu 🧵 Thợ phụ 💰 Lương: 6 – 13 triệu/tháng (làm tốt tăng nha",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/131677269",
-    "lat": 10.757106,
-    "lng": 106.738205
-  },
-  {
-    "id": "131268791",
-    "title": "CÔNG TY LP STUDIO TUYỂN DỤNG THU NGÂN BÁN HÀNG",
-    "price": "Đến 8 triệu/tháng",
-    "priceNum": 8000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/AjrDRYkEmzMr0Ny9UpyUXBgIf0QXSE-n0usPCDXRqVA/preset:listing/plain/934541b43bf760632d6290c885563ef7-2975953228289788764.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "💼 Mô tả công việc: • Tư vấn sản phẩm cho khách hàng tại cửa hàng và qua Zalo, Facebook, điện thoại • Nhập và quản lý đơn hàng trên phần mềm bán hàng • Theo dõi đơn hàng, tiếp nhận và cập nhật thông tin bảo hành • Tạo đơn giao hàng và phối hợp với kho",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131268791",
-    "lat": 10.802689,
-    "lng": 106.60261
   },
   {
     "id": "132171420",
@@ -3095,7 +1443,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.2,
     "description": "Thanh lý máy Photocopy toshiba 357 đẹp như mới - Chức năng: in - copy - scan màu - Tốc độ : 35 trang / phút - Khổ giấy : A3 máy đẹp phù hợp in ấn văn phòng - Máy đẹp sẵn kho quận 12- Bình Dương - Khách yêu cần đến xem máy trực tiếp rinh máy về - Hỗ t",
     "amenities": [
       "Wifi",
@@ -3105,187 +1453,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132171420",
     "lat": 10.8834305,
     "lng": 106.670395
-  },
-  {
-    "id": "131802839",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9 Đen",
-    "price": "4.500.000 đ",
-    "priceNum": 4000000,
-    "area": "129 m²",
-    "district": "Quận Bắc Từ Liêm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/QatMgTgVDaACxFzSpwf9uBULl-9ExzqET_b1D4yvwuA/preset:listing/plain/ae0956a73c1636c344da8d9aff27c83a-2979757532454871590.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "Loa Bluetooth Harman Kardon Onyx Studio 9 màu đen, thiết kế độc đáo, âm thanh sống động. - Chất âm mạnh mẽ, bass sâu. - Kết nối Bluetooth ổn định. - Pin dùng lâu, tiện lợi mang đi. - Mới mua trải nghiệm hôm Tết, để lại cho ae nào cần Mình để 4tr5",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131802839",
-    "lat": 21.050608,
-    "lng": 105.79097
-  },
-  {
-    "id": "131783884",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 9 Đen",
-    "price": "5.500.000 đ",
-    "priceNum": 5000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/0MmVF1PmrYFDb3RabSODvuGoJFFYCpn2bV3E3OuIqF0/preset:listing/plain/07943578898cee4baf876a4d67650c25-2979618894117044816.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Loa ONYX STUDIO 9 mới mua được 2 ngày cần bán lại",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131783884",
-    "lat": 10.813185,
-    "lng": 106.708725
-  },
-  {
-    "id": "132093352",
-    "title": "GIÁM SÁT THI CÔNG NỘI THẤT",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "96 m²",
-    "district": "Quận 1, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "TẠI SAO LANDA STUDIO LÀ ĐIỂM ĐẾN CHO SỰ NGHỆP CỦA BẠN? Tại LANDA STUDIO, chúng tôi không chỉ xây dựng những ngôi nhà, chúng tôi kiến tạo những tác phẩm nghệ thuật sống động. Là đơn vị dẫn đầu phân khúc nội thất Luxury với mạng lưới đối tác độc quyền ",
-    "amenities": [
-      "Nội thất đầy đủ"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132093352",
-    "lat": 10.793097,
-    "lng": 106.69029
-  },
-  {
-    "id": "131767193",
-    "title": "Loa Harman Kardon Onyx Studio 9 Đen",
-    "price": "5.000.000 đ",
-    "priceNum": 5000000,
-    "area": "11 m²",
-    "district": "Thành phố Thuận An, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/9VCWDbulrGsA0EtrBOAaUmpX0dXCeU-4jEV1QEnZ9nQ/preset:listing/plain/0d039d2b49a064e06dd1ac923a23cd03-2979482444561675472.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "Loa Bluetooth Harman Kardon Onyx Studio 9 màu đen, thiết kế sang trọng, âm thanh sống động. - Kết nối Bluetooth tiện lợi. - Pin dùng lâu, dễ dàng mang đi. - Âm bass mạnh mẽ, chi tiết. Cần pass nhanh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131767193",
-    "lat": 10.885255,
-    "lng": 106.69793
-  },
-  {
-    "id": "132194726",
-    "title": "KỸ THUẬT ÂM THANH",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Gf7DNfzMEW7ntg1J91iTbmQM7KmG5IXs4jVS_bILRcw/preset:listing/plain/0bbf7b2b3dabfd70cbdb56e48a27cf37-2982913347895245661.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Mô tả công việc: - TUYỂN DỤNG KỸ THUẬT ÂM THANH & PHỤ CỬA HÀNG - Cài đặt phần mềm Cubase - Chỉnh âm thanh cho khách (hát hay, phù hợp nhu cầu) - Bảo hành, hỗ trợ phần mềm cho khách - Hỗ trợ kỹ thuật & lắp đặt phần cứng khi cần Thời gian làm việc: - 9",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132194726",
-    "lat": 10.832696,
-    "lng": 106.63855
-  },
-  {
-    "id": "131392328",
-    "title": "Loa Bluetooth Alpha Works AW-STUDIO110 Mẫu mới",
-    "price": "2.500.000 đ",
-    "priceNum": 2000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/TjNdhDF8hzaOoR3BmqTi8XjsfbsLaexAOpMWFU529TI/preset:listing/plain/e73208b83e2be44529cb5bfd7909e35a-2976822501870263352.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Thông tin chung: Loại sản phẩm: Loa bluetooth Tổng công suất: 200W Công suất liên tục: 100W Công suất cực đỉnh: 200W Nguồn: Pin Thời gian sử dụng: Dùng khoảng 11 tiếng (với âm lượng 50%) Thời gian sạc: Khoảng 4 - 10 tiếng (với 5V/1-2A, 9V/2A, hoặc 20",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "22 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131392328",
-    "lat": 10.851773,
-    "lng": 106.74677
-  },
-  {
-    "id": "132112483",
-    "title": "48STUDIO Cẩn tuyển 3 bạn nữ về văn phòng",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "48STUDIO Cẩn tuyển 3 bạn nữ về văn phòng 👉Công việc: chăm sóc fanpage Facebook, Tài khoản Tiktok 👉Nội dung công việc: biên tập nội dung theo định hướng sẵn của công ty, quản lí các kênh hệ thống fanpage, tiktok của công ty 👉Yêu cầu: -Tuổi: 18-25 -Biế",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132112483",
-    "lat": 10.737167,
-    "lng": 106.74001
   },
   {
     "id": "131855329",
@@ -3302,7 +1469,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.4,
     "description": "📍 Vị trí cụ thể: Nằm ngay ngã tư Minh Mạng – Nguyễn Phước Lan, P. Hòa Quý, Q. Ngũ Hành Sơn, TP. Đà Nẵng Thuộc khu đô thị sinh thái Sun Riverpolis quy mô ~500ha – trung tâm phát triển mới phía Nam thành phố () 🌐 Kết nối cực kỳ thuận tiện: Chỉ 5 phút đ",
     "amenities": [
       "Wifi",
@@ -3328,7 +1495,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.0,
     "description": "Thông số kỉ thuật: CPU: I7 - 10750H Ram: 16GB DDR4 SSD: 512GB PCIe NVMe Vga: Nvidia Quadro T1000 4G Màn hình: 15inch FHD (1920 x 1080) Option: keyled, finger, face id",
     "amenities": [
       "Wifi",
@@ -3354,7 +1521,7 @@ export const LISTINGS: Listing[] = [
       "Full nội thất"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.0,
     "description": "📍Bình Lợi - Phường Bình Lợi Trung - Quận Bình Thạnh • Nội Thất: Đầy đủ như hình - Máy lạnh, tủ lạnh, giường, bàn ghế, tủ quần áo, kệ bếp, tủ giày, máy giặt riêng ... • Ra vào vân tay, giờ giấc tự do, kh chung chủ • Khu dân cư an ninh, thích hợp ở 2 -",
     "amenities": [
       "Máy lạnh",
@@ -3368,84 +1535,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/129817757",
     "lat": 10.835073,
     "lng": 106.70322
-  },
-  {
-    "id": "131959441",
-    "title": "Máy trạm HP Zbook G10 i9-13900H 32GB/512G/4K touch",
-    "price": "29.800.000 đ",
-    "priceNum": 29000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/CcotKqtvpXqAe6BE3KLGncXg92P1cCBRmuoz2Yl9t3Y/preset:listing/plain/5984619423b81237708574067fbcbb6b-2981696627452682257.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Mình cần bán Laptop HP Zbook Studio G10 Workstation Core i9 13900H, Ram 32GB, SSD 512GB NVMe 4x4, VGA RTX A1000 6GB, dòng máy trạm Ultrabook mỏng nhẹ nhất của HP Màn hình 4K Cảm ứng siêu nhạy. Cấu hình như sau: ✅CPU: i9-13900H 14 lõi 20 luồng 4.1GHz ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131959441",
-    "lat": 10.805869,
-    "lng": 106.64387
-  },
-  {
-    "id": "131701283",
-    "title": "Tai nghe Beats Studio 2.0 Wireless",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/8I4zYkCRDGlCp4RhuyCAPW-4PLO5Es_1C5Rsv6sLZbg/preset:listing/plain/1b3bca0e8bb170c462a29f04ff96521e-2979022119290351333.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "​Cần nhượng lại Beats Studio 2.0 Wireless (Black/Red) ​Tình trạng: Ngoại hình còn rất đẹp (như hình chụp thật). Mọi chức năng Bluetooth và chống ồn chủ động (ANC) hoạt động hoàn hảo. ​Ưu điểm: Vừa mới thay bộ đệm tai (earpads) mới 100% cực êm, sạch s",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131701283",
-    "lat": 10.77052,
-    "lng": 106.67998
-  },
-  {
-    "id": "131718473",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 5",
-    "price": "3.500.000 đ",
-    "priceNum": 3000000,
-    "area": "57 m²",
-    "district": "Thành phố Đà Lạt, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/nCn8vTtlUqv1_VemZVNdHJ0Sq57yU-vfCMdPWczr_kI/preset:listing/plain/6dd862bd7173f137e7d1912f3c5ae2fa-2979151185090018157.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "loa hk5 tình trạng còn đẹp sự dụng ít pin còn ok có kèm sạc zin",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131718473",
-    "lat": 11.949362,
-    "lng": 108.43555
   },
   {
     "id": "131801626",
@@ -3462,7 +1551,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.6,
     "description": "✅ HP zbook studio 15 g7 🔆 Core i7 10750H 🔆 Ram 16gb ddr4 2933mt/s onboard 🔆 SSD 512gb nvme nâng cấp thoải mái 🔆 GPU Nvidia Quadro T2000 hỗ trợ đồ hoạ 🖥️ 15.6” FHD ips 💎 led phím, bảo mật vân tay Tình trạng ngoại hình còn khá đẹp (có cấn nhẹ 2 vết) 🔋p",
     "amenities": [
       "Wifi",
@@ -3488,7 +1577,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 5.0,
     "description": "Mình cần pass lại tai nghe Beats Studio3 Wireless màu Đen (Matte Black) cực sang. ​Nguồn gốc: Hàng chính hãng mua tại Điện Máy Xanh (yên tâm về chất lượng). ​Tình trạng: Ngoại hình còn rất mới (như ảnh), đệm da êm ái, mọi chức năng chống ồn (ANC) và ",
     "amenities": [
       "Wifi",
@@ -3498,84 +1587,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132149812",
     "lat": 10.8292885,
     "lng": 106.614395
-  },
-  {
-    "id": "131678323",
-    "title": "Loa di động Harman Onyx Studio X5",
-    "price": "1.700.000 đ",
-    "priceNum": 1000000,
-    "area": "118 m²",
-    "district": "Huyện Nhà Bè, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/VSOfMDZFgn8REHGm0WFPfP0oP8htVNXGpKuFjAFIRko/preset:listing/plain/654a482c84f78dcf772df6a7cb8175dc-2978871054070759467.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Loa DIY 50w harman onyx studio X5 cấu hình 50w cắm điện và sử dụng pin là 35w dung lượng pin 5800mah trên 15h phát nhạc chất âm harman bao phê bass sâu thẳm, kèm sạc zin bảo hành 4 tháng cho ae sử dụng không lo đụng hàng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131678323",
-    "lat": 10.69437,
-    "lng": 106.74116
-  },
-  {
-    "id": "131671365",
-    "title": "Loa Bluetooth Harman Kardon Onyx Studio 7",
-    "price": "2.950.000 đ",
-    "priceNum": 2000000,
-    "area": "40 m²",
-    "district": "Huyện Phú Vang, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/gUHYf6tooIcina_8aSzz6nJ8ktYI4oN8nmW-sWkqiI0/preset:listing/plain/1ab9158188c5e068c41c6382255364d2-2978844076363989035.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "HK7 full lướt zin chính hãng 100% Tình trạng xước dăm tay cầm, vải ê căng đẹp Công suất 50W, bass ấm nghe tạp bao hay 📍Giá hơn #2xxx, loa sẵn ở Huế ae cần trải nghiệm ib em nhaa 🔊",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131671365",
-    "lat": 16.516968,
-    "lng": 107.606735
-  },
-  {
-    "id": "131717474",
-    "title": "Mac Studio M2 Ultra 64GB/1TB 24Cpu-60Gpu NEWSEAL",
-    "price": "89.900.000 đ",
-    "priceNum": 89000000,
-    "area": "105 m²",
-    "district": "Quận 10, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/J4LmG90ix6Z2vOQpdczmfpr0WF7EzB35d-GeVLXA6bE/preset:listing/plain/a5f980af46fa2a30ae534d820ec6e87f-2979146612405406325.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "𝐒𝐭𝐮𝐝𝐢𝐨 𝐔𝐥𝐭𝐫𝐚 𝐌𝟐 𝟔𝟒/𝟏𝐓𝐁 𝐍𝐄𝐖𝐒𝐄𝐀𝐋 𝟏𝟎𝟎% 𝐜𝐡𝐨 𝐚𝐧𝐡 𝐞𝐦 𝐥𝐚̀𝐦 𝐦𝐚́𝐲 𝐭𝐫𝐚̣𝐦, 𝐫𝐞𝐧𝐝𝐞𝐫 𝐪𝐮𝐚𝐲 𝐝𝐮̛̣𝐧𝐠 ☺️ MacStudio Ultra M2 Fullbox Newseal ♦️Ram 64GB / Ssd 1TB / 24Cpu-60Gpu ♦️Máy NEWSEAL 100% đập hộp 📌Máy chuẩn sạch Giá 89tr9 (Cáp sạc, Balo, Túi chống sốc) 📍245 Bà Hạ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131717474",
-    "lat": 10.76292,
-    "lng": 106.66966
   },
   {
     "id": "131740630",
@@ -3592,7 +1603,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.2,
     "description": "Workstation mỏng, nhẹ, vỏ nhôm cao cấp bền bỉ phù hợp cho anh em kỹ sư, thiết kế 🍃 HP ZBOOK STUDIO G7 • i7-10750H / 16GB/ SSD 512GB • Màn 15.6 inch FHD IPS độ chuẩn màu tốt. • NVIDIA Quadro T2000 4GB GDDR6. ✅ Ngoại hình máy có cấn, xướt dăm cạnh viền",
     "amenities": [
       "Wifi",
@@ -3602,58 +1613,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131740630",
     "lat": 10.781502,
     "lng": 106.66598
-  },
-  {
-    "id": "131476634",
-    "title": "Tai nghe Beats Studio Wireless Trắng",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "11 m²",
-    "district": "Thành phố Thủ Dầu Một, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/WxxpKm5JvFmM4giLBSm9IDcg43KypwMdsCBcKvVjgIc/preset:listing/plain/27d4e43b53d7bc9dabb8e6f00e8660d8-2977407004752198514.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Tai nghe studio wireless để lại cho bạn nào cần tình trạng tai nghe tốt full phụ kiện",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131476634",
-    "lat": 10.991956,
-    "lng": 106.63208
-  },
-  {
-    "id": "131679188",
-    "title": "Loa Harman Kardon Onyx Studio 9 mới mua",
-    "price": "4.500.000 đ",
-    "priceNum": 4000000,
-    "area": "56 m²",
-    "district": "Thành phố Pleiku, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/N8BgqqWquJDL0QLIq3cpvSWoRZLpxgTHRb1A0DCeM70/preset:listing/plain/0e64c3a8307f29c3fc84c73098ffff07-2978874970218859125.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Mua tại Cell phỏn được 3 ngày kẹt tiền nên cần pass lại",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131679188",
-    "lat": 13.976935,
-    "lng": 107.99331
   },
   {
     "id": "131718392",
@@ -3670,7 +1629,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.7,
     "description": "✨HP ZBook 17 G7 – Chuẩn workstation, sức mạnh thực chiến cho dân kỹ thuật & đồ họa 🔹HP ZBook 17 G7 được chế tác từ hợp kim nhôm – magie cao cấp, vật liệu ứng dụng trong ngành hàng không, mang lại độ bền vượt trội, khả năng chịu lực cao, chống va đập,",
     "amenities": [
       "Wifi",
@@ -3696,7 +1655,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.7,
+    "rating": 4.1,
     "description": "Cần bán laptop HP ZBOOK 15U G5. Máy đẹp như hình,LED PHÍM, NGUYÊN zin,chạy ổn định, chạy cực nhanh xử lý đồ hoạ 2D 3D rất mượt,đảm bảo xài là ghiền,máy chayh rất mát MÀN HÌNH SÁNG ĐẸP LUNG LINH RÕ NÉT,PIN XÀI 3H-4H TÙY CV XỬ DỤNG Cấu hình máy như sau",
     "amenities": [
       "Wifi",
@@ -3722,7 +1681,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.3,
     "description": ".,can sang lai phong tro đây dư tiên nghi chi việc sách đồ vô la o.gia sang 10 tr bao gôn tư lanh quạt do dung ca nhan rất nhiều thang sao moi đen tiên nhan bao gom cóc 2 tr roi liên he số điên thoq i*** cho ăn nhơn go vấp danh cho cấp vô chong hoặc ",
     "amenities": [
       "Wifi",
@@ -3748,7 +1707,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.3,
     "description": "📍 [HÀ NỘI - CÁC QUẬN TRUNG TÂM] TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ DỊCH VỤ – FULL TIME 🔎 MÔ TẢ VỊ TRÍ Khai phá thị trường cho thuê sôi động tại Hà Nội. Chúng tôi tìm kiếm những cộng sự năng động, khéo léo để kết nối khách hàng với những không gian sống ",
     "amenities": [
       "Wifi",
@@ -3774,7 +1733,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 5.0,
     "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Tân Tiến, Vị Thanh, Hậu Giang. Công việc linh hoạt, phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động t",
     "amenities": [
       "Wifi",
@@ -3786,38 +1745,12 @@ export const LISTINGS: Listing[] = [
     "lng": 105.41267
   },
   {
-    "id": "132193623",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Càng Long, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/4lwFM39lh_SWYOhVVdkPmm4fisRLqOFHkbUtCyl3k0k/preset:listing/plain/67370862eb1a10a1563145b437eee2ad-2982909855124276266.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Đại Phúc, Càng Long, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian cá ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132193623",
-    "lat": 9.980403,
-    "lng": 106.2934
-  },
-  {
-    "id": "132193689",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Tam Nông, Việt Nam",
+    "id": "132237951",
+    "title": "Sale Phòng trọ & CHDV",
+    "price": "Đến 20 triệu/tháng",
+    "priceNum": 20000000,
+    "area": "27 m²",
+    "district": "Quận Cái Răng, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
     "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
@@ -3827,289 +1760,6 @@ export const LISTINGS: Listing[] = [
     ],
     "verified": true,
     "rating": 4.6,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Phú Hiệp, Tam Nông, Đồng Tháp. Công việc linh hoạt, phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động t",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132193689",
-    "lat": 10.775765,
-    "lng": 105.51227
-  },
-  {
-    "id": "132178504",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Ngã Bảy, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/pA2ylO2vlnFbXXBrlXtsY0596Oehz6rfVUYM8IfCDVc/preset:listing/plain/56fd6c96e8ca9c379864a2e5b79f016f-2982787239168467025.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB HẬU GIANG – TÂN THÀNH, TP. NGÃ BẢY] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Tân Thành, TP. Ngã Bảy, Hậu Giang. Công việc phù hợp cho những ai muốn tăng thu nhập nhưn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132178504",
-    "lat": 9.862259,
-    "lng": 105.8349
-  },
-  {
-    "id": "132178373",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thành phố Trà Vinh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/zUxd2B95YxLjaxogsGFtbINpRlUrHAzwc4do3QmoOAE/preset:listing/plain/98fdc74e4834b45ad69c28079be482c7-2982786687172763729.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "📣 [JOB TRÀ VINH – LONG ĐỨC] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Đức, Trà Vinh. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ động thời gian. 💰 Th",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132178373",
-    "lat": 9.972941,
-    "lng": 106.3346
-  },
-  {
-    "id": "132178448",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Lấp Vò, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ogevLYPkxKUt3F4uRPiti38LC0uOyQq17uZpRq8cqbo/preset:listing/plain/9d6ea2fc6c52ccc275a7700c168ba9f2-2982786987255095377.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB ĐỒNG THÁP – AN ĐÔNG, LẤP VÒ] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại An Đông, Lấp Vò, Đồng Tháp. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ động",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132178448",
-    "lat": 10.4078865,
-    "lng": 105.5533
-  },
-  {
-    "id": "131636410",
-    "title": "Tuyển bảo vệ toà nhà cho thuê phòng trọ",
-    "price": "Từ 9 triệu/tháng",
-    "priceNum": 9000000,
-    "area": "111 m²",
-    "district": "Quận Phú Nhuận, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Cần tuyển gấp 1 bảo vệ toà nhà cho thuê phòng trọ, đi làm ngay khi trúng tuyển Mô tả công việc: - Trông coi xe - Hỗ trợ xử lý các hư hỏng lặt vặt phát sinh trong phòng trọ - Hỗ trợ các công việc khác theo yêu cầu cấp trên Chế độ: - Lương 9.000.000 - ",
-    "amenities": [
-      "Bảo vệ 24/7"
-    ],
-    "postedAt": "2 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131636410",
-    "lat": 10.802115,
-    "lng": 106.68108
-  },
-  {
-    "id": "132103091",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thị xã Long Mỹ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/wWB-AWgGfLsXDY4XBRteXdiAop8PBTlFxxT0caWvpNE/preset:listing/plain/f662ec44effa21592e24eb15d4be8531-2982043772626898819.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📣 [TUYỂN DỤNG HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHU VỰC LONG PHÚ, LONG MỸ Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Long Phú, Long Mỹ, Hậu Giang. Cơ hội dành cho những ai muốn có thêm thu nhập ổn định và c",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132103091",
-    "lat": 9.64071,
-    "lng": 105.606064
-  },
-  {
-    "id": "132103041",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thị xã Duyên Hải, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ks8e2uhaDtxlURcCBS4iGVc8Y9aiO7qmOH97mV5ZTS8/preset:listing/plain/61234ae3aea83bc132f13d78de3703de-2982043603509677955.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "📣 [TUYỂN DỤNG TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHU VỰC HIỆP THẠNH, DUYÊN HẢI Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng khu vực Hiệp Thạnh, Duyên Hải, Trà Vinh. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng v",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132103041",
-    "lat": 9.730212,
-    "lng": 106.55251
-  },
-  {
-    "id": "132254183",
-    "title": "TUYỂN NHÂN VIÊN TƯ VẤN PHÒNG TRỌ/ DẪN KHÁCH",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/xXbGrwMFMCSANRnwHnm02z9b5RTIsaLZ8CQLWZU2gfQ/preset:listing/plain/3219924bcac2cb8314850776f54536f9-2983337613343479365.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "Thu nhập: 8-20 triệu trở lên Nơi làm việc: Cầu Giấy, HN Kinh nghiệm làm việc: Không yêu cầu (được đào tạo từ đầu tới khi thành thạo) Mô tả công việc: • Đăng bài giới thiệu phòng trọ, căn hộ… lên Facebook, TikTok và các kênh MXH theo mẫu có sẵn và tư ",
-    "amenities": [
-      "Máy lạnh"
-    ],
-    "postedAt": "3 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132254183",
-    "lat": 21.039566,
-    "lng": 105.77407
-  },
-  {
-    "id": "131464688",
-    "title": "Máy giặt Sanyo, toshiba cho sinh viên, phòng trọ",
-    "price": "1.190.000 đ",
-    "priceNum": 1000000,
-    "area": "81 m²",
-    "district": "Quận Long Biên, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/k8BB9yHJmUJEU5hAmRdlHbe-FEgbAVo_7hRq74x4U5w/preset:listing/plain/3e62f8e95fd607984b985ddb79a31256-2977295471031466866.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Máy giặt sinh viên,phòng trọ: -Mọi chức năng của máy đều đang hoạt động tốt -Giặt vắt cực êm,tiết kiệm điện nước -Hỗ trợ vận chuyển bảo hành 6 tháng Máy 7kg giá 1190k, máy 9kg giá 1590k",
-    "amenities": [
-      "Máy giặt"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/131464688",
-    "lat": 21.044842,
-    "lng": 105.86866
-  },
-  {
-    "id": "132085130",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Vị Thuỷ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/7WClOZQkqLotK2IREhVtxSFo6F6DueohB0xggOkVh1A/preset:listing/plain/7a137f657bab9d5858256db1b4abcfda-2981898383968019486.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📣 [HẬU GIANG – VĨNH THUẬN TÂY, VỊ THỦY] TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng dành cho ứng viên tại Vĩnh Thuận Tây, Vị Thủy, Hậu Giang. Công việc phù hợp cho người muốn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132085130",
-    "lat": 9.716602,
-    "lng": 105.48297
-  },
-  {
-    "id": "132085054",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Trà Cú, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [TRÀ VINH – HÀM GIANG, TRÀ CÚ] TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng dành cho ứng viên tại Hàm Giang, Trà Cú, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132085054",
-    "lat": 9.657332,
-    "lng": 106.28164
-  },
-  {
-    "id": "132237951",
-    "title": "Sale Phòng trọ & CHDV",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "27 m²",
-    "district": "Quận Cái Răng, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
     "description": "Mô tả công việc Đăng tin phòng trọ & CHDV trên các hội nhóm FB phòng trọ Tư vấn khách hàng có nhu cầu và đặt lịch hẹn xem phòng Có app tìm trọ - nhatrovn hỗ hỗ trợ thuận tiện làm việc KHÔNG CỌC, KHÔNG MẤT BẤT CỨ CHI PHÍ NÀO CHĂM CHỈ THU NHẬP NHIỀU Th",
     "amenities": [
       "Wifi",
@@ -4119,109 +1769,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132237951",
     "lat": 9.974437,
     "lng": 105.75272
-  },
-  {
-    "id": "132240789",
-    "title": "TUYỂN NHÂN VIÊN / CTV SALE PHÒNG TRỌ – CĂN HỘ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/3jTnEQ_VxFpIchuQB_OmRPHC3Ghf8JBqGUDD5Fmp1VE/preset:listing/plain/008bcd6b38276b1c3612eb84cf6a0a18-2983221795170479002.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "NhaTroVN – Anhome tuyển nhân sự hỗ trợ tư vấn và kết nối khách thuê phòng trọ/căn hộ dịch vụ. 🧩 Công việc chính: Đăng tin tìm khách thuê trên các nền tảng (Facebook, TikTok, Chợ Tốt…) Tư vấn phòng phù hợp theo nhu cầu khách hàng Sắp xếp lịch và hỗ tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "22 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132240789",
-    "lat": 21.033953,
-    "lng": 105.785
-  },
-  {
-    "id": "132223518",
-    "title": "Tuyển dụng parttime tư vấn phòng trọ, CHDV",
-    "price": "Từ 7 triệu/tháng",
-    "priceNum": 7000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1551361415-69c87624334f?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Muốn kiếm từ 7tr/tháng nhưng chưa có kinh nghiệm? Hãy ứng tuyển ngay … Ở đây: ✅ Có người kèm 1:1 từ đầu ✅ Chưa biết gì vẫn được hướng dẫn ✅ Team toàn người làm lâu năm ⸻ 🛠️ Công việc: • Tìm khách, tư vấn, dẫn xem phòng • Làm cùng team, không làm 1 mì",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132223518",
-    "lat": 10.83293,
-    "lng": 106.67187
-  },
-  {
-    "id": "132218010",
-    "title": "NHÂN VIÊN SỬA CHỮA BẢO TRÌ PHÒNG TRỌ",
-    "price": "Đến 12 triệu/tháng",
-    "priceNum": 12000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/16ZH_BT0CZwGx_T0-EEDjjgdcl732KI02J_iFZVs53Y/preset:listing/plain/2ff5a6897e61d2b5a6f3ca8b9f3287dd-2983070548475229825.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "Mô tả công việc: - Tuyển dụng 01 Nhân viên bảo trì, sửa chữa hệ thống phòng trọ - Kiểm tra, bảo trì định kỳ hệ thống điện, nước, cơ sở vật chất của phòng trọ. - Sửa chữa các hư hỏng nhỏ trong phòng trọ (ống nước, bóng đèn, khóa cửa, quạt, điều hòa, v",
-    "amenities": [
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132218010",
-    "lat": 10.747893,
-    "lng": 106.6085
-  },
-  {
-    "id": "132225798",
-    "title": "Tuyển Sales Executive Cho Thuê CHDV / Phòng Trọ",
-    "price": "Đến 23,50 triệu/tháng",
-    "priceNum": 23500000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/sw-8fU6mShlz4gb2HbPQsYJ-hEcFIfeXbYpsnK4BEg8/preset:listing/plain/61480e0f336674da634e41788d611064-2983104076473449309.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "### GIỚI THIỆU SƠ LƯỢC ### - ZENITH là startup hoạt động trong lĩnh vực tư vấn cho thuê Căn Hộ Dịch Vụ / Phòng Trọ / Nhà / Mặt Bằng Kinh Doanh tại khu vực TP. Hồ Chí Minh. Hiện tại startup đang trong giai đoạn soft-launch và cần tìm kiếm các ứng viên",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132225798",
-    "lat": 10.794826,
-    "lng": 106.621765
   },
   {
     "id": "132016634",
@@ -4238,7 +1785,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.3,
     "description": "Tủ lạnh Sharp 180 lít tiết kiệm hiệu quả ⭐️Không bám tuyết ⭐️Vận hành êm ái ⭐️Rất lợi điện, tiết kiệm điện năng hiệu quả ⭐️Làm lạnh nhanh, giữ lạnh tốt ⭐️Bảo quản thực phẩm tươi ngon, sử dụng lâu hơn ⭐️Phù hợp nhà trọ công nhân, HSSV Mẫu mã đa dạng, ",
     "amenities": [
       "Tủ lạnh"
@@ -4263,7 +1810,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.8,
     "description": "Dẫn khách xem phòng trọ khu vực TP HCM (được chọn quận gần nhà) Làm hợp đồng cho khách thuê phòng trọ Có hô trợ cho sinh viên làm partime Lương 8tr + 50% doanh số Call ***",
     "amenities": [
       "Wifi",
@@ -4273,32 +1820,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132223495",
     "lat": 10.770934,
     "lng": 106.66008
-  },
-  {
-    "id": "121668338",
-    "title": "Tuyển 5 Nhân sự cho Thuê căn hộ & Phòng trọ HCM",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/hfDwPoLc5dpDxjnQPRPyWChI1OTJpxqe0hNDcc9Yexk/preset:listing/plain/a0bafffbf6a8739b1c5c382ec3c74116-2909167959996384418.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "🌟TUYỂN CỘNG TÁC VIÊN PART-TIME, FULL-TIME VỀ MẢNG NGÀNH KINH DOANH, MARKETING CHO THUÊ CĂN HỘ MINI🌟 👉 CỘNG TÁC VIÊN CÓ THỂ LÀM TẠI NHÀ VÀO THỜI GIAN RẢNH 🔴Đ𝐨̂́𝐢 𝐭𝐮̛𝐨̛̣𝐧𝐠: SINH VIÊN TP. HCM ‼️𝐊𝐡𝐨̂𝐧𝐠 𝐲𝐞̂𝐮 𝐜𝐚̂̀𝐮 𝐤𝐢𝐧𝐡 𝐧𝐠𝐡𝐢𝐞̣̂𝐦, có lộ trình đào tạo bài bả",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "41 phút trước",
-    "sourceUrl": "https://www.chotot.com/121668338",
-    "lat": 10.810451,
-    "lng": 106.612366
   },
   {
     "id": "131510057",
@@ -4327,84 +1848,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.69276
   },
   {
-    "id": "129498601",
-    "title": "TUYỂN NHÂN VIÊN LAU DỌN PHÒNG TRỌ (BÁN THỜI",
-    "price": "Đến 6 triệu/tháng",
-    "priceNum": 6000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/NHbR2o6csKDqhb0b13VqgbUTb3ANCiXgu4E0uaG1GmI/preset:listing/plain/5f85795b678b5bb8a17f9da2d4f06719-2961061132697501421.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Hiện tại chúng tôi cần tuyển nhân viên lau dọn phòng trọ làm việc tại khu vực: 📍 Quận 6 – Quận 10 – Bình Tân (TP.HCM) ⸻ 🧹 MÔ TẢ CÔNG VIỆC • Lau dọn, vệ sinh phòng trọ khi khách trả phòng hoặc theo lịch định kỳ. • Dọn dẹp khu vực chung: hành lang, cầu",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/129498601",
-    "lat": 10.770323,
-    "lng": 106.59671
-  },
-  {
-    "id": "132195564",
-    "title": "TUYỂN SALE TƯ VẤN PHÒNG TRỌ/DẪN KHÁCH",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/WMh6S8-2kyX-NeAX8qvJe2k0IfyOcuOdCEQj4-MIZ8g/preset:listing/plain/23c3318e02cbd4b2cf8417459a118fd6-2982916360145469106.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📍NHATROVN - ANHOME TUYỂN DỤNG Vị trí: Nhân viên triển khai dịch vụ khách hàng ĐỊA CHỈ LÀM VIỆC: 18/165 Cầu Giấy, Hà Nội 🧑‍💼 Mô tả công việc: • Tìm kiếm khách hàng có nhu cầu thuê phòng trọ - căn hộ • Tư vấn, giới thiệu nguồn phòng có sẵn của công ty ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132195564",
-    "lat": 21.021805,
-    "lng": 105.79087
-  },
-  {
-    "id": "132176107",
-    "title": "📍 TUYỂN NHÂN VIÊN / CTV SALE PHÒNG TRỌ – CHDV",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/TZKSEcGRmlJ5cX_-1BoJAtnKx-aKcUcVzupvdlJEy3A/preset:listing/plain/002568ae262b5e99b56ba1156d98a12a-2982775731589511556.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "NhaTroVN – Anhome tuyển nhân sự hỗ trợ tư vấn và kết nối khách thuê phòng trọ/căn hộ dịch vụ. 🧩 Công việc chính: Đăng tin tìm khách thuê trên các nền tảng (Facebook, TikTok, Chợ Tốt…) Tư vấn phòng phù hợp theo nhu cầu khách hàng Sắp xếp lịch và hỗ tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132176107",
-    "lat": 21.010153,
-    "lng": 105.798836
-  },
-  {
     "id": "131669824",
     "title": "Nhà 1 lầu 1 trệt 3 PN có 2 phòng trọ đang cho thuê 15Tr/Tháng",
     "price": "4,25 tỷ",
@@ -4419,7 +1862,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.1,
     "description": "Dự án: Thông tin chi tiết: 🏡 CHÍNH CHỦ CẦN BÁN NHÀ 1 TRỆT 1 LẦU – DT 105m² (5x21) – CÓ THU NHẬP TỪ PHÒNG TRỌ - Nhà + Trọ cho Thuê 15Tr/ Tháng 📍 Vị trí: Đường bê tông rộng, ô tô vào tận nơi, khu dân cư yên tĩnh, an ninh tốt. ✨ Thông tin chi tiết: - Di",
     "amenities": [
       "Bảo vệ 24/7",
@@ -4445,7 +1888,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.0,
     "description": "Cộng tác viên đăng bài, tư vấn phòng trọ, tìm khách đi xem trọ, làm việc online, 300-2tr/deal, lãnh lương theo tuần, không cần bỏ vốn, được đào tạo việc làm",
     "amenities": [
       "Wifi",
@@ -4455,136 +1898,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132202784",
     "lat": 10.99509,
     "lng": 106.657616
-  },
-  {
-    "id": "132015729",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Phụng Hiệp, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📣 [JOB HẬU GIANG – HIỆP HƯNG, PHỤNG HIỆP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng khu vực Hiệp Hưng, Phụng Hiệp, Hậu Giang. Công việc phù hợp cho người muốn tăng thêm thu nhập ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132015729",
-    "lat": 9.758069,
-    "lng": 105.75272
-  },
-  {
-    "id": "132015616",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Lai Vung, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/PQvW0y-nBpf80sYpG9SORQggWJJjmA13xC-dJ1nHp7s/preset:listing/plain/b84f4f867ea46f623681a715762ac117-2981317461360499947.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB ĐỒNG THÁP – LONG THẮNG, LAI VUNG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng làm việc khu vực Long Thắng, Lai Vung, Đồng Tháp. Công việc phù hợp cho ai muốn có thêm thu nhậ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132015616",
-    "lat": 10.242854,
-    "lng": 105.69991
-  },
-  {
-    "id": "132015544",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Tiểu Cần, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/FTnkIKAY3GNJiaFTCTFNwXAsti7WczkcFYfkVrxMz7E/preset:listing/plain/67bda358810dd53fb0e566069510c685-2981317167350078699.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "📣 [JOB TRÀ VINH – LONG THỚI, TIỂU CẦN] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng làm việc khu vực Long Thới, Tiểu Cần, Trà Vinh. Công việc phù hợp cho người muốn tăng thu nhập nh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132015544",
-    "lat": 9.79352,
-    "lng": 106.14045
-  },
-  {
-    "id": "131999033",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Duyên Hải, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/SKKZ9MrWd43ABPwEhBSArYgUN9XD7n_-xTTvTdlQZZU/preset:listing/plain/9a91f0c32784d114ccdf80db66eb7ead-2981187482007756011.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng khu vực Long Vĩnh, Duyên Hải, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131999033",
-    "lat": 9.583697,
-    "lng": 106.358154
-  },
-  {
-    "id": "131999110",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Long Mỹ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ugE706wQNpWG1PX84yMq1zI8md77fjrYPJ_V0SuBoys/preset:listing/plain/aace762560ea106fa7ed6499bba122fc-2981187815824004610.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng khu vực Thuận Hưng, Long Mỹ, Hậu Giang. Công việc phù hợp cho những ai muốn có thêm thu nhập ổn định nhưng vẫn chủ độn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131999110",
-    "lat": 9.660954,
-    "lng": 105.51813
   },
   {
     "id": "132172848",
@@ -4600,7 +1913,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 5.0,
+    "rating": 4.0,
     "description": "Gần chợ, gần trường, an ninh, yên tĩnh, gần trung tâm qua lại các quận",
     "amenities": [
       "Bảo vệ 24/7"
@@ -4609,32 +1922,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132172848",
     "lat": 10.756644,
     "lng": 106.714966
-  },
-  {
-    "id": "131999069",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Hồng Ngự, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/N2JZNNJfrF5UtD1nO0m9Bjb-Ar4I9Yq_7tfmpwv2Ylk/preset:listing/plain/9f75548e4a1b45d5fd4aab22eb9bdf91-2981187646086157826.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng khu vực Thường Lạc, Hồng Ngự, Đồng Tháp. Công việc phù hợp cho những ai muốn tăng thêm thu nhập nhưng vẫn linh động th",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131999069",
-    "lat": 10.83486,
-    "lng": 105.31897
   },
   {
     "id": "132172474",
@@ -4651,7 +1938,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 5.0,
     "description": "Bán gấp nhà 1 trệt 1 lầu đường xe hơi 6m - KDC Tân Kiên - Bình Chánh. giá 1tỷ030tr Diện tích: 5m x 20m = 100m2, sổ hồng riêng. DT sử dụng 110m2 Thiết kế 1 trệt 1 lầu + 5 phòng trọ đang cho thuê phía sau (1tr6/phòng). Vừa ở vừa cho thuê đầu tư dòng ti",
     "amenities": [
       "Máy lạnh",
@@ -4661,188 +1948,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132172474",
     "lat": 10.714177,
     "lng": 106.59122
-  },
-  {
-    "id": "131978360",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/i15A_BZWy8Pz2Ke9TIjS2MLCmqyfObQqdmWyOEK8UD0/preset:listing/plain/250e9d3f9e243ac33297a52c8df0b53d-2981040168781583874.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Tân Bình, Châu Thành, Đồng Tháp. Công việc phù hợp cho ai muốn tăng thu nhập mà vẫn chủ động thời gian. 💰 Thu nhập",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131978360",
-    "lat": 10.255392,
-    "lng": 105.7762
-  },
-  {
-    "id": "131978280",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/1zo6ByurBp8BVjl7676EslY3wrmd6qWsBiYHZOIHNGk/preset:listing/plain/0e8fd81008a34ebb2816b34977547ed0-2981039858641146372.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Hòa, Châu Thành, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày. ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131978280",
-    "lat": 9.878322,
-    "lng": 106.49949
-  },
-  {
-    "id": "131978439",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Châu Thành A, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Nhơn Nghĩa A, Châu Thành A, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131978439",
-    "lat": 9.946995,
-    "lng": 105.64712
-  },
-  {
-    "id": "131720798",
-    "title": "TUYỂN HỌC VIỆC BẢO TRÌ PHÒNG TRỌ-ĐIỆN LẠNH",
-    "price": "Đến 7 triệu/tháng",
-    "priceNum": 7000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/-PVgxqZi-f6TGvbt-93jGOF0fDwfyfHrtwBg23tR7hI/preset:listing/plain/284cd0b9c1cfb35d555c6b2d9766cd88-2979079454869447206.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "Cần tuyển 1-2 học việc hoặc thợ làm công việc bảo trì, sửa chữa nhà trọ, căn hộ dịch vụ. - Không yêu cầu kinh nghiệm - Được đào tạo từ A-Z. - có hỗ trợ chổ ở- chi phí đi lại - yêu cầu có sức khoẻ tốt, nhanh nhặn, tháo vác, chịu khó. - Tuổi từ 18-25 N",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/131720798",
-    "lat": 10.78602,
-    "lng": 106.6085
-  },
-  {
-    "id": "131954003",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Mái Dầm, Châu Thành, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131954003",
-    "lat": 9.936293,
-    "lng": 105.87013
-  },
-  {
-    "id": "132182243",
-    "title": "TUYỂN NVKD - SALE PHÒNG TRỌ CÓ LƯƠNG CỨNG - HH CAO",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/27bMIQbzNBkQxUIIZh5Pjcp_96gGHXJeBHTqVMILcCw/preset:listing/plain/2906fc6e13f29c83e458124ee6327b07-2982801812637336012.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "••TUYỂN GẤP NHÂN VIÊN KINH DOANH SALE PHÒNG TRỌ CÓ LƯƠNG CỨNG HOA HỒNG CAO ✅Thu Nhập: - Được hưởng lương cứng và lĩnh thưởng nếu làm tốt, có chế độ đãi ngộ tốt - Không cần kinh nghiệm chỉ cần chịu khó nhanh nhẹn -Được hỗ trợ đăng tin, hỗ trợ Maketing",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132182243",
-    "lat": 10.805362,
-    "lng": 106.60968
-  },
-  {
-    "id": "131953951",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Cao Lãnh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Bình Thạnh, Cao Lãnh, Đồng Tháp. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131953951",
-    "lat": 10.320038,
-    "lng": 105.78793
   },
   {
     "id": "132129025",
@@ -4871,108 +1976,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.63797
   },
   {
-    "id": "131953889",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 40 triệu/tháng",
-    "priceNum": 40000000,
-    "area": "35 m²",
-    "district": "Huyện Cầu Ngang, Việt Nam",
+    "id": "132066551",
+    "title": "CẦN BÁN DÃY TRỌ CÓ 1 KIOT VÀ 4 PHÒNG TRỌ ĐANG CHO THUÊ THU NHẬP 8TR",
+    "price": "2,4 tỷ",
+    "priceNum": 2400000000,
+    "area": "11 m²",
+    "district": "Thị xã Bến Cát, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/kY-b_Q2TFsKve4zTvIiOUSyR5RHVgn8eQNfYIi13No0/preset:listing/plain/b038be056d40867722e5e413814af35e-2980878926722733570.jpg",
+    "image": "https://cdn.chotot.com/LK9MnypSGicKoG5seNDV9iu_gj8WIPq6fQOtPj0qPYc/preset:listing/plain/24087fb02541955833458b73dd70ed8e-2981747174043717507.jpg",
     "tags": [
-      "AI Verified",
-      "Việt Nam"
+      "Việt Nam",
+      "Cho thuê"
     ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Mỹ Tây, Cầu Ngang, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày. 💰 T",
+    "verified": false,
+    "rating": 4.1,
+    "description": "- Với diện 5x30 (tc 100%) có 1 kiot và 4 phòng trọ đang cho thuê thu nhập mỗi tháng 8tr . - Đất nằm trong khu dân cư đông đúc , bao quanh là kcn mỹ phước 1,2 . giao thông thuận tiện bán 1km là trung tâm hành chính bến cát , đường mỹ phước tân vạn . -",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131953889",
-    "lat": 9.722938,
-    "lng": 106.48182
-  },
-  {
-    "id": "131935709",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Thành phố Sa Đéc, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/vUEvlPN5QsHwS09apTkMIeN97CnaSftAiXjnTL2L2IQ/preset:listing/plain/bb655f5f7cbcfe03d2c2237e9e672430-2980742343659455253.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Tân Khánh Đông, TP Sa Đéc. Công việc linh hoạt, phù hợp cho người muốn tăng thu nhập mà vẫn chủ động thời gian mỗi",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131935709",
-    "lat": 10.355597,
-    "lng": 105.72925
-  },
-  {
-    "id": "131935641",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Cầu Kè, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/QHV3o5uiNoihJlbnUtcv0JP4j3-dOgLBUi8ebYB4XbA/preset:listing/plain/8315f5b09650f9dd2c7bc98b559f3da5-2980742080631159751.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hòa Ân, Cầu Kè, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian, không gò bó. 💰 ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131935641",
-    "lat": 9.89415,
-    "lng": 106.06989
-  },
-  {
-    "id": "131935746",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Vị Thanh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hỏa Tiến, TP Vị Thanh, Hậu Giang. Công việc linh hoạt, phù hợp cho người muốn kiếm thêm thu nhập mà vẫn chủ động t",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131935746",
-    "lat": 9.722853,
-    "lng": 105.396126
+    "postedAt": "7 ngày trước",
+    "sourceUrl": "https://www.chotot.com/132066551",
+    "lat": 11.173189,
+    "lng": 106.6645
   },
   {
     "id": "130779614",
@@ -4989,7 +2016,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.8,
     "description": "Thanh lí máy đã qua sử dụng và đang hoạt động tốt. Máy zin chưa qua sửa chữa. Bảo hành và vận chuyển miễn phí. Chạy êm ít hao điện. Có chính sách bảo hành đổi nếu lỗi trục trặc. Anh chị có nhu cầu mua sản phẩm này hoặc tham khảo nhiều mẫu hơn add zal",
     "amenities": [
       "Máy giặt"
@@ -5014,7 +2041,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.5,
+    "rating": 4.7,
     "description": "Tôi cần bán căn nhà tại Long An giáp Hồ Chí Minh, tại khu vực đông dân cư, gần chợ và khu công nghiệp. - Nhà hiện đang có 8 phòng trọ cho thuê, nguồn thu từ 5tr đến >7tr (tùy thời điểm). - Hẻm rộng xe oto có thể vào được.",
     "amenities": [
       "Wifi",
@@ -5039,7 +2066,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.6,
+    "rating": 4.0,
     "description": "Làm việc tại: 109 Cộng Hoà, Bảy Hiền, Tân Bình Thời gian: 20–24 tiếng/tuần tại văn phòng Trợ cấp: 2.000.000 VNĐ/tháng Công việc: Marketing và tư vấn cho thuê căn hộ dịch vụ, phòng trọ, căn hộ trên TikTok, Facebook, Fanpage, Website và Zalo. Yêu cầu: ",
     "amenities": [
       "Wifi",
@@ -5049,83 +2076,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132121098",
     "lat": 10.801962,
     "lng": 106.64771
-  },
-  {
-    "id": "120770243",
-    "title": "Sỉ - lẻ  tủ lạnh cũ phòng trọ, ccmn bảo hành dài",
-    "price": "1.400.000 đ",
-    "priceNum": 1000000,
-    "area": "75 m²",
-    "district": "Quận Đống Đa, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/K14Ng50kYIxxf6p_GIabOJeGC1OdJwqmdKoHrNHFcCc/preset:listing/plain/1b6c830dd8729fa713814f2aad4f8037-2903941647809085334.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Cửa hàng chuyên tủ lạnh cũ từ 100l đến 500l giá chỉ từ 1tr4, bảo hành 3 - 6 tháng tùy đơn giá, số lượng, miễn phí vận chuyển tận nơi",
-    "amenities": [
-      "Tủ lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/120770243",
-    "lat": 21.020054,
-    "lng": 105.82462
-  },
-  {
-    "id": "132083219",
-    "title": "TUYỂN NHÂN VIÊN / CTV SALE PHÒNG TRỌ – CHDV",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/IHYbS7-sriNF7cPL4Z4xXbHuPgqJBJrzW3dj7Nsvn2M/preset:listing/plain/5440e7e9da25cefdafc89d2e2dfc62b2-2981891169497505003.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "NhaTroVN – Anhome tuyển nhân sự hỗ trợ tư vấn và kết nối khách thuê phòng trọ/căn hộ dịch vụ. 🧩 Công việc chính: Đăng tin tìm khách thuê trên các nền tảng (Facebook, TikTok, Chợ Tốt…) Tư vấn phòng phù hợp theo nhu cầu khách hàng Sắp xếp lịch và hỗ tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132083219",
-    "lat": 21.010153,
-    "lng": 105.798836
-  },
-  {
-    "id": "131831135",
-    "title": "Unite cần Tuyển 20 Sale Phòng trọ - Nhận việc ngay",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/yRk3GYF5GDaAhjZTYexQHa42LOWtG2l9IlzeamfSwvM/preset:listing/plain/00abe34946add24b8adbfc8ab4a365e8-2979991052882016236.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "🔥 Cần tìm thêm Đồng Đội🔥 Unite Group đang tìm kiếm những người đồng hành mới cho đội ngũ tư vấn khách thuê căn hộ mini tại TP.HCM. Cơ hội để bạn bước vào lĩnh vực đang phát triển mạnh mẽ – với hệ thống & chiến lược đã được chứng minh. 💼 Vị trí: Chuyê",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131831135",
-    "lat": 10.825686,
-    "lng": 106.7043
   },
   {
     "id": "130804103",
@@ -5142,7 +2092,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.0,
     "description": "Thanh lí máy đã qua sử dụng và đang hoạt động tốt. Máy zin chưa qua sửa chữa. Bảo hành và vận chuyển miễn phí. Chạy êm ít hao điện. Có chính sách bảo hành đổi nếu lỗi trục trặc. Anh chị có nhu cầu mua sản phẩm này hoặc tham khảo nhiều mẫu hơn add zal",
     "amenities": [
       "Máy giặt"
@@ -5153,32 +2103,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.700615
   },
   {
-    "id": "132047153",
-    "title": "Tuyển Sale Phòng Trọ & CHDV Hà Nội",
-    "price": "Từ 12 triệu/tháng",
-    "priceNum": 12000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/vobODWDrJWprl-PssnM2YSIcs80az1P9P5z7kF-wFcw/preset:listing/plain/243fb90a68a7855efd7a9ed2be4a393e-2981581066565948930.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "Tuyển nhân viên sale phòng trọ & CHDV Tuyển nhân viên dẫn khách đi xem phòng trọ & CHDV Thu nhập trừ 12 triệu đến 30 triệu Có hệ thống sẵn *** Có khách hàng sẵn chỉ cần dẫn Được hỗ trợ & đào tạo Nhatrovn có hơn 30 văn phòng tại các thành phố lớn, tha",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132047153",
-    "lat": 10.757106,
-    "lng": 106.738205
-  },
-  {
     "id": "132041452",
     "title": "[CÓ THƯỞNG] NV SALE PHÒNG TRỌ, CHDV SG",
     "price": "Từ 8 triệu/tháng",
@@ -5187,7 +2111,7 @@ export const LISTINGS: Listing[] = [
     "district": "Quận 7, TP. Hồ Chí Minh",
     "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1551361415-69c87624334f?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Cho thuê"
@@ -5205,291 +2129,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.69693
   },
   {
-    "id": "131837079",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Càng Long, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/48GZ35ezKWA1yoS803HGSKazLjGyz5YrUGtuKKleoLo/preset:listing/plain/5af3ecc204a0c88049d16ff019b3defc-2980013816922866453.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB TRÀ VINH – MỸ ĐỨC, CÀNG LONG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Mỹ Đức, Càng Long, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131837079",
-    "lat": 10.057874,
-    "lng": 106.258095
-  },
-  {
-    "id": "131837463",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Thành phố Cao Lãnh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/KLnVWxC05ki0wVyCtsnEdwamBCOACDiZjA3zm8v2W5Y/preset:listing/plain/561444893e1cf25af04682277cb1a925-2980014203219220786.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "📣 [JOB ĐỒNG THÁP – HÒA THUẬN, CAO LÃNH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hòa Thuận, Cao Lãnh, Đồng Tháp. Công việc phù hợp cho người muốn tăng thu nhập, chủ động thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131837463",
-    "lat": 10.465913,
-    "lng": 105.61926
-  },
-  {
-    "id": "131815040",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Ngã Bảy, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hiệp Lợi, Ngã Bảy, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn linh hoạt thời gian mỗi ngày. ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131815040",
-    "lat": 9.842873,
-    "lng": 105.78793
-  },
-  {
-    "id": "131814899",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Thành phố Hồng Ngự, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/9sAtI3CI2XLC7ceKsxyc73vxoCuSWjuYBYDHMWIzQlQ/preset:listing/plain/f13253602406599c74cc18492dbd495e-2979866291934253653.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại An Thạnh, Hồng Ngự, Đồng Tháp. Công việc phù hợp cho ai muốn kiếm thêm thu nhập nhưng vẫn chủ động thời gian mỗi n",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131814899",
-    "lat": 10.814353,
-    "lng": 105.34532
-  },
-  {
-    "id": "131814603",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thành phố Trà Vinh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/AMavvvr_j1Hd9dU3WvKNzjtZ0H1leK2NCFLskJO-83Q/preset:listing/plain/4b51b36b542b836c5448331613c48afb-2979865509525545510.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Phường 8, TP. Trà Vinh, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131814603",
-    "lat": 9.911851,
-    "lng": 106.314
-  },
-  {
-    "id": "132012689",
-    "title": "TUYỂN NHÂN VIÊN / CTV SALE PHÒNG TRỌ – CHDV",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/PJBclO7ZxRfb3t7yHx5Qyb5Y3AkNtNgC9pV925ZB5GQ/preset:listing/plain/fa30cade4c15b982d1b491bc779db73d-2981306547826973931.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "NhaTroVN – Anhome tuyển nhân sự hỗ trợ tư vấn và kết nối khách thuê phòng trọ/căn hộ dịch vụ. 🧩 Công việc chính: Đăng tin tìm khách thuê trên các nền tảng (Facebook, TikTok, Chợ Tốt…) Tư vấn phòng phù hợp theo nhu cầu khách hàng Sắp xếp lịch và hỗ tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132012689",
-    "lat": 21.03677,
-    "lng": 105.80115
-  },
-  {
-    "id": "128723717",
-    "title": "TUYỂN NV VỆ SINH PHÒNG TRỌ KÝ TÚC XÁ KV Q9 THỦ ĐỨC",
-    "price": "Đến 9 triệu/tháng",
-    "priceNum": 9000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ObKNwH1fWKe-J8H7Q0KVloMdcPb8lFVGxNbwkRknDnc/preset:listing/plain/b809ca2066d2825c79b471a253878760-2964488331177323343.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "TUYỂN NHÂN VIÊN VỆ SINH CĂN HỘ DỊCH VỤ, KÝ TÚC XÁ - THẢO NGUYÊN XANH THẢO NGUYÊN XANH cần tuyển dụng nhân viên vệ sinh tòa nhà (độ tuổi 25-45 tuổi) Giờ làm việc: Thứ 2-Thứ 7 hàng tuần, 8h -17h. Địa điểm: Làm việc ở khu vực Quận 9, Thủ Đức Địa chỉ Văn",
-    "amenities": [
-      "Bếp đầy đủ"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/128723717",
-    "lat": 10.840954,
-    "lng": 106.79719
-  },
-  {
-    "id": "131997545",
-    "title": "TUYỂN NHÂN VIÊN / CTV SALE PHÒNG TRỌ – CHDV",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/dfi6xp3qGP__TpKZbsmqmgCGS4Q7GYZj07dYZ-s7BjQ/preset:listing/plain/96c9a0e551642958ee910631dc528c7d-2981179352613841816.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "NhaTroVN – Anhome tuyển nhân sự hỗ trợ tư vấn và kết nối khách thuê phòng trọ/căn hộ dịch vụ. 🧩 Công việc chính: Đăng tin tìm khách thuê trên các nền tảng (Facebook, TikTok, Chợ Tốt…) Tư vấn phòng phù hợp theo nhu cầu khách hàng Sắp xếp lịch và hỗ tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131997545",
-    "lat": 21.04504,
-    "lng": 105.79218
-  },
-  {
-    "id": "131802568",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Tháp Mười, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Cjfo0AAtklknIKtLB5jp7qtr6i_t49aFNkj-ag3ucv8/preset:listing/plain/1807fdaaa5890eb2c32530baaa36a1ba-2979752188695540663.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Mỹ Quý, Tháp Mười, Đồng Tháp. Công việc phù hợp cho người muốn tăng thu nhập, chủ động thời gian, không gò bó. 💰 T",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131802568",
-    "lat": 10.54535,
-    "lng": 105.74686
-  },
-  {
-    "id": "131801312",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thị xã Duyên Hải, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Nd2J_iT8QIuus838Yihvaq7pjA65oNaH167oVIX8Yto/preset:listing/plain/3a28a25b7ffe2e56ef77872daf089324-2979751622557925968.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Dân Thành, Duyên Hải, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian làm việc. ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131801312",
-    "lat": 9.5768585,
-    "lng": 106.49949
-  },
-  {
-    "id": "131801527",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thị xã Long Mỹ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/DJjWfFA0XO80PQf2Wfrt0-rHRILjhFW6XWQgppEbklY/preset:listing/plain/2bcc52a7fc7736a32802db25263be96d-2979752392667717985.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Trị, Long Mỹ, Hậu Giang. Công việc phù hợp cho người muốn tăng thu nhập, chủ động thời gian, không gò bó. 💰 T",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131801527",
-    "lat": 9.669597,
-    "lng": 105.565025
-  },
-  {
     "id": "132015036",
     "title": "Nhà bán có 7 phòng trọ đang cho thuê",
     "price": "12,9 tỷ",
@@ -5504,7 +2143,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.1,
     "description": "Dự án: Thông tin chi tiết: Nhà bán có 7 phòng trọ đang cho thuê trên 20 triệu 1 tháng, hẻm rộng xe hơi, gần chợ, trường học, bệnh viện, khu vực an ninh tốt",
     "amenities": [
       "Bảo vệ 24/7"
@@ -5529,7 +2168,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.6,
     "description": "🔥 Bán gấp nhà đất 10 phòng trọ cho thuê – dòng tiền ổn định 12tr/th tại Tân Phú Trung, Củ Chi 🔥 📍 Vị trí: Đường số 65, xã Tân Phú Trung, huyện Củ Chi ✅Gần Kcn Tân Phú Trung,BV Xuyên Á , Uỷ Ban xã, Chợ, Về Hóc Môn 10p, Quận 12 17p , An Sương 30p 🚗 Đườ",
     "amenities": [
       "Wifi",
@@ -5567,133 +2206,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.75718
   },
   {
-    "id": "131741080",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Thanh Bình, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/iJybk6hYVRTcmgoask2TPBnIzVFKmrnZC4P-FmscUP0/preset:listing/plain/307fda1fa6f3fd5fdc2106554b7bdc6e-2979305676241690766.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Bình Thành, Phụng Hiệp, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian. 💰 Thu",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131741080",
-    "lat": 10.600945,
-    "lng": 105.40095
-  },
-  {
-    "id": "131741030",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Trà Cú, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/fyvsX0rMzKerpAoLsi6-H-XiX8y8HNl9dNxhTAUukAk/preset:listing/plain/397ba366ef122f863237212e66ccc2f4-2979305463755029342.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Định An, Trà Cú, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian. 💰 Thu nhập: 8–",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131741030",
-    "lat": 9.625604,
-    "lng": 106.26987
-  },
-  {
-    "id": "131939071",
-    "title": "TUYỂN SALE PHÒNG TRỌ / CTV ONLINE",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "79 m²",
-    "district": "Quận Cầu Giấy, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/NimXSToI13xPDD6rjvcy2heB5X4BK6RZyE9G035gCIo/preset:listing/plain/18662fcf235286958275c56d1a2ce15f-2980757781431681813.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "NhaTroVN – Anhome đang mở rộng nhân sự mảng cho thuê phòng & căn hộ dịch vụ tại Hà Nội. Nếu bạn muốn một công việc linh hoạt, được đào tạo từ đầu và có cơ hội kiếm thu nhập cao, đừng bỏ lỡ 👇 🧩 Bạn sẽ làm gì? – Tạo nội dung tìm khách trên các nền tảng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131939071",
-    "lat": 21.021805,
-    "lng": 105.79087
-  },
-  {
-    "id": "131741125",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Vị Thuỷ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Vĩnh Thuận Tây, Vị Thủy, Hậu Giang. Phù hợp cho người muốn tăng thu nhập nhưng vẫn chủ động thời gian cá nhân. 💰 T",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131741125",
-    "lat": 9.716602,
-    "lng": 105.48297
-  },
-  {
-    "id": "131927877",
-    "title": "tuyển bảo vệ cho phòng trọ",
-    "price": "Đến 5,50 triệu/tháng",
-    "priceNum": 5500000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
+    "id": "131956282",
+    "title": "[KO CẦN KN] CTV ONLINE – SALE PHÒNG TRỌ",
+    "price": "Đến 20 triệu/tháng",
+    "priceNum": 20000000,
+    "area": "110 m²",
+    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
     "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&fit=crop",
+    "image": "https://cdn.chotot.com/f7uhXK19OuFgVBq1TjvsIYtYc8_PsRZdrAJVKd2CS4s/preset:listing/plain/4048d01025a68ddf92af8aae4f3020bb-2980886966922549477.jpg",
     "tags": [
       "AI Verified",
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
-    "description": "Địa điềm lạm việc tại phường Gia định. Quận Bình Thạnh . Tp. HCM.",
+    "rating": 5.0,
+    "description": "Mô tả công việc: - Tuyển CTV ONLINE – SALE PHÒNG TRỌ - Đăng bài tìm khách (Facebook, TikTok…) - Nhắn tin tư vấn khách theo form có sẵn - Đặt lịch hẹn khách đi xem phòng Thời gian làm việc: - Làm online, linh hoạt Quyền lợi: - Thu nhập: Trung bình 5 –",
     "amenities": [
-      "Bảo vệ 24/7"
+      "Wifi",
+      "Máy lạnh"
     ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131927877",
-    "lat": 10.796287,
-    "lng": 106.70651
+    "postedAt": "2 tuần trước",
+    "sourceUrl": "https://www.chotot.com/131956282",
+    "lat": 10.83293,
+    "lng": 106.67187
   },
   {
     "id": "131959769",
@@ -5709,7 +2245,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 5.0,
+    "rating": 4.3,
     "description": "Dự án: Thông tin chi tiết: Giấy tờ pháp lý đầy đủ Có sẵn 53 phòng trọ cho thuê",
     "amenities": [
       "Wifi",
@@ -5719,110 +2255,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131959769",
     "lat": 10.8292885,
     "lng": 106.614395
-  },
-  {
-    "id": "131956282",
-    "title": "[KO CẦN KN] CTV ONLINE – SALE PHÒNG TRỌ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/f7uhXK19OuFgVBq1TjvsIYtYc8_PsRZdrAJVKd2CS4s/preset:listing/plain/4048d01025a68ddf92af8aae4f3020bb-2980886966922549477.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Mô tả công việc: - Tuyển CTV ONLINE – SALE PHÒNG TRỌ - Đăng bài tìm khách (Facebook, TikTok…) - Nhắn tin tư vấn khách theo form có sẵn - Đặt lịch hẹn khách đi xem phòng Thời gian làm việc: - Làm online, linh hoạt Quyền lợi: - Thu nhập: Trung bình 5 –",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131956282",
-    "lat": 10.83293,
-    "lng": 106.67187
-  },
-  {
-    "id": "131716147",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Thanh Bình, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/3la7Ji8vSCeaTJGAfxrMfqOu4Wvz67yEpyiAMzd3kbw/preset:listing/plain/67d57809e0e2de7f82c715caa6e09a7d-2979142269883332428.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Tân Bình, Thanh Bình, Đồng Tháp. Công việc phù hợp cho người muốn tăng thu nhập, chủ động thời gian, không gò bó. ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131716147",
-    "lat": 10.600945,
-    "lng": 105.40095
-  },
-  {
-    "id": "131716075",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Tiểu Cần, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hiếu Tử, Tiểu Cần, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày. 💰 T",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131716075",
-    "lat": 9.849156,
-    "lng": 106.21691
-  },
-  {
-    "id": "131941110",
-    "title": "[KO CẦN KN] NV KINH DOANH CHO THUÊ PHÒNG TRỌ",
-    "price": "Đến 15 triệu (lương khoán)",
-    "priceNum": 15000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "Mô tả công việc: - Tuyển dụng NHÂN VIÊN KINH DOANH CHO THUÊ PHÒNG TRỌ (SALE PHÒNG TRỌ) - Tìm kiếm khách hàng: Đăng tin trên các nền tảng mạng xã hội (Facebook, Zalo, Chợ Tốt, TikTok) và các hội nhóm tìm phòng. - Tư vấn & Dẫn khách: Phản hồi nhu cầu c",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131941110",
-    "lat": 10.786331,
-    "lng": 106.627655
   },
   {
     "id": "131955453",
@@ -5839,7 +2271,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.2,
     "description": "Mô tả công việc: - Đăng bài tìm khách trên Facebook, TikTok, website - Tư vấn khách hàng có nhu cầu thuê phòng - Dẫn khách đi xem phòng (có team hỗ trợ) - Chốt deal và chăm sóc khách Thời gian làm việc: - Ca sáng: 8h30 – 11h30 - Ca chiều: 13h30 – 17h",
     "amenities": [
       "Wifi",
@@ -5851,82 +2283,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.63944
   },
   {
-    "id": "131716215",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Long Mỹ, Việt Nam",
-    "province": "Việt Nam",
+    "id": "131941110",
+    "title": "[KO CẦN KN] NV KINH DOANH CHO THUÊ PHÒNG TRỌ",
+    "price": "Đến 15 triệu (lương khoán)",
+    "priceNum": 15000000,
+    "area": "113 m²",
+    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/4-tkVEdg3kd4cg2gllQ0lYnzkj36ttg5_PPTDOJwbuk/preset:listing/plain/8690809a6bc266a195bfbd464d517ea1-2979142494936577868.jpg",
+    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
-      "Việt Nam"
+      "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Thuận Hưng, Long Mỹ, Hậu Giang. Công việc phù hợp cho người muốn kiếm thêm thu nhập nhưng vẫn chủ động thời gian m",
+    "rating": 4.4,
+    "description": "Mô tả công việc: - Tuyển dụng NHÂN VIÊN KINH DOANH CHO THUÊ PHÒNG TRỌ (SALE PHÒNG TRỌ) - Tìm kiếm khách hàng: Đăng tin trên các nền tảng mạng xã hội (Facebook, Zalo, Chợ Tốt, TikTok) và các hội nhóm tìm phòng. - Tư vấn & Dẫn khách: Phản hồi nhu cầu c",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131716215",
-    "lat": 9.660954,
-    "lng": 105.51813
-  },
-  {
-    "id": "131695785",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Tân Hồng, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📣 [JOB ĐỒNG THÁP – CÔNG CHÍ, TÂN HỒNG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Công Chí, Tân Hồng, Đồng Tháp. Công việc phù hợp cho người muốn tăng thu nhập – linh hoạt thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131695785",
-    "lat": 10.843849,
-    "lng": 105.46539
-  },
-  {
-    "id": "131695717",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Duyên Hải, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/KZfOtBpCTeg4BY-2zo9ZcuHf-IBonKbSthq9Ugw6hpc/preset:listing/plain/573dce444392fbb8b5e0b6a9a4a6abaa-2978999267648617014.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB TRÀ VINH – LONG KHÁNH, DUYÊN HẢI] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Khánh, Duyên Hải, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập – chủ động thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131695717",
-    "lat": 9.6017885,
-    "lng": 106.42881
+    "postedAt": "3 tuần trước",
+    "sourceUrl": "https://www.chotot.com/131941110",
+    "lat": 10.786331,
+    "lng": 106.627655
   },
   {
     "id": "131889115",
@@ -5943,7 +2323,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.7,
+    "rating": 4.0,
     "description": "✨️ Chủ cần bán 2 căn nhà 2 tầng đang cho thuê phòng trọ trong chợ An Bình Tây, Ba Tri, Bến Tre cũ (nay là xã Ba Tri, Vĩnh Long) 🔹️ Diện tích mỗi căn 90m² ngang 5x18m, 1 trệt 2 lầu, full thổ cư 🔹️ Nhà xây kiên cố còn rất mới, mỗi căn có 8 phòng trọ rộ",
     "amenities": [
       "Bếp đầy đủ"
@@ -5952,58 +2332,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131889115",
     "lat": 10.063386,
     "lng": 106.57609
-  },
-  {
-    "id": "131695833",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Châu Thành A, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/CYg4C-U5h6HNUSQNWttt8PjMRNvqwoa3z_8VmIVCXjs/preset:listing/plain/8b0f8e40fb121b8740e693d81a19d864-2978999646409099893.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB HẬU GIANG – NHƠN NGHĨA A, CHÂU THÀNH A] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Nhơn Nghĩa A, Châu Thành A, Hậu Giang. Công việc phù hợp cho người muốn tăng thu nhập",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131695833",
-    "lat": 9.946995,
-    "lng": 105.64712
-  },
-  {
-    "id": "131834134",
-    "title": "Vật dụng gia đình Phòng trọ",
-    "price": "2.500.000 đ",
-    "priceNum": 2000000,
-    "area": "108 m²",
-    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/1CWRUX-NHQ7uPjvj8ZWWHgWcCLaRPizHxQQnfmWdGNs/preset:listing/plain/221ae9200a327a7f5dfc70f33282942f-2980004713610117909.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "Mình về quê, nên nhượng lại toàn bộ vật dụng trên hình, phù hợp ở phòng trọ muốn nấu ăn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131834134",
-    "lat": 10.759751,
-    "lng": 106.59082
   },
   {
     "id": "131869673",
@@ -6020,7 +2348,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.8,
+    "rating": 4.5,
     "description": "Đất thổ cư, có phòng trọ cho thuê, chính chủ",
     "amenities": [
       "Wifi",
@@ -6032,134 +2360,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.31232
   },
   {
-    "id": "131674156",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
+    "id": "131834134",
+    "title": "Vật dụng gia đình Phòng trọ",
+    "price": "2.500.000 đ",
+    "priceNum": 2000000,
+    "area": "108 m²",
+    "district": "Quận Bình Tân, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fit=crop",
+    "image": "https://cdn.chotot.com/1CWRUX-NHQ7uPjvj8ZWWHgWcCLaRPizHxQQnfmWdGNs/preset:listing/plain/221ae9200a327a7f5dfc70f33282942f-2980004713610117909.jpg",
     "tags": [
       "AI Verified",
-      "Việt Nam"
+      "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Đông Thạnh, Châu Thành, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ng",
+    "rating": 5.0,
+    "description": "Mình về quê, nên nhượng lại toàn bộ vật dụng trên hình, phù hợp ở phòng trọ muốn nấu ăn",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131674156",
-    "lat": 9.941945,
-    "lng": 105.75272
-  },
-  {
-    "id": "131674107",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Tam Nông, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/MxgrZ7bcIO5G60z2FvOgYwJA68NfhtQz1DO-8XR4Uog/preset:listing/plain/49be1e02162c5f13b62041c4f5c8b0e1-2978853573727551705.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hòa Bình, Tam Nông, Đồng Tháp. Công việc phù hợp cho người muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngà",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131674107",
-    "lat": 10.787078,
-    "lng": 105.61193
-  },
-  {
-    "id": "131673099",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/XL9h17Q06-BaCnI7ESPKgAwNnJkZ1U1gc11sZHBVfQo/preset:listing/plain/782193623cc853c811056fa29b751e35-2978850502344595159.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hưng Mỹ, Châu Thành, Trà Vinh. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian mỗi ngày. 💰",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131673099",
-    "lat": 9.921099,
-    "lng": 106.39937
-  },
-  {
-    "id": "131656789",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Vị Thanh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/3TRqtv_DW6CIe3_A-_Vs9tC1cG5MH1JiBarSYv3bymc/preset:listing/plain/719aeeee2f37dde6e8a244785662ebc9-2978726144920357493.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB HẬU GIANG – HỎA LỰU, VỊ THANH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hỏa Lựu, Vị Thanh, Hậu Giang. Công việc phù hợp cho bạn muốn kiếm thêm thu nhập nhưng vẫn linh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131656789",
-    "lat": 9.729784,
-    "lng": 105.439964
-  },
-  {
-    "id": "131656685",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Lấp Vò, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/cRptg0vF0SXvoUSGUZoGHwwRTrJUG7yH-AS2rXt30DQ/preset:listing/plain/e05349e2e8a7fdabcf404f3c53410166-2978725668834262103.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "📣 [JOB ĐỒNG THÁP – ĐỊNH YÊN, LẤP VÒ] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Định Yên, Lấp Vò, Đồng Tháp. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ độ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131656685",
-    "lat": 10.309874,
-    "lng": 105.5533
+    "postedAt": "3 tuần trước",
+    "sourceUrl": "https://www.chotot.com/131834134",
+    "lat": 10.759751,
+    "lng": 106.59082
   },
   {
     "id": "131844013",
@@ -6176,7 +2400,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.3,
     "description": "TUYỂN GẤP NHÂN VIÊN KINH DOANH SALE PHÒNG TRỌ CÓ LƯƠNG CỨNG HOA HỒNG CAO ✅Thu Nhập: - Được hưởng lương cứng 5tr/1 tháng được lĩnh thưởng nếu làm tốt, có chế độ đãi ngộ tốt - Không cần kinh nghiệm chỉ cần chịu khó nhanh nhẹn -Được hỗ trợ sim đăng tin,",
     "amenities": [
       "Wifi",
@@ -6186,58 +2410,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131844013",
     "lat": 10.822539,
     "lng": 106.63797
-  },
-  {
-    "id": "131656603",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Cầu Ngang, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/V33OvsU9eYZThMaU5P4o8IFni0GNE7TYp7prbjhtdHY/preset:listing/plain/9a32e3f3548f33984307b2484b8a6d4e-2978725315913681525.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "📣 [JOB TRÀ VINH – HIỆP MỸ ĐÔNG, CẦU NGANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hiệp Mỹ Đông, Cầu Ngang, Trà Vinh. Công việc phù hợp cho bạn nào muốn tăng thu nhập nhưng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131656603",
-    "lat": 9.755244,
-    "lng": 106.48182
-  },
-  {
-    "id": "131837803",
-    "title": "Giường sắt ống tròn Phù hợp cho phòng trọ,",
-    "price": "1.150.000 đ",
-    "priceNum": 1000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/QzCUxgHdF6sVHOYNGg5ucVXiB4mGTB4ck86lrT499R4/preset:listing/plain/b28a0037bb4bfd145ee8fe833826bccc-2980016284242671596.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Giường sắt ống tròn – chắc chắn từng chi tiết Phù hợp cho phòng trọ, homestay, gia đình 💰 Bảng giá: 80cm: 1.150k 1m: 1.250k 1m2: 1.400k 1m4: 1.500k 1m6: 1.600k 1m8: 1.750k ✔️ Dễ vệ sinh ✔️ Độ bền cao",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131837803",
-    "lat": 10.725101,
-    "lng": 106.72641
   },
   {
     "id": "131815677",
@@ -6254,7 +2426,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.6,
     "description": "Anhome Group (hệ thống NhaTroVN) đang phát triển đội ngũ tại văn phòng Cầu Giấy, được đào tạo từ đầu. 📍 Khu vực hoạt động chính: Cầu Giấy và các quận lân cận 💼 Bạn sẽ đảm nhận – Tìm kiếm khách hàng trên các nền tảng social, có hỗ trợ tool chạy commen",
     "amenities": [
       "Wifi",
@@ -6264,84 +2436,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131815677",
     "lat": 21.021805,
     "lng": 105.79087
-  },
-  {
-    "id": "131598771",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Lai Vung, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Hậu, Lai Vung, Đồng Tháp. Công việc dành cho người muốn tăng thu nhập – linh hoạt thời gian – không gò bó văn",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131598771",
-    "lat": 10.284659,
-    "lng": 105.62366
-  },
-  {
-    "id": "131597102",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "28 m²",
-    "district": "Thành phố Cà Mau, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/kMk1Si_S7DjkPwjr4hxUJOJEVhCZSsxOj7d2EmXvzqw/preset:listing/plain/4a5e9e612eecf9f144bbcfb7acdf2f62-2978278886438973643.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB CÀ MAU] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Phường 1, TP Cà Mau. Công việc phù hợp cho ai muốn tăng thu nhập – chủ động thời gian – không gò bó. 💰 Thu nhập: 8–25",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131597102",
-    "lat": 9.19023,
-    "lng": 105.13467
-  },
-  {
-    "id": "131598876",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Ngã Bảy, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ByP-lr176ZOmHRJKTpwVrF3y48li6pPBJ5WxTxlSh-A/preset:listing/plain/8304d234af22d6d26a6e41ed973d9493-2978287057323185879.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hiệp Lợi, Ngã Bảy, Hậu Giang. Công việc phù hợp cho ai muốn tăng thu nhập – chủ động thời gian – không gò bó giờ g",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131598876",
-    "lat": 9.842873,
-    "lng": 105.78793
   },
   {
     "id": "131836548",
@@ -6357,7 +2451,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.2,
+    "rating": 4.4,
     "description": "Dự án: Thông tin chi tiết: Dự án: Thông tin chi tiết: Dự án: Thông tin chi tiết: Dự án: Thông tin chi tiết: Thông tin chi tiết Dự án : Khu dân cư Hiệp Bình Nhà có 4 phòng trọ có gác hiện đang cho thuê Nhà cách đường Hiệp Bình 200 m Cách đường B 10m D",
     "amenities": [
       "Wifi",
@@ -6383,7 +2477,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.1,
     "description": "🔥 THANH LÝ ĐỒ PHÒNG TRỌ GIÁ RẺ – CẦN ĐI GẤP 🔥 Mình chuẩn bị về quê nên cần thanh lý nhanh một số đồ đang dùng: • Quạt: … • Nồi cơm điện: … • Bếp: … • (liệt kê thêm đồ của bạn) 👉 Đồ còn dùng tốt, ai cần ghé xem trực tiếp 👉 Ưu tiên lấy nhanh – có fix n",
     "amenities": [
       "Bếp đầy đủ"
@@ -6408,7 +2502,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.7,
     "description": "Thanh lí máy đã qua sử dụng và đang hoạt động tốt. Máy zin chưa qua sửa chữa. Bảo hành và vận chuyển miễn phí. Chạy êm ít hao điện. Có chính sách bảo hành đổi nếu lỗi trục trặc. Anh chị có nhu cầu mua sản phẩm này hoặc tham khảo nhiều mẫu hơn add zal",
     "amenities": [
       "Máy giặt"
@@ -6417,421 +2511,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/130627582",
     "lat": 10.725101,
     "lng": 106.72641
-  },
-  {
-    "id": "131575562",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Hồng Ngự, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/dwGdUn1f0cteFxPaT1rjckl7MF5R8REXw2P-FNRjOVE/preset:listing/plain/d1d36f019a442baf767e02feb8248a28-2978129391131517659.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Thường Lạc, Hồng Ngự, Đồng Tháp. Công việc linh hoạt – phù hợp cho người muốn tăng thu nhập nhưng vẫn chủ ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131575562",
-    "lat": 10.83486,
-    "lng": 105.31897
-  },
-  {
-    "id": "131575623",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thị xã Long Mỹ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Zmsui8C6_baUtx5K2jsOFCWGATTWUV-6m0jbJUNSmps/preset:listing/plain/85087c9a033e160dca58eaffa0c50d68-2978129674178064992.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Long Bình, Long Mỹ, Hậu Giang. Công việc linh hoạt – phù hợp cho người muốn tăng thu nhập nhưng vẫn chủ độ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131575623",
-    "lat": 9.728206,
-    "lng": 105.58261
-  },
-  {
-    "id": "131575481",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Cầu Kè, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/uLXINk-7Hh3ODvT92iTs6IWqZKcmYHAkXku8QQXEUfw/preset:listing/plain/6678d8da7ed4d505e0cdef3f7e756896-2978129154511467104.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Hòa Ân, Cầu Kè, Trà Vinh. Công việc linh hoạt – phù hợp cho ai muốn tăng thu nhập mà vẫn chủ động thời gian",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131575481",
-    "lat": 9.89415,
-    "lng": 106.06989
-  },
-  {
-    "id": "131554428",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Càng Long, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/1Abg23XjApb8WAuSgfkjGFUCqu1bwggeD65afqlYU5w/preset:listing/plain/bd8d3c83e56588ad7a5acfc601296582-2977985098643494615.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Bình Phú, Càng Long, Trà Vinh. Công việc linh hoạt, phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thời gian.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131554428",
-    "lat": 9.972522,
-    "lng": 106.234566
-  },
-  {
-    "id": "131696961",
-    "title": "TUYỂN CTV SALE PHÒNG TRỌ/CHDV HCM",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/tstR8jCVXiG35sVvwqoupB71P7iwg8URVcwl8nPqJV8/preset:listing/plain/bea79d1dfb61b19dbdecca6c2adfb607-2979003651389536076.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Không cần dẫn khách chỉ cần kiếm khách có các anh đẹp trai dẫn Hệ thống hơn 10.000 phòng • Có kinh nghiệm sale phòng là một lợi thế – không có sẽ được đào tạo • Hoa hồng từ 1tr- 3TR ... • Rảnh thì làm , bận thì nghỉ , chăm chỉ thu nhập cao • Đội nhóm",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131696961",
-    "lat": 10.751195,
-    "lng": 106.72199
-  },
-  {
-    "id": "131554656",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Châu Thành, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/BF5iRQLtC7oj8otT5qPviY2blNL6th8GPT8JnpqNS4I/preset:listing/plain/326c9ccfdffe20bfff40655bcebc714a-2977985960233632746.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Phú Long, Châu Thành, Đồng Tháp. Công việc linh hoạt – phù hợp cho người muốn tăng thu nhập nhưng vẫn chủ động thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131554656",
-    "lat": 10.222217,
-    "lng": 105.78793
-  },
-  {
-    "id": "131554764",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 40 triệu/tháng",
-    "priceNum": 40000000,
-    "area": "30 m²",
-    "district": "Huyện Vị Thuỷ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Y1IMMG1MC6I_ieXnbP9J4GWUPn834fRrPQKM6uLx-aM/preset:listing/plain/cd745a38564599f98ddac7f8d009e3d0-2977986393683465175.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Vĩnh Thuận Tây, Vị Thủy, Hậu Giang. Công việc linh hoạt – phù hợp cho ai muốn tăng thu nhập nhưng vẫn chủ động thờ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131554764",
-    "lat": 9.716602,
-    "lng": 105.48297
-  },
-  {
-    "id": "131534876",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Huyện Cao Lãnh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Bình Hàng Tây, Cao Lãnh, Đồng Tháp. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ động thời gian",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131534876",
-    "lat": 10.375605,
-    "lng": 105.76446
-  },
-  {
-    "id": "131757809",
-    "title": "TUYỂN CTV SALE PHÒNG TRỌ-CĂN HỘ DỊCH VỤ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/gzmVRXegikyMHDEV43lLyngwXRqRUrkmeOuqEB3T5pA/preset:listing/plain/6a40ad1c0b288208b4f1d5f878618204-2979435524463485478.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "💥 TUYỂN CTV SALE PHÒNG TRỌ BÌNH THẠNH – THU NHẬP 5–20TR/THÁNG Bạn đang cần một công việc không cần vốn – linh hoạt thời gian – thu nhập tốt? Đây là cơ hội dành cho bạn 👇 📍 Khu vực làm việc: Quận Bình Thạnh 🔥 Khu cực HOT, nhu cầu thuê cao 🏫 Gần các tr",
-    "amenities": [
-      "Nội thất đầy đủ"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131757809",
-    "lat": 10.825686,
-    "lng": 106.7043
-  },
-  {
-    "id": "131534283",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thành phố Trà Vinh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Phường 5, TP. Trà Vinh. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ động thời gian. 💰 Thu nhập:",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131534283",
-    "lat": 9.930418,
-    "lng": 106.34785
-  },
-  {
-    "id": "131534916",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Phụng Hiệp, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/nPKr9PpwRUFJeaI_FRIxWryHY010dYX0P0650upITrk/preset:listing/plain/285393d9436e139ea467d6ca8ea41fea-2977842835023877445.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "📣 [JOB HẬU GIANG] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Kinh Cùng, Phụng Hiệp, Hậu Giang. Công việc phù hợp cho những ai muốn tăng thu nhập nhưng vẫn chủ động thời gian. ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131534916",
-    "lat": 9.8068285,
-    "lng": 105.63539
-  },
-  {
-    "id": "131739824",
-    "title": "NHÂN VIÊN DẪN KHÁCH PHÒNG TRỌ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "14 m²",
-    "district": "Thành phố Tây Ninh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/Ykiz1GGMcnn8wjbf1ejz3N8lNALosWanON1GVXQ1vT4/preset:listing/plain/1702de53a92da1aa17b7c8223cb80485-2979299653845944949.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "Anhome – Nhatrovn Anhome – Nhatrovn tuyển nhân sự triển khai dịch vụ, làm việc trực tiếp với khách thuê phòng trọ và căn hộ dịch vụ. Công việc: Nhận data khách từ công ty, tư vấn & dẫn xem phòng. Hỗ trợ ký hợp đồng và giới thiệu dịch vụ Anhome. Làm v",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131739824",
-    "lat": 11.310856,
-    "lng": 106.09194
-  },
-  {
-    "id": "131739820",
-    "title": "NHÂN VIÊN DẪN KHÁCH PHÒNG TRỌ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "14 m²",
-    "district": "Thành phố Tây Ninh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/4tUwqbcbc3vFf1PrBsUz9XipU1G2hlYaeTG0Q_5eeHM/preset:listing/plain/578da3c33e9b1fe1123af8ecfc1e44f5-2979299647990469364.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "Anhome – Nhatrovn Anhome – Nhatrovn tuyển nhân sự triển khai dịch vụ, làm việc trực tiếp với khách thuê phòng trọ và căn hộ dịch vụ. Công việc: Nhận data khách từ công ty, tư vấn & dẫn xem phòng. Hỗ trợ ký hợp đồng và giới thiệu dịch vụ Anhome. Làm v",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131739820",
-    "lat": 11.300025,
-    "lng": 106.11399
-  },
-  {
-    "id": "131026057",
-    "title": "Giường phòng trọ,giường gỗ tự nhiên giá rẻ!",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "17 m²",
-    "district": "Quận Liên Chiểu, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/cG12KciIJw5Wt_L54ZFJnTTi6MqeYHxVJUoYqTQOPCg/preset:listing/plain/a674efb8abede43226fc4b9eb4ccd27a-2974205255359242758.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "Giường gỗ tự nhiên mới 100% Chà nhám và sơn màu kĩ càng Đã xử lý chống mối mọi Giao lắp nhanh gọn! Liên hệ ngay nhé!",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131026057",
-    "lat": 16.153168,
-    "lng": 108.10729
-  },
-  {
-    "id": "131376714",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Huyện Vị Thuỷ, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "📣 [JOB HẬU GIANG – VỊ TRUNG, VỊ THỦY] NHÂN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Vị Trung, Vị Thủy, Hậu Giang. Công việc phù hợp cho bạn muốn tăng thu nhập và linh hoạt ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131376714",
-    "lat": 9.779858,
-    "lng": 105.51813
-  },
-  {
-    "id": "131513969",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Thị xã Duyên Hải, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/DULglSyZTsrofJQUtnkucs3I7cZ4gI-KwY4Qgz8NPe8/preset:listing/plain/f473c845f2ec2ca73951e2db568963cd-2977697029497731954.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Long Hữu, Duyên Hải, Trà Vinh. Công việc phù hợp cho những bạn muốn tăng thu nhập nhưng vẫn chủ động thời gian 💼✨ 💰",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131513969",
-    "lat": 9.635697,
-    "lng": 106.50538
   },
   {
     "id": "131673105",
@@ -6867,13 +2546,13 @@ export const LISTINGS: Listing[] = [
     "district": "Thành phố Vĩnh Long, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.8,
     "description": "[VĨNH LONG] TUYỂN CHIẾN BINH TƯ VẤN – DẪN KHÁCH XEM PHÒNG 🔎 MÔ TẢ VỊ TRÍ Bạn muốn bứt phá thu nhập tại địa phương? Hãy gia nhập team tư vấn phòng cho thuê của chúng tôi tại khu vực Vĩnh Long ngay hôm nay! 💰 THU NHẬP & CHẾ ĐỘ Mức thu nhập: 8 – 20 triệ",
     "amenities": [
       "Wifi",
@@ -6893,13 +2572,13 @@ export const LISTINGS: Listing[] = [
     "district": "Thành phố Sóc Trăng, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.3,
     "description": "[SÓC TRĂNG] TUYỂN NHÂN VIÊN TƯ VẤN – GIỚI THIỆU PHÒNG TRỌ 🔎 MÔ TẢ VỊ TRÍ Chào đón đồng đội gia nhập chi nhánh Sóc Trăng. Công việc đơn giản nhưng thu nhập đột phá dựa trên sự chăm chỉ và nhiệt huyết của bạn. 💰 THU NHẬP & CHẾ ĐỘ Tổng thu nhập: 8 – 20 ",
     "amenities": [
       "Wifi",
@@ -6909,6 +2588,32 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131723757",
     "lat": 9.595051,
     "lng": 105.95819
+  },
+  {
+    "id": "131723698",
+    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ CHO KHÁCH",
+    "price": "Đến 22 triệu/tháng",
+    "priceNum": 22000000,
+    "area": "44 m²",
+    "district": "Thành phố Nha Trang, Việt Nam",
+    "province": "Việt Nam",
+    "type": "Căn hộ",
+    "image": "https://images.unsplash.com/photo-1551361415-69c87624334f?w=600&q=80&fit=crop",
+    "tags": [
+      "AI Verified",
+      "Việt Nam"
+    ],
+    "verified": true,
+    "rating": 4.6,
+    "description": "[NHA TRANG] TUYỂN CHUYÊN VIÊN TƯ VẤN LƯU TRÚ DỊCH VỤ 🔎 MÔ TẢ VỊ TRÍ Cơ hội làm việc tại thành phố du lịch Nha Trang với thu nhập cao. Vị trí dành cho những bạn trẻ năng động, giao tiếp tốt và có tinh thần cầu tiến. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập bình q",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "4 tuần trước",
+    "sourceUrl": "https://www.chotot.com/131723698",
+    "lat": 12.252708,
+    "lng": 109.162735
   },
   {
     "id": "131590661",
@@ -6925,7 +2630,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.7,
+    "rating": 4.1,
     "description": "🔥 CẦN BÁN GẤP LÔ ĐẤT CÓ SỔ HỒNG RIÊNG – CÓ SẴN THU NHẬP 🔥 📍 Vị trí: Khu phố Thạnh Hòa B, phường An Thạnh, Thuận An, TP.HCM 💰 Giá bán: 5,5T– còn thương lượng cho khách thiện chí ✅ Thông tin chi tiết: Diện tích: 279m² (rộng rãi, dễ xây dựng) Thổ cư: 16",
     "amenities": [
       "Wifi",
@@ -6935,32 +2640,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131590661",
     "lat": 10.95465,
     "lng": 106.70048
-  },
-  {
-    "id": "131723698",
-    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ CHO KHÁCH",
-    "price": "Đến 22 triệu/tháng",
-    "priceNum": 22000000,
-    "area": "44 m²",
-    "district": "Thành phố Nha Trang, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "[NHA TRANG] TUYỂN CHUYÊN VIÊN TƯ VẤN LƯU TRÚ DỊCH VỤ 🔎 MÔ TẢ VỊ TRÍ Cơ hội làm việc tại thành phố du lịch Nha Trang với thu nhập cao. Vị trí dành cho những bạn trẻ năng động, giao tiếp tốt và có tinh thần cầu tiến. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập bình q",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131723698",
-    "lat": 12.252708,
-    "lng": 109.162735
   },
   {
     "id": "129892683",
@@ -6977,7 +2656,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.3,
+    "rating": 4.1,
     "description": "Chính chủ cần bán 5 phòng trọ mới xây có dòng tiền cố định 13trieu/ tháng. Mỗi phòng đều có điều hoà, nóng lạnh,..Kiệt 222 Trần Đại Nghĩa - đối diện trà sữa Zone Six to đùng đùng ZL ***",
     "amenities": [
       "Wifi",
@@ -7003,7 +2682,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 5.0,
     "description": "cần tìm điều hoà lâp phòng trọ tài chính dưới 3tr,báo giá công lắp vật tư",
     "amenities": [
       "Wifi",
@@ -7013,161 +2692,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131680136",
     "lat": 20.943048,
     "lng": 105.84224
-  },
-  {
-    "id": "131699646",
-    "title": "Tuyển Sale cho Thuê phòng Trọ KTX tại Gò Vấp",
-    "price": "Đến 50 triệu/tháng",
-    "priceNum": 50000000,
-    "area": "110 m²",
-    "district": "Quận Gò Vấp, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/xnFtBSlKkyUfIwpRM3vudUOJfM_SeLsVQZUiWmd1P58/preset:listing/plain/2a80c9b262b079537467c2ad7e2b567b-2979016052462871894.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "Yếu cầu: làm việc offline tại địa chỉ 164/17 nguyễn oanh p17 gò vấp Mình cần tuyển người phụ mình công việc sale phòng trong hệ thống chdv Và trực sale . Có khách gọi nghe dt và tư vấn chốt dc khách có hoa hồng , Không cần chạy dẫn khách chỉ cần ngồi",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131699646",
-    "lat": 10.84094,
-    "lng": 106.67482
-  },
-  {
-    "id": "131462026",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Trà Cú, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/TruM6TekGPW9GJ4_67qgjOSQbKELoyX5dMIOzNg8Qws/preset:listing/plain/647b69f70bfb9f871b0d5a4a8140a98f-2977284176693476210.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [JOB TRÀ VINH] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Thị trấn Định An, Trà Cú, Trà Vinh. Công việc phù hợp cho bạn nào muốn tăng thu nhập nhưng vẫn chủ động thời gian c",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131462026",
-    "lat": 9.616258,
-    "lng": 106.29635
-  },
-  {
-    "id": "131648481",
-    "title": "7kg máy giặt phòng trọ",
-    "price": "1.750.000 đ",
-    "priceNum": 1000000,
-    "area": "103 m²",
-    "district": "Quận 8, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/mNyH5Ri8x0krsuOOATM0wWID2iHVsfmNMX6dlQ3ECxU/preset:listing/plain/77fcb39e2d8f60204e14f1e0e7f88571-2978692560693581527.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "Thanh lí máy đã qua sử dụng và đang hoạt động tốt. Máy zin chưa qua sửa chữa. Bảo hành và vận chuyển miễn phí. Chạy êm ít hao điện. Có chính sách bảo hành đổi nếu lỗi trục trặc. Anh chị có nhu cầu mua sản phẩm này hoặc tham khảo nhiều mẫu hơn add zal",
-    "amenities": [
-      "Máy giặt"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131648481",
-    "lat": 10.725149,
-    "lng": 106.62618
-  },
-  {
-    "id": "131462135",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "29 m²",
-    "district": "Thành phố Cao Lãnh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "📣 [JOB ĐỒNG THÁP] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại Hòa An, Cao Lãnh, Đồng Tháp. Công việc linh hoạt, phù hợp cho người muốn tăng thu nhập mà vẫn chủ động thời gian 💼",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131462135",
-    "lat": 10.448566,
-    "lng": 105.61193
-  },
-  {
-    "id": "131439179",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "35 m²",
-    "district": "Huyện Tiểu Cần, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/_qvuYLINBFLvWOJyRRNgE4mc7prb0QwBJr0vp2jftyc/preset:listing/plain/7c7dcdbc5d301cd0410d1d32cb066c07-2977130050970303257.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "📣 [TRÀ VINH] TUYỂN DỤNG CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Bạn ở Hiếu Tử, Tiểu Cần, Trà Vinh và muốn kiếm thêm thu nhập mà vẫn chủ động thời gian? Đây là cơ hội dành cho bạn 👇 🏢 Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131439179",
-    "lat": 9.849156,
-    "lng": 106.21691
-  },
-  {
-    "id": "131439306",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Vị Thanh, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/qCt-tP0E_EqADhA2R1-U-ne_KkxYhZJMK0s8uRn-GIo/preset:listing/plain/09354f1752b68c05e1c03358c79ff2ee-2977130624751942425.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "📣 [HẬU GIANG – HỎA LỰU, VỊ THANH] TUYỂN DỤNG CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Bạn đang ở Hỏa Lựu, Vị Thanh, Hậu Giang và muốn tìm công việc linh hoạt, thu nhập ổn định? Đừng bỏ lỡ cơ hội này 👇 🏢 Anhome Group – NhaTroVN tuyển Chuy",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131439306",
-    "lat": 9.729784,
-    "lng": 105.439964
   },
   {
     "id": "131439251",
@@ -7184,7 +2708,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.1,
     "description": "📣 [ĐỒNG THÁP – AN BÌNH A, HỒNG NGỰ] TUYỂN DỤNG CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Bạn đang ở An Bình A, Hồng Ngự, Đồng Tháp và muốn tìm công việc linh hoạt, thu nhập tốt? Xem ngay cơ hội này 👇 🏢 Anhome Group – NhaTroVN tuyển Chuyên",
     "amenities": [
       "Wifi",
@@ -7210,7 +2734,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.6,
     "description": "[ĐẮK LẮK] TUYỂN ĐỐI TÁC TƯ VẤN – DẪN KHÁCH XEM PHÒNG TRỌ 🔎 MÔ TẢ VỊ TRÍ Tuyển nhân sự tư vấn cho thuê tại khu vực Buôn Ma Thuột. Công việc giúp bạn làm chủ tài chính và thời gian, bứt phá thu nhập hàng tháng tại Đắk Lắk. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập ",
     "amenities": [
       "Wifi",
@@ -7220,110 +2744,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131650528",
     "lat": 12.633933,
     "lng": 108.00408
-  },
-  {
-    "id": "131413971",
-    "title": "NHÂN VIÊN TƯ VẤN KHÁCH THUÊ PHÒNG TRỌ - CTV ONLINE",
-    "price": "Đến 25 triệu/tháng",
-    "priceNum": 25000000,
-    "area": "30 m²",
-    "district": "Thành phố Ngã Bảy, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "📣 [JOB HẬU GIANG – ĐẠI THÀNH, TP NGÃ BẢY] CHUYÊN VIÊN TƯ VẤN CĂN HỘ/PHÒNG TRỌ – KHÔNG CHẤM CÔNG Anhome Group – NhaTroVN tuyển Chuyên viên tư vấn thuê phòng tại khu vực Đại Thành, TP Ngã Bảy. Công việc phù hợp cho ai muốn tăng thu nhập nhưng vẫn linh ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131413971",
-    "lat": 9.841193,
-    "lng": 105.82316
-  },
-  {
-    "id": "131607506",
-    "title": "Cửa phòng trọ (KT: 0.9m x 2m )",
-    "price": "650.000 đ",
-    "priceNum": 650000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/nhd0nWdSjpHJ57AJY7jR8asGOZkcidyZr955AzFv4PU/preset:listing/plain/c4c9c816a5cedab0a858dece511665b0-2978329729415562326.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "cửa phòng trọ _ giá: 650k một bộ _ KT: 0,90m x 2m _ - Xem tại Cửa Hàng Đồ Cũ : VIỆT HOÀNG - Đ/C:602A đường Tô Ngọc Vân, Phường Tam Bình, T.P Thủ Đức, HCM",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131607506",
-    "lat": 10.867641,
-    "lng": 106.73379
-  },
-  {
-    "id": "131658843",
-    "title": "💥Tuyển 7 sale phòng trọ, căn hộ cho thuê TP.HCM",
-    "price": "20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/3OEM9ILyDDHnKN23Ne-CaQ9aObei1IZLMHnvXCAukUg/preset:listing/plain/6f6f5b27a9b0bb7ae0f2955062cd9d08-2978733574869127536.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "CÔNG VIỆC ĐẦU TIÊN, NÊN CHỌN TIỀN HAY CHỌN NGHỀ? 🤔 ​Tại sao không chọn cả hai? Tại GM House, chúng mình tuyển CTV/Chuyên viên tư vấn căn hộ với tiêu chí: ✨ Kỹ năng là trên hết: Bạn được học cách thấu hiểu tâm lý khách hàng – điều mà không trường lớp ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131658843",
-    "lat": 10.8014965,
-    "lng": 106.722946
-  },
-  {
-    "id": "131450184",
-    "title": "Tuyển 5 Nhân sự cho thuê Phòng trọ - Căn hộ HCM",
-    "price": "Đến 19 triệu/tháng",
-    "priceNum": 19000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/fpUllNx2O0AdfCgP_CbVfjzdzvJyJX1CIM9Eru6wrYY/preset:listing/plain/9d5bced501d237873b1274055321ef9d-2977197300182736582.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "TUYỂN DỤNG] NHÂN VIÊN KINH DOANH CĂN HỘ MINI (FULL/PART-TIME) UNITE GROUP tìm đồng đội trẻ, nhiệt huyết cùng bứt phá thu nhập tại TP.HCM. Không Yêu Cầu Kinh Nghiệm 🔥 QUYỀN LỢI HẤP DẪN: • Hoa hồng cực cao: Lên đến 75% giá trị sản phẩm. • Nguồn hàng ph",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131450184",
-    "lat": 10.809227,
-    "lng": 106.61503
   },
   {
     "id": "131558314",
@@ -7340,7 +2760,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.1,
+    "rating": 5.0,
     "description": "Dự án: Thông tin chi tiết: Bán nhà đất hoàn công 100%, cho thuê 6 phòng trọ mới xây",
     "amenities": [
       "Wifi",
@@ -7352,57 +2772,6 @@ export const LISTINGS: Listing[] = [
     "lng": 108.71852
   },
   {
-    "id": "131514885",
-    "title": "cần pass lại phòng trọ 3tr2 và tủ lạnh mini",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/WLlxQJsdHFK6yOn_4iTsrBJmp1kMCiC8RfPPr2e1o2c/preset:listing/plain/63dea1610c1c74749bcfa9ee10221f03-2977700719722543986.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "Cần pass lại phòng trọ 3tr2 và tủ lạnh 1tr",
-    "amenities": [
-      "Tủ lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131514885",
-    "lat": 10.786331,
-    "lng": 106.627655
-  },
-  {
-    "id": "131541423",
-    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ",
-    "price": "Đến 22 triệu/tháng",
-    "priceNum": 22000000,
-    "area": "40 m²",
-    "district": "Thành phố Huế, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "📍 [HUẾ] TUYỂN CHUYÊN VIÊN GIỚI THIỆU PHÒNG CHO THUÊ – LÀM VIỆC CẢ NGÀY 🔎 MÔ TẢ VỊ TRÍ Phát triển sự nghiệp tại Cố đô với công việc tư vấn lưu trú chuyên nghiệp. Chúng tôi tìm kiếm những cộng sự chăm chỉ, am hiểu đường xá khu vực Huế để hỗ trợ khách h",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131541423",
-    "lat": 16.487991,
-    "lng": 107.547554
-  },
-  {
     "id": "131541579",
     "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ",
     "price": "Đến 21 triệu/tháng",
@@ -7411,13 +2780,13 @@ export const LISTINGS: Listing[] = [
     "district": "Thành phố Nha Trang, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.7,
     "description": "📍 [KHÁNH HÒA] TUYỂN CHUYÊN VIÊN TƯ VẤN DỊCH VỤ PHÒNG CHO THUÊ 🔎 MÔ TẢ VỊ TRÍ Phát triển hệ thống lưu trú tại Cam Ranh, Diên Khánh. Chúng tôi cần những bạn trẻ đầy nhiệt huyết để giới thiệu sản phẩm chất lượng đến khách hàng. 💰 THU NHẬP & CHẾ ĐỘ Thu n",
     "amenities": [
       "Wifi",
@@ -7443,7 +2812,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.9,
     "description": "[VĨNH LONG] TUYỂN ĐỐI TÁC TƯ VẤN – DẪN KHÁCH XEM PHÒNG TRỌ 🔎 MÔ TẢ VỊ TRÍ Cần tìm đồng đội đồng hành tại Vĩnh Long. Vị trí dành cho các bạn trẻ muốn có thu nhập cao tại địa phương thông qua việc giới thiệu phòng cho thuê chất lượng. 💰 THU NHẬP & CHẾ ",
     "amenities": [
       "Wifi",
@@ -7453,6 +2822,58 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131541460",
     "lat": 10.241009,
     "lng": 105.98321
+  },
+  {
+    "id": "131541423",
+    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ",
+    "price": "Đến 22 triệu/tháng",
+    "priceNum": 22000000,
+    "area": "40 m²",
+    "district": "Thành phố Huế, Việt Nam",
+    "province": "Việt Nam",
+    "type": "Căn hộ",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&fit=crop",
+    "tags": [
+      "AI Verified",
+      "Việt Nam"
+    ],
+    "verified": true,
+    "rating": 4.7,
+    "description": "📍 [HUẾ] TUYỂN CHUYÊN VIÊN GIỚI THIỆU PHÒNG CHO THUÊ – LÀM VIỆC CẢ NGÀY 🔎 MÔ TẢ VỊ TRÍ Phát triển sự nghiệp tại Cố đô với công việc tư vấn lưu trú chuyên nghiệp. Chúng tôi tìm kiếm những cộng sự chăm chỉ, am hiểu đường xá khu vực Huế để hỗ trợ khách h",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "1 tháng trước",
+    "sourceUrl": "https://www.chotot.com/131541423",
+    "lat": 16.487991,
+    "lng": 107.547554
+  },
+  {
+    "id": "131541596",
+    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ",
+    "price": "Đến 22 triệu/tháng",
+    "priceNum": 22000000,
+    "area": "53 m²",
+    "district": "Thành phố Buôn Ma Thuột, Việt Nam",
+    "province": "Việt Nam",
+    "type": "Căn hộ",
+    "image": "https://cdn.chotot.com/lYraX3mRv1KITkWuLd3-Mn_2HCUYyE-geefjmaEhbKw/preset:listing/plain/897783a80d5a4051e0047ab520b31352-2977870787079495366.jpg",
+    "tags": [
+      "AI Verified",
+      "Việt Nam"
+    ],
+    "verified": true,
+    "rating": 4.6,
+    "description": "[ĐẮK LẮK] TUYỂN ĐỐI TÁC TƯ VẤN – DẪN KHÁCH XEM PHÒNG TRỌ 🔎 MÔ TẢ VỊ TRÍ Tuyển dụng nhân sự tư vấn tại Buôn Ma Thuột. Công việc giúp bạn làm chủ tài chính và thời gian, bứt phá thu nhập hàng tháng tại Đắk Lắk. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập bình quân: 8",
+    "amenities": [
+      "Wifi",
+      "Máy lạnh"
+    ],
+    "postedAt": "1 tháng trước",
+    "sourceUrl": "https://www.chotot.com/131541596",
+    "lat": 12.59828,
+    "lng": 108.034775
   },
   {
     "id": "131541612",
@@ -7469,7 +2890,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.6,
     "description": "[CÀ MAU] TUYỂN NHÂN VIÊN TƯ VẤN – GIỚI THIỆU PHÒNG CHO THUÊ 🔎 MÔ TẢ VỊ TRÍ Chào đón đồng đội gia nhập team tư vấn tại vùng Đất Mũi. Công việc năng động giúp khách hàng tìm được căn phòng ưng ý nhất tại Cà Mau. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập: 8 – 20 tri",
     "amenities": [
       "Wifi",
@@ -7489,13 +2910,13 @@ export const LISTINGS: Listing[] = [
     "district": "Thành phố Nha Trang, Việt Nam",
     "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.3,
     "description": "📍 [NHA TRANG] TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ & PHÒNG CHO THUÊ 🔎 MÔ TẢ VỊ TRÍ Mở rộng đội ngũ tại Nha Trang. Công việc dành cho những bạn muốn bứt phá tài chính và làm việc trong môi trường dịch vụ chuyên nghiệp tại thành phố du lịch. 💰 THU NHẬP & CH",
     "amenities": [
       "Wifi",
@@ -7505,32 +2926,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131541505",
     "lat": 12.266535,
     "lng": 109.19841
-  },
-  {
-    "id": "131541596",
-    "title": "CÔNG VIỆC TƯ VẤN VÀ GIỚI THIỆU PHÒNG TRỌ",
-    "price": "Đến 22 triệu/tháng",
-    "priceNum": 22000000,
-    "area": "53 m²",
-    "district": "Thành phố Buôn Ma Thuột, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/lYraX3mRv1KITkWuLd3-Mn_2HCUYyE-geefjmaEhbKw/preset:listing/plain/897783a80d5a4051e0047ab520b31352-2977870787079495366.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.1,
-    "description": "[ĐẮK LẮK] TUYỂN ĐỐI TÁC TƯ VẤN – DẪN KHÁCH XEM PHÒNG TRỌ 🔎 MÔ TẢ VỊ TRÍ Tuyển dụng nhân sự tư vấn tại Buôn Ma Thuột. Công việc giúp bạn làm chủ tài chính và thời gian, bứt phá thu nhập hàng tháng tại Đắk Lắk. 💰 THU NHẬP & CHẾ ĐỘ Thu nhập bình quân: 8",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131541596",
-    "lat": 12.59828,
-    "lng": 108.034775
   },
   {
     "id": "131293874",
@@ -7547,7 +2942,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.3,
+    "rating": 4.1,
     "description": "❤ Lyna Apartment - Căn hộ khách sạn full nội thất tại 81 Vũ Đình Liên Hòa Xuân ❤ ➡️ Phòng mới, phong cách hiện đại, thoáng mát, sạch sẽ, có ban công, ánh sáng tự nhiên. ➡️ Đầy đủ nội thất, điều hòa, tủ lạnh, máy giặt riêng, máy nóng lạnh, bếp từ, tủ ",
     "amenities": [
       "Máy lạnh",
@@ -7558,7 +2953,7 @@ export const LISTINGS: Listing[] = [
       "Ban công",
       "Bếp đầy đủ"
     ],
-    "postedAt": "5 giờ trước",
+    "postedAt": "6 giờ trước",
     "sourceUrl": "https://www.chotot.com/131293874",
     "lat": 16.013407,
     "lng": 108.22676
@@ -7577,7 +2972,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.1,
+    "rating": 4.2,
     "description": "Càn bán nhà xây kiểu biệt thự vừa ở vừa cho thuê thu nhập tầm 140tr/tháng diện tích gần 500m2 đất ở xấy 4 lầu vay ngân hàng dx 30 tê cần bán gấp giá tốt lh e qua sdt or z.l",
     "amenities": [
       "Wifi",
@@ -7603,7 +2998,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.8,
     "description": "Dự án: Thông tin chi tiết: 🏢 BÁN CĂN HỘ RICHSTAR – QUẬN TÂN PHÚ ✨ Làm việc chính chủ – Báo đúng giá – Dẫn xem đúng căn 🔹 Căn 2PN 2WC – Full nội thất 💰 Giá: 3,850 tỷ 🔹 Căn 3PN 2WC 💰 Giá: 4,4 tỷ 📍 Khu căn hộ Richstar – vị trí đẹp, tiện ích đầy đủ, phù ",
     "amenities": [
       "Nội thất đầy đủ"
@@ -7628,7 +3023,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.9,
     "description": "Dự án: Thông tin chi tiết: * Studio 30 - 37m2 giá 1tỷ750 - 1tỷ850. * 1PN+ 47 - 52m2 giá 2tỷ250 - 2tỷ400. * 2PN 59m2 giá 2tỷ600 - 2tỷ900. * 2PN+ 69m2 giá 3tỷ - 3,3tỷ. * 3PN 81m2 giá 4 tỷ - 4,4 tỷ. * 3PN 102m2. Giá 5,5 tỷ - 6 tỷ. + Quỹ căn hơn 1200 căn",
     "amenities": [
       "Bảo vệ 24/7"
@@ -7653,7 +3048,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.3,
     "description": "Không sử dụng bán lại căn hộ 2pn 2wc 80m² toà A chung cư C-SKYVIEW Chánh Nghĩa, trung tâm Thủ Dầu Một - Căn góc, tầng cao, trang bị full nội thất cao cấp - Có sẵn HĐ thuê thu nhập 12 triệu/tháng - Giá bán: 2,48 tỷ (sổ riêng, bao sang tên, không thươn",
     "amenities": [
       "Nội thất đầy đủ"
@@ -7678,7 +3073,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.0,
     "description": "Căn hộ 2PN 55m2 đầu tư xây dựng bởi Tập đoàn Bcons: - Gần Làng Đại Học Thủ Đức với khoảng 80.000 sinh viên, giảng viên tăng mỗi năm, đảm bảo nhu cầu thuê luôn cao. Quy hoạch bài bản, đường rộng thông thoáng, liền kế tuyến Metro. Vị trí đắc địa hội tụ",
     "amenities": [
       "Wifi",
@@ -7703,7 +3098,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.1,
+    "rating": 4.2,
     "description": "Chính chủ bán nhà hẻm xe hơi đường Phan Huy Ích quận Gò Vấp DT 8x20 1 trêt 3 lầu. Đang cho thuê làm căn hộ cao cấp thu nhập 35-40tr/tháng. Chi tiết LH: *** Mrs Vy.",
     "amenities": [
       "Wifi",
@@ -7713,31 +3108,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131935014",
     "lat": 10.834721,
     "lng": 106.63944
-  },
-  {
-    "id": "132215818",
-    "title": "Cho thuê căn hộ dịch vụ giá theo ngày tại Vũng Tàu",
-    "price": "1.200.000 đ",
-    "priceNum": 1000000,
-    "area": "10 m²",
-    "district": "Thành phố Vũng Tàu, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/60RELuHoBotDqh07sv7MHIOdOpt33huUKnjRcZ49NfI/preset:listing/plain/a558f13d5ddf8ee8e20066ccf372d6d5-2983060438882860220.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "Em cho thuê căn hộ dịch vụ theo ngày khu Bãi Sau Vũng Tàu - Căn hộ từ 50m2- 160m2 từ 1PN - 3PN - Tất cả căn hộ đã trang bị đầy đủ nội thất hiện đại, có thể nấu ăn trong căn hộ - Vị trí ngay sát Bãi Sau, hoàn toàn có thể đi bộ ra biển và công viên Bãi",
-    "amenities": [
-      "Nội thất đầy đủ"
-    ],
-    "postedAt": "2 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132215818",
-    "lat": 10.343432,
-    "lng": 107.09147
   },
   {
     "id": "132215738",
@@ -7754,7 +3124,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.4,
     "description": "Em cho thuê căn hộ du lịch theo ngày tại Bãi Sau Vũng Tàu - Căn hộ 160m2, 3PN, 3WC - Là căn góc nên thiết kế thông thoáng, phòng khách - phòng ngủ đều view biển trực diện - Đã trang bị đầy đủ nội thất hiện đại, có thể nấu ăn thoải mãi - xoong nồi đã ",
     "amenities": [
       "Nội thất đầy đủ"
@@ -7765,29 +3135,55 @@ export const LISTINGS: Listing[] = [
     "lng": 107.09147
   },
   {
-    "id": "132215309",
-    "title": "CHUNG CƯ CHỈ 2,1 TỶ CHO THUÊ LÊN TỚI 25 TRIỆU/THÁNG",
-    "price": "2,1 tỷ",
-    "priceNum": 2100000000,
-    "area": "17 m²",
-    "district": "Quận Sơn Trà, Việt Nam",
+    "id": "132215818",
+    "title": "Cho thuê căn hộ dịch vụ giá theo ngày tại Vũng Tàu",
+    "price": "1.200.000 đ",
+    "priceNum": 1000000,
+    "area": "10 m²",
+    "district": "Thành phố Vũng Tàu, Việt Nam",
     "province": "Việt Nam",
-    "type": "Studio",
-    "image": "https://cdn.chotot.com/u7aPkQ9XUSMuapX43tlY7dlCbh6hqojcsLpX8F18aDQ/preset:listing/plain/bc8141379b631e86b93d3a3d5f5d3a2d-2983057388747893369.jpg",
+    "type": "Căn hộ",
+    "image": "https://cdn.chotot.com/60RELuHoBotDqh07sv7MHIOdOpt33huUKnjRcZ49NfI/preset:listing/plain/a558f13d5ddf8ee8e20066ccf372d6d5-2983060438882860220.jpg",
     "tags": [
       "AI Verified",
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.1,
-    "description": "Bạn đang đau đầu tìm kiếm căn hộ studio giá hơn 2 tỷ mặt sông Hàn? Bạn đang tìm kiếm bđs dòng tiền cho thuê linh hoạt ngắn hạn/dài hạn đạt tỷ suất 10%/năm? Bạn đang có vốn chỉ khoảng 550 triệu và muốn mua 1 tài sản dòng tiền tại Đà Nẵng của cđt uy tí",
+    "rating": 4.3,
+    "description": "Em cho thuê căn hộ dịch vụ theo ngày khu Bãi Sau Vũng Tàu - Căn hộ từ 50m2- 160m2 từ 1PN - 3PN - Tất cả căn hộ đã trang bị đầy đủ nội thất hiện đại, có thể nấu ăn trong căn hộ - Vị trí ngay sát Bãi Sau, hoàn toàn có thể đi bộ ra biển và công viên Bãi",
     "amenities": [
+      "Nội thất đầy đủ"
+    ],
+    "postedAt": "2 ngày trước",
+    "sourceUrl": "https://www.chotot.com/132215818",
+    "lat": 10.343432,
+    "lng": 107.09147
+  },
+  {
+    "id": "132012032",
+    "title": "Căn Hộ 1PN , 2PN Đường Lương Định Của Q2 Đã Có Sổ Hồng Ở Cho Thuê Ngay",
+    "price": "7,5 tỷ",
+    "priceNum": 7500000000,
+    "area": "119 m²",
+    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
+    "type": "1 Phòng ngủ",
+    "image": "https://cdn.chotot.com/nRwYX0gqnMSLIxcItTlRfEM3_UdNa2UlLGnN6fhTcwk/preset:listing/plain/b43d271aff4d5cfde21a881a0da0d0b0-2981300771297736717.jpg",
+    "tags": [
+      "AI Verified",
+      "Cho thuê"
+    ],
+    "verified": true,
+    "rating": 4.3,
+    "description": "*** Vị Trí : Mặt Tiền Lương Định Của Quận 2 - Cách vòng xoay Trần Não Lương Định Của 500m , Cách trung tâm tài chính Quận 1 chỉ 15 phút qua cầu và hầm Thủ Thiêm. *** Giá Bán : - Căn 2PN 2WC 76m2 : Giá 7,5 tỷ bao hết thuế phí , đã có sổ hồng sang tên ",
+    "amenities": [
+      "Hồ bơi",
       "Gym"
     ],
-    "postedAt": "56 phút trước",
-    "sourceUrl": "https://www.chotot.com/132215309",
-    "lat": 16.100111,
-    "lng": 108.22886
+    "postedAt": "hôm qua",
+    "sourceUrl": "https://www.chotot.com/132012032",
+    "lat": 10.79038,
+    "lng": 106.74604
   },
   {
     "id": "132012963",
@@ -7815,30 +3211,29 @@ export const LISTINGS: Listing[] = [
     "lng": 106.66547
   },
   {
-    "id": "131744157",
-    "title": "Bán toà căn hộ 2 mặt kiệt oto VF vào nhà Trần Cao Vân,cho thuê 1ty/nam",
-    "price": "17,9 tỷ",
-    "priceNum": 17900000000,
+    "id": "132215309",
+    "title": "CHUNG CƯ CHỈ 2,1 TỶ CHO THUÊ LÊN TỚI 25 TRIỆU/THÁNG",
+    "price": "2,1 tỷ",
+    "priceNum": 2100000000,
     "area": "17 m²",
-    "district": "Quận Thanh Khê, Việt Nam",
+    "district": "Quận Sơn Trà, Việt Nam",
     "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/WpT5OP05PbqbKJZEXE5o40xhnkHbSBSarWwOAgu9erw/preset:listing/plain/5988a47ea61cb905d73e0de8b326465b-2979317456813538142.jpg",
+    "type": "Studio",
+    "image": "https://cdn.chotot.com/u7aPkQ9XUSMuapX43tlY7dlCbh6hqojcsLpX8F18aDQ/preset:listing/plain/bc8141379b631e86b93d3a3d5f5d3a2d-2983057388747893369.jpg",
     "tags": [
-      "Việt Nam",
-      "Cho thuê"
+      "AI Verified",
+      "Việt Nam"
     ],
-    "verified": false,
-    "rating": 4.9,
-    "description": "Dự án: Thông tin chi tiết: 🍀❄️🌸TOÀ CĂN HỘ TRẦN CAO VÂN – 100M² – 5 TẦNG – DÒNG TIỀN 84TR/THÁNG - 1 TỶ ĐỒNG/NĂM – GIÁ 17.9 TỶ❄️🍀 🤑 𝐕𝐢̣ 𝐭𝐫𝐢́ • Toà căn hộ 2 mặt kiệt, ô tô lui vào tận nhà, cách mặt tiền Trần Cao Vân 30m, cách ngã tư Ông Ích Khiêm và Qua",
+    "verified": true,
+    "rating": 4.2,
+    "description": "Bạn đang đau đầu tìm kiếm căn hộ studio giá hơn 2 tỷ mặt sông Hàn? Bạn đang tìm kiếm bđs dòng tiền cho thuê linh hoạt ngắn hạn/dài hạn đạt tỷ suất 10%/năm? Bạn đang có vốn chỉ khoảng 550 triệu và muốn mua 1 tài sản dòng tiền tại Đà Nẵng của cđt uy tí",
     "amenities": [
-      "Máy giặt",
-      "Nội thất đầy đủ"
+      "Gym"
     ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/131744157",
-    "lat": 16.072126,
-    "lng": 108.20686
+    "postedAt": "1 giờ trước",
+    "sourceUrl": "https://www.chotot.com/132215309",
+    "lat": 16.100111,
+    "lng": 108.22886
   },
   {
     "id": "132196660",
@@ -7866,31 +3261,6 @@ export const LISTINGS: Listing[] = [
     "lng": 108.22449
   },
   {
-    "id": "117310848",
-    "title": "TUYỂN SALE CHO THUÊ CĂN HỘ DỊCH VỤ  TP.HCM",
-    "price": "Đến 30 triệu/tháng",
-    "priceNum": 30000000,
-    "area": "105 m²",
-    "district": "Quận 10, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/LsdME5AsmlLQH8GnIs4aek_CxjpZn1rqg2lI_d1omaU/preset:listing/plain/0a05fe5fe86544863576d68e416ee61f-2921014543013059302.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 5.0,
-    "description": "* Mô tả công việc: - Đăng bài viết và tìm kiếm khách hàng có nhu cầu thuê phòng, căn hộ dịch vụ tại TP.HCM với dự án công ty có sẵn kèm hình ảnh video. (Sản phẩm dễ cho thuê) - List danh sách nhóm có khách hàng tiềm năng công ty sẽ cung cấp (các nhóm",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 giờ trước",
-    "sourceUrl": "https://www.chotot.com/117310848",
-    "lat": 10.770934,
-    "lng": 106.66008
-  },
-  {
     "id": "131841422",
     "title": "Giỏ hàng Habitat CK 10%, TT 10% ký HĐ, nhận nhà cho thuê ngay",
     "price": "2,6 tỷ",
@@ -7905,7 +3275,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.0,
     "description": "Dòng căn hộ khai thác cho thuê rất tốt nhờ nằm ngay VSIP + sát Aeon Mall khu tập trung chuyên gia nước ngoài. Giá & chính sách. Giá từ 2,6 tỷ/căn (67m²). Thanh toán 10% (~260 triệu). Đủ 30% nhận nhà cho thuê ngay. Phần còn lại giãn ~19 tháng. Chiết k",
     "amenities": [
       "Hồ bơi",
@@ -7933,7 +3303,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.4,
     "description": "50m - ĐANG CHO THUÊ CĂN HỘ DỊCH VỤ- NƠ TRANG LONG - BÌNH THẠNH - Diện tích công nhận đủ. Pháp lý rõ ràng. Chủ bao sang tên .- Nhà 3 mặt thoáng, hiện trạng 3 phòng đang cho thuê CHDV, tất cả phòng đều có sẵn máy lạnh, máy giặt, bếp điện mini",
     "amenities": [
       "Máy lạnh",
@@ -7960,16 +3330,41 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.9,
     "description": "Dự án: Thông tin chi tiết: em nghĩ đoạn ni anh thử tìm hiểu sản phẩm của Sun Group anh ạ mặt sông Hàn này, anh ko cần đầu tư diện tích quá rộng như căn Studio 33m2 mà nó hoạt động full công suất lễ hay ko lễ thì vẫn cho thuê đều, khách lẻ hay khách k",
     "amenities": [
       "Wifi",
       "Máy lạnh"
     ],
-    "postedAt": "6 giờ trước",
+    "postedAt": "7 giờ trước",
     "sourceUrl": "https://www.chotot.com/132251068",
     "lat": 16.087246,
     "lng": 108.24665
+  },
+  {
+    "id": "132103395",
+    "title": "bán căn hộ dịch vụ Tân Phú - dt 8 x 10 - 6 phòng vừa ở vừa cho thuê",
+    "price": "7,6 tỷ",
+    "priceNum": 7600000000,
+    "area": "113 m²",
+    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
+    "province": "TP. Hồ Chí Minh",
+    "type": "Duplex",
+    "image": "https://cdn.chotot.com/qTaRwg7f62DNscWfZGfOQcL_ObZZMolG058nrJeAVJQ/preset:listing/plain/c1eb5068d5ffa9cb47d6e66c08714202-2982045128266190723.jpg",
+    "tags": [
+      "AI Verified",
+      "Cho thuê"
+    ],
+    "verified": true,
+    "rating": 4.3,
+    "description": "chỉ có 1 căn giá tốt - ko có căn thứ 2 so sánh - VỪA Ở VỪA KINH DOANH DÒNG TIỀN 12 TRIỆU / THÁNG ----‐-- Bán căn hộ dịch vụ Tân Phú - ĐÔ ĐỐC CHẤN - GIÁ GIẢM CHÀO 7 tỷ 6 - hẻm xe hơi - diện tích 8x 10 - 3tầng đúc BTCT + mái đúc BTCT - Tổng 6pn - PK - ",
+    "amenities": [
+      "Bếp đầy đủ"
+    ],
+    "postedAt": "15 giờ trước",
+    "sourceUrl": "https://www.chotot.com/132103395",
+    "lat": 10.803547,
+    "lng": 106.62967
   },
   {
     "id": "131904389",
@@ -7986,7 +3381,7 @@ export const LISTINGS: Listing[] = [
       "Full nội thất"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.1,
     "description": "📍 Vị trí: Mặt tiền Trần Văn Giàu (TL10), cửa ngõ Tây Sài Gòn 📌 Kết nối nhanh về Bình Tân – trung tâm TP Vị trí đẹp – ngay trung tâm nội khu 🏬 Khối đế căn hộ – đông người qua lại 📐 Diện tích linh hoạt 40–140m² 💰 Đầu tư ít – sinh lời nhanh ✔ Mở shop ✔ ",
     "amenities": [
       "Nội thất đầy đủ"
@@ -8011,7 +3406,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.0,
+    "rating": 4.5,
     "description": "• Kết cấu: 5 tầng, gồm 9 phòng cho thuê • Thu nhập hiện tại: khoảng 250 triệu/năm. • Có thể vừa ở vừa khai thác cho thuê Thông tin chi tiết: • Diện tích đất: 5 x 15m, vuông vức, nở hậu • Vị trí: cách mặt tiền đường Nguyễn Phước Nguyên đúng 2 căn nhà ",
     "amenities": [
       "Bảo vệ 24/7"
@@ -8020,32 +3415,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132171231",
     "lat": 16.04942,
     "lng": 108.185455
-  },
-  {
-    "id": "129618272",
-    "title": "TUYỂN SALE CHO THUÊ VÀ CHUYỂN NHƯỢNG CĂN HỘ QUẬN 2",
-    "price": "Từ 40 triệu (lương khoán)",
-    "priceNum": 40000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/0dw8If6nyiGr6uCzW8KiWCh_3-KPzZ39-6AayO0PtB0/preset:listing/plain/7738a00bf51a82cad49ae9903b6cfc8a-2961922137932593280.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "🌟 BẠN ĐAM MÊ BẤT ĐỘNG SẢN VÀ MUỐN THU NHẬP KHÔNG GIỚI HẠN? AMOLAND TUYỂN SALE CHUYỂN NHƯỢNG & CHO THUÊ CĂN HỘ QUẬN 2 – ĐÃI NGỘ SIÊU HẤP DẪN! 🌟 CHẾ ĐỘ & QUYỀN LỢI • Lương cứng: 4.000.000 - 8.000.000 vnđ/tháng • Hoa hồng lên đến 70% – nhận tiền trong 2",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "25 phút trước",
-    "sourceUrl": "https://www.chotot.com/129618272",
-    "lat": 10.75053,
-    "lng": 106.778435
   },
   {
     "id": "110739414",
@@ -8062,7 +3431,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.1,
     "description": "PHÚ ĐÔNG PREMIER 2PN, 2WC, 72M2, 3.4 TỶ Tọa lạc tại vị trí đắc địa của TP. Dĩ An, cách mặt tiền Phạm Văn Đồng (Thủ Đức) chỉ 300m. Trang bị các trang thiết bị, nội thất Tiện ích: có siêu thị winmart , khuôn viên tầng trệt, phòng gym yoga , hồ bơi nước",
     "amenities": [
       "Hồ bơi",
@@ -8076,30 +3445,29 @@ export const LISTINGS: Listing[] = [
     "lng": 106.7534
   },
   {
-    "id": "131799360",
-    "title": "TUYỂN SALE BÁN - CHO THUÊ CĂN HỘ QUÂN 2",
-    "price": "Đến 40 triệu/tháng",
-    "priceNum": 40000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/QeF7d4fPhQ_OI_6W-SBwB2VKR4qlTX8Hc148tmMocSE/preset:listing/plain/3d4d6c323ac7a2cba5bfa70e892fbb38-2979744294990864934.jpg",
+    "id": "130374931",
+    "title": "Diamond Boulevard căn hộ trục QL13, sát Metro, tiềm năng cho thuê cao",
+    "price": "1,9 tỷ",
+    "priceNum": 1900000000,
+    "area": "11 m²",
+    "district": "Thành phố Thuận An, Việt Nam",
+    "province": "Việt Nam",
+    "type": "1 Phòng ngủ",
+    "image": "https://cdn.chotot.com/Gm-VWfQUvvLXyI4yD9SSUjcct-Tcjfqb5Jtst8AT7NU/preset:listing/plain/3cd9cdee3cfe9722dd1f33ae2849c7b3-2967608640301705249.jpg",
     "tags": [
       "AI Verified",
-      "Cho thuê"
+      "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.5,
-    "description": "CÔNG TY TNHH BĐS CITYLAND CẦN TUYỂN NHÂN VIÊN KINH DOANH BẤT ĐỘNG SẢN Số lượng cần tuyển: 05 Hình thức làm việc: Toàn thời gian. Chức vụ: Nhân viên. Kinh nghiệm: Không yêu cầu kinh nghiệm. Biết tiếng Anh là một lợi thế. MÔ TẢ CÔNG VIỆC: - Giới thiệu ",
+    "rating": 4.6,
+    "description": "Diamond Boulevard căn hộ đầu tư sinh lời trên trục QL13. Giá từ 35 - 36 triệu/m² | Cho thuê & thanh khoản tốt. Anh/chị đang tìm sản phẩm đầu tư BĐS có giá trị bền vững? Diamond Boulevard là lựa chọn đáng cân nhắc nhờ: Vị trí trung tâm Thuận An trục Q",
     "amenities": [
-      "Wifi",
-      "Máy lạnh"
+      "Nội thất đầy đủ"
     ],
-    "postedAt": "2 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131799360",
-    "lat": 10.781944,
-    "lng": 106.768234
+    "postedAt": "7 ngày trước",
+    "sourceUrl": "https://www.chotot.com/130374931",
+    "lat": 10.957153,
+    "lng": 106.71757
   },
   {
     "id": "131701837",
@@ -8116,7 +3484,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.8,
     "description": "Dự án: Thông tin chi tiết: - Căn hộ 2PN liền kề sân bay Tân Sơn Nhất và trung tâm Gò Vấp , giá 2.1 tỷ , có sẵn Hợp Đồng thuê 12tr/tháng - Vị trí ngay MT đường Nguyễn Bỉnh Khiêm giao Phạm Văn Đồng , cách sân bay TSN 5 phút đi xe - T",
     "amenities": [
       "Hồ bơi",
@@ -8126,7 +3494,7 @@ export const LISTINGS: Listing[] = [
       "Ban công",
       "Bếp đầy đủ"
     ],
-    "postedAt": "1 giờ trước",
+    "postedAt": "2 giờ trước",
     "sourceUrl": "https://www.chotot.com/131701837",
     "lat": 10.817023,
     "lng": 106.687294
@@ -8146,7 +3514,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": false,
-    "rating": 4.6,
+    "rating": 4.8,
     "description": "Chính chủ cần bán căn 2 phòng ngủ Full nội thất Chung cư Legacy 60m2, đang có hợp đồng cho thuê 10tr/tháng, đầy đủ máy lạnh, tủ lạnh, tivi, lò vi sóng, máy giặt, máy nước nóng, bếp từ, máy hút khói, giường, tủ quần áo, thiết bị vệ sinh chỉ dọn vào là",
     "amenities": [
       "Máy lạnh",
@@ -8175,7 +3543,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.9,
     "description": "Bán căn 2PN-2WC 67m2 giá *** tại Eco Xuân Lái Thiêu Có nội thất cho thuê được 6tr/ tháng. Chủ bán gấp 2 tỷ 28 hỗ trợ vay. Tiền mặt giá tốt hơn nữa.",
     "amenities": [
       "Nội thất đầy đủ"
@@ -8200,7 +3568,7 @@ export const LISTINGS: Listing[] = [
       "Full nội thất"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.8,
     "description": "Vị trí: Nguyễn Thượng Hiền , Bình Thạnh trung tâm kết nối nhanh Quận 1, Phú Nhuận, Gò Vấp. Chỉ 10 phút đến sân bay Tân Sơn Nhất, thuận tiện di chuyển mọi hướng. Diện tích: 58m² Thiết kế: 2PN 2WC ban công thoáng mát, đón gió tự nhiên. Nội thất: Ful",
     "amenities": [
       "Hồ bơi",
@@ -8229,7 +3597,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.8,
     "description": "- Căn hộ 2PN liền kề sân bay Tân Sơn Nhất và trung tâm Gò Vấp , giá 2.1 tỷ , có sẵn Hợp Đồng thuê 13tr/tháng - Vị trí ngay MT đường Lê Quang Định giao Phạm Văn Đồng , cách sân bay TSN 5 phút đi xe - Thuận tiện di chuyển vào Bi",
     "amenities": [
       "Hồ bơi",
@@ -8286,7 +3654,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.4,
     "description": "Dự án: Thông tin chi tiết: Bán C Sky View Thủ Dầu Một còn giá tốt 1.890 tỷ. Bàn giao full nội thất tốt, đã có sổ hồng riêng. có HĐ thuê 8.5tr/tháng. lhxn ***",
     "amenities": [
       "Nội thất đầy đủ"
@@ -8295,6 +3663,32 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131509383",
     "lat": 10.97374,
     "lng": 106.66504
+  },
+  {
+    "id": "131755349",
+    "title": "CHỈ VỚI 150TR DỌN VÔ Ở VÀ CHO THUÊ LẠI TRONG 2 NĂM LS6%",
+    "price": "1,8 tỷ",
+    "priceNum": 1800000000,
+    "area": "32 m²",
+    "district": "Huyện Bến Lức, Việt Nam",
+    "province": "Việt Nam",
+    "type": "1 Phòng ngủ",
+    "image": "https://cdn.chotot.com/v22cKmxMD33W7pVmh9AhOWWLqvxEYiE-xtXVZFUxqVs/preset:listing/plain/a1c9bfea2e1b08f6a2ab5574e3441040-2979426403499682415.jpg",
+    "tags": [
+      "AI Verified",
+      "Việt Nam"
+    ],
+    "verified": true,
+    "rating": 4.3,
+    "description": "CĂN 2PN , 2WC, BAN CÔNG THOÁNG, THIẾT KẾ ĐÓN GIÓ, ÁNH SÁNG TỰ NHIÊN NẰM NGAY TRUNG TÂM CỦA CÁC CHUYÊN GIA NƯỚC NGOÀI Ở - THANH TOÁN 15% KÝ HĐMB SẴN SÀNG CHO KHÁCH THUÊ LẠI 6% - TẶNG FULL GÓI NỘI THẤT GỖ AN CƯỜNG - ANH CHỊ XEM VỊ TRÍ VÀ NHÀ SẼ ƯNG NGA",
+    "amenities": [
+      "Nội thất đầy đủ",
+      "Ban công"
+    ],
+    "postedAt": "2 ngày trước",
+    "sourceUrl": "https://www.chotot.com/131755349",
+    "lat": 10.7939825,
+    "lng": 106.50519
   },
   {
     "id": "131332481",
@@ -8311,7 +3705,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.9,
+    "rating": 4.1,
     "description": "Chủ nhà cần tiền kinh doanh nên muốn bán lại căn 1PN1WC tại khu căn hộ Bcons City tháp Green Emerald. Vị trí: đường Thống Nhất, Đông Hoà, Dĩ An, Bình Dương. Nhà mới nhận tháng 10/2026 nên còn rất mới Hiện đang cho thuê hợp đồng 02 năm giá 9tr/ tháng.",
     "amenities": [
       "Nội thất đầy đủ",
@@ -8323,55 +3717,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.79375
   },
   {
-    "id": "132012032",
-    "title": "Căn Hộ 1PN , 2PN Đường Lương Định Của Q2 Đã Có Sổ Hồng Ở Cho Thuê Ngay",
-    "price": "7,5 tỷ",
-    "priceNum": 7500000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
+    "id": "129760374",
+    "title": "Bán căn 3pn 2wc chung cư Dreamhome Palace Q8, vào ở hoặc cho thuê ngay",
+    "price": "2,99 tỷ",
+    "priceNum": 2990000000,
+    "area": "103 m²",
+    "district": "Quận 8, TP. Hồ Chí Minh",
     "province": "TP. Hồ Chí Minh",
-    "type": "1 Phòng ngủ",
-    "image": "https://cdn.chotot.com/nRwYX0gqnMSLIxcItTlRfEM3_UdNa2UlLGnN6fhTcwk/preset:listing/plain/b43d271aff4d5cfde21a881a0da0d0b0-2981300771297736717.jpg",
+    "type": "2 Phòng ngủ",
+    "image": "https://cdn.chotot.com/0XSL8fFFcmpqh1eeUAsYkdFPoQAEtPOo6BWBy83J270/preset:listing/plain/a82a169c7ee7c8aadade38343269d59a-2962928809495519385.jpg",
     "tags": [
       "AI Verified",
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
-    "description": "*** Vị Trí : Mặt Tiền Lương Định Của Quận 2 - Cách vòng xoay Trần Não Lương Định Của 500m , Cách trung tâm tài chính Quận 1 chỉ 15 phút qua cầu và hầm Thủ Thiêm. *** Giá Bán : - Căn 2PN 2WC 76m2 : Giá 7,5 tỷ bao hết thuế phí , đã có sổ hồng sang tên ",
+    "rating": 4.5,
+    "description": "Gia đình bán căn 3pn 2wc 76m2 chung cư Dreamhome Palace Quận 8 - Giá 2.99 tỷ (gồm nội thất cơ bản: có rèm & bếp từ âm) - bao hết thuế phí sang tên - Có ngân hàng cho vay 1 tỷ 7 (thời gian 30 năm) - Chung cư đầy đủ tiện ích, gần chợ & trường học các c",
     "amenities": [
-      "Hồ bơi",
-      "Gym"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132012032",
-    "lat": 10.79038,
-    "lng": 106.74604
-  },
-  {
-    "id": "129718562",
-    "title": "Habitat Đầu Tư Và Cho Thuê - 79m2 - Chiết Khấu 9% - em Bá",
-    "price": "3 tỷ",
-    "priceNum": 3000000000,
-    "area": "11 m²",
-    "district": "Thành phố Thuận An, Việt Nam",
-    "province": "Việt Nam",
-    "type": "1 Phòng ngủ",
-    "image": "https://cdn.chotot.com/tvkf8niZ6umrx3kUeU8Dam8_oWCCOlKrdNRFXuuWf68/preset:listing/plain/50586d87b2c5f49c64c2fba80b0ef7d9-2962645232623379143.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.0,
-    "description": "2pn 2wc, 79m2 chung cư Habitat. Giá tỷ full VAT cả 2PN đều có cửa sổ lớn. Thanh toán 10% ký HDMB, 30% nhận nhà ở ngay. Khuôn viên rộng 4,1ha, hồ bơi dài 50m. Có cam kết thuê, nhận nhà miễn lãi 1 năm, ân hạn góc 36 tháng. Liên hệ: (Em Bá Habitat) để x",
-    "amenities": [
-      "Hồ bơi"
+      "Nội thất đầy đủ",
+      "Bếp đầy đủ"
     ],
     "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/129718562",
-    "lat": 10.92473,
-    "lng": 106.72363
+    "sourceUrl": "https://www.chotot.com/129760374",
+    "lat": 10.70677,
+    "lng": 106.62474
   },
   {
     "id": "131173767",
@@ -8387,7 +3756,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.1,
+    "rating": 4.5,
     "description": "Future BS Phong Thuỷ Up Wave 125 Giấy tờ ngay chủ Linh tinh đồ chơi 2 bộ áo trắng đỏ và vàng cát full keo - Phuộc Ohlins Monkey full box - Tay nissin , heo brembo , đĩa đồ chơi ,bình dầu rời - Vỏ michellin - Cổ pô titan , ốp pô - Ổ khoá smartkey - Cầ",
     "amenities": [
       "Wifi",
@@ -8424,58 +3793,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.82374
   },
   {
-    "id": "132233667",
-    "title": "Tượng dê tam dương phong thuỷ cao cấp",
-    "price": "1.395.000 đ",
-    "priceNum": 1000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/IG4WftVbvX254gbvE-tPe8kdbPmZbuOHSURHTHjtLis/preset:listing/plain/fbebb8c4ece47c70935aa462c57d6348-2983194092039104596.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "- Kích thước: Dài 28cm, Rộng 18cm, Cao 38cm, Nặng 3kg - Chất liệu: Vàng cát mỹ nghệ. - Kiểu dáng: Tam Dương Đứng Trên Núi Vàng. - Chi tiết: Tượng Tam Dương được chế tác với các chi tiết tinh xảo, như chi tiết vàng cát đính ngọc đỏ trên lưng, đứng núi",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "hôm qua",
-    "sourceUrl": "https://www.chotot.com/132233667",
-    "lat": 10.793186,
-    "lng": 106.65008
-  },
-  {
-    "id": "132185683",
-    "title": "Xe đẩy hàng Phong Thạnh Đỏ",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "103 m²",
-    "district": "Quận 8, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/VkNYCbh0o9IMlHlMWVe8pHxeqY2z7fH4FJdBmV596fM/preset:listing/plain/3e315e4a3b3cb12c78be20cf44dba32b-2982826466995818265.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Xe đẩy hàng Phong Thạnh màu đỏ, khung kim loại chắc chắn, chịu tải tốt. - Bánh xe linh hoạt, dễ di chuyển. - Phù hợp dùng trong kho, siêu thị, nhà xưởng. giá 1tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132185683",
-    "lat": 10.750103,
-    "lng": 106.67998
-  },
-  {
     "id": "131730114",
     "title": "poodle tiny đen phong thuỷ",
     "price": "2.000.000 đ",
@@ -8502,109 +3819,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.671135
   },
   {
-    "id": "132158589",
-    "title": "Tuyển 05 Nhân Viên Sales Trang sức Phong thuỷ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "111 m²",
-    "district": "Quận Phú Nhuận, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/GmWEW1JhnpVQU8Msm-ZphBrnLV4M24cM0WvZRlskXcQ/preset:listing/plain/ea7c7cd5af3582f6ebff0abe044c870b-2982631968854415688.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "MÔ TẢ CÔNG VIỆC * Chịu trách nhiệm các hoạt động bán hàng tại cửa hàng. * Hoàn thành các chỉ tiêu được giao về doanh thu (KPI). * Tư vấn bán hàng trực tiếp và online trên các nền tảng mạng xã hội của cửa hàng. * Chăm sóc và duy trì mối quan hệ với kh",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "16 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132158589",
-    "lat": 10.808407,
-    "lng": 106.67364
-  },
-  {
-    "id": "132244515",
-    "title": "TƯỢNG QUAN CÔNG CHIÊU TÀI TRANG TRÍ PHONG THUỶ",
-    "price": "1.028.000 đ",
-    "priceNum": 1000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/5aZq0LhfGwYwXNztV__iLzcJH_rb6t22m9APNLJPEzw/preset:listing/plain/bb903bbe3eba747d13ef50896c70864c-2983236598408221890.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "- Kích thước: Dài 19cm, Rộng 14cm, Cao 38cm, Nặng 1.7kg - Chất liệu: Vàng cát mỹ nghệ. - Kiểu dáng: Đứng thẳng uy nghi. - Chi tiết: Tượng Quan Công được chế tác với các chi tiết tinh xảo, như chi tiết trang phục giáp rồng uốn lượn trên ngực áo, biểu ",
-    "amenities": [
-      "Bảo vệ 24/7"
-    ],
-    "postedAt": "20 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132244515",
-    "lat": 10.793186,
-    "lng": 106.65008
-  },
-  {
-    "id": "132165350",
-    "title": "Đá phong thủy Tinh thể Vàng",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "53 m²",
-    "district": "Thành phố Buôn Ma Thuột, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/RaypLGUjTi8LxiMOlwXndyPDTQLq1jRZo0FriljDOg8/preset:listing/plain/5ce5dadeed6d1be9a4aceb05de1b954f-2982672528409382505.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "hốc đá tinh thể màu vàng thành lý 1000k miễn phí ship hàng toàn quốc",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "5 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132165350",
-    "lat": 12.619167,
-    "lng": 107.94668
-  },
-  {
-    "id": "132204441",
-    "title": "[BÌNH ĐỊNH - PHÚ PHONG] TUYỂN NV GIAO HÀNG",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "43 m²",
-    "district": "Huyện Tây Sơn, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/PXsaFCSvl_kIJBtiq3sLLERuewAPTmZLnT5bbVrh2N8/preset:listing/plain/60a9cba50ef8d909d923d3e91a654fbc-2982948831833389444.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "📣 GHTK TUYỂN SHIPPER (GIAO HÀNG XE MÁY) 🏢 Công ty Cổ phần Giao Hàng Tiết Kiệm 🚚 Công việc: Nhận hàng tại bưu cục Giao hàng theo tuyến có sẵn Cập nhật đơn trên app 💰 Thu nhập: 10 – 15 triệu/tháng ✔️ Không yêu cầu kinh nghiệm ✔️ Có hướng dẫn khi làm ✔️",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132204441",
-    "lat": 13.917481,
-    "lng": 108.923485
-  },
-  {
     "id": "131194461",
     "title": "labrador thuần chủng phong thuỷ ạ 😊",
     "price": "4.500.000 đ",
@@ -8619,7 +3833,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.5,
+    "rating": 4.9,
     "description": "Cún nhà m ở dăklak Bên m co ship toàn quốc ☘️☘️☘️",
     "amenities": [
       "Wifi",
@@ -8645,7 +3859,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.6,
+    "rating": 4.9,
     "description": "THANH LÝ CƠ QUAN KHO BỆNH VIỆN TRƯỜNG HỌC A E CÓ ALO CÓ GIÁ CỰC TỐT LOPTOP 60K 1 KÝ RAM MIAN MÁY BÀN THU HẾT MÁY LẠNH TẤT CẢ ĐỒ MÁY TÍNH THU HẾT CPU MÁY BÀN LOPTOP LIÊN HỆ CỬA HÀNG HỮU TÀI AN GIANG HẺM 2 YẾU KIÊU MỸ BÌNH LONG XUYÊN AN GIANG 8G TỚI 20",
     "amenities": [
       "Máy lạnh"
@@ -8654,32 +3868,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/125835561",
     "lat": 10.387165,
     "lng": 105.43556
-  },
-  {
-    "id": "132240171",
-    "title": "TƯỢNG TRÂU TÀI LỘC TRANG TRÍ PHONG THUỶ CAO CẤP",
-    "price": "785.000 đ",
-    "priceNum": 785000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/UXtx3_NFKURy9S9tNTu_S_oYO6AuCVTvSdz09wbJtpM/preset:listing/plain/ad19ddab26fe5898647dfb8392809628-2983219726960946074.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.4,
-    "description": "- Kích thước lớn: Dài 30cm, Rộng 13cm, Cao 26cm, Nặng 1.9kg - Chất liệu: Composite sợi gỗ nguyên khối - Màu sắc: Đàn hương đỏ cao cấp. - Kiểu dáng: Mang Xâu Tiền Tài Lộc. - Chi tiết: Tượng Trâu Phong Thủy được chế tác với các chi tiết tinh xảo, như c",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "23 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132240171",
-    "lat": 10.793186,
-    "lng": 106.65008
   },
   {
     "id": "132210690",
@@ -8708,32 +3896,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.68372
   },
   {
-    "id": "132140919",
-    "title": "Trứng khủng long phong thuỷ Đá",
-    "price": "1.000.000 đ",
-    "priceNum": 1000000,
-    "area": "11 m²",
-    "district": "Thành phố Thủ Dầu Một, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/LC04yB3F0Esiq219tmZ1tdnLRnKcypTGiRUpivl1r-s/preset:listing/plain/3ed69decb8680a07a00f54fae59a09ac-2982471770577450624.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Trứng khủng long phong thuỷ. Viên dưới 10kg hoặc 30kg và 60kg đều có giá từ 1tr",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "6 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132140919",
-    "lat": 10.9623575,
-    "lng": 106.67335
-  },
-  {
     "id": "132219818",
     "title": "PC Phong Vũ i3 Gen 7 19 inch 8GB/120GB",
     "price": "2.990.000 đ",
@@ -8748,7 +3910,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.8,
     "description": "Bộ máy vi tính bàn học tập + bán hàng online + kế toán : Màn hình Acer 19 inch sắc nét Thùng máy tính thông số : Main H110 / Chip core i3 Gen 7 / R8Gb R4 / ổ cứng SSD 120Gb / Nguồn 350W CST / Windows 10/11 64 bit + Office Quà Tặng đi kèm : 1 bộ phím ",
     "amenities": [
       "Wifi"
@@ -8757,31 +3919,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132219818",
     "lat": 10.74274,
     "lng": 106.677765
-  },
-  {
-    "id": "132130541",
-    "title": "Chum nước , phun nước phong thuỷ",
-    "price": "800.000 đ",
-    "priceNum": 800000000,
-    "area": "119 m²",
-    "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/w-JSgUrsssw6B5CG06SWP7r0xhXrAEpv5rDvaUdnT7Y/preset:listing/plain/01ada8587acaef6decdf046e29df542c-2982338587087091328.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.0,
-    "description": "Quận 2 thanh lý Chum nước , phun nước phong thuỷ Thanh lý cho ai cần",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132130541",
-    "lat": 10.785133,
-    "lng": 106.72941
   },
   {
     "id": "126108719",
@@ -8798,7 +3935,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.0,
     "description": "Cần bán chiếc Airblade 125 Fi ( phun xăng điện tử) xe mới dọn từ trong ra ngoài lên Style đen nhám 2021 2 van tặng BS Vip siêu phong thuỷ 3.68.33 máy zin cực kỳ êm cục máy mình bao bao rất êm nhé ( vừa bảo dưỡng toàn xe thay nhớt vệ sinh nồi về ko",
     "amenities": [
       "Wifi",
@@ -8808,32 +3945,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/126108719",
     "lat": 10.763898,
     "lng": 106.63944
-  },
-  {
-    "id": "132191679",
-    "title": "ĐỨC PHONG - GIAO HÀNG XE MÁY –LÀM NGAY, LƯƠNG NGON",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "12 m²",
-    "district": "Huyện Bù Đăng, Việt Nam",
-    "province": "Việt Nam",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/FvkJtYSFLaFioe8vsOjuflhuXZ8y3do_V1aXGODlnHc/preset:listing/plain/4066a17f521adb548bf8fe6eb9260f9a-2982903525257463719.jpg",
-    "tags": [
-      "AI Verified",
-      "Việt Nam"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "✅ Lương theo năng suất, % hoa hồng trên đơn,Nhận lương 2 lần/ tháng ✅ Quyền lợi: BHTN trong giờ làm lên đến 50Tr, hưởng BHXH và khám sức khỏe khi ký HĐLĐ Được chọn tuyến chạy gần nhà, làm việc trong khu vực cố định Mô tả: Lấy hàng từ bưu cục, giao hà",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 ngày trước",
-    "sourceUrl": "https://www.chotot.com/132191679",
-    "lat": 11.81328,
-    "lng": 107.23709
   },
   {
     "id": "132100420",
@@ -8850,7 +3961,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.0,
     "description": "Bát Tràng, bình hút lộc mạ vàng 24k, cao58cm ,miệng40cm,hoành 110cm,hoạ tiết tinh xảo có dát vàng",
     "amenities": [
       "Wifi",
@@ -8876,7 +3987,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.9,
     "description": "Siêu phẩm dream thái 99 phục dựng full new bản sau xe thùng Biển số phong thuỷ 8686 Biển thành phố chính chủ đứng tên càvet ký uỷ quyền giử biển cho ae chơi 30 năm Giá cho ae sưu tầm 58tr chưa đủ tiền dọn nữa nhé ae Xem xe tại tân phú",
     "amenities": [
       "Wifi",
@@ -8886,32 +3997,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/132136035",
     "lat": 10.850668,
     "lng": 106.72051
-  },
-  {
-    "id": "132062644",
-    "title": "Tranh sơn dầu Phong khổ 60x80",
-    "price": "900.000 đ",
-    "priceNum": 900000000,
-    "area": "123 m²",
-    "district": "Huyện Gia Lâm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/HeJnW7Y7JULNEaV9czgBL2w3Zo_JcfYNIEL1rHuGyeU/preset:listing/plain/c4dc02cf5f4295cdae047690e6130ecf-2981733283032943030.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Tranh sơn dầu phong cảnh đa sắc, mang đến không gian sống động, tươi mới. - Chất liệu sơn dầu bền đẹp. - Màu sắc hài hòa, chi tiết tinh xảo. - Phù hợp trang trí nhiều không gian.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132062644",
-    "lat": 21.084465,
-    "lng": 105.91638
   },
   {
     "id": "132133729",
@@ -8928,7 +4013,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.6,
     "description": "Quá hot Macbook Neo 2026 new100% openbox Hàng mua tại Phong Vũ 30/4 màu silver, touchid Pin chưa sạc lần nào Fullbox chưa khui bộ sạc ✅A18| 8g | 256g 🎉 tặng kèm chuột k dây , túi chống sock 🚛Cọc 10% freeship mọi miền 🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎 💥Tặng kèm túi chống so",
     "amenities": [
       "Wifi",
@@ -8953,7 +4038,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.6,
+    "rating": 4.8,
     "description": "Em nhà mới hơi chật e cần nhượng lại cho ae đam mê Dream thái date 96 chất mộc mạc Bs 4 số đẹp phong thuỷ ( cavec vàng Ae muốn ký gi cũng được ) Cây sườn cọp , tem, nước sơn zin bóng , nẹp cọp zin , cốp zin , tem zin theo xe đẹp không lỗi , bửng date",
     "amenities": [
       "Wifi",
@@ -8979,7 +4064,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.8,
     "description": "Tủ quần áo 4 cánh nhựa đài loan - Ngang 1m63 x Cao 1m80 x Sâu 42cm giá 2tr300 - Ngang 1m65 x Cao 1m80 x Sâu 47cm giá 2tr450 - Giá tủ được giao tại xưởng không qua trung gian - Tủ bảo hành 1 năn lỗi bản lề cánh - Chất liệu nhựa bền, không mối mọt. - D",
     "amenities": [
       "Wifi",
@@ -9005,7 +4090,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.9,
     "description": "Bộ PC Phong Vũ Home Office MT A50232 mới mua, chưa dùng nhiều. - Cấu hình: CPU AMD Ryzen 5 3400G, RAM 8GB DDR4, ổ cứng 512GB SSD. - Mainboard Asus PRIME A520M-K, nguồn MIK SPOWER 500-500W. - Phù hợp làm việc văn phòng, học tập, giải trí nhẹ nhàng. DT",
     "amenities": [
       "Wifi",
@@ -9015,31 +4100,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131868463",
     "lat": 18.49464,
     "lng": 105.439026
-  },
-  {
-    "id": "132032399",
-    "title": "Sách Muôn kiếp nhân sinh Nguyên Phong Mới",
-    "price": "800.000 đ",
-    "priceNum": 800000000,
-    "area": "121 m²",
-    "district": "Quận Nam Từ Liêm, TP. Hà Nội",
-    "province": "TP. Hà Nội",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ym6RWDHQIXaHJZ6q3ALPCMiPAltxdM-3cdaV5Z5cnoQ/preset:listing/plain/fd1a9fdcbe1f89088072dc9312319031-2981455134035688383.jpg",
-    "tags": [
-      "Cho thuê"
-    ],
-    "verified": false,
-    "rating": 4.9,
-    "description": "Combo 10 cuốn sách của tác giả Nguyên Phong, gồm Muôn kiếp nhân sinh, Hành trình về phương Đông và nhiều tác phẩm khác. - Sách còn mới, mua trên Tiki. - Nội dung tâm linh sâu sắc, đáng đọc. Nội dung: Cuốn sách kể về hành trình khám phá tiền kiếp của ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132032399",
-    "lat": 20.98917,
-    "lng": 105.78353
   },
   {
     "id": "124870348",
@@ -9056,7 +4116,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.8,
     "description": "Xe được chụp đúng từ xe đăng lên k qua chỉnh sửa và k lấy hình xe khác . - Máy móc nguyên zin , chưa qua sửa chữa , bảo đảm người mua sử dụng yên tâm k hư vặt . - Mọi chức năng điện : đèn , đề , còi , nhan ... hoạt động tốt - Hình thức còn gọn gàng s",
     "amenities": [
       "Wifi",
@@ -9082,7 +4142,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.4,
+    "rating": 4.7,
     "description": "BẢO VỆ CA 8 TIẾNG CỬA HÀNG ĐIỆN THOẠI 24H STORE Địa chỉ: 686 Lê Hồng Phong, Phường 10, Quận 10 * THỜI GIAN + LƯƠNG: - Ca 8h(14h-22h) - Lương 6.300.000đ/tháng * CÔNG VIỆC: Trực an ninh, trông coi dẫn dắt xe cho khách và 1 số công việc phòng nghiệp vụ ",
     "amenities": [
       "Bảo vệ 24/7"
@@ -9093,57 +4153,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.66789
   },
   {
-    "id": "122651692",
-    "title": "TUYỂN TƯ VẤN VIÊN CĂN HỘ DỊCH VỤ - ĐẢM BẢO CÓ SỐ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/EuH7TTcD5yPEKVRLwWcqJFmLANoFxF-0DybxzpMInPg/preset:listing/plain/5c1b1acc2a74ccab1546c8153de936d1-2962530364347544240.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Lovanhome tuyển dụng 15 bạn nhân viên kinh doanh tư vấn căn hộ dịch vụ (sale CHDV) Yêu cầu: - Tốt nghiệp cấp 3 - Trung thực, chăm chỉ - Có kinh nghiệm sale là 1 lợi thế - Có smartphone, laptop Phúc lợi: - Lương full time 8tr theo KPI, có thưởng, hoa ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 giờ trước",
-    "sourceUrl": "https://www.chotot.com/122651692",
-    "lat": 10.801152,
-    "lng": 106.64474
-  },
-  {
-    "id": "132103395",
-    "title": "bán căn hộ dịch vụ Tân Phú - dt 8 x 10 - 6 phòng vừa ở vừa cho thuê",
-    "price": "7,6 tỷ",
-    "priceNum": 7600000000,
-    "area": "113 m²",
-    "district": "Quận Tân Phú, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Duplex",
-    "image": "https://cdn.chotot.com/qTaRwg7f62DNscWfZGfOQcL_ObZZMolG058nrJeAVJQ/preset:listing/plain/c1eb5068d5ffa9cb47d6e66c08714202-2982045128266190723.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.5,
-    "description": "chỉ có 1 căn giá tốt - ko có căn thứ 2 so sánh - VỪA Ở VỪA KINH DOANH DÒNG TIỀN 12 TRIỆU / THÁNG ----‐-- Bán căn hộ dịch vụ Tân Phú - ĐÔ ĐỐC CHẤN - GIÁ GIẢM CHÀO 7 tỷ 6 - hẻm xe hơi - diện tích 8x 10 - 3tầng đúc BTCT + mái đúc BTCT - Tổng 6pn - PK - ",
-    "amenities": [
-      "Bếp đầy đủ"
-    ],
-    "postedAt": "15 giờ trước",
-    "sourceUrl": "https://www.chotot.com/132103395",
-    "lat": 10.803547,
-    "lng": 106.62967
-  },
-  {
     "id": "132237907",
     "title": "[KO CẦN KN] NV SALE CĂN HỘ DỊCH VỤ TP.HCM",
     "price": "Đến 100 triệu/tháng",
@@ -9152,7 +4161,7 @@ export const LISTINGS: Listing[] = [
     "district": "Thành phố Thủ Đức, TP. Hồ Chí Minh",
     "province": "TP. Hồ Chí Minh",
     "type": "Căn hộ",
-    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80&fit=crop",
+    "image": "https://images.unsplash.com/photo-1551361415-69c87624334f?w=600&q=80&fit=crop",
     "tags": [
       "AI Verified",
       "Cho thuê"
@@ -9170,32 +4179,6 @@ export const LISTINGS: Listing[] = [
     "lng": 106.72641
   },
   {
-    "id": "131880210",
-    "title": "TUYỂN KỸ THUẬT BẢO TRÌ HỆ THỐNG CĂN HỘ DỊCH VỤ",
-    "price": "Đến 15 triệu/tháng",
-    "priceNum": 15000000,
-    "area": "98 m²",
-    "district": "Quận 3, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/oj7FlECTcM14QGJqaiOBEFi3ipXFjWNXlE-Ywshsy0k/preset:listing/plain/1c893b4205f4d5d450e01787ee7f9668-2980327194468647701.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Bảo trì tổng thể về: điện, nước, điện lạnh, sơn sửa dân dụng.",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131880210",
-    "lat": 10.782711,
-    "lng": 106.67932
-  },
-  {
     "id": "131557340",
     "title": "SALE CĂN HỘ DỊCH VỤ – THU NHẬP KHÔNG GIỚI HẠN 🔥",
     "price": "Đến 20 triệu/tháng",
@@ -9210,7 +4193,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.7,
+    "rating": 4.4,
     "description": "🔥 [TUYỂN DỤNG GẤP] NHÂN VIÊN KINH DOANH CĂN HỘ DỊCH VỤ – THU NHẬP KHÔNG GIỚI HẠN 🔥 PART - FULLTIME ĐỀU NHẬN. Bạn đang tìm công việc thu nhập tốt – không cần kinh nghiệm – được đào tạo từ đầu? 👉 Gia nhập ngay Lovanhome – team trẻ, hỗ trợ tận tay đến k",
     "amenities": [
       "Wifi",
@@ -9236,7 +4219,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.8,
+    "rating": 4.6,
     "description": "Mô tả công việc: - Chuyên viên sale căn hộ dịch vụ lương cứng + hoa hồng cao - Sale độc quyền căn hộ của cty , giá cả tốt hơn thị trường rất nhiều - hoa hồng cao hơn môi giới ngoài và các cty lớn khác ... môi trường vui vẻ , nhiệt tình , năng động",
     "amenities": [
       "Wifi",
@@ -9248,30 +4231,30 @@ export const LISTINGS: Listing[] = [
     "lng": 106.67444
   },
   {
-    "id": "132093974",
-    "title": "TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ DỊCH VỤ CHO THUÊ",
-    "price": "Đến 30 triệu (lương khoán)",
-    "priceNum": 30000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
+    "id": "131744157",
+    "title": "Bán toà căn hộ 2 mặt kiệt oto VF vào nhà Trần Cao Vân,cho thuê 1ty/nam",
+    "price": "17,9 tỷ",
+    "priceNum": 17900000000,
+    "area": "17 m²",
+    "district": "Quận Thanh Khê, Việt Nam",
+    "province": "Việt Nam",
     "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/7tBjxVfxhEKS93HJgqcIUvyKQQeSKf789nx9zsEZi1U/preset:listing/plain/40929c4d4a88ff3e38a8367775786613-2982391510740012931.jpg",
+    "image": "https://cdn.chotot.com/WpT5OP05PbqbKJZEXE5o40xhnkHbSBSarWwOAgu9erw/preset:listing/plain/5988a47ea61cb905d73e0de8b326465b-2979317456813538142.jpg",
     "tags": [
-      "AI Verified",
+      "Việt Nam",
       "Cho thuê"
     ],
-    "verified": true,
+    "verified": false,
     "rating": 4.8,
-    "description": "TUYỂN CHUYÊN VIÊN TƯ VẤN CĂN HỘ DỊCH VỤ CHO THUÊ (PART-TIME/FULL-TIME) (Không yêu cầu kinh nghiệm – Đào tạo nghiệp vụ từ A-Z) I. MÔ TẢ CÔNG VIỆC Marketing & Tìm kiếm khách hàng: Thực hiện đăng tin, cập nhật hình ảnh và thông tin sản phẩm (căn hộ, phò",
+    "description": "Dự án: Thông tin chi tiết: 🍀❄️🌸TOÀ CĂN HỘ TRẦN CAO VÂN – 100M² – 5 TẦNG – DÒNG TIỀN 84TR/THÁNG - 1 TỶ ĐỒNG/NĂM – GIÁ 17.9 TỶ❄️🍀 🤑 𝐕𝐢̣ 𝐭𝐫𝐢́ • Toà căn hộ 2 mặt kiệt, ô tô lui vào tận nhà, cách mặt tiền Trần Cao Vân 30m, cách ngã tư Ông Ích Khiêm và Qua",
     "amenities": [
-      "Wifi",
-      "Máy lạnh"
+      "Máy giặt",
+      "Nội thất đầy đủ"
     ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132093974",
-    "lat": 10.803202,
-    "lng": 106.7225
+    "postedAt": "6 ngày trước",
+    "sourceUrl": "https://www.chotot.com/131744157",
+    "lat": 16.072126,
+    "lng": 108.20686
   },
   {
     "id": "130803144",
@@ -9288,7 +4271,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.1,
+    "rating": 4.5,
     "description": "♥️♥️♥️CHÀO XUÂN NĂM MỚI SẴN SÀNG MỞ HÀNG LỘC LÁ CHO CHỦ MỚI TIẾP QUẢN.♥️ 👌Căn hộ dịch vụ 7 phòng khép kín,1 sân phơi với đầy đủ trang thiết bị từ dưới cùng lên đến tận ngọn,nội thất xịn sò thang máy nhập khẩu chạy êm ái cùng hệ thống PCCC đầy đủ ,đầu",
     "amenities": [
       "Nội thất đầy đủ"
@@ -9297,31 +4280,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/130803144",
     "lat": 20.996061,
     "lng": 105.86194
-  },
-  {
-    "id": "131324207",
-    "title": "NHÂN VIÊN KỸ THUẬT CĂN HỘ DỊCH VỤ",
-    "price": "Từ 12 triệu/tháng",
-    "priceNum": 12000000,
-    "area": "99 m²",
-    "district": "Quận 4, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/stDqyFBeeasyBVXCMBcmLjyaCMYbacfANYdCArcSQ34/preset:listing/plain/dd3f50f3220cdfd37e65844642b148c7-2976306434247935520.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "Chúng tôi cần tuyển nhân viên kỹ thuật để vận hành và bảo trì hệ thống căn hộ dịch vụ, đảm bảo hoạt động ổn định và xử lý sự cố nhanh chóng. 🔧 MÔ TẢ CÔNG VIỆC • Kiểm tra, bảo trì hệ thống điện – nước – máy lạnh • Sửa chữa các hạng mục hư hỏng trong c",
-    "amenities": [
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131324207",
-    "lat": 10.76384,
-    "lng": 106.70228
   },
   {
     "id": "131475863",
@@ -9338,7 +4296,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.6,
     "description": "Dự án: Thông tin chi tiết: 🔥CHDV NGAY KHU VIP PHAN ĐĂNG LƯU PHÚ NHUẬN 💵 Phân Khúc 12Tỷ - dòng tiền ổn định 360tr/năm 🏡 Vị trí HxH sát Phan Đăng Lưu - P5 Phú Nhuận 👉 Diện tích: 66,7 m2 ( ngang 4 nở hậu 4.15m dài 19) 👉 KC : 4 tầng BTCT7 PN, 8WC, ban cô",
     "amenities": [
       "Ban công"
@@ -9363,7 +4321,7 @@ export const LISTINGS: Listing[] = [
       "Việt Nam"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.2,
     "description": "Dự án The Soleil đã hiện hữu quý anh chị đầu tư nhận căn hộ full nội thất vận hành cho thuê mang lại lợi nhuận ngay. Hiện tại em đang có căn tầng cao tầm view nhìn trọn biển Mỹ Khê giá thấp hơn thị trường 600tr cực hiếm tại The Soleil.",
     "amenities": [
       "Nội thất đầy đủ"
@@ -9372,58 +4330,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131953672",
     "lat": 16.07073,
     "lng": 108.23661
-  },
-  {
-    "id": "125660629",
-    "title": "cần tuyển quản lý căn hộ dịch vụ",
-    "price": "Đến 20 triệu/tháng",
-    "priceNum": 20000000,
-    "area": "102 m²",
-    "district": "Quận 7, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/644wEcmyHzhicHmeHLltwmR9WT-ci_rIrqpcD-dOim8/preset:listing/plain/0532e87b97ec90a24760f752533365ba-2935672379506799948.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "Cần tuyển quản lý căn hộ dịch vụ Yêu cầu biết sửa điện nước cơ bản Biêt sử dụng máy tính cơ bản các phần mềm văn phòng Có kinh nghiệm ít nhất 1 năm Thời gian chủ linh hoạt",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/125660629",
-    "lat": 10.743049,
-    "lng": 106.69693
-  },
-  {
-    "id": "131499065",
-    "title": "Tuyển dụng quản lý vận hành căn hộ dịch vụ",
-    "price": "Từ 7 triệu/tháng",
-    "priceNum": 7000000,
-    "area": "109 m²",
-    "district": "Quận Bình Thạnh, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/1dFtAjgH54mBu-q86Yq6y36rmQhr3fymtt6a97dzkww/preset:listing/plain/3f5d36324c4b9f75643617bdb3c506a0-2977567457826811884.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.2,
-    "description": "Quản lý các công việc liên quan đến vận hành hệ thống căn hộ dịch vụ tại các quận trong nội thành TP HCM. ( quận Bình Thạnh, Gò Vấp, Thủ Đức..) Yêu cầu: có xe máy, điện thoại, laptop ( nếu không có được cấp), - Nam trong độ tuổi 18-30 tuổi. Ưu tiên s",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "3 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131499065",
-    "lat": 10.8059,
-    "lng": 106.70504
   },
   {
     "id": "131996458",
@@ -9440,7 +4346,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.3,
+    "rating": 4.9,
     "description": "CCMN Ô TÔ ĐỖ CỬA_ VỊ TRÍ ĐẸP_ CHỦ CẦN BÁN GẤP_ GÀ ĐẺ TRỨNG VÀNG GIÁ SIÊU HẤP DẪN 👏👏siêu phẩm nhà dòng tiền tại khu vực dân cư đông đúc giáp Hoàng Mai - thiết kế hiện đại - ô tô lùi cửa - dòng tiền cao - pccc &gpxd đủ. Lợi thế ngõ đẹp ô tô đỗ sát cửa ",
     "amenities": [
       "Wifi",
@@ -9450,32 +4356,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131996458",
     "lat": 20.983627,
     "lng": 105.84923
-  },
-  {
-    "id": "131792168",
-    "title": "Cần Tuyển Sale Cho Thuê Nhà Nguyên Căn Tại TPHCM.",
-    "price": "Đến 40 triệu/tháng",
-    "priceNum": 40000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/zY1BVYsXBkEXgP49PiyDNfIGdiCy5jnMo55tQYpgFGs/preset:listing/plain/1e742ddc42ca501e9d326181e7b40414-2979715659078382005.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.6,
-    "description": "BĐS ĐP cần tuyển nhân viên Sale cho thuê nhà nguyên căn và mặt bằng KD ở trung tâm TP.HCM. ⚡️ Độ tuổi: 20-35 tuổi. ⚡️ Sơ bộ công việc: + Tư vấn, giới thiệu sản phẩm nhà cho thuê nguyên căn, mặt bằng KD đến với KH. + Tư vấn, giới thiệu các sản phẩm Că",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 giờ trước",
-    "sourceUrl": "https://www.chotot.com/131792168",
-    "lat": 10.794441,
-    "lng": 106.65456
   },
   {
     "id": "131140098",
@@ -9491,7 +4371,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.7,
+    "rating": 4.6,
     "description": "Chính chủ cần bán hoặc cho thuê : - Nhà nguyên căn khu vực Hoàng Diệu 2 - Thủ Đức, khu trung tâm full tiện ích. Khu vực an ninh dân cư đông đúc - Phòng khách, sân để xe, 2 phòng ngủ, 1 wc - Nội thất có sẵn 1 máy lạnh - Diện tích : 59,1 m2 (ngang 5,6m",
     "amenities": [
       "Máy lạnh",
@@ -9518,7 +4398,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.5,
     "description": "cho thuê nhà nguyên căn nhà cấp 4 giá 1tr800k cọc 1 tháng tiền nhà",
     "amenities": [
       "Wifi",
@@ -9528,83 +4408,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131993340",
     "lat": 10.814899,
     "lng": 106.528946
-  },
-  {
-    "id": "132083411",
-    "title": "Tuyển Sale Cho Thuê Chiến Nhà Nguyên Căn - MBKD",
-    "price": "Đến 100 triệu/ngày",
-    "priceNum": 100000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/_eO-cGYWXYiCjSvvWa8qmgO92ROcHIWLWSZ3VwrI_s8/preset:listing/plain/7583717a89b5448071582255b4bb41c6-2981891960083071347.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.9,
-    "description": "- Lương + Hoa hồng cao nhất thị trường Thu nhập: 20tr - 100tr - Hỗ Trợ Marketing + Khách hàng - Tuyển Dụng Vị trí: Fulltime / Partime - Thời gian làm việc: Linh động / Thoải mái / Tự do - Giới thiệu tư vấn cho thuê: Nhà Nguyên Căn / Mặt Bằng / Căn Hộ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132083411",
-    "lat": 10.792579,
-    "lng": 106.642
-  },
-  {
-    "id": "132084137",
-    "title": "Tuyển Sale Cho Thuê Nhà Nguyên Căn - MBKD - TP.HCM",
-    "price": "Đến 100 triệu/ngày",
-    "priceNum": 100000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/7DfDA1UO8sLfHDv4V_SUBDlrT3cKTw8hVJuXKGL-3gk/preset:listing/plain/aa3945b3490a912e4c33b42017a5f379-2981894805848579307.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "MÔ TẢ CÔNG VIỆC: - Đăng bài giới thiệu các sản phẩm cho thuê nhà nguyên căn, mặt bằng kinh doanh - Tư vấn, giới thiệu nguồn nhà – mặt bằng có sẵn của công ty & hỗ trợ khách hàng đi xem - Làm việc theo nhóm, có Leader hướng dẫn tận tình - Môi trường t",
-    "amenities": [
-      "Wifi"
-    ],
-    "postedAt": "1 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132084137",
-    "lat": 10.792579,
-    "lng": 106.642
-  },
-  {
-    "id": "132067931",
-    "title": "Tuyển Sale Chiến Cho Thuê Nhà Nguyên Căn - MBKD",
-    "price": "Đến 100 triệu/ngày",
-    "priceNum": 100000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/_3hUbBCr7NW2bbqOFuk_uXW3I2rq0D4Qts8K5XZ69Vg/preset:listing/plain/8afff8dac2060a3dc91cf8c711c7809b-2981757921568924702.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.7,
-    "description": "1. Vị trí: Nhân viên dẫn khách xem nhà nguyên căn và mặt bằng kinh doanh MÔ TẢ CÔNG VIỆC: - Đăng bài giới thiệu các sản phẩm cho thuê nhà nguyên căn, mặt bằng kinh doanh - Tư vấn, giới thiệu nguồn nhà – mặt bằng có sẵn của công ty & hỗ trợ khách hàng",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tuần trước",
-    "sourceUrl": "https://www.chotot.com/132067931",
-    "lat": 10.792579,
-    "lng": 106.642
   },
   {
     "id": "131839558",
@@ -9620,7 +4423,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": false,
-    "rating": 4.6,
+    "rating": 4.0,
     "description": "Bán hoặc Cho thuê nhà nguyên căn nhà cho thuê , liên hệ Sơn ***. giá 2.500.000đ/tháng",
     "amenities": [
       "Wifi",
@@ -9630,109 +4433,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/131839558",
     "lat": 10.830611,
     "lng": 106.86114
-  },
-  {
-    "id": "131796994",
-    "title": "TUYỂN DỤNG SALE CHO THUÊ MẶT BẰNG / NHÀ NGUYÊN CĂN",
-    "price": "Đến 60 triệu/tháng",
-    "priceNum": 60000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/9V1NHi7kB8vZm6uQELPQbQnQhId1C-0gtVyo9KCDxq4/preset:listing/plain/f1d6dbdb8d63a5c731809573a840eb65-2979734842927440422.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "MÔ TẢ CÔNG VIỆC: - Đăng bài giới thiệu các sản phẩm cho thuê nhà nguyên căn, mặt bằng kinh doanh - Tư vấn, giới thiệu nguồn nhà – mặt bằng có sẵn của công ty & hỗ trợ khách hàng đi xem - Làm việc theo nhóm, có Leader hướng dẫn tận tình - Môi trường t",
-    "amenities": [
-      "Wifi"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131796994",
-    "lat": 10.792579,
-    "lng": 106.642
-  },
-  {
-    "id": "131737627",
-    "title": "Tuyển NV Sale Cho Thuê Nhà Nguyên Căn - Mặt Bằng",
-    "price": "Đến 60 triệu/ngày",
-    "priceNum": 60000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/KlzKC50NKhDTcaiHs8VIObRmRm_I4z545T4SjWVcglM/preset:listing/plain/4866ca0547be5768f75e275705ba7451-2979286394668985423.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "🌟 New House Tuyển Dụng 10 Bạn Sales 🌟Thu nhập cao: từ 20 – 60tr 🌟 New House - Địa chỉ tin cậy cho thuê nhà nguyên căn, mặt bằng TP.HCM 🌟 Tuyển Dụng: Vị trí Partime + Fulltime 🌟 Thời gian làm việc linh động / chủ động / tự do, phù hợp mọi lứa tuổi đều",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "4 tuần trước",
-    "sourceUrl": "https://www.chotot.com/131737627",
-    "lat": 10.792579,
-    "lng": 106.642
-  },
-  {
-    "id": "128915381",
-    "title": "Tuyển NVKD Sale Cho Thuê Nhà Nguyên Căn + MBKD HCM",
-    "price": "Đến 60 triệu/ngày",
-    "priceNum": 60000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/DZgPtt74mssVtuLlBwP_8JxqQbgbbDqdjxSZk3rparc/preset:listing/plain/504d1c6311e6fdde5953cc6283dd7369-2956971010144306044.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.8,
-    "description": "🌟Thu nhập cao: từ 20 – 60tr 🌟 New House - Địa chỉ tin cậy cho thuê nhà nguyên căn, mặt bằng TP.HCM 🌟 Tuyển Dụng: Vị trí Partime + Fulltime 🌟 Thời gian làm việc linh động / chủ động / tự do, phù hợp mọi lứa tuổi đều làm được. 💰 THU NHẬP & QUYỀN LỢI 🔥 ",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/128915381",
-    "lat": 10.793693,
-    "lng": 106.642395
-  },
-  {
-    "id": "131596726",
-    "title": "Tuyển 15 Bạn Sale Cho Thuê MBKD / Nhà Nguyên Căn",
-    "price": "Đến 60 triệu/ngày",
-    "priceNum": 60000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/A-GV_Ovc46CZf9khDxN3Eu-2yvpXtzgoCKqCLitbl8A/preset:listing/plain/190d26814858a2b5817ee72bdb8edb7f-2978277268623757876.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 4.3,
-    "description": "🌟 New House Tuyển Dụng 10 Bạn Sales 🌟Thu nhập cao: từ 20 – 60tr 🌟 New House - Địa chỉ tin cậy cho thuê nhà nguyên căn, mặt bằng TP.HCM 🌟 Tuyển Dụng: Vị trí Partime + Fulltime 🌟 Thời gian làm việc linh động / chủ động / tự do, phù hợp mọi lứa tuổi đều",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "1 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131596726",
-    "lat": 10.792579,
-    "lng": 106.642
   },
   {
     "id": "131157989",
@@ -9749,7 +4449,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.0,
+    "rating": 4.1,
     "description": "Nhà cho thuê phù hợp gia đình nhỏ Trên đường Phạm Văn Đồng ( gần chùa Long Nhiễu- Thủ Đức)",
     "amenities": [
       "Wifi",
@@ -9775,7 +4475,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 4.2,
+    "rating": 4.3,
     "description": "QUYỀN LỢI: - Thu nhập không giới hạn theo deal, trung bình 20 – 100 triệu/tháng, - Không cần kinh nghiệm, được đào tạo từ A–Z. - Thời gian làm việc linh hoạt, chỉ cần điện thoại, wifi là làm được. - Phù hợp mọi lứa tuổi: Sinh viên, mẹ bỉm, nhân viên ",
     "amenities": [
       "Wifi"
@@ -9800,7 +4500,7 @@ export const LISTINGS: Listing[] = [
       "Cho thuê"
     ],
     "verified": true,
-    "rating": 5.0,
+    "rating": 4.7,
     "description": "TUYỂN DỤNG NHÂN VIÊN CHỤP ẢNH NHÀ NGUYÊN CĂN, MẶT BẰNG KHU VỰC PHÚ NHUẬN & BÌNH THẠNH, TÂN BÌNH & TÂN PHÚ - PHỎNG VẤN NHẬN VIỆC NGAY * Hình thức: PART - TIME * Mô tả công việc - Chụp ảnh căn hộ mini theo yêu cầu công ty (bao gồm: phòng ngủ, wc, ban c",
     "amenities": [
       "Nội thất đầy đủ",
@@ -9810,32 +4510,6 @@ export const LISTINGS: Listing[] = [
     "sourceUrl": "https://www.chotot.com/130386403",
     "lat": 10.756908,
     "lng": 106.67998
-  },
-  {
-    "id": "131342198",
-    "title": "Cần Tuyển 10 Bạn Sale Cho Thuê Nhà Nguyên Căn & MB",
-    "price": "Đến 60 triệu/ngày",
-    "priceNum": 60000000,
-    "area": "112 m²",
-    "district": "Quận Tân Bình, TP. Hồ Chí Minh",
-    "province": "TP. Hồ Chí Minh",
-    "type": "Căn hộ",
-    "image": "https://cdn.chotot.com/ppBO_u95Ra8cPsYhGm7Feok9V163Ch6LA2CmIa4JDIw/preset:listing/plain/d2bc954deb5b97e9f4a2d6bbb9bad93c-2976436919084213848.jpg",
-    "tags": [
-      "AI Verified",
-      "Cho thuê"
-    ],
-    "verified": true,
-    "rating": 5.0,
-    "description": "🌟 New House Tuyển Dụng 10 Bạn Sales 🌟Thu nhập cao: từ 20 – 60tr 🌟 New House - Địa chỉ tin cậy cho thuê nhà nguyên căn, mặt bằng TP.HCM 🌟 Tuyển Dụng: Vị trí Partime + Fulltime 🌟 Thời gian làm việc linh động / chủ động / tự do, phù hợp mọi lứa tuổi đều",
-    "amenities": [
-      "Wifi",
-      "Máy lạnh"
-    ],
-    "postedAt": "2 tháng trước",
-    "sourceUrl": "https://www.chotot.com/131342198",
-    "lat": 10.792579,
-    "lng": 106.642
   }
 ];
 

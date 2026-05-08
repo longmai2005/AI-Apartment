@@ -153,22 +153,37 @@ def fetch_all_raw() -> list[dict]:
     return all_ads
 
 
+BLACKLIST_KEYWORDS = [
+    "tuyển", "tìm việc", "việc làm", "giám sát", "kỹ thuật âm thanh",
+    "nhân viên", "công nhân", "thợ may", "lao động", "lương tháng",
+    "máy tính", "laptop", "điện thoại", "xe máy", "ô tô", "máy trạm",
+    "loa ", "ampli", "camera", "thiết bị", "phần mềm", "dịch vụ sửa",
+    "mua bán", "sang nhượng", "chuyển nhượng",
+]
+RENTAL_CATEGORIES = {1000, 1010, 1020, 1050}
+
+
 def is_rental(ad: dict) -> bool:
     price_str = (ad.get("price_string", "") or "").lower()
     subject   = (ad.get("subject", "") or "").lower()
     price     = ad.get("price", 0) or 0
     cat       = ad.get("category", 0)
-    # Giá rõ ràng là theo tháng
+
+    # Loại các tin không liên quan (việc làm, thiết bị, xe cộ)
+    if any(kw in subject for kw in BLACKLIST_KEYWORDS):
+        return False
+
+    # Giá rõ ràng là theo tháng → chắc chắn cho thuê
     if "tháng" in price_str:
         return True
-    # Category phòng trọ hoặc căn hộ (không phải đất/văn phòng)
+    # Category phòng trọ hoặc căn hộ dịch vụ → chắc chắn cho thuê
     if cat in (1000, 1050):
         return True
-    # Giá nằm trong khoảng hợp lý của thuê theo tháng (500K - 100M)
-    if 500_000 < price < 100_000_000:
+    # Từ khóa rõ ràng trong tiêu đề
+    if any(kw in subject for kw in ["cho thuê", "cần thuê", "thuê căn", "thuê phòng", "thuê nhà", "thuê studio"]):
         return True
-    # Từ khóa cho thuê trong tiêu đề
-    if any(kw in subject for kw in ["cho thuê", "cần thuê", "thuê căn", "thuê phòng"]):
+    # Giá trong khoảng thuê theo tháng (1.5M – 80M) — không phải tỷ/tỷ đồng
+    if 1_500_000 < price < 80_000_000 and "tỷ" not in price_str:
         return True
     return False
 
