@@ -11,17 +11,18 @@ from collections import defaultdict
 # Chiến lược đúng (đã test và xác nhận):
 # Dùng nhiều search query để tổng hợp đủ loại nhà cho thuê
 FETCH_CONFIGS = [
-    {"cg": None, "q": "studio+cho+thue",     "label": "Studio cho thuê"},
-    {"cg": None, "q": "thue+phong+tro",      "label": "Phòng trọ"},
-    {"cg": None, "q": "cho+thue+can+ho",     "label": "Căn hộ cho thuê"},
-    {"cg": None, "q": "cho+thue+chung+cu",   "label": "Chung cư cho thuê"},
-    {"cg": None, "q": "phong+1pn+cho+thue",  "label": "1PN cho thuê"},
-    {"cg": None, "q": "can+ho+dich+vu",      "label": "Căn hộ dịch vụ"},
-    {"cg": None, "q": "thue+nha+nguyen+can", "label": "Nhà nguyên căn cho thuê"},
+    {"q": "cho thuê phòng trọ",         "label": "Phòng trọ cho thuê"},
+    {"q": "cho thuê phòng trọ hcm",     "label": "Phòng trọ HCM"},
+    {"q": "cho thuê phòng trọ hà nội",  "label": "Phòng trọ HN"},
+    {"q": "cho thuê căn hộ chung cư",   "label": "Căn hộ chung cư"},
+    {"q": "cho thuê studio căn hộ",     "label": "Studio cho thuê"},
+    {"q": "cho thuê nhà nguyên căn",    "label": "Nhà nguyên căn"},
+    {"q": "cho thuê căn hộ dịch vụ",   "label": "Căn hộ dịch vụ"},
+    {"q": "cho thuê phòng giá rẻ",      "label": "Phòng giá rẻ"},
 ]
 
-TOTAL_PAGES  = 15   # 15 trang × 20 = 300 listings/query (tổng ~1500+)
-DELAY        = 1.2  # giây
+TOTAL_PAGES  = 10   # 10 trang × 20 = 200 listings/query
+DELAY        = 1.0  # giây
 OUTPUT_DIR   = "data"
 TS_OUTPUT_WEB    = "src/data/listings.ts"
 TS_OUTPUT_MOBILE = "mobile/constants/listings.ts"
@@ -111,26 +112,23 @@ AMENITY_KEYWORDS = {
 
 # ─── Fetch ────────────────────────────────────────────────────────────────────
 
-def fetch_all_raw() -> list[dict]:
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+def fetch_chotot(seen_ids: set) -> list[dict]:
+    """Fetch từ Chợ Tốt — keyword search với tiếng Việt có dấu."""
+    from urllib.parse import quote
     all_ads = []
-    seen_ids = set()
-
     for cfg in FETCH_CONFIGS:
-        cg, q, label = cfg["cg"], cfg["q"], cfg["label"]
+        q, label = cfg["q"], cfg["label"]
+        q_enc = quote(q)
         print(f"\n{'─'*50}")
-        print(f"📥 {label}")
+        print(f"📥 [ChợTốt] {label}")
         count = 0
         for page in range(TOTAL_PAGES):
             offset = page * 20
-            if cg:
-                url = f"https://gateway.chotot.com/v1/public/ad-listing?cg={cg}&limit=20&o={offset}&st=s,k"
-            else:
-                url = f"https://gateway.chotot.com/v1/public/ad-listing?q={q}&limit=20&o={offset}&st=s,k"
+            url = f"https://gateway.chotot.com/v1/public/ad-listing?q={q_enc}&limit=20&o={offset}&st=s,k"
             try:
                 r = requests.get(url, headers=HEADERS, timeout=12)
                 if r.status_code != 200:
-                    print(f"  ⚠ HTTP {r.status_code} — dừng pagination")
+                    print(f"  ⚠ HTTP {r.status_code}")
                     break
                 ads = r.json().get("ads", [])
                 if not ads:
@@ -146,46 +144,147 @@ def fetch_all_raw() -> list[dict]:
                 print(f"  ✗ page {page+1}: {e}")
                 break
             time.sleep(DELAY)
+    return all_ads
 
-    print(f"\n✅ Tổng raw rentals: {len(all_ads)}")
+
+# Nhatot.com là sàn BĐS riêng của Chợ Tốt — chỉ có bất động sản
+NHATOT_CONFIGS = [
+    {"path": "nha-dat/cho-thue-phong-tro-nha-tro",    "label": "Phòng trọ (nhatot)"},
+    {"path": "nha-dat/cho-thue-can-ho-chung-cu",       "label": "Căn hộ chung cư (nhatot)"},
+    {"path": "nha-dat/cho-thue-nha-rieng",             "label": "Nhà riêng cho thuê (nhatot)"},
+    {"path": "nha-dat/cho-thue-can-ho-dich-vu",        "label": "CHDV (nhatot)"},
+]
+
+def fetch_nhatot(seen_ids: set) -> list[dict]:
+    """Fetch từ nhatot.com — gateway API dùng chung với chotot nhưng chỉ BĐS."""
+    all_ads = []
+    for cfg in NHATOT_CONFIGS:
+        path, label = cfg["path"], cfg["label"]
+        print(f"\n{'─'*50}")
+        print(f"📥 [Nhatot] {label}")
+        count = 0
+        for page in range(TOTAL_PAGES):
+            offset = page * 20
+            url = (
+                f"https://gateway.chotot.com/v2/public/ad-listing?"
+                f"cg=1000&limit=20&o={offset}&st=s,k&key_param_included=true"
+                f"&category_path={path}"
+            )
+            try:
+                r = requests.get(url, headers={**HEADERS, "Referer": "https://www.nhatot.com/"}, timeout=12)
+                if r.status_code != 200:
+                    # fallback: try v1 without category_path
+                    break
+                data = r.json()
+                ads = data.get("ads", [])
+                if not ads:
+                    print(f"  ✓ Hết data ở page {page+1}")
+                    break
+                new = [a for a in ads if a.get("list_id") not in seen_ids]
+                seen_ids.update(a["list_id"] for a in new if a.get("list_id"))
+                rentals = [a for a in new if is_rental(a)]
+                all_ads.extend(rentals)
+                count += len(rentals)
+                print(f"  page {page+1:2d}: {len(ads):2d} ads → {len(rentals):2d} rentals (tổng={count})")
+            except Exception as e:
+                print(f"  ✗ page {page+1}: {e}")
+                break
+            time.sleep(DELAY)
+    return all_ads
+
+
+def fetch_all_raw() -> list[dict]:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    seen_ids: set = set()
+
+    ads_chotot = fetch_chotot(seen_ids)
+    ads_nhatot = fetch_nhatot(seen_ids)
+
+    all_ads = ads_chotot + ads_nhatot
+    print(f"\n✅ Chợ Tốt: {len(ads_chotot)} | Nhatot: {len(ads_nhatot)} | Tổng: {len(all_ads)}")
     with open(os.path.join(OUTPUT_DIR, "listings_raw.json"), "w", encoding="utf-8") as f:
         json.dump(all_ads, f, ensure_ascii=False, indent=2)
     return all_ads
 
 
 BLACKLIST_KEYWORDS = [
-    "tuyển", "tìm việc", "việc làm", "giám sát", "kỹ thuật âm thanh",
-    "nhân viên", "công nhân", "thợ may", "lao động", "lương tháng",
-    "máy tính", "laptop", "điện thoại", "xe máy", "ô tô", "máy trạm",
-    "loa ", "ampli", "camera", "thiết bị", "phần mềm", "dịch vụ sửa",
-    "mua bán", "sang nhượng", "chuyển nhượng",
+    # Chức danh công việc / tuyển dụng
+    "tuyển", "tìm việc", "việc làm", "nhân viên", "công nhân", "thợ may",
+    "lao động", "lương tháng", "lương/tháng", "thu nhập", "giám sát",
+    "công việc", "tuyển dụng", "mô tả công việc", "kỹ thuật âm thanh",
+    "chuyên viên", "full time", "part time", "thực tập",
+    "cần người", "tìm người", "đồng đội", "cộng tác viên", "dẫn khách",
+    "đăng bài", "đăng tin phòng", "sale phòng", "tư vấn phòng trọ",
+    "cần thêm", "kiếm thêm", "làm thêm", "partime", "part-time",
+    "kinh doanh bất động sản", "sale bất động sản", "bán bất động sản",
+    "nv kinh doanh", "nv bán", "nhân sự", "quản lý bán hàng",
+    "lái xe", "bảo vệ", "y tá", "điều dưỡng", "kế toán",
+    "ctv ", "sale căn", "sale chung cư",
+    "lương khoán", "hoa hồng", "thưởng doanh số",
+    # Đồ điện tử / âm thanh (không phải bất động sản)
+    "tai nghe", "headphone", "airpod", "earbud",
+    "loa ", "loa bass", "loa jbl", "loa klipsch", "subwoofer",
+    "ampli", "amply", "amplifier", "receiver",
+    "sound card", "soundcard", "mixer", "microphone",
+    "studio monitor", "monitor speaker",
+    "jbl ", "klipsch", "bose ", "sennheiser", "beyerdynamic",
+    "beats studio", "beats pro", "beats solo",
+    "máy tính", "laptop", "macbook", "thinkpad", "surface",
+    "điện thoại", "iphone", "samsung galaxy", "oppo ", "xiaomi ",
+    "xe máy", "ô tô", "honda ", "yamaha ", "suzuki ",
+    "máy trạm", "workstation", "gaming pc", "case máy",
+    "camera ", "webcam", "đèn led", "thiết bị", "phần mềm",
+    "máy giặt", "tủ lạnh", "điều hoà bán", "nệm ", "nội thất bán",
+    # Mua bán (không phải thuê)
+    "mua bán", "sang nhượng", "chuyển nhượng", "dịch vụ sửa",
+    "bán gấp", "cần bán", "bán nhanh",
+    "công ty tnhh", "công ty cổ phần",
 ]
-RENTAL_CATEGORIES = {1000, 1010, 1020, 1050}
+
+RENTAL_TITLE_KEYWORDS = [
+    "cho thuê", "cần thuê", "thuê căn", "thuê phòng", "thuê nhà", "thuê studio",
+    "phòng trọ", "phòng cho", "nhà trọ", "chung cư", "căn hộ", "nhà nguyên căn",
+    "studio cho", "studio thuê", "officetel", "căn duplex", "penthouse",
+    "mặt bằng cho thuê", "văn phòng cho thuê",
+]
 
 
 def is_rental(ad: dict) -> bool:
     price_str = (ad.get("price_string", "") or "").lower()
     subject   = (ad.get("subject", "") or "").lower()
     price     = ad.get("price", 0) or 0
-    cat       = ad.get("category", 0)
 
-    # Loại các tin không liên quan (việc làm, thiết bị, xe cộ)
+    # Loại ngay nếu có từ khóa đen
     if any(kw in subject for kw in BLACKLIST_KEYWORDS):
         return False
 
-    # Giá rõ ràng là theo tháng → chắc chắn cho thuê
-    if "tháng" in price_str:
-        return True
-    # Category phòng trọ hoặc căn hộ dịch vụ → chắc chắn cho thuê
-    if cat in (1000, 1050):
-        return True
-    # Từ khóa rõ ràng trong tiêu đề
-    if any(kw in subject for kw in ["cho thuê", "cần thuê", "thuê căn", "thuê phòng", "thuê nhà", "thuê studio"]):
-        return True
-    # Giá trong khoảng thuê theo tháng (1.5M – 80M) — không phải tỷ/tỷ đồng
-    if 1_500_000 < price < 80_000_000 and "tỷ" not in price_str:
-        return True
-    return False
+    # Loại salary format: "Đến X triệu/tháng" hoặc "Từ X triệu/tháng" (lương job)
+    # Rental thật dùng: "X triệu/tháng" hoặc "X.XXX.XXX đ" trực tiếp
+    if re.match(r"^(đến|từ)\s+\d", price_str):
+        return False
+    if "lương khoán" in price_str or "hoa hồng" in price_str:
+        return False
+
+    # Phải có tín hiệu thuê rõ ràng gắn với loại tài sản (không phải việc làm về thuê)
+    has_rent_title = any(kw in subject for kw in [
+        "cho thuê phòng", "cho thuê căn", "cho thuê nhà", "cho thuê studio",
+        "cho thuê chung cư", "cho thuê chdv", "cho thuê mặt bằng",
+        "phòng trọ cho thuê", "phòng cho thuê",
+        "căn hộ cho thuê", "studio cho thuê", "nhà nguyên căn cho thuê",
+        "cần thuê phòng", "cần thuê căn", "thuê căn hộ", "thuê phòng trọ",
+    ])
+    has_month_price = "/tháng" in price_str or " tháng" in price_str
+
+    if not (has_rent_title or has_month_price):
+        return False
+
+    # Giá không hợp lệ
+    if "tỷ" in price_str:
+        return False
+    if price > 0 and (price < 1_500_000 or price > 100_000_000):
+        return False
+
+    return True
 
 
 # ─── Normalize ───────────────────────────────────────────────────────────────

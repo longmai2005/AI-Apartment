@@ -37,7 +37,7 @@ const LISTINGS = [
   { id: 8, img: IMG_APT_8, name: "Botanica Premier",      district: "Tân Bình",      priceFrom: 9,   priceTo: 17, available: 7, area: "45–80 m²",   rating: 4.5, badge: "Còn nhiều",   badgeHex: "#06b6d4", amenities: ["Cây xanh","Hồ bơi","Gym"] },
 ];
 
-// ─── Real listings (từ Chợ Tốt) — mapped to card format ────────────────────
+// ─── Real listings — mapped to card format ───────────────────────────────────
 const BADGE_COLORS = ["#22d3ee","#10b981","#8b5cf6","#f59e0b","#ef4444","#3b82f6"];
 const FEATURED_REAL = REAL_LISTINGS
   .filter(l => l.priceNum > 0)
@@ -94,7 +94,7 @@ const SECURITY_FEATURES = [
 ];
 
 const MARQUEE_ITEMS = [
-  { text: "Dữ liệu thực · Chợ Tốt",   dot: "#22d3ee" },
+  { text: "Dữ liệu thị trường thực tế",  dot: "#22d3ee" },
   { text: "4.9 ★ App Store",           dot: "#fbbf24" },
   { text: "AI Agents 24/7",            dot: "#a78bfa" },
   { text: "98% Khách hài lòng",        dot: "#34d399" },
@@ -1966,7 +1966,7 @@ export function LandingPage() {
           transition={{ delay: 0.58, duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-6 mt-10">
           {[
-            { val: `${REAL_LISTINGS.length}+`, label: t("Tin đăng thực · Chợ Tốt","Real listings · Chợ Tốt"), color: "#22d3ee" },
+            { val: `${REAL_LISTINGS.length}+`, label: t("Tin đăng thực tế","Real listings"), color: "#22d3ee" },
             { val: "4.9★",     label: t("App Store","App Store"),                  color: "#fbbf24" },
             { val: "98%",      label: t("Khách hài lòng","Satisfaction rate"),     color: "#34d399" },
           ].map(({ val, label, color }) => (
@@ -2080,7 +2080,7 @@ export function LandingPage() {
               </div>
               <p className="text-white/40 mb-1" style={{ fontSize: "0.75rem", fontWeight: 600 }}>{t("Nền tảng tính đến hôm nay","Platform stats today")}</p>
               <div className="grid grid-cols-2 gap-5 mt-4">
-                <StatCounter target={REAL_LISTINGS.length} suffix="+" color="#22d3ee" label={t("Tin thực · Chợ Tốt","Real · Chợ Tốt")} />
+                <StatCounter target={REAL_LISTINGS.length} suffix="+" color="#22d3ee" label={t("Tin đăng thực tế","Real listings")} />
                 <StatCounter target={98}    suffix="%" color="#34d399" label={t("Hài lòng","Satisfaction")} />
                 <StatCounter target={3200}  suffix="+" color="#a78bfa" label={t("GD/tháng","Txn/month")} />
                 <div>
@@ -2173,13 +2173,13 @@ export function LandingPage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-3" style={{ background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.18)" }}>
                 <Home size={12} className="text-emerald-400" />
-                <span className="text-emerald-400" style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>{t("TIN ĐĂNG THỰC · CHỢ TỐT","REAL LISTINGS · CHỢ TỐT")}</span>
+                <span className="text-emerald-400" style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>{t("TIN THUÊ NHÀ THỰC TẾ","REAL RENTAL LISTINGS")}</span>
               </div>
               <h2 className="text-white" style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 900, letterSpacing: "-0.04em" }}>
                 {t("Tin thuê nhà thực tế","Live rental listings")}
               </h2>
               <p className="text-white/35 mt-1" style={{ fontSize: "0.85rem" }}>
-                {t(`${REAL_LISTINGS.length} tin đăng thực · cập nhật từ Chợ Tốt`,`${REAL_LISTINGS.length} real listings · sourced from Chợ Tốt`)}
+                {t(`${REAL_LISTINGS.length} căn hộ & phòng trọ thực tế · nhiều tỉnh thành`,`${REAL_LISTINGS.length} real rentals · multiple cities`)}
               </p>
             </div>
             <div className="flex flex-col items-end gap-3">
@@ -2290,7 +2290,7 @@ export function LandingPage() {
                               onClick={e => e.stopPropagation()}
                               className="px-1.5 py-0.5 rounded text-white/30 hover:text-cyan-400 transition-colors"
                               style={{ fontSize: "0.55rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                              Chợ Tốt ↗
+                              Xem chi tiết ↗
                             </a>
                           )}
                         </div>
