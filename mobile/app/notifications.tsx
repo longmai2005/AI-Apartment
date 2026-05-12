@@ -2,7 +2,7 @@ import { View, Text, ScrollView, Pressable, StyleSheet } from "react-native";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../constants/theme";
+import { Colors, Font, Radius } from "../shared/theme";
 
 type Notif = {
   id:     string;

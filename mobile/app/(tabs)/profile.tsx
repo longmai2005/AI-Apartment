@@ -2,7 +2,7 @@ import { View, Text, Pressable, ScrollView, StyleSheet } from "react-native";
 import { router, Href } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
+import { Colors, Font, Radius } from "../../shared/theme";
 
 type MenuItem = {
   icon:  React.ComponentProps<typeof Ionicons>["name"];

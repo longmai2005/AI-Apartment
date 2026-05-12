@@ -3,10 +3,10 @@ import { View, Text, ScrollView, Pressable, TextInput, Image, StyleSheet, Dimens
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
-import { LISTINGS } from "../../constants/listings";
-import { toggleSave, useSaved } from "../../constants/savedStore";
-import { useRecent } from "../../constants/recentStore";
+import { Colors, Font, Radius } from "../../shared/theme";
+import { LISTINGS } from "../../features/listing/listings";
+import { toggleSave, useSaved } from "../../features/store/savedStore";
+import { useRecent } from "../../features/store/recentStore";
 
 const { width } = Dimensions.get("window");
 const CARD_W    = width * 0.56;

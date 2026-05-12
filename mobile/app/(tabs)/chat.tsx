@@ -6,11 +6,11 @@ import {
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
+import { Colors, Font, Radius } from "../../shared/theme";
 import {
   AGENTS, AGENT_QUICK_PROMPTS, AGENT_GREETINGS, agentReply,
   type AgentId,
-} from "../../constants/agents";
+} from "../../features/agents";
 
 type Message = { role: "user" | "ai"; text: string; ts: number };
 
