@@ -1,4 +1,4 @@
-// AUTO-GENERATED 2026-05-08 13:52 — 51 listings thực tế thị trường Việt Nam
+// AUTO-GENERATED 2026-05-12 08:59 — 51 listings thực tế thị trường Việt Nam
 // Chạy lại: python scripts/generate_listings.py
 
 export type Listing = {
