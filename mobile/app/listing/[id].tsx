@@ -3,10 +3,10 @@ import { View, Text, Image, ScrollView, Pressable, StyleSheet, Dimensions, Modal
 import { useLocalSearchParams, router } from "expo-router";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
-import { LISTINGS } from "../../constants/listings";
-import { toggleSave, useSaved } from "../../constants/savedStore";
-import { trackViewed } from "../../constants/recentStore";
+import { Colors, Font, Radius } from "../../shared/theme";
+import { LISTINGS } from "../../features/listing/listings";
+import { toggleSave, useSaved } from "../../features/store/savedStore";
+import { trackViewed } from "../../features/store/recentStore";
 
 const { width } = Dimensions.get("window");
 const TIMES = ["9:00", "10:00", "11:00", "14:00", "15:00", "16:00"];

@@ -3,7 +3,7 @@ import { View, Text, TextInput, Pressable, StyleSheet, KeyboardAvoidingView, Pla
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
+import { Colors, Font, Radius } from "../../shared/theme";
 
 const FEATURES = [
   { icon: "shield-checkmark-outline" as const, text: "Listing Verifier AI tự động" },

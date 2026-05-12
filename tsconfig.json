@@ -17,7 +17,13 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["vite/client", "node"]
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@/*":        ["./src/*"],
+      "@shared/*":  ["./src/shared/*"],
+      "@features/*":["./src/features/*"],
+      "@lib/*":     ["./src/lib/*"]
+    }
   },
   "include": ["src"]
 }

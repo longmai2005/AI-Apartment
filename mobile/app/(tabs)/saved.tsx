@@ -2,9 +2,9 @@ import { View, Text, StyleSheet, Pressable, ScrollView, Image } from "react-nati
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
-import { LISTINGS } from "../../constants/listings";
-import { toggleSave, useSaved } from "../../constants/savedStore";
+import { Colors, Font, Radius } from "../../shared/theme";
+import { LISTINGS } from "../../features/listing/listings";
+import { toggleSave, useSaved } from "../../features/store/savedStore";
 
 export default function SavedScreen() {
   const savedIds      = useSaved();

@@ -3,8 +3,8 @@ import { View, Text, TextInput, Pressable, ScrollView, StyleSheet, Image } from 
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
-import { LISTINGS } from "../../constants/listings";
+import { Colors, Font, Radius } from "../../shared/theme";
+import { LISTINGS } from "../../features/listing/listings";
 
 const DISTRICTS = ["Quận 1", "Quận 7", "Bình Thạnh", "Thủ Đức", "Gò Vấp", "Quận 4", "Quận 3", "Quận 10"];
 const BUDGETS   = ["Dưới 5tr", "5–8tr", "8–12tr", "Trên 12tr"];

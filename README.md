@@ -13,7 +13,6 @@
 ![Vite](https://img.shields.io/badge/Vite-6-646cff?style=flat-square&logo=vite&logoColor=white)
 ![Expo](https://img.shields.io/badge/Expo-SDK_53-000020?style=flat-square&logo=expo&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini_2.5_Flash-API-4285f4?style=flat-square&logo=google&logoColor=white)
 
 </div>
 
@@ -21,7 +20,7 @@
 
 ## Tổng quan
 
-NestaVietAI là một **monorepo** bao gồm Web App và Mobile App, tích hợp đồng bộ **4 AI Agents** chuyên biệt cho từng giai đoạn trong hành trình thuê/cho thuê căn hộ — từ đăng tin, tư vấn tìm kiếm, vận hành hậu mãi đến thanh toán pháp lý tự động.
+NestaVietAI là một **monorepo** gồm Web App và Mobile App, tích hợp **4 AI Agents** chuyên biệt cho từng giai đoạn trong hành trình thuê/cho thuê căn hộ — từ đăng tin, tư vấn tìm kiếm, vận hành hậu mãi đến thanh toán tự động.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -30,22 +29,20 @@ NestaVietAI là một **monorepo** bao gồm Web App và Mobile App, tích hợp
 │  ┌─────────────────────┐   ┌──────────────────────────┐    │
 │  │      Web App        │   │       Mobile App          │    │
 │  │  React 19 + Vite    │   │  React Native + Expo 53   │    │
-│  │                     │   │                           │    │
 │  │  5 Portals          │   │  5 Tabs + Auth Flow       │    │
 │  │  Landing · Tenant   │   │  Home · Search · Chat     │    │
 │  │  Landlord · Admin   │   │  Saved · Profile          │    │
 │  │  Manager · Dev      │   │                           │    │
 │  └──────────┬──────────┘   └────────────┬─────────────┘    │
-│             │                           │                   │
 │             └────────────┬──────────────┘                   │
 │                          ▼                                  │
-│              ┌─────────────────────┐                       │
-│              │    4 AI Agents      │                       │
-│              │  🔍 Listing Verifier│                       │
-│              │  🤖 Super Broker AI │                       │
-│              │  🛠️  Smart Concierge │                       │
-│              │  📋 Contract & Admin│                       │
-│              └─────────────────────┘                       │
+│              ┌─────────────────────┐                        │
+│              │    4 AI Agents      │                        │
+│              │  Listing Verifier   │                        │
+│              │  Super Broker AI    │                        │
+│              │  Smart Concierge    │                        │
+│              │  Contract & Admin   │                        │
+│              └─────────────────────┘                        │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -68,52 +65,113 @@ NestaVietAI là một **monorepo** bao gồm Web App và Mobile App, tích hợp
 ```
 Apartment For Rent/
 │
-├── src/                                ← Web App (React 19 + Vite)
-│   ├── app/
-│   │   ├── pages/                      ← LandingPage, TenantApp, LandlordApp…
-│   │   └── routes.tsx                  ← createBrowserRouter + guards + animations
-│   ├── services/
-│   │   ├── listingVerifier.ts          ← Gemini 2.5-Flash (Agent 1 — API thực)
-│   │   └── agents/
-│   │       ├── index.ts                ← Agent registry + unified exports
-│   │       ├── listingVerifier.ts      ← Agent 1: types, SEO helpers, mock
-│   │       ├── superBroker.ts          ← Agent 2: types, mock apartments, reply
-│   │       ├── smartConcierge.ts       ← Agent 3: types, ticket mock, triage
-│   │       └── contractAdmin.ts        ← Agent 4: types, contract/invoice, VietQR
+├── src/                                   ← Web App (React 19 + Vite)
+│   │
+│   ├── shared/                            ← Primitives dùng chung (2+ features)
+│   │   ├── ui/                            ← shadcn/ui (50+ components)
+│   │   ├── components/
+│   │   │   ├── StatCounter.tsx            ← Animated number counter
+│   │   │   ├── WordReveal.tsx             ← Word-by-word text reveal
+│   │   │   ├── LazyImage.tsx              ← IntersectionObserver lazy load
+│   │   │   ├── RatingModal.tsx
+│   │   │   ├── OnboardingTour.tsx
+│   │   │   └── ImageWithFallback.tsx
+│   │   ├── hooks/
+│   │   │   ├── useLang.ts                 ← VI/EN language toggle
+│   │   │   └── useCountUp.ts              ← Animated number count-up
+│   │   └── styles/                        ← index.css · theme.css · fonts.css
+│   │
+│   ├── lib/
+│   │   └── api.ts                         ← NestJS HTTP client (stub)
+│   │
+│   ├── features/
+│   │   ├── landing/                       ← Landing page
+│   │   │   └── LandingPage.tsx            ← Main page (~2,600 lines)
+│   │   │
+│   │   ├── listing/                       ← Tin đăng / bài viết
+│   │   │   ├── types.ts                   ← Listing interface
+│   │   │   ├── index.ts                   ← Barrel export
+│   │   │   ├── data/seed-listings.ts      ← 51 listings thực từ Chợ Tốt
+│   │   │   └── components/PriceEstimator.tsx
+│   │   │
+│   │   ├── apartment/                     ← Dữ liệu căn hộ (model vật lý)
+│   │   │   ├── types.ts
+│   │   │   └── components/MapView.tsx
+│   │   │
+│   │   ├── agents/                        ← AI Agent adapters + registry
+│   │   │   ├── index.ts                   ← AGENT_REGISTRY
+│   │   │   ├── listingVerifier.ts
+│   │   │   ├── superBroker.ts
+│   │   │   ├── smartConcierge.ts
+│   │   │   └── contractAdmin.ts
+│   │   │
+│   │   ├── ai-service/
+│   │   │   └── listingVerifier.ts         ← Gemini 2.5-Flash (API thực)
+│   │   │
+│   │   ├── chat/
+│   │   │   ├── ChatWidget.tsx
+│   │   │   └── ChatInbox.tsx
+│   │   │
+│   │   ├── tenant/                        ← Portal cư dân
+│   │   │   ├── TenantApp.tsx
+│   │   │   ├── TenantLogin.tsx
+│   │   │   └── TenantRegister.tsx
+│   │   │
+│   │   ├── landlord/                      ← Portal chủ nhà
+│   │   │   ├── LandlordApp.tsx
+│   │   │   ├── LandlordLogin.tsx
+│   │   │   ├── LandlordRegister.tsx
+│   │   │   └── components/
+│   │   │       ├── DocScanner.tsx
+│   │   │       └── MaintenanceCalendar.tsx
+│   │   │
+│   │   ├── admin/                         ← Quản trị hệ thống
+│   │   ├── manager/                       ← Vận hành tòa nhà
+│   │   ├── dev/                           ← Developer portal
+│   │   └── shared-pages/                  ← Trang dùng chung nhiều vai trò
+│   │       ├── PortalDirectory.tsx
+│   │       ├── ContractsPage.tsx
+│   │       ├── PaymentsPage.tsx
+│   │       ├── ReportsPage.tsx
+│   │       └── SecurityPage.tsx
+│   │
 │   ├── data/
-│   │   └── vietnam-admin.ts            ← 34 tỉnh/thành hợp nhất + 3,321 phường/xã
-│   └── styles/index.css                ← Liquid Glass design system
+│   │   └── vietnam-admin.ts               ← 34 tỉnh/thành · 3,321 phường/xã
+│   │
+│   └── app/
+│       ├── App.tsx
+│       └── routes.tsx                     ← createBrowserRouter + guards + animations
 │
-├── mobile/                             ← Mobile App (React Native + Expo SDK 53)
+├── mobile/                                ← Mobile App (React Native + Expo SDK 53)
 │   ├── app/
-│   │   ├── (tabs)/                     ← Home · Search · Chat · Saved · Profile
-│   │   ├── (auth)/                     ← Tenant & Landlord login/register
-│   │   ├── listing/[id].tsx            ← Chi tiết tin + đặt lịch xem
+│   │   ├── (tabs)/                        ← Home · Search · Chat · Saved · Profile
+│   │   ├── (auth)/                        ← Tenant & Landlord login/register
+│   │   ├── listing/[id].tsx               ← Chi tiết tin + đặt lịch xem
 │   │   └── notifications.tsx
-│   └── constants/
-│       ├── theme.ts                    ← Colors, Font, Radius tokens
-│       ├── listings.ts                 ← 10 listings mock data
-│       ├── savedStore.ts               ← Reactive pub/sub saved store
-│       └── agents/
-│           ├── index.ts                ← Agent registry + unified reply dispatcher
-│           ├── superBroker.ts          ← Agent 2: config, quick prompts, reply
-│           ├── smartConcierge.ts       ← Agent 3: config, quick prompts, reply
-│           ├── contractAdmin.ts        ← Agent 4: config, quick prompts, reply
-│           └── listingVerifier.ts      ← Agent 1: config, quick prompts, reply
+│   │
+│   ├── features/
+│   │   ├── agents/                        ← 4 Agent configs + reply dispatchers
+│   │   ├── listing/listings.ts            ← Mock listings data
+│   │   └── store/
+│   │       ├── savedStore.ts              ← Reactive pub/sub saved store
+│   │       └── recentStore.ts
+│   │
+│   └── shared/
+│       └── theme.ts                       ← Colors, Font, Radius tokens
 │
-├── package.json                        ← Web dependencies
+├── package.json                           ← Web dependencies
 └── README.md
 ```
 
-> **Ghi chú cho nhóm:** Khi tích hợp backend thực, chỉ cần vào file agent tương ứng và thay mock function bằng `async` function gọi API. Mọi TODO đều được comment kèm endpoint + request/response schema.
+> **Ghi chú cho nhóm:** Khi tích hợp backend thực, thay mock function trong `features/agents/` bằng `async` function gọi API qua `src/lib/api.ts`. Mọi TODO đều được comment kèm endpoint.
 
 ---
 
 ## 4 AI Agents
 
-Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn bộ lifecycle thuê căn hộ.
+Cả Web và Mobile tích hợp đầy đủ 4 agents — phủ toàn bộ lifecycle thuê căn hộ.
 
-### 🔍 Agent 1 — Listing Verifier
+### Agent 1 — Listing Verifier
 > *Giai đoạn: Onboarding tài sản*
 
 | | Chi tiết |
@@ -122,15 +180,15 @@ Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn b�
 | **NLP Pipeline** | Trích xuất thực thể: diện tích, giá, phòng, nội thất, chính sách |
 | **Auto-Copywriting** | Sinh tiêu đề + mô tả chuẩn SEO từ dữ liệu thô |
 | **Vision AI** | Auto-tagging ảnh · đánh giá chất lượng · phát hiện watermark |
-| **Output** | JSON chuẩn hóa sẵn lưu DB · tin chưa đạt → "Bản nháp" + feedback |
+| **Output** | JSON chuẩn hóa → DB · tin chưa đạt → "Bản nháp" + feedback |
 | **Giá trị** | Tiết kiệm 90% thời gian kiểm duyệt · đảm bảo Clean Data |
 
-**Web** — Tab "Đăng tin" trong LandlordApp: form 3 bước + nút "Kiểm tra bằng AI" gọi **Gemini 2.5-Flash API thực**  
-**Mobile** — Chat Hub → 🔍 Listing Verifier · quick prompts: tối ưu tiêu đề, kiểm tra ảnh, SEO mô tả
+**Web** — Tab "Đăng tin" trong LandlordApp: form 3 bước + "Kiểm tra bằng AI" → Gemini 2.5-Flash (`features/ai-service/listingVerifier.ts`)  
+**Mobile** — Chat Hub → Listing Verifier · quick prompts: tối ưu tiêu đề, kiểm tra ảnh, SEO mô tả
 
 ---
 
-### 🤖 Agent 2 — Super Broker AI
+### Agent 2 — Super Broker AI
 > *Giai đoạn: Lead Generation*
 
 | | Chi tiết |
@@ -142,12 +200,12 @@ Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn b�
 | **Output** | Đề xuất cá nhân hóa + tự động chốt lịch xem + đồng bộ Calendar |
 | **Giá trị** | Phục vụ 24/7 · Conversational Search tăng tỷ lệ chốt deal |
 
-**Web** — Tab "AI Chat" trong TenantApp: chat đầy đủ + card listing + bản đồ mock  
-**Mobile** — Chat Hub → 🤖 Super Broker AI (mặc định) · quick prompts: tìm phòng, so sánh quận
+**Web** — Tab "AI Chat" trong TenantApp: chat đầy đủ + card listing + bản đồ  
+**Mobile** — Chat Hub → Super Broker AI (mặc định) · quick prompts: tìm phòng, so sánh quận
 
 ---
 
-### 🛠️ Agent 3 — Smart Concierge
+### Agent 3 — Smart Concierge
 > *Giai đoạn: Tenant Care & Hậu mãi*
 
 | | Chi tiết |
@@ -160,11 +218,11 @@ Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn b�
 | **Giá trị** | Giảm SLA wait time · chủ nhà không nhận cuộc gọi lúc nửa đêm |
 
 **Web** — Tab "Yêu cầu dịch vụ" trong TenantApp: form báo sự cố + ticket board + SLA timer  
-**Mobile** — Chat Hub → 🛠️ Smart Concierge · Profile "Phòng đang thuê" → auto-open agent
+**Mobile** — Chat Hub → Smart Concierge · Profile "Phòng đang thuê" → auto-open agent
 
 ---
 
-### 📋 Agent 4 — Contract & Admin
+### Agent 4 — Contract & Admin
 > *Giai đoạn: Billing & Operations*
 
 | | Chi tiết |
@@ -178,7 +236,7 @@ Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn b�
 | **Giá trị** | Loại bỏ 100% sai sót tính toán thủ công · minh bạch tài chính |
 
 **Web** — `ContractsPage` (ký HĐ điện tử 3 bước) + `PaymentsPage` (VietQR) + `ReportsPage` (Recharts)  
-**Mobile** — Chat Hub → 📋 Contract & Admin · Profile "Hợp đồng" / "Thanh toán" → auto-open agent
+**Mobile** — Chat Hub → Contract & Admin · Profile "Hợp đồng" / "Thanh toán" → auto-open agent
 
 ---
 
@@ -187,7 +245,6 @@ Cả Web và Mobile đều tích hợp đầy đủ 4 agents — phủ toàn b�
 ### Cài đặt & Chạy
 
 ```bash
-# Từ thư mục root
 npm install
 npm run dev        # → http://localhost:5173
 npm run build      # → dist/
@@ -199,11 +256,11 @@ npm run build      # → dist/
 |:--|:--|:--|
 | Framework | React 19 + TypeScript + Vite 6 | RSC-ready |
 | Routing | React Router v7 | `createBrowserRouter` + lazy routes |
-| Styling | Tailwind CSS v4 | Liquid Glass tokens |
-| Animation | Framer Motion v12 (`motion/react`) | Page transitions + scroll-driven |
+| Styling | Tailwind CSS v4 | Liquid Glass design tokens |
+| Animation | Motion (`motion/react`) | Page transitions + scroll-driven |
 | Charts | Recharts | AreaChart, BarChart, PieChart |
 | Icons | Lucide React | |
-| AI — Agent 1 | Gemini 2.5-Flash API | `services/listingVerifier.ts` |
+| AI Agent 1 | Gemini 2.5-Flash API | `features/ai-service/listingVerifier.ts` |
 | Địa chính | `src/data/vietnam-admin.ts` | 34 tỉnh/thành · 3,321 phường/xã |
 
 ### Portals & Routes
@@ -230,13 +287,14 @@ npm run build      # → dist/
 <details>
 <summary><strong>Landing Page</strong></summary>
 
-- Scroll progress bar + hero parallax
-- WordReveal animation · Bento grid với stagger variants
-- How It Works step connector
+- Scroll progress bar + hero parallax + word reveal animation
+- Bento grid với stagger variants
+- How It Works step connector (scroll-driven)
 - **Command Palette (⌘K)** — tìm kiếm nhanh toàn bộ features
 - **Rental Calculator** — tính chi phí thuê theo tháng
 - **Comparison Drawer** — so sánh tối đa 3 căn hộ side-by-side
 - StatCounter fill bar với IntersectionObserver
+- Neighborhood Heatmap · Market Insights chart
 
 </details>
 
@@ -255,7 +313,7 @@ npm run build      # → dist/
 
 - Đăng ký 4 bước: xác minh → tòa nhà → pháp lý & ngân hàng → gói dịch vụ
 - Chọn phường/xã: searchable button list (không dùng `<select>`)
-- **Listing Verifier AI** — Gemini 2.5-Flash thực: NLP extraction + Vision check
+- **Listing Verifier AI** — Gemini 2.5-Flash: NLP extraction + Vision check
 - **AgentsTab** — dashboard 4 agents với status, metrics, event stream mock
 - Dashboard KPI + biểu đồ doanh thu/lấp đầy + SLA alerts
 
@@ -293,7 +351,7 @@ npx expo start --android # Android Emulator
 | Routing | Expo Router v4 | File-based routing |
 | Navigation | Stack + Bottom Tabs | Safe area aware |
 | State | Module pub/sub store | Không cần Redux/Context |
-| Styling | `StyleSheet.create()` + design tokens | `constants/theme.ts` |
+| Styling | `StyleSheet.create()` + design tokens | `shared/theme.ts` |
 | TypeScript | Strict mode | 0 errors `tsc --noEmit` |
 
 ### 4-Agent Chat Hub
@@ -304,32 +362,20 @@ Tab Chat là trung tâm AI của mobile — chuyển đổi giữa 4 agents bằ
 ┌────────────────────────────────────────────────────┐
 │  ●  Super  ●  Concierge  ●  Contract  ●  Verifier  │  ← Agent selector
 ├────────────────────────────────────────────────────┤
-│                                                    │
 │  [Quick prompts phù hợp theo agent đang chọn]     │
-│                                                    │
-│  ┌──────────────────────────────────────────────┐ │
-│  │  Chat bubble · Lịch sử độc lập mỗi agent    │ │
-│  └──────────────────────────────────────────────┘ │
-│                                                    │
-│  [Input] ────────────────────────────────── [Send] │
+│  ┌──────────────────────────────────────────────┐  │
+│  │  Chat bubble · Lịch sử độc lập mỗi agent    │  │
+│  └──────────────────────────────────────────────┘  │
+│  [Input] ─────────────────────────────────── [Send]│
 └────────────────────────────────────────────────────┘
 ```
 
 | Agent | Màu accent | Deep link param |
 |:--|:--|:--|
-| 🤖 Super Broker AI | Cyan `#22D3EE` | `?agent=broker` |
-| 🛠️ Smart Concierge | Emerald `#34D399` | `?agent=concierge` |
-| 📋 Contract & Admin | Violet `#A78BFA` | `?agent=contract` |
-| 🔍 Listing Verifier | Amber `#F59E0B` | `?agent=verifier` |
-
-Profile menu tự động mở đúng agent:
-
-| Menu item | Agent |
-|:--|:--|
-| Phòng đang thuê | 🛠️ Smart Concierge |
-| Hợp đồng của tôi | 📋 Contract & Admin |
-| Thanh toán | 📋 Contract & Admin |
-| Hỗ trợ | 🛠️ Smart Concierge |
+| Super Broker AI | Cyan `#22D3EE` | `?agent=broker` |
+| Smart Concierge | Emerald `#34D399` | `?agent=concierge` |
+| Contract & Admin | Violet `#A78BFA` | `?agent=contract` |
+| Listing Verifier | Amber `#F59E0B` | `?agent=verifier` |
 
 ### Màn hình Mobile
 
@@ -342,18 +388,6 @@ Profile menu tự động mở đúng agent:
 | `(tabs)/profile` | Tài khoản | Deep links → agents |
 | `listing/[id]` | Chi tiết tin | Verifier badge + Super Broker CTA |
 | `notifications` | Thông báo | Feed từ 4 agents |
-| `(auth)/tenant-login` | Đăng nhập cư dân | — |
-| `(auth)/tenant-register` | Đăng ký cư dân | — |
-| `(auth)/landlord-login` | Đăng nhập chủ nhà | — |
-| `(auth)/landlord-register` | Đăng ký chủ nhà PRO | — |
-
-### Reactive Saved Store
-
-```ts
-// Module-level pub/sub — không cần Context Provider
-export function toggleSave(id: string)   // toggle & notify all subscribers
-export function useSaved(): Set<string>  // React hook · tự re-render khi thay đổi
-```
 
 ---
 
@@ -363,11 +397,14 @@ export function useSaved(): Set<string>  // React hook · tự re-render khi tha
 
 ```css
 /* Core tokens */
---bg-dark:          #070B16;
---bg-light:         #F0F4FF;
---glass-blur:       backdrop-filter: blur(24px) saturate(180%);
---aurora:           3 radial-gradient blobs (cyan · violet · emerald);
---card-hover:       shadow màu theo badge + border glow;
+--bg-dark:    #070B16;
+--bg-light:   #F0F4FF;
+/* Glass effect */
+backdrop-filter: blur(24px) saturate(180%);
+/* Aurora background */
+3 radial-gradient blobs: cyan · violet · emerald;
+/* Card hover */
+shadow theo badge color + border glow;
 ```
 
 ### Mobile — Dark Space
@@ -379,7 +416,7 @@ export function useSaved(): Set<string>  // React hook · tự re-render khi tha
 | `Colors.cyan` | `#22D3EE` | Tenant accent · Super Broker |
 | `Colors.emerald` | `#34D399` | AI Verified · Smart Concierge |
 | `Colors.violet` | `#A78BFA` | Landlord accent · Contract Admin |
-| Amber | `#F59E0B` | Listing Verifier |
+| `Colors.amber` | `#F59E0B` | Listing Verifier |
 | `Colors.border` | `rgba(255,255,255,0.06)` | Đường kẻ, divider |
 
 ---
@@ -392,17 +429,17 @@ export function useSaved(): Set<string>  // React hook · tự re-render khi tha
 |:--|:--|:--|
 | Cư dân | `localStorage: nv-tenant-logged-in` | `TenantGuard` |
 | Chủ nhà | `localStorage: nv-landlord-logged-in` | `LandlordGuard` |
-| Admin | `sessionStorage: nv-admin-auth` | `AdminGuard` · `isAdminAuthenticated()` |
-| Manager | `sessionStorage: nv-manager-session` | `ManagerGuard` · `isManagerAuthenticated()` |
-| Developer | `sessionStorage: nv-dev-session` | `DevGuard` · `isDevAuthenticated()` |
+| Admin | `sessionStorage: nv-admin-auth` | `AdminGuard` |
+| Manager | `sessionStorage: nv-manager-session` | `ManagerGuard` |
+| Developer | `sessionStorage: nv-dev-session` | `DevGuard` |
 
-- Route guards tự động redirect về login portal tương ứng
-- Cross-portal isolation: dev token không có giá trị ở tenant portal và ngược lại
+- Route guards tự động redirect về đúng login portal
+- Cross-portal isolation: token của portal này không có giá trị ở portal khác
 - Session token chứa expiry (8h) — tự hết hạn, không cần logout thủ công
 
 ### Mobile Auth
 
-Mock auth hiện tại (router.replace sau submit). JWT + `AsyncStorage` sẽ implement cùng backend thực.
+Mock auth hiện tại (`router.replace` sau submit). JWT + `AsyncStorage` sẽ implement cùng backend thực.
 
 ---
 
@@ -410,7 +447,7 @@ Mock auth hiện tại (router.replace sau submit). JWT + `AsyncStorage` sẽ im
 
 | Hạng mục | Web | Mobile | Ghi chú |
 |:--|:--:|:--:|:--|
-| Landing Page | ✅ | — | Scroll animations, bento, stats |
+| Landing Page | ✅ | — | Scroll animations, bento, heatmap, stats |
 | Command Palette ⌘K | ✅ | — | Tìm kiếm nhanh toàn bộ |
 | Rental Calculator | ✅ | — | Tính chi phí thuê |
 | Comparison Drawer | ✅ | — | So sánh 3 căn hộ |
@@ -423,30 +460,16 @@ Mock auth hiện tại (router.replace sau submit). JWT + `AsyncStorage` sẽ im
 | Portal Landlord | ✅ | ✅ auth | Dashboard, Listing, Reports |
 | Portal Admin | ✅ | — | System monitoring |
 | Portal Manager | ✅ | — | Building operations |
-| Portal Developer | ✅ | — | Terminal aesthetic + CI/CD |
+| Portal Developer | ✅ | — | Terminal aesthetic |
 | Saved listings | — | ✅ | Reactive pub/sub |
 | Notifications | — | ✅ | 7 loại từ 4 agents |
 | Hợp đồng điện tử | ✅ | — | Form → Preview → Done |
 | VietQR thanh toán | ✅ | — | SVG mock chuẩn QR spec |
 | Báo cáo tài chính | ✅ | — | Recharts: Area/Bar/Pie |
 | Dữ liệu địa chính | ✅ | ✅ | 34 tỉnh hợp nhất · 3,321 đơn vị |
-| Backend thực | — | — | Rust API Gateway *(planned)* |
-| Database thực | — | — | PostgreSQL + Qdrant *(planned)* |
-| AI Core thực | Partial | — | Listing Verifier → Gemini |
-
----
-
-## Demo Credentials
-
-| Portal | Email | Mật khẩu |
-|:--|:--|:--|
-| Cư dân | `tenant@email.com` | *(bất kỳ)* |
-| Chủ nhà | `landlord@email.com` | *(bất kỳ)* |
-| Admin | `admin@nestaviet.vn` | `NestaViet@Admin2025` |
-| Manager | `manager@nestaviet.vn` | `NestaViet@Manager2025` |
-| Developer | `dev@nestaviet.vn` | `NestaViet@Dev2025` |
-
-> Tất cả portals đều có nút **"DEMO CREDENTIALS — click to fill"** trên trang đăng nhập.
+| Backend API | — | — | NestJS + Prisma *(in development)* |
+| Database | — | — | PostgreSQL + Supabase *(planned)* |
+| AI Core mở rộng | Partial | — | Listing Verifier → Gemini thực |
 
 ---
 
@@ -455,6 +478,6 @@ Mock auth hiện tại (router.replace sau submit). JWT + `AsyncStorage` sẽ im
 **NestaVietAI v1.0.0** · Made with ❤️ in Vietnam
 
 *Frontend prototype đủ demo toàn bộ luồng sản phẩm với 4 AI Agents.*  
-*Backend AI thực (Python + LangGraph) — in development.*
+*Backend NestJS + Prisma — in development.*
 
 </div>
