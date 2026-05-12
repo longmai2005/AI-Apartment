@@ -15,6 +15,8 @@ import { ChatWidget } from "../components/ChatWidget";
 import { useLang } from "../../hooks/useLang";
 import { useCountUp } from "../../hooks/useCountUp";
 import { LISTINGS as REAL_LISTINGS } from "../../data/listings";
+import { api } from "../../lib/api";
+import { error } from "node:console";
 
 // ─── Images ──────────────────────────────────────────────────────────────────
 const IMG_APT_1 = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=75&fit=crop";
@@ -25,6 +27,14 @@ const IMG_APT_5 = "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=4
 const IMG_APT_6 = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=75&fit=crop";
 const IMG_APT_7 = "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&q=75&fit=crop";
 const IMG_APT_8 = "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&q=75&fit=crop";
+
+// Test connect
+api.get('/apartment')
+.then(res => {
+  console.log('Đã kết nối thành công')
+  console.log(res.data)
+})
+.catch(error => console.log(error));
 
 const LISTINGS = [
   { id: 1, img: IMG_APT_1, name: "Vinhomes Grand Park",   district: "TP. Thủ Đức",  priceFrom: 8.5, priceTo: 15, available: 4, area: "45–85 m²",   rating: 4.9, badge: "Mới nhất",      badgeHex: "#10b981", amenities: ["Hồ bơi","Gym","Bãi xe"] },
@@ -66,6 +76,7 @@ const AGENTS = [
   { id: 3, name: "Smart Concierge", icon: Zap,          g: "from-violet-500 to-purple-400",desc: "Triage sự cố, dispatch kỹ thuật, theo dõi SLA" },
   { id: 4, name: "Contract & Admin",icon: BarChart3,    g: "from-orange-500 to-amber-400", desc: "Hóa đơn VietQR, reconcile thanh toán, báo cáo dòng tiền" },
 ];
+
 const AGENT_COLORS   = ["#3b82f6","#10b981","#8b5cf6","#f59e0b"];
 const AGENT_METRICS  = [
   { val: "234",   label: "Listings duyệt hôm nay", sub: "12 bị từ chối tự động" },
@@ -73,6 +84,7 @@ const AGENT_METRICS  = [
   { val: "89",    label: "Tickets xử lý",          sub: "SLA đạt: 97.8%" },
   { val: "156",   label: "Hóa đơn xuất",           sub: "0 sai sót tính toán" },
 ];
+
 const AGENT_LOGS = [
   { agent: "Listing Verifier", msg: "Duyệt xong #L-2204 — NLP OK, 4/4 ảnh đạt chuẩn → Đã đăng lên sàn",              color: "#3b82f6" },
   { agent: "Super Broker",     msg: "Tư vấn khách 2PN Q7 <12M — RAG gợi ý 3 lựa chọn, chốt lịch hẹn Thứ 7",           color: "#10b981" },
@@ -116,6 +128,7 @@ const MARQUEE_ITEMS = [
 // Bình Thuận→Lâm Đồng, Bình Phước+Tây Ninh→Bình Dương, Bà Rịa-VT→Đồng Nai,
 // Tiền Giang+Bến Tre→Long An, Hậu Giang+Sóc Trăng→Cần Thơ, Kiên Giang→An Giang,
 // Vĩnh Long+Trà Vinh→Đồng Tháp, Bạc Liêu→Cà Mau
+
 type ProvinceEntry = { id: string; name: string; avg: number; sub: string; wards?: number };
 const VIETNAM_PROVINCES: Record<"north" | "central" | "south", ProvinceEntry[]> = {
   north: [
@@ -137,6 +150,7 @@ const VIETNAM_PROVINCES: Record<"north" | "central" | "south", ProvinceEntry[]> 
     { id: "nghe-an",     name: "Nghệ An",     avg: 5,  sub: "Tỉnh",                       wards: 130 },
     { id: "ha-tinh",     name: "Hà Tĩnh",     avg: 4,  sub: "Tỉnh (+ Quảng Bình)",        wards: 69  },
   ],
+
   central: [
     { id: "hue",        name: "Huế",        avg: 6,  sub: "Tỉnh (+ Quảng Trị)",   wards: 40  },
     { id: "da-nang",    name: "Đà Nẵng",    avg: 10, sub: "TP. Trực thuộc TW",    wards: 94  },
@@ -148,6 +162,7 @@ const VIETNAM_PROVINCES: Record<"north" | "central" | "south", ProvinceEntry[]> 
     { id: "gia-lai",    name: "Gia Lai",    avg: 4,  sub: "Tỉnh (+ Kon Tum)",     wards: 135 },
     { id: "lam-dong",   name: "Lâm Đồng",   avg: 6,  sub: "Tỉnh (+ Bình Thuận)", wards: 124 },
   ],
+  
   south: [
     { id: "hcm",        name: "Hồ Chí Minh", avg: 16, sub: "TP. Trực thuộc TW",                    wards: 168 },
     { id: "binh-duong", name: "Bình Dương",   avg: 7,  sub: "Tỉnh (+ Bình Phước + Tây Ninh)",       wards: 96  },
