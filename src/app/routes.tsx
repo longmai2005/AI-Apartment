@@ -1,25 +1,25 @@
 import { createBrowserRouter, Navigate, Outlet, useLocation } from "react-router";
 import { lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { LandingPage } from "./pages/LandingPage";
-import { TenantRegister } from "./pages/TenantRegister";
-import { TenantLogin } from "./pages/TenantLogin";
-import { LandlordRegister } from "./pages/LandlordRegister";
-import { LandlordLogin } from "./pages/LandlordLogin";
-import { AdminLogin, isAdminAuthenticated } from "./pages/AdminLogin";
-import { ManagerLogin, isManagerAuthenticated } from "./pages/ManagerLogin";
-import { DevLogin, isDevAuthenticated } from "./pages/DevLogin";
-import { PortalDirectory } from "./pages/PortalDirectory";
+import { LandingPage } from "@features/landing/LandingPage";
+import { TenantRegister } from "@features/tenant/TenantRegister";
+import { TenantLogin } from "@features/tenant/TenantLogin";
+import { LandlordRegister } from "@features/landlord/LandlordRegister";
+import { LandlordLogin } from "@features/landlord/LandlordLogin";
+import { AdminLogin, isAdminAuthenticated } from "@features/admin/AdminLogin";
+import { ManagerLogin, isManagerAuthenticated } from "@features/manager/ManagerLogin";
+import { DevLogin, isDevAuthenticated } from "@features/dev/DevLogin";
+import { PortalDirectory } from "@features/shared-pages/PortalDirectory";
 
-const TenantApp     = lazy(() => import("./pages/TenantApp").then(m => ({ default: m.TenantApp })));
-const LandlordApp   = lazy(() => import("./pages/LandlordApp").then(m => ({ default: m.LandlordApp })));
-const AdminPanel    = lazy(() => import("./pages/AdminPanel").then(m => ({ default: m.AdminPanel })));
-const ManagerApp    = lazy(() => import("./pages/ManagerApp").then(m => ({ default: m.ManagerApp })));
-const DevApp        = lazy(() => import("./pages/DevApp").then(m => ({ default: m.DevApp })));
-const ContractsPage = lazy(() => import("./pages/ContractsPage").then(m => ({ default: m.ContractsPage })));
-const PaymentsPage  = lazy(() => import("./pages/PaymentsPage").then(m => ({ default: m.PaymentsPage })));
-const ReportsPage   = lazy(() => import("./pages/ReportsPage").then(m => ({ default: m.ReportsPage })));
-const SecurityPage  = lazy(() => import("./pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
+const TenantApp     = lazy(() => import("@features/tenant/TenantApp").then(m => ({ default: m.TenantApp })));
+const LandlordApp   = lazy(() => import("@features/landlord/LandlordApp").then(m => ({ default: m.LandlordApp })));
+const AdminPanel    = lazy(() => import("@features/admin/AdminPanel").then(m => ({ default: m.AdminPanel })));
+const ManagerApp    = lazy(() => import("@features/manager/ManagerApp").then(m => ({ default: m.ManagerApp })));
+const DevApp        = lazy(() => import("@features/dev/DevApp").then(m => ({ default: m.DevApp })));
+const ContractsPage = lazy(() => import("@features/shared-pages/ContractsPage").then(m => ({ default: m.ContractsPage })));
+const PaymentsPage  = lazy(() => import("@features/shared-pages/PaymentsPage").then(m => ({ default: m.PaymentsPage })));
+const ReportsPage   = lazy(() => import("@features/shared-pages/ReportsPage").then(m => ({ default: m.ReportsPage })));
+const SecurityPage  = lazy(() => import("@features/shared-pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
 
 function isLandlordAuthenticated() {
   try { return localStorage.getItem("nv-landlord-logged-in") === "true"; } catch { return false; }

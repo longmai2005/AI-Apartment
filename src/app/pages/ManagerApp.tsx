@@ -10,8 +10,8 @@ import {
   Eye, Edit3, Trash2, Download, Send, User, Building,
   TrendingUp, Star,
 } from "lucide-react";
-import { useCountUp } from "../../hooks/useCountUp";
-import { useLang } from "../../hooks/useLang";
+import { useCountUp } from "@shared/hooks/useCountUp";
+import { useLang } from "@shared/hooks/useLang";
 
 const AUTH_KEY = "nv_manager_session";
 function getSession() {

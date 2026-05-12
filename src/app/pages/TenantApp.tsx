@@ -10,11 +10,11 @@ import {
   Filter, Grid, List, Phone, Mail, Shield, Moon, Sun,
   MessageSquare, Map, DollarSign, Globe, ScanLine
 } from "lucide-react";
-import { OnboardingTour } from "../components/OnboardingTour";
-import { ChatInbox } from "../components/ChatInbox";
-import { MapView } from "../components/MapView";
-import { PriceEstimator } from "../components/PriceEstimator";
-import { RatingModal } from "../components/RatingModal";
+import { OnboardingTour } from "@shared/components/OnboardingTour";
+import { ChatInbox } from "@features/chat/ChatInbox";
+import { MapView } from "@features/apartment/components/MapView";
+import { PriceEstimator } from "@features/listing/components/PriceEstimator";
+import { RatingModal } from "@shared/components/RatingModal";
 
 function getTenantUser() {
   try { return JSON.parse(localStorage.getItem("nv-tenant-user") || "{}"); } catch { return {}; }

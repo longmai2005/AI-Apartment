@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { View, Text, Pressable, Dimensions, Image, StyleSheet, Animated } from "react-native";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Colors, Font, Radius } from "../constants/theme";
+import { Colors, Font, Radius } from "../shared/theme";
 
 const { width, height } = Dimensions.get("window");
 

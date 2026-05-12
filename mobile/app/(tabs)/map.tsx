@@ -3,8 +3,8 @@ import { View, Text, Pressable, ScrollView, Image, StyleSheet, Dimensions } from
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors, Font, Radius } from "../../constants/theme";
-import { LISTINGS } from "../../constants/listings";
+import { Colors, Font, Radius } from "../../shared/theme";
+import { LISTINGS } from "../../features/listing/listings";
 
 const { width } = Dimensions.get("window");
 

@@ -2,7 +2,7 @@ import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "../../constants/theme";
+import { Colors } from "../../shared/theme";
 
 type IoniconName = React.ComponentProps<typeof Ionicons>["name"];
 

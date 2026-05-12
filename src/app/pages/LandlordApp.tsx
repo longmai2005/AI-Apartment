@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router";
-import { verifyListing, buildRawText, checkAgentHealth, type VerifyListingData } from "../../services/listingVerifier";
+import { verifyListing, buildRawText, checkAgentHealth, type VerifyListingData } from "@features/ai-service/listingVerifier";
 import { motion, AnimatePresence } from "motion/react";
 import {
   BarChart3, Building2, TrendingUp, Users,
@@ -16,10 +16,10 @@ import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell
 } from "recharts";
-import { useCountUp } from "../../hooks/useCountUp";
-import { DocScanner } from "../components/DocScanner";
-import { MaintenanceCalendar } from "../components/MaintenanceCalendar";
-import { RatingModal } from "../components/RatingModal";
+import { useCountUp } from "@shared/hooks/useCountUp";
+import { DocScanner } from "@features/landlord/components/DocScanner";
+import { MaintenanceCalendar } from "@features/landlord/components/MaintenanceCalendar";
+import { RatingModal } from "@shared/components/RatingModal";
 
 type LandlordTab = "dashboard" | "properties" | "tenants" | "listing" | "reports" | "settings" | "agents" | "calendar" | "docs";
 
