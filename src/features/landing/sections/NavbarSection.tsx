@@ -1,5 +1,6 @@
+import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
-import { Building2, Search, Globe, ArrowRight } from "lucide-react";
+import { Building2, Search, Globe, ArrowRight, ChevronDown } from "lucide-react";
 import type { NavigateFunction } from "react-router";
 
 interface NavbarSectionProps {
@@ -13,6 +14,19 @@ interface NavbarSectionProps {
 }
 
 export default function NavbarSection({ scrolled, navigate, lang, toggleLang, onOpenCommandPalette, onGetStarted, t }: NavbarSectionProps) {
+  const [portalsOpen, setPortalsOpen] = useState(false);
+  const portalsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (portalsRef.current && !portalsRef.current.contains(e.target as Node)) {
+        setPortalsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-[9990] transition-all duration-300"
       style={{
@@ -73,30 +87,36 @@ export default function NavbarSection({ scrolled, navigate, lang, toggleLang, on
           </button>
 
           {/* Portal dropdown */}
-          <div className="relative group hidden md:block">
-            <button className="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/35 hover:text-white/65 transition-all"
-              style={{ fontSize: "0.78rem", border: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.025)" }}>
+          <div className="relative hidden md:block" ref={portalsRef}>
+            <button
+              onClick={() => setPortalsOpen(v => !v)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/55 hover:text-white/80 transition-all"
+              style={{ fontSize: "0.78rem", border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.04)" }}>
               <Globe size={12} />{t("Cổng khác","Portals")}
+              <ChevronDown size={10} style={{ transform: portalsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }} />
             </button>
-            <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-white/10 shadow-2xl overflow-hidden opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all"
-              style={{ background: "rgba(3,7,18,0.97)", backdropFilter: "blur(16px)" }}>
-              {[
-                { label: t("Quản lý toà nhà","Building Manager"), sub: "manager.nestaviet.vn", path: "/manager/login", color: "text-emerald-400" },
-                { label: "Developer Portal",                       sub: "dev.nestaviet.vn",     path: "/dev/login",     color: "text-blue-400"   },
-                { label: "Admin Portal",                           sub: "admin.nestaviet.vn",   path: "/admin/login",   color: "text-violet-400" },
-              ].map(p => (
-                <button key={p.path} onClick={() => navigate(p.path)}
-                  className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/6 last:border-0">
-                  <p className={`font-semibold ${p.color}`} style={{ fontSize: "0.8rem" }}>{p.label}</p>
-                  <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>{p.sub}</p>
+            {portalsOpen && (
+              <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 shadow-2xl overflow-hidden z-50"
+                style={{ background: "rgba(3,7,18,0.97)", backdropFilter: "blur(16px)" }}>
+                {[
+                  { label: t("Cổng Chủ Nhà","Landlord Portal"),    sub: "landlord.nestaviet.vn", path: "/landlord/login", color: "text-amber-400"   },
+                  { label: t("Quản lý toà nhà","Building Manager"), sub: "manager.nestaviet.vn",  path: "/manager/login",  color: "text-emerald-400" },
+                  { label: "Developer Portal",                       sub: "dev.nestaviet.vn",      path: "/dev/login",      color: "text-blue-400"    },
+                  { label: "Admin Portal",                           sub: "admin.nestaviet.vn",    path: "/admin/login",    color: "text-violet-400"  },
+                ].map(p => (
+                  <button key={p.path} onClick={() => { navigate(p.path); setPortalsOpen(false); }}
+                    className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-b border-white/6 last:border-0">
+                    <p className={`font-semibold ${p.color}`} style={{ fontSize: "0.8rem" }}>{p.label}</p>
+                    <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>{p.sub}</p>
+                  </button>
+                ))}
+                <button onClick={() => { navigate("/portals"); setPortalsOpen(false); }}
+                  className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-t border-white/10">
+                  <p className="font-semibold text-white/50" style={{ fontSize: "0.8rem" }}>🗂 {t("Tất cả cổng","All Portals")}</p>
+                  <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>nestaviet.vn/portals</p>
                 </button>
-              ))}
-              <button onClick={() => navigate("/portals")}
-                className="w-full text-left px-4 py-3 hover:bg-white/5 transition-colors border-t border-white/10">
-                <p className="font-semibold text-white/50" style={{ fontSize: "0.8rem" }}>🗂 {t("Tất cả cổng","All Portals")}</p>
-                <p className="text-white/22 font-mono mt-0.5" style={{ fontSize: "0.62rem" }}>nestaviet.vn/portals</p>
-              </button>
-            </div>
+              </div>
+            )}
           </div>
 
           <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}

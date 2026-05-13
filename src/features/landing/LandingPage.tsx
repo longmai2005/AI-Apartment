@@ -70,6 +70,18 @@ export function LandingPage() {
     }
   };
 
+  const handleAskAI = () => {
+    setChatTrigger({
+      query: searchQuery.trim()
+        ? t(
+            `Tôi đang tìm: "${searchQuery.trim()}". Bạn có thể tư vấn giúp tôi không?`,
+            `I'm looking for: "${searchQuery.trim()}". Can you help me find something?`
+          )
+        : t("Xin chào! Tôi cần tư vấn về thuê căn hộ.", "Hello! I need advice about renting an apartment."),
+      id: Date.now(),
+    });
+  };
+
   const handleContactAskAI = (listing: ContactListing) => {
     setChatTrigger({
       query: `Tôi muốn hỏi về tin đăng: "${listing.title}" — ${listing.price}, ${listing.area}, ${listing.district}. Có thể tư vấn cho tôi không?`,
@@ -244,6 +256,7 @@ export function LandingPage() {
         setSearchFocused={setSearchFocused}
         setSubmittedQuery={setSubmittedQuery}
         handleSearchSubmit={handleSearchSubmit}
+        onAskAI={handleAskAI}
         listings={REAL_LISTINGS}
         totalListings={REAL_LISTINGS.length}
         onGetStarted={openGetStarted}
@@ -259,9 +272,6 @@ export function LandingPage() {
       </AnimatePresence>
 
       <MarqueeSection />
-
-      <div className="nv-section-divider" />
-      <BentoSection t={t} />
 
       <div className="nv-section-divider" />
       <ListingsSection
@@ -293,6 +303,9 @@ export function LandingPage() {
 
       <div className="nv-section-divider" />
       <AppDownloadSection t={t} />
+
+      <div className="nv-section-divider" />
+      <BentoSection t={t} />
 
       <div className="nv-section-divider" />
       <CTASection ctaRef={ctaRef} ctaGlowX={ctaGlowX} onGetStarted={openGetStarted} t={t} />
