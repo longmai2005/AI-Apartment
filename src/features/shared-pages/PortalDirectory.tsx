@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import {
@@ -95,6 +96,11 @@ const PORTALS = [
 
 export function PortalDirectory() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.documentElement.removeAttribute("data-theme");
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div

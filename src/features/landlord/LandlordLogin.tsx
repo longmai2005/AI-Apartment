@@ -125,7 +125,7 @@ export function LandlordLogin() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-3 py-1 mb-4">
               <Shield size={13} className="text-violet-400" />
-              <span className="text-violet-400" style={{ fontSize: "0.72rem", fontWeight: 700 }}>QUẢN LÝ TÒA NHÀ</span>
+              <span className="text-violet-400" style={{ fontSize: "0.72rem", fontWeight: 700 }}>CHỦ NHÀ</span>
             </div>
             <h1 className="text-white mb-2" style={{ fontSize: "2rem", fontWeight: 800 }}>
               {isFirstLogin ? "Đổi mật khẩu" : forgotMode ? "Quên mật khẩu" : "Đăng nhập"}
@@ -135,7 +135,7 @@ export function LandlordLogin() {
                 ? "Đặt mật khẩu mới để bảo vệ tài khoản quản lý của bạn"
                 : forgotMode
                 ? "Nhập email đăng ký — hệ thống sẽ gửi mật khẩu tạm thời"
-                : "Dành cho chủ nhà & quản lý tòa nhà"}
+                : "CỔNG ĐĂNG NHẬP DÀNH CHO CHỦ NHÀ"}
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export function LandlordLogin() {
                   <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 flex gap-3">
                     <AlertCircle size={16} className="text-amber-400 flex-shrink-0 mt-0.5" />
                     <p className="text-amber-300" style={{ fontSize: "0.8rem", lineHeight: 1.6 }}>
-                      Tài khoản quản lý yêu cầu đổi mật khẩu tạm thời trước khi sử dụng.
+                      Tài khoản chủ nhà yêu cầu đổi mật khẩu tạm thời trước khi sử dụng.
                     </p>
                   </div>
                   {[
@@ -250,20 +250,20 @@ export function LandlordLogin() {
                     <button onClick={handleLogin} disabled={loading}
                       className="w-full py-3.5 rounded-xl font-semibold text-white flex items-center justify-center gap-2 nv-glow-pulse transition-opacity hover:opacity-90"
                       style={{ background: "linear-gradient(135deg,#8b5cf6,#a78bfa)", fontSize: "0.9rem" }}>
-                      {loading ? <RefreshCw size={16} className="animate-spin" /> : <><ArrowRight size={16} />Đăng nhập</>}
+                      {loading ? <RefreshCw size={16} className="animate-spin" /> : <><ArrowRight size={16} />ĐĂNG NHẬP</>}
                     </button>
                   </motion.div>
 
                   <div className="relative my-2">
                     <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/8" /></div>
-                    <div className="relative flex justify-center"><span className="bg-transparent px-3 text-white/25" style={{ fontSize: "0.72rem" }}>hoặc</span></div>
+                    <div className="relative flex justify-center"><span className="bg-transparent px-3 text-white/25" style={{ fontSize: "0.72rem" }}>HOẶC</span></div>
                   </div>
 
                   <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, type: "spring", stiffness: 280, damping: 24 }} className="text-center">
-                    <p className="text-white/40 mb-3" style={{ fontSize: "0.82rem" }}>Chưa có tài khoản quản lý?</p>
+                    <p className="text-white/41 mb-3" style={{ fontSize: "0.77rem" }}>BẠN LÀ CHỦ NHÀ NHƯNG CHƯA CÓ TÀI KHOẢN?</p>
                     <button onClick={() => navigate("/landlord/register")}
                       className="w-full py-3 rounded-xl border border-violet-500/30 text-violet-400 hover:bg-violet-500/8 transition-all font-semibold" style={{ fontSize: "0.85rem" }}>
-                      Đăng ký quản lý tòa nhà
+                      ĐĂNG KÝ CHỦ NHÀ 
                     </button>
                   </motion.div>
                 </motion.div>

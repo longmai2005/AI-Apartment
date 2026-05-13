@@ -17,6 +17,7 @@ interface HeroSectionProps {
   setSearchFocused: (f: boolean) => void;
   setSubmittedQuery: (q: string) => void;
   handleSearchSubmit: () => void;
+  onAskAI: () => void;
   listings: Listing[];
   totalListings: number;
   onGetStarted: () => void;
@@ -26,11 +27,11 @@ interface HeroSectionProps {
 export default function HeroSection({
   heroRef, headlineY, subTextY, widgetY, widgetOpacity,
   searchQuery, setSearchQuery, searchFocused, setSearchFocused,
-  setSubmittedQuery, handleSearchSubmit, listings, totalListings,
+  setSubmittedQuery, handleSearchSubmit, onAskAI, listings, totalListings,
   onGetStarted, t,
 }: HeroSectionProps) {
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-visible">
+    <section ref={heroRef} className="relative min-h-[78vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-10 overflow-visible">
 
       <div className="absolute top-[20%] left-[8%] w-48 h-48 rounded-full pointer-events-none nv-orb-1"
         style={{ background: "radial-gradient(circle, rgba(34,211,238,0.22) 0%, transparent 70%)", filter: "blur(12px)" }} />
@@ -62,7 +63,7 @@ export default function HeroSection({
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.16, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-white text-center"
-          style={{ fontSize: "clamp(3rem,7.5vw,6.5rem)", fontWeight: 900, lineHeight: 1.08, letterSpacing: "-0.045em" }}>
+          style={{ fontSize: "clamp(2rem,5.5vw,4rem)", fontWeight: 900, lineHeight: 1.08, letterSpacing: "-0.045em" }}>
           {t("THUÊ CĂN HỘ","RENT SMARTER")}
           <br />
           <span className="nv-hero-gradient">
@@ -71,7 +72,7 @@ export default function HeroSection({
         </motion.h1>
       </motion.div>
 
-      <motion.div style={{ y: subTextY }} className="mt-8 max-w-xl mx-auto w-full">
+      <motion.div style={{ y: subTextY }} className="mt-5 max-w-xl mx-auto w-full">
         <motion.p
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -90,7 +91,7 @@ export default function HeroSection({
         initial={{ opacity: 0, y: 24, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.44, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mt-10 w-full max-w-2xl">
+        className="relative mt-7 w-full max-w-2xl">
         <div className="flex gap-2">
           <div className="flex items-center gap-3 flex-1 rounded-2xl px-5 py-3.5 border transition-all"
             style={{
@@ -117,6 +118,21 @@ export default function HeroSection({
               </button>
             )}
           </div>
+          <button
+            onClick={onAskAI}
+            title={t("Hỏi AI", "Ask AI")}
+            className="flex items-center justify-center flex-shrink-0 transition-all"
+            style={{
+              width: 50, height: 50, borderRadius: "1rem",
+              background: "rgba(139,92,246,0.15)",
+              border: "1px solid rgba(139,92,246,0.35)",
+              color: "#a78bfa", cursor: "pointer",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(139,92,246,0.28)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(139,92,246,0.15)"; }}
+          >
+            <Bot size={18} />
+          </button>
           <button onClick={handleSearchSubmit}
             className="flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-white hover:opacity-90 transition-opacity flex-shrink-0"
             style={{ fontSize: "0.88rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)", boxShadow: "0 0 20px rgba(34,211,238,0.22)" }}>
@@ -181,7 +197,7 @@ export default function HeroSection({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.58, duration: 0.5 }}
-        className="flex flex-wrap items-center justify-center gap-6 mt-10">
+        className="flex flex-wrap items-center justify-center gap-6 mt-7">
         {[
           { val: `${totalListings}+`, label: t("Tin đăng thực tế","Real listings"), color: "#22d3ee" },
           { val: "4.9★",     label: t("App Store","App Store"),               color: "#fbbf24" },
@@ -195,7 +211,7 @@ export default function HeroSection({
       </motion.div>
 
       {/* CTA buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-5">
         <motion.button
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
