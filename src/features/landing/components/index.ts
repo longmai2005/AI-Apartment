@@ -11,3 +11,4 @@ export { ComparisonDrawer } from "./ComparisonDrawer";
 export { SearchResultsSection } from "./SearchResultsSection";
 export { default as ContactListingModal } from "./ContactListingModal";
 export type { ContactListing } from "./ContactListingModal";
+export { QuickLoginModal } from "./QuickLoginModal";

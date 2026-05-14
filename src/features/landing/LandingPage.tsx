@@ -14,6 +14,7 @@ import {
   ComparisonDrawer,
   SearchResultsSection,
   ContactListingModal,
+  QuickLoginModal,
 } from "./components";
 import type { ContactListing } from "./components";
 import NavbarSection from "./sections/NavbarSection";
@@ -45,6 +46,10 @@ export function LandingPage() {
   const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
   const [listingFilter, setListingFilter] = useState<"all" | "hcm" | "hn" | "other">("all");
+  const [quickLogin, setQuickLogin] = useState<"chat" | "post" | null>(null);
+
+  const handleContact = () => setQuickLogin("chat");
+  const handlePostListing = () => setQuickLogin("post");
 
   // Handlers
   const openGetStarted = () => {
@@ -160,7 +165,16 @@ export function LandingPage() {
 
       {/* Portals */}
       {createPortal(
-        <AnimatePresence>{showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}</AnimatePresence>,
+        <AnimatePresence>
+          {showGetStarted && <GetStartedModal onClose={() => setShowGetStarted(false)} />}
+          {quickLogin && (
+            <QuickLoginModal
+              mode={quickLogin}
+              onClose={() => setQuickLogin(null)}
+              onSuccess={() => { setQuickLogin(null); navigate(quickLogin === "chat" ? "/chat" : "/post"); }}
+            />
+          )}
+        </AnimatePresence>,
         document.body
       )}
 
@@ -239,8 +253,8 @@ export function LandingPage() {
         navigate={navigate}
         lang={lang}
         toggleLang={toggleLang}
-        onOpenCommandPalette={() => setShowCommandPalette(true)}
-        onGetStarted={openGetStarted}
+        onContact={handleContact}
+        onPostListing={handlePostListing}
         t={t}
       />
 
