@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
-import { Building2, Search, Globe, ArrowRight, ChevronDown } from "lucide-react";
+import { Building2, MessageCircle, Globe, Plus, ChevronDown } from "lucide-react";
 import type { NavigateFunction } from "react-router";
 
 interface NavbarSectionProps {
@@ -8,12 +8,12 @@ interface NavbarSectionProps {
   navigate: NavigateFunction;
   lang: string;
   toggleLang: () => void;
-  onOpenCommandPalette: () => void;
-  onGetStarted: () => void;
+  onContact: () => void;
+  onPostListing: () => void;
   t: (vi: string, en: string) => string;
 }
 
-export default function NavbarSection({ scrolled, navigate, lang, toggleLang, onOpenCommandPalette, onGetStarted, t }: NavbarSectionProps) {
+export default function NavbarSection({ scrolled, navigate, lang, toggleLang, onContact, onPostListing, t }: NavbarSectionProps) {
   const [portalsOpen, setPortalsOpen] = useState(false);
   const portalsRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +58,7 @@ export default function NavbarSection({ scrolled, navigate, lang, toggleLang, on
             { label: t("Bảo mật","Security"), href: "/security" },
             { label: t("Tải app","Download"), href: null },
           ].map(({ label, href }) => (
-            <button key={label} onClick={() => href ? navigate(href) : onGetStarted()}
+            <button key={label} onClick={() => href ? navigate(href) : undefined}
               className="px-4 py-2 rounded-lg text-white/45 hover:text-white/80 hover:bg-white/5 transition-all"
               style={{ fontSize: "0.85rem" }}>
               {label}
@@ -68,11 +68,11 @@ export default function NavbarSection({ scrolled, navigate, lang, toggleLang, on
 
         {/* Controls */}
         <div className="flex items-center gap-1.5 flex-shrink-0">
-          <button onClick={onOpenCommandPalette}
+          <button onClick={onContact}
             className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-white/28 hover:text-white/55 transition-all"
             style={{ fontSize: "0.72rem", border: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.03)" }}>
-            <Search size={11} className="text-white/25" />
-            <span>⌘K</span>
+            <MessageCircle size={11} className="text-white/25" />
+            <span>{t("Liên hệ", "Contact")}</span>
           </button>
           <button onClick={toggleLang}
             className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg text-white/40 hover:text-white/75 hover:bg-white/6 transition-all"
@@ -120,10 +120,10 @@ export default function NavbarSection({ scrolled, navigate, lang, toggleLang, on
           </div>
 
           <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-            onClick={onGetStarted}
+            onClick={onPostListing}
             className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-semibold"
             style={{ fontSize: "0.83rem", background: "linear-gradient(135deg,#22d3ee,#3b82f6)", boxShadow: "0 0 18px rgba(34,211,238,0.25)" }}>
-            {t("Bắt đầu","Get Started")}<ArrowRight size={13} />
+            {t("Đăng tin","Post Listing")}<Plus size={13} />
           </motion.button>
         </div>
       </div>

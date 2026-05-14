@@ -19,7 +19,26 @@ const DevApp        = lazy(() => import("@features/dev/DevApp").then(m => ({ def
 const ContractsPage = lazy(() => import("@features/shared-pages/ContractsPage").then(m => ({ default: m.ContractsPage })));
 const PaymentsPage  = lazy(() => import("@features/shared-pages/PaymentsPage").then(m => ({ default: m.PaymentsPage })));
 const ReportsPage   = lazy(() => import("@features/shared-pages/ReportsPage").then(m => ({ default: m.ReportsPage })));
-const SecurityPage  = lazy(() => import("@features/shared-pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
+const SecurityPage    = lazy(() => import("@features/shared-pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
+const ChatPage        = lazy(() => import("@features/chat/ChatPage").then(m => ({ default: m.ChatPage })));
+const PostListingPage = lazy(() => import("@features/post/PostListingPage").then(m => ({ default: m.PostListingPage })));
+
+function isQuickAuthenticated() {
+  try {
+    return (
+      !!localStorage.getItem("nv-quick-email") ||
+      localStorage.getItem("nv-tenant-logged-in") === "true" ||
+      localStorage.getItem("nv-landlord-logged-in") === "true"
+    );
+  } catch { return false; }
+}
+
+function ChatGuard() {
+  return isQuickAuthenticated() ? <ChatPage /> : <Navigate to="/" replace />;
+}
+function PostGuard() {
+  return isQuickAuthenticated() ? <PostListingPage /> : <Navigate to="/" replace />;
+}
 
 function isLandlordAuthenticated() {
   try { return localStorage.getItem("nv-landlord-logged-in") === "true"; } catch { return false; }
@@ -164,6 +183,8 @@ export const router = createBrowserRouter([
       { path: "/contracts",           Component: ContractsGuard },
       { path: "/payments",            Component: PaymentsGuard },
       { path: "/reports",             Component: ReportsGuard },
+      { path: "/chat",                Component: ChatGuard },
+      { path: "/post",                Component: PostGuard },
     ],
   },
 ]);
