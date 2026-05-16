@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { useNavigate } from "react-router";
+import { data, useNavigate } from "react-router";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { ChatWidget } from "@features/chat/ChatWidget";
 import { useLang } from "@shared/hooks/useLang";
@@ -28,6 +28,9 @@ import CTASection from "./sections/CTASection";
 import FooterSection from "./sections/FooterSection";
 import UtilityToolsSection from "./sections/UtilityToolsSection";
 import { AgentControlRoom } from "./components";
+
+import { api } from "@/lib/api";
+import { error } from "node:console";
 
 // ─── LandingPage ──────────────────────────────────────────────────────────────
 export function LandingPage() {
@@ -158,6 +161,54 @@ export function LandingPage() {
       }
     } catch { /* noop */ }
   }, []);
+  // test BE => AI
+// test BE => AI
+  useEffect(() => {
+    // 1. Chuẩn bị mock data khớp với DTO bên NestJS
+    const mockData = {
+      apartmentId: "apt_test_123",
+      ownerId: "owner_test_456",
+      rawText: "Cho thuê nhà 2 tầng kiệt ô tô Nguyễn Văn Linh. Diện tích 50m2. Giá 5 triệu/tháng, cọc 1.",
+      imageUrls: []
+    };
+
+    // 2. In log dữ liệu gửi đi (Payload)
+    console.log('🚀 [Next.js] Đang gửi Request POST tới /ai-agents/verify');
+    console.log('📦 [Next.js] Payload (mockData):', JSON.stringify(mockData, null, 2));
+
+    // 3. Gọi API với cấu hình timeout 30 giây để tránh lỗi đứt kết nối sớm
+    api.post('/ai-agents/verify', mockData, { timeout: 30000 })
+      .then((response) => {
+        // 4. In log chi tiết kết quả nhận được (Response)
+        console.log('✅ [Next.js] Call API Thành Công!');
+        
+        // Response data thường được Axios gói trong response.data
+        const responseData = response.data ?? response; 
+        
+        // In cấu trúc trả về đầy đủ, giúp bạn dễ dàng xem các nested object (ví dụ list ảnh hoặc meta_data của AI)
+        console.log('📩 [Next.js] Dữ liệu nhận được (Response Data):');
+        console.dir(responseData, { depth: null }); 
+      }) 
+      .catch((error) => {
+        // 5. In log lỗi chi tiết nếu có
+        console.error('❌ [Next.js] Lỗi khi gọi API AI Agent:');
+        
+        // In thông báo lỗi từ Axios
+        console.error('Message:', error.message);
+        
+        // Nếu server có trả về HTTP status code (ví dụ 400, 500) và error message cụ thể
+        if (error.response) {
+            console.error('HTTP Status:', error.response.status);
+            console.error('Server Error Data:', error.response.data);
+        } else if (error.request) {
+            // Lỗi do request đã gửi nhưng không nhận được phản hồi (timeout, network error)
+            console.error('No response received (Possible Timeout or Network Error). Request object:', error.request);
+        } else {
+            console.error('Error details:', error);
+        }
+      });
+      
+  }, []); // Cực kỳ quan trọng: Mảng [] đảm bảo chỉ chạy 1 lần khi component mount
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "#030B14" }}>
