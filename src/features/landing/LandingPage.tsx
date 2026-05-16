@@ -26,6 +26,7 @@ import HowItWorksSection from "./sections/HowItWorksSection";
 import AppDownloadSection from "./sections/AppDownloadSection";
 import CTASection from "./sections/CTASection";
 import FooterSection from "./sections/FooterSection";
+import UtilityToolsSection from "./sections/UtilityToolsSection";
 import { AgentControlRoom } from "./components";
 
 // ─── LandingPage ──────────────────────────────────────────────────────────────
@@ -295,17 +296,13 @@ export function LandingPage() {
         setListingFilter={setListingFilter}
         selectedListings={selectedListings}
         toggleCompare={toggleCompare}
-        onContactListing={listing => setContactListing({
-          id: listing.id,
-          title: listing.name,
-          price: `${listing.priceFrom}–${listing.priceTo}M/tháng`,
-          area: listing.area,
-          district: listing.district,
-          description: listing.amenities?.join(", ") ?? "",
-        })}
+        onContactListing={listing => navigate(`/listing/${listing.id}`)}
         onGetStarted={openGetStarted}
         t={t}
       />
+
+      <div className="nv-section-divider" />
+      <UtilityToolsSection />
 
       <div className="nv-section-divider" />
       <section className="py-28 px-6">

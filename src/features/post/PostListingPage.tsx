@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { Home, MapPin, Ruler, FileText, Image } from "lucide-react";
 import PostHeader from "./components/PostHeader";
 import PropertyTypeSelector from "./components/PropertyTypeSelector";
 import PropertyLocationFields from "./components/PropertyLocationFields";
@@ -42,6 +43,18 @@ const INITIAL_FORM: PostForm = {
   images: Array(6).fill(null),
 };
 
+function SectionCard({ icon: Icon, title, children }: { icon: React.ComponentType<{ size: number; className: string }>, title: string, children: React.ReactNode }) {
+  return (
+    <div className="rounded-2xl p-5" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
+      <div className="flex items-center gap-2 mb-5">
+        <Icon size={15} className="text-cyan-400" />
+        <span className="text-white font-semibold" style={{ fontSize: "0.9rem" }}>{title}</span>
+      </div>
+      {children}
+    </div>
+  );
+}
+
 export function PostListingPage() {
   const navigate = useNavigate();
   const [form, setForm] = useState<PostForm>(INITIAL_FORM);
@@ -74,57 +87,59 @@ export function PostListingPage() {
       <PostHeader onBack={() => navigate("/")} />
 
       <div className="flex-1 overflow-y-auto">
-        <div className="max-w-2xl mx-auto px-5 py-8 flex flex-col gap-8">
+        <div className="max-w-2xl mx-auto px-5 py-8 flex flex-col gap-5">
 
-          <PropertyTypeSelector
-            propertyType={form.propertyType}
-            intent={form.intent}
-            onChange={(type, intent) => setForm(prev => ({ ...prev, propertyType: type, intent }))}
-          />
+          <SectionCard icon={Home} title="Loại bất động sản">
+            <PropertyTypeSelector
+              propertyType={form.propertyType}
+              intent={form.intent}
+              onChange={(type, intent) => setForm(prev => ({ ...prev, propertyType: type, intent }))}
+            />
+          </SectionCard>
 
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
+          <SectionCard icon={MapPin} title="Vị trí bất động sản">
+            <PropertyLocationFields
+              disabled={locationDisabled}
+              province={form.province}
+              district={form.district}
+              ward={form.ward}
+              onChange={setField}
+            />
+          </SectionCard>
 
-          <PropertyLocationFields
-            disabled={locationDisabled}
-            province={form.province}
-            district={form.district}
-            ward={form.ward}
-            onChange={setField}
-          />
+          <SectionCard icon={Ruler} title="Đặc điểm bất động sản">
+            <PropertyDetailsFields
+              disabled={detailsDisabled}
+              area={form.area}
+              floors={form.floors}
+              bedrooms={form.bedrooms}
+              bathrooms={form.bathrooms}
+              onChange={setField}
+            />
+          </SectionCard>
 
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
+          <SectionCard icon={FileText} title="Nội dung tin đăng">
+            <ListingContentFields
+              title={form.title}
+              description={form.description}
+              price={form.price}
+              priceUnit={form.priceUnit}
+              onChange={setField}
+            />
+          </SectionCard>
 
-          <PropertyDetailsFields
-            disabled={detailsDisabled}
-            area={form.area}
-            floors={form.floors}
-            bedrooms={form.bedrooms}
-            bathrooms={form.bathrooms}
-            onChange={setField}
-          />
-
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
-
-          <ListingContentFields
-            title={form.title}
-            description={form.description}
-            price={form.price}
-            priceUnit={form.priceUnit}
-            onChange={setField}
-          />
-
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
-
-          <ImageUploadArea
-            images={form.images}
-            onImageChange={(index, file) =>
-              setForm(prev => {
-                const images = [...prev.images];
-                images[index] = file;
-                return { ...prev, images };
-              })
-            }
-          />
+          <SectionCard icon={Image} title="Hình ảnh">
+            <ImageUploadArea
+              images={form.images}
+              onImageChange={(index, file) =>
+                setForm(prev => {
+                  const images = [...prev.images];
+                  images[index] = file;
+                  return { ...prev, images };
+                })
+              }
+            />
+          </SectionCard>
 
           <PostSubmitButton
             submitted={submitted}

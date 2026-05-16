@@ -20,8 +20,9 @@ const ContractsPage = lazy(() => import("@features/shared-pages/ContractsPage").
 const PaymentsPage  = lazy(() => import("@features/shared-pages/PaymentsPage").then(m => ({ default: m.PaymentsPage })));
 const ReportsPage   = lazy(() => import("@features/shared-pages/ReportsPage").then(m => ({ default: m.ReportsPage })));
 const SecurityPage    = lazy(() => import("@features/shared-pages/SecurityPage").then(m => ({ default: m.SecurityPage })));
-const ChatPage        = lazy(() => import("@features/chat/ChatPage").then(m => ({ default: m.ChatPage })));
-const PostListingPage = lazy(() => import("@features/post/PostListingPage").then(m => ({ default: m.PostListingPage })));
+const ChatPage           = lazy(() => import("@features/chat/ChatPage").then(m => ({ default: m.ChatPage })));
+const PostListingPage    = lazy(() => import("@features/post/PostListingPage").then(m => ({ default: m.PostListingPage })));
+const ListingDetailPage  = lazy(() => import("@features/listing/ListingDetailPage").then(m => ({ default: m.ListingDetailPage })));
 
 function isQuickAuthenticated() {
   try {
@@ -185,6 +186,7 @@ export const router = createBrowserRouter([
       { path: "/reports",             Component: ReportsGuard },
       { path: "/chat",                Component: ChatGuard },
       { path: "/post",                Component: PostGuard },
+      { path: "/listing/:id",         Component: ListingDetailPage },
     ],
   },
 ]);
