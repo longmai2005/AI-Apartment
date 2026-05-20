@@ -14,6 +14,7 @@ import { RatingModal } from "@shared/components/RatingModal";
 import DashboardTab from "@features/landlord/components/DashboardTab";
 import TenantsTab from "@features/landlord/components/TenantsTab";
 import ListingTab from "@features/landlord/components/ListingTab";
+import ListingApp_fixed from "./components/ListingApp_fixed"; // Demo cho ListingTab
 import ReportsTab from "@features/landlord/components/ReportsTab";
 import SettingsTab from "@features/landlord/components/SettingsTab";
 import PropertiesTab from "@features/landlord/components/PropertiesTab";
@@ -210,8 +211,9 @@ export function LandlordApp() {
               </motion.div>
             )}
             {activeTab === "listing" && (
-              <motion.div key="listing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex-1 overflow-hidden flex flex-col max-w-3xl w-full mx-auto">
-                <ListingTab />
+              <motion.div key="listing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex-1 overflow-hidden flex flex-col w-full"> {/*Tắt max-w-3xl với w-auto để anh Hiển test FE phần ni nghe*/}
+                {/* <ListingTab /> */}
+                <ListingApp_fixed />
               </motion.div>
             )}
             {activeTab === "agents" && (
