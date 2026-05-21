@@ -58,7 +58,10 @@ export default function ListingApp_fixed() {
 
     // State của AI
     const [isVerifying, setIsVerifying] = useState(false);
-    const ownerId = 'b2f280da-dbac-4b47-9ad8-d6bb67d12853'
+    const [aiResult, setAiResult] = useState<any>(null);
+
+    const ownerId = 'b2f280da-dbac-4b47-9ad8-d6bb67d12853';
+
     useEffect(() => {
         const fetchOnwerApartmentsList = async () => {
             setIsLoadingApartments(true)
@@ -157,7 +160,28 @@ export default function ListingApp_fixed() {
 
     const triggerAIVerification = async () => {
         setIsVerifying(true);
-        // [TODO]: Gửi formData và uploadedImages qua API NestJS để check AI
+        setAiResult(null);
+        try {
+            const imageUrlsToVerify = uploadedImages.map(img => img.url);
+
+            // Gửi MỘT CỤC data nguyên bản
+            const payload = {
+                apartmentId: selectedApartmentId,
+                ownerId: ownerId,
+                ...formData, // Spread toàn bộ formData (title, description, price, v.v...)
+                imageUrls: imageUrlsToVerify
+            };
+
+            console.log("📦 Đang gửi Payload SẠCH sang NestJS:", payload);
+
+            const res = await api.post('/ai-agents/verify', payload);
+
+            const returnedData = res.data?.data;
+            console.log("Dữ liệu từ AI là: ", returnedData);
+            setAiResult(returnedData);
+        } catch (error) {
+            console.error("Error at triggerAIVerification func: ", error);
+        }
         // Chờ phản hồi và nhét vào State Cột 3
         setTimeout(() => { setIsVerifying(false); }, 2000);
     };
@@ -402,7 +426,7 @@ export default function ListingApp_fixed() {
                 CỘT 3: BẢNG TĨNH AI VERIFIER 
             ========================================================================= */}
             <div className="w-full xl:w-1/4 xl:min-w-[280px] xl:max-w-[320px] bg-slate-50 flex flex-col xl:h-full flex-shrink-0 min-h-[50vh]">
-                <div className="h-[72px] px-4 border-b border-slate-200 bg-white shadow-sm z-10 flex-shrink-0">
+                <div className="h-[72px] p-4 border-b border-slate-200 bg-white shadow-sm z-10 flex-shrink-0">
                     <div className="flex flex-col justify-center">
                         <h2 className="font-bold text-slate-800 text-lg flex items-center gap-2">
                             <Bot size={20} className="text-emerald-600" />
@@ -411,8 +435,99 @@ export default function ListingApp_fixed() {
                         <p className="text-xs text-slate-500 mt-1">Báo cáo đánh giá tự động</p>
                     </div>
                 </div>
+                {/* kiểm tra đang kích hoạt AI hay sao ?  */}
+                {isVerifying ? (
+                    <div className="flex flex-col items-center justify-center py-20 text-slate-500">
+                        <RefreshCw size={40} className="animate-spin text-emerald-500 mb-4" />
+                        <p className="font-medium animate-pulse">AI đang phân tích và đối soát...</p>
+                    </div>
+                ) : aiResult ? (
+                    /* NẾU ĐÃ CÓ KẾT QUẢ AI */
+                    <div className="space-y-4">
+                        {/* Khối Điểm số và Trạng thái */}
+                        <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                            <h4 className="text-xs font-bold text-slate-400 mb-3 tracking-wider">KẾT QUẢ KIỂM DUYỆT</h4>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg
+                                            ${aiResult.validation.score >= 70 ? 'border-emerald-200 text-emerald-600' : 'border-red-200 text-red-600'}
+                                        `}>
+                                        {aiResult.validation.score}
+                                    </div>
+                                    <div className="text-sm">
+                                        <p className="text-slate-500">Điểm chất lượng</p>
+                                        <p className={`font-bold ${aiResult.listing.status === 'published' ? 'text-emerald-600' : 'text-amber-600'}`}>
+                                            {aiResult.listing.status.toUpperCase()}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
+                            {/* Hiển thị Feedback nếu bị đánh rớt hoặc trừ điểm */}
+                            {aiResult.validation.issues?.length > 0 && (
+                                <div className="mt-4 p-3 bg-red-50 rounded-lg text-sm border border-red-100">
+                                    <p className="font-bold text-red-700 mb-1">⚠️ Cần khắc phục:</p>
+                                    <ul className="list-disc pl-4 text-red-600 space-y-1">
+                                        {aiResult.validation.issues.map((issue: string, idx: number) => (
+                                            <li key={idx}>{issue}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Khối Nội dung Chuẩn hoá */}
+                        <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                            <h4 className="text-xs font-bold text-slate-400 mb-2 tracking-wider">BẢN NHÁP TỐI ƯU BỞI AI</h4>
+                            <h5 className="font-bold text-slate-800 text-sm mb-2">{aiResult.listing.title}</h5>
+                            <div className="text-sm text-slate-600 whitespace-pre-wrap bg-slate-50 p-3 rounded-lg border border-slate-100 max-h-40 overflow-y-auto">
+                                {aiResult.listing.description}
+                            </div>
+                        </div>
+
+                        {/* Khối Trích xuất & Đối soát Database */}
+                        <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                            <div className="flex justify-between items-center mb-3">
+                                <h4 className="text-xs font-bold text-slate-400 tracking-wider">TRÍCH XUẤT THỰC THỂ</h4>
+                                {aiResult.validation.is_verified_by_db && (
+                                    <span className="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded flex items-center gap-1">
+                                        <CheckCircle2 size={10} /> Khớp DB
+                                    </span>
+                                )}
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex justify-between text-sm border-b border-slate-50 pb-1">
+                                    <span className="text-slate-400">Giá AI hiểu</span>
+                                    <span className="text-slate-700 font-bold">{aiResult.listing.price_per_month.toLocaleString()} ₫</span>
+                                </div>
+                                <div className="flex justify-between text-sm border-b border-slate-50 pb-1">
+                                    <span className="text-slate-400">Diện tích</span>
+                                    <span className="text-slate-700 font-bold">{aiResult.apartment_meta.area_m2} m²</span>
+                                </div>
+                                <div className="flex justify-between text-sm pb-1">
+                                    <span className="text-slate-400">Tiện ích</span>
+                                    <span className="text-slate-700 font-bold truncate max-w-[120px] text-right" title={aiResult.apartment_meta.amenities.join(', ')}>
+                                        {aiResult.apartment_meta.amenities.length} mục
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tag ảnh gợi ý */}
+                        {aiResult.image_tags_suggested?.length > 0 && (
+                            <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                                <h4 className="text-xs font-bold text-slate-400 mb-2 tracking-wider">GỢI Ý TỪ KHÓA TÌM KIẾM</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {aiResult.image_tags_suggested.map((tag: string, idx: number) => (
+                                        <span key={idx} className="bg-violet-50 text-violet-600 text-xs px-2 py-1 rounded-md border border-violet-100">
+                                            #{tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ) : ( <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
                     <div className="space-y-4 opacity-40 select-none pointer-events-none">
                         <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
                             <h4 className="text-xs font-bold text-slate-400 mb-3 tracking-wider">ĐIỂM CHUẨN SEO</h4>
@@ -446,7 +561,7 @@ export default function ListingApp_fixed() {
                     <div className="mt-6 text-center text-sm text-slate-400 font-medium px-4 pb-10">
                         Hoàn thành cột nội dung và bấm <span className="text-violet-500">"Duyệt qua AI"</span> để hiển thị kết quả tại đây.
                     </div>
-                </div>
+                </div> )}
             </div>
 
         </div>
