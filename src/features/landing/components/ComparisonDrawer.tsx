@@ -3,7 +3,7 @@ import { X, Bot, ArrowRight } from "lucide-react";
 import { LISTINGS } from "../data";
 
 export function ComparisonDrawer({ selectedIds, onClose, t, onGetStarted }: {
-  selectedIds: number[];
+  selectedIds: string[];
   onClose: () => void;
   t: (vi: string, en: string) => string;
   onGetStarted: () => void;

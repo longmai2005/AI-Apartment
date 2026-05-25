@@ -46,11 +46,13 @@ export function LandingPage() {
   const [chatTrigger, setChatTrigger] = useState<{ query: string; id: number } | undefined>();
   const [contactListing, setContactListing] = useState<ContactListing | null>(null);
   const [showCommandPalette, setShowCommandPalette] = useState(false);
-  const [selectedListings, setSelectedListings] = useState<number[]>([]);
+  const [selectedListings, setSelectedListings] = useState<string[]>([]);
   const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
-  const [listingFilter, setListingFilter] = useState<"all" | "hcm" | "hn" | "other">("all");
+  const [listingFilter, setListingFilter] = useState<"all" | "hc" | "tk" | "st" | "lc">("all");
   const [quickLogin, setQuickLogin] = useState<"chat" | "post" | null>(null);
+
+  
 
   const handleContact = () => setQuickLogin("chat");
   const handlePostListing = () => setQuickLogin("post");
@@ -62,7 +64,7 @@ export function LandingPage() {
     try { localStorage.setItem("nv-tour-done", "true"); } catch { /* noop */ }
   };
 
-  const toggleCompare = (id: number) => {
+  const toggleCompare = (id: string) => {
     setSelectedListings(prev =>
       prev.includes(id) ? prev.filter(x => x !== id) : prev.length < 3 ? [...prev, id] : prev
     );
@@ -161,55 +163,29 @@ export function LandingPage() {
       }
     } catch { /* noop */ }
   }, []);
-  // test BE => AI
-// test BE => AI
-  useEffect(() => {
-    // 1. Chuẩn bị mock data khớp với DTO bên NestJS
-    const mockData = {
-      apartmentId: "apt_test_123",
-      ownerId: "owner_test_456",
-      rawText: "Cho thuê nhà 2 tầng kiệt ô tô Nguyễn Văn Linh. Diện tích 50m2. Giá 5 triệu/tháng, cọc 1.",
-      imageUrls: []
-    };
 
-    // 2. In log dữ liệu gửi đi (Payload)
-    console.log('🚀 [Next.js] Đang gửi Request POST tới /ai-agents/verify');
-    console.log('📦 [Next.js] Payload (mockData):', JSON.stringify(mockData, null, 2));
-
-    // 3. Gọi API với cấu hình timeout 30 giây để tránh lỗi đứt kết nối sớm
-    api.post('/ai-agents/verify', mockData, { timeout: 30000 })
-      .then((response) => {
-        // 4. In log chi tiết kết quả nhận được (Response)
-        console.log('✅ [Next.js] Call API Thành Công!');
+  useEffect( () => {
+    const fetchListing = async () => {
+      try {
+        const res = await api.get("/listing");
+        console.log("Đã call NestJS BE");
         
-        // Response data thường được Axios gói trong response.data
-        const responseData = response.data ?? response; 
-        
-        // In cấu trúc trả về đầy đủ, giúp bạn dễ dàng xem các nested object (ví dụ list ảnh hoặc meta_data của AI)
-        console.log('📩 [Next.js] Dữ liệu nhận được (Response Data):');
-        console.dir(responseData, { depth: null }); 
-      }) 
-      .catch((error) => {
-        // 5. In log lỗi chi tiết nếu có
-        console.error('❌ [Next.js] Lỗi khi gọi API AI Agent:');
-        
-        // In thông báo lỗi từ Axios
-        console.error('Message:', error.message);
-        
-        // Nếu server có trả về HTTP status code (ví dụ 400, 500) và error message cụ thể
-        if (error.response) {
-            console.error('HTTP Status:', error.response.status);
-            console.error('Server Error Data:', error.response.data);
-        } else if (error.request) {
-            // Lỗi do request đã gửi nhưng không nhận được phản hồi (timeout, network error)
-            console.error('No response received (Possible Timeout or Network Error). Request object:', error.request);
+        if(res){
+          console.log("Tất cả bài viết là: ");
+          console.log(res.data)
         } else {
-            console.error('Error details:', error);
+          console.log("Không thể nhận được Data");
         }
-      });
-      
-  }, []); // Cực kỳ quan trọng: Mảng [] đảm bảo chỉ chạy 1 lần khi component mount
+      } catch (err) {
+        console.error("Lỗi khi call listing data: ", err);
+      }
+    }
 
+    fetchListing();
+  }, [])
+  
+
+  
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ backgroundColor: "#030B14" }}>
       {/* Scroll progress line */}
@@ -347,7 +323,7 @@ export function LandingPage() {
         setListingFilter={setListingFilter}
         selectedListings={selectedListings}
         toggleCompare={toggleCompare}
-        onContactListing={listing => navigate(`/listing/${listing.id}`)}
+        onContactListing={listing => navigate(`/listing/${listing.apartment.ownerId}`)}
         onGetStarted={openGetStarted}
         t={t}
       />
