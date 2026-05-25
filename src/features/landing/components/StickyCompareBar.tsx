@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { LISTINGS } from "../data";
 
 export function StickyCompareBar({ selectedIds, onCompare, onClear, t }: {
-  selectedIds: number[];
+  selectedIds: string[];
   onCompare: () => void;
   onClear: () => void;
   t: (vi: string, en: string) => string;

@@ -1,29 +1,96 @@
-import type { RefObject } from "react";
+import { useState, useEffect, type RefObject } from "react";
 import { motion } from "motion/react";
 import type { MotionValue } from "motion/react";
 import { Star, MapPin, ArrowRight, ChevronRight, Home } from "lucide-react";
 import { LazyImage } from "@shared/components/LazyImage";
 import { SocialProofBadge } from "../components";
 import { REAL_LISTINGS, FEATURED_REAL } from "../data";
+import { api } from "@/lib/api";
 
 type FeaturedListing = typeof FEATURED_REAL[number];
 
 interface ListingsSectionProps {
   listingsRef: RefObject<HTMLElement | null>;
   listingsDrift: MotionValue<number>;
-  listingFilter: "all" | "hcm" | "hn" | "other";
-  setListingFilter: (f: "all" | "hcm" | "hn" | "other") => void;
-  selectedListings: number[];
-  toggleCompare: (id: number) => void;
-  onContactListing: (apt: FeaturedListing) => void;
+  listingFilter: "all" | "hc" | "tk" | "st" | "lc";
+  setListingFilter: (f: "all" | "hc" | "tk" | "st" | "lc") => void;
+  selectedListings: string[];
+  toggleCompare: (id: string) => void;
+  onContactListing: (apt: any) => void;
   onGetStarted: () => void;
   t: (vi: string, en: string) => string;
+}
+
+interface Listings {
+  id: string,
+  title: string,
+  description: string,
+  pricePerMonth: number,
+  images: {
+    imageUrl: string;
+    isPrimary: boolean;
+  } [],
+  apartment: {
+    district: string,
+    area: number,
+    floor: number,
+    room_number: number,
+    type: string,
+    note: string,
+    fullAddress: string
+    bedroom: string,
+    livingroom: string,
+    kitchen: string,
+    bathroom: string,
+  }
+
 }
 
 export default function ListingsSection({
   listingsRef, listingsDrift, listingFilter, setListingFilter,
   selectedListings, toggleCompare, onContactListing, onGetStarted, t,
 }: ListingsSectionProps) {
+
+  const [listings, setListings] = useState<Listings[]>([]);
+  const [loading, setLoading] = useState(true);
+ 
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        const res = await api.get('/listing');
+        const result = await res.data;
+
+        console.log("Đang kết nối đến API Lisitng: ");
+        console.log("Kết quả nhận được: \n", result );
+
+        if(result){
+          setListings(result);
+        } 
+
+      } catch (error) {
+        console.error("Không thể gọi API Listings: ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchListings();
+  }, []);
+
+  const countHC = listings.filter((apt) => apt.apartment?.district?.includes("Hải Châu") ).length;
+  const countTK = listings.filter((apt) => apt.apartment?.district?.includes("Thanh Khê") ).length;
+  const countST = listings.filter((apt) => apt.apartment?.district?.includes("Sơn Trà") ).length;
+  const countLC = listings.filter((apt) => apt.apartment?.district?.includes("Liên Chiểu") ).length;
+
+
+  if (loading) {
+    return (
+      <section className="py-28 px-6 flex justify-center items-center">
+        <div className="animate-pulse text-cyan-400 font-bold">Đang tải danh sách căn hộ...</div>
+      </section>
+    );
+  }
+
   return (
     <section ref={listingsRef} className="py-28 px-6" style={{ background: "rgba(255,255,255,0.015)" }}>
       <div className="max-w-7xl mx-auto">
@@ -42,7 +109,7 @@ export default function ListingsSection({
               {t("Tin thuê nhà thực tế","Live rental listings")}
             </h2>
             <p className="text-white/35 mt-1" style={{ fontSize: "0.85rem" }}>
-              {t(`${REAL_LISTINGS.length} căn hộ & phòng trọ thực tế · nhiều tỉnh thành`,`${REAL_LISTINGS.length} real rentals · multiple cities`)}
+              {t(`${listings.length} căn hộ & phòng trọ thực tế · nhiều tỉnh thành`,`${listings.length} real rentals · multiple cities`)}
             </p>
           </div>
           <div className="flex flex-col items-end gap-3">
@@ -56,11 +123,12 @@ export default function ListingsSection({
         {/* Province filter tabs */}
         <div className="flex items-center gap-2 mb-6 flex-wrap">
           {([
-            { key: "all",   label: t("Tất cả","All"),       count: FEATURED_REAL.length },
-            { key: "hcm",   label: "TP. Hồ Chí Minh",       count: FEATURED_REAL.filter(l => l.province.includes("Hồ Chí Minh")).length },
-            { key: "hn",    label: "Hà Nội",                 count: FEATURED_REAL.filter(l => l.province.includes("Hà Nội")).length },
-            { key: "other", label: t("Tỉnh khác","Other"),   count: FEATURED_REAL.filter(l => !l.province.includes("Hồ Chí Minh") && !l.province.includes("Hà Nội")).length },
-          ] as { key: "all"|"hcm"|"hn"|"other"; label: string; count: number }[]).map(tab => (
+            { key: "all",   label: t("Tất cả","All"),       count: listings.length },
+            { key: "hc",   label: "Hải Châu",       count: countHC },
+            { key: "tk",    label: "Thanh Khê",                 count:  countTK },
+            { key: "st",    label: "Sơn Trà",                 count: countST },
+            { key: "lc",    label: "Liên Chiểu",                 count: countLC },
+          ] as { key: "all"|"hc"|"tk"|"st"|"lc"; label: string; count: number }[]).map(tab => (
             <button key={tab.key} onClick={() => setListingFilter(tab.key)}
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border transition-all"
               style={{
@@ -78,88 +146,136 @@ export default function ListingsSection({
 
         <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
           <motion.div className="flex gap-5" style={{ minWidth: "max-content", x: listingsDrift }}>
-            {FEATURED_REAL
-              .filter(apt =>
-                listingFilter === "all"   ? true :
-                listingFilter === "hcm"   ? apt.province.includes("Hồ Chí Minh") :
-                listingFilter === "hn"    ? apt.province.includes("Hà Nội") :
-                !apt.province.includes("Hồ Chí Minh") && !apt.province.includes("Hà Nội")
-              )
-              .map((apt, i) => {
-              const isCompared = selectedListings.includes(apt.id);
-              const tickerMsgs = [`${apt.available} trống`, `${2 + (i % 4)} đang xem`, "Vừa được quan tâm", `${apt.available} phòng còn`];
-              const tickerIdx = Math.floor(Date.now() / 4000 + i) % tickerMsgs.length;
-              return (
-                <motion.div key={apt.id}
-                  initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i,3) * 0.08 }}
-                  whileHover={{ y: -10, scale: 1.015 }}
-                  onClick={() => onContactListing(apt)}
-                  className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group relative"
-                  style={{ width: "280px", background: isCompared ? `${apt.badgeHex}0d` : "rgba(255,255,255,0.04)", border: `1px solid ${isCompared ? apt.badgeHex + "50" : "rgba(255,255,255,0.09)"}`, boxShadow: "0 4px 24px rgba(0,0,0,0.25)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${apt.badgeHex}60`; if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = `${apt.badgeHex}44`; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)"; if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.09)"; }}
-                >
-                  <button
-                    onClick={e => { e.stopPropagation(); toggleCompare(apt.id); }}
-                    className="absolute top-3 left-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
-                    style={{
-                      background: isCompared ? apt.badgeHex : "rgba(0,0,0,0.55)",
-                      backdropFilter: "blur(8px)",
-                      border: `1px solid ${isCompared ? apt.badgeHex : "rgba(255,255,255,0.2)"}`,
-                      boxShadow: isCompared ? `0 0 12px ${apt.badgeHex}80` : "none",
-                    }}>
-                    <span className="text-white font-bold" style={{ fontSize: "0.85rem", lineHeight: 1 }}>{isCompared ? "✓" : "+"}</span>
-                  </button>
+            {listings.length === 0 ? (
+              <div className="text-white/50 py-10 w-full text-center">Chưa có bài đăng nào phù hợp...</div>
+            ) : (
+              listings
+                .filter((item) => {
+                  const addr = item.apartment?.district || "";
+                  if (listingFilter === "all") return true;
+                  if (listingFilter === "hc") return addr.includes("Hải Châu");
+                  if (listingFilter === "tk") return addr.includes("Thanh Khê");
+                  if (listingFilter === "st") return addr.includes("Sơn Trà");
+                  if (listingFilter === "lc") return addr.includes("Liên Chiểu");
+                  return !addr.includes("Hải Châu") && !addr.includes("Thanh Khê")  && !addr.includes("Sơn Trà")  && !addr.includes("Liên Chiểu");
+                })
+                .map((item, i) => {
+                  // Xử lý logic hiển thị từng Card
+                  const isCompared = selectedListings.includes(item.id);
+                  const badgeHex = "#22d3ee"; // Màu chủ đạo Cyan
+                  const priceM = (item.pricePerMonth / 1000000).toFixed(1); // Format 8500000 -> 8.5M
+                  const coverImage = item.images[0]?.imageUrl || "https://via.placeholder.com/300x200?text=No+Image";
+                  const district = item.apartment?.district || "Đà Nẵng";
+                  
+                  const tickerMsgs = [`1 trống`, `${2 + (i % 4)} đang xem`, "Vừa được quan tâm"];
+                  const tickerIdx = Math.floor(Date.now() / 4000 + i) % tickerMsgs.length;
 
-                  <div className="relative h-48 overflow-hidden">
-                    <LazyImage src={apt.img} alt={apt.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-white" style={{ fontSize: "0.6rem", fontWeight: 700, background: apt.badgeHex, boxShadow: `0 0 10px ${apt.badgeHex}80` }}>{apt.badge}</span>
-                    <div className="absolute top-12 right-3 rounded-full px-2 py-1 flex items-center gap-1" style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)" }}>
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-white" style={{ fontSize: "0.58rem", fontWeight: 600 }}>{tickerMsgs[tickerIdx]}</span>
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h3 className="text-white font-bold" style={{ fontSize: "0.9rem" }}>{apt.name}</h3>
-                      <p className="text-white/60 flex items-center gap-1" style={{ fontSize: "0.7rem" }}><MapPin size={9} />{apt.district}</p>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-baseline gap-1 mb-3">
-                      <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceFrom}M</span>
-                      <span className="text-white/20 text-xs">–</span>
-                      <span className="text-cyan-400 font-bold" style={{ fontSize: "1.05rem" }}>{apt.priceTo}M</span>
-                      <span className="text-white/30" style={{ fontSize: "0.68rem" }}>/tháng</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {apt.amenities.map(a => (
-                        <span key={a} className="text-white/50 px-2 py-0.5 rounded-md"
-                          style={{ fontSize: "0.6rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>{a}</span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                      <div className="flex items-center gap-1">
-                        <Star size={11} className="text-yellow-400" style={{ fill: "#facc15" }} />
-                        <span className="text-white/50" style={{ fontSize: "0.72rem" }}>{apt.rating}</span>
+                  return (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: Math.min(i, 3) * 0.08 }}
+                      whileHover={{ y: -10, scale: 1.015 }}
+                      onClick={() => onContactListing(item)}
+                      className="rounded-3xl overflow-hidden cursor-pointer flex-shrink-0 group relative"
+                      style={{
+                        width: "280px",
+                        background: isCompared ? `${badgeHex}0d` : "rgba(255,255,255,0.04)",
+                        border: `1px solid ${isCompared ? badgeHex + "50" : "rgba(255,255,255,0.09)"}`,
+                        boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.boxShadow = `0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px ${badgeHex}60`;
+                        if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = `${badgeHex}44`;
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)";
+                        if (!isCompared) (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.09)";
+                      }}
+                    >
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleCompare(item.id);
+                        }}
+                        className="absolute top-3 left-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
+                        style={{
+                          background: isCompared ? badgeHex : "rgba(0,0,0,0.55)",
+                          backdropFilter: "blur(8px)",
+                          border: `1px solid ${isCompared ? badgeHex : "rgba(255,255,255,0.2)"}`,
+                          boxShadow: isCompared ? `0 0 12px ${badgeHex}80` : "none",
+                        }}
+                      >
+                        <span className="text-white font-bold" style={{ fontSize: "0.85rem", lineHeight: 1 }}>
+                          {isCompared ? "✓" : "+"}
+                        </span>
+                      </button>
+
+                      <div className="relative h-48 overflow-hidden bg-gray-800">
+                        <LazyImage
+                          src={coverImage}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <span
+                          className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-white uppercase tracking-wider"
+                          style={{ fontSize: "0.6rem", fontWeight: 700, background: badgeHex, boxShadow: `0 0 10px ${badgeHex}80` }}
+                        >
+                          CHO THUÊ
+                        </span>
+                        <div
+                          className="absolute top-12 right-3 rounded-full px-2 py-1 flex items-center gap-1"
+                          style={{ background: "rgba(0,0,0,0.55)", backdropFilter: "blur(8px)" }}
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="text-white" style={{ fontSize: "0.58rem", fontWeight: 600 }}>
+                            {tickerMsgs[tickerIdx]}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-3 left-3 right-3">
+                          <h3 className="text-white font-bold truncate" style={{ fontSize: "0.9rem" }}>{item.title}</h3>
+                          <p className="text-white/70 flex items-center gap-1 mt-1" style={{ fontSize: "0.75rem" }}>
+                            <MapPin size={10} /> {district}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-white/28" style={{ fontSize: "0.65rem" }}>{apt.area}</span>
-                        {"sourceUrl" in apt && (apt as { sourceUrl?: string }).sourceUrl && (
-                          <a
-                            href={(apt as { sourceUrl?: string }).sourceUrl}
-                            target="_blank" rel="noopener noreferrer"
-                            onClick={e => e.stopPropagation()}
-                            className="px-1.5 py-0.5 rounded text-white/30 hover:text-cyan-400 transition-colors"
-                            style={{ fontSize: "0.55rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                            Xem chi tiết ↗
-                          </a>
-                        )}
+                      
+                      <div className="p-4">
+                        <div className="flex items-baseline gap-1 mb-3">
+                          <span className="text-cyan-400 font-bold" style={{ fontSize: "1.2rem" }}>{priceM}</span>
+                          <span className="text-cyan-400 font-bold" style={{ fontSize: "1rem" }}>Triệu</span>
+                          <span className="text-white/40 ml-1" style={{ fontSize: "0.7rem" }}>/tháng</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          <span className="text-white/60 px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[0.65rem]">
+                            {item.apartment?.bedroom || 1} PN
+                          </span>
+                          <span className="text-white/60 px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[0.65rem]">
+                            {item.apartment?.bathroom || 1} WC
+                          </span>
+                          <span className="text-white/60 px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[0.65rem]">
+                            Tầng {item.apartment?.floor || 1}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                          <div className="flex items-center gap-1">
+                            <Star size={11} className="text-yellow-400" style={{ fill: "#facc15" }} />
+                            <span className="text-white/60" style={{ fontSize: "0.75rem" }}>5.0</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-white/40 font-medium" style={{ fontSize: "0.75rem" }}>
+                              {item.apartment?.area || 0} m²
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                    </motion.div>
+                  );
+                })
+            )}
           </motion.div>
         </div>
 

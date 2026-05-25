@@ -33,6 +33,7 @@ export function ListingDetailPage() {
   const navigate = useNavigate();
 
   const { listing, agent, images } = getMockListing(id ?? "");
+  
 
   const isLoggedIn  = isTenantAuth() || isLandlordAuth() || isAdminAuthenticated() || isDevAuthenticated();
   const canRate     = isTenantAuth();
@@ -46,6 +47,8 @@ export function ListingDetailPage() {
     document.documentElement.removeAttribute("data-theme");
     window.scrollTo(0, 0);
   }, [id]);
+
+  console.log("Trang detail: ");
 
   // Derived ratings from comments that have a star rating
   const ratedComments = useMemo(() => comments.filter(c => c.rating != null), [comments]);
