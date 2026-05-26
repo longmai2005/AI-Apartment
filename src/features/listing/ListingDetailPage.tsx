@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Building2 } from "lucide-react";
 import { isAdminAuthenticated } from "@features/admin/AdminLogin";
 import { isDevAuthenticated } from "@features/dev/DevLogin";
 import { getMockListing } from "./data/mockDetail";
@@ -107,12 +107,24 @@ export function ListingDetailPage() {
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: "#030B14" }}>
-      <div className="sticky top-0 z-10 border-b border-white/6 px-6 py-3 flex items-center gap-3"
-        style={{ background: "rgba(3,7,18,0.85)", backdropFilter: "blur(20px)" }}>
+      <div className="sticky top-0 z-10 border-b border-white/6 px-6 py-4 flex items-center justify-between"
+        style={{ background: "rgba(3,7,18,0.9)", backdropFilter: "blur(20px)" }}>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ background: "linear-gradient(135deg,#3b82f6,#22d3ee)", boxShadow: "0 4px 14px rgba(34,211,238,0.3)" }}>
+            <Building2 size={18} className="text-white" />
+          </div>
+          <div>
+            <p style={{ fontSize: "1rem", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.01em" }}>
+              NestaViet<span style={{ color: "#22d3ee" }}>AI</span>
+            </p>
+            <p style={{ fontSize: "0.62rem", color: "rgba(255,255,255,0.3)", lineHeight: 1 }}>Nền tảng thuê căn hộ</p>
+          </div>
+        </div>
         <button onClick={() => navigate(-1)}
-          className="flex items-center gap-1.5 text-white/40 hover:text-white/75 transition-colors"
-          style={{ fontSize: "0.83rem" }}>
-          <ChevronLeft size={16} />Quay lại
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-white/10 text-white/45 hover:text-white/80 hover:border-white/20 hover:bg-white/5 transition-all"
+          style={{ fontSize: "0.82rem" }}>
+          <ChevronLeft size={15} />Quay lại
         </button>
       </div>
 

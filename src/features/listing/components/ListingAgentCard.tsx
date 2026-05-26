@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, Phone, Send, PhoneOff } from "lucide-react";
+import { MessageCircle, Phone, Send, PhoneOff, Building2 } from "lucide-react";
 
 interface ChatMessage {
   id: number;
@@ -188,6 +188,17 @@ export function ListingAgentCard({
           ))}
         </div>
       )}
+
+      {/* NestaVietAI branding */}
+      <div className="flex items-center justify-center gap-2 py-2.5 border-t border-white/6">
+        <div className="w-5 h-5 rounded-md flex items-center justify-center"
+          style={{ background: "linear-gradient(135deg,#3b82f6,#22d3ee)", boxShadow: "0 0 8px rgba(34,211,238,0.2)" }}>
+          <Building2 size={11} className="text-white" />
+        </div>
+        <span style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.3)" }}>
+          Nền tảng <span className="font-semibold" style={{ color: "rgba(255,255,255,0.5)" }}>NestaViet</span><span style={{ color: "#22d3ee", fontWeight: 600 }}>AI</span>
+        </span>
+      </div>
     </div>
   );
 }
