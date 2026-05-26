@@ -12,8 +12,39 @@ import { ListingAgentCard } from "./components/ListingAgentCard";
 import { ListingRatingsSection } from "./components/ListingRatingsSection";
 import { ListingCommentsSection } from "./components/ListingCommentsSection";
 import type { Comment } from "./components/ListingCommentsSection";
+import { api } from "@/lib/api";
 
 const QUICK_REPLIES = ["Căn hộ này còn không ạ?", "Có video không ạ?", "Thời gian xem phòng?", "Chi phí phát sinh?"];
+
+interface ListingDetail {
+  id: string;
+  title: string;
+  description: string;
+  pricePerMonth: number;
+  createdAt: string;
+  images: {
+    imageUrl: string;
+    isPrimary: boolean;
+  }[];
+  apartment: {
+    district: string;
+    area: number;
+    floor: number;
+    room_number: number;
+    type: string;
+    note: string;
+    fullAddress: string;
+    bedroom: number;
+    livingroom: number;
+    kitchen: number;
+    bathroom: number;
+    owner?: {
+      name: string;
+      phone: string;
+      email: string;
+    }
+  };
+}
 
 function getRole(): Comment["authorRole"] {
   if (isAdminAuthenticated()) return "admin";
@@ -32,8 +63,11 @@ export function ListingDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const { listing, agent, images } = getMockListing(id ?? "");
-  
+  // const { listing, agent, images } = getMockListing(id ?? "");
+  // const {agent} = getMockListing(id ?? "");
+
+  const [listing, setListing] = useState<ListingDetail | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const isLoggedIn  = isTenantAuth() || isLandlordAuth() || isAdminAuthenticated() || isDevAuthenticated();
   const canRate     = isTenantAuth();
@@ -49,6 +83,26 @@ export function ListingDetailPage() {
   }, [id]);
 
   console.log("Trang detail: ");
+
+  useEffect(() => {
+    const fetchListingDetail = async () => {
+      if(!id) return;
+
+      try {
+        setLoading(true);
+        const res = await api.get(`/listing/${id}`);
+        console.log("Data nhận được: ", res.data);
+
+        setListing(res.data)
+      } catch (error) {
+        console.error("Lỗi khi nhận Data: ", error)
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchListingDetail();
+  }, [id])
 
   // Derived ratings from comments that have a star rating
   const ratedComments = useMemo(() => comments.filter(c => c.rating != null), [comments]);
@@ -103,7 +157,34 @@ export function ListingDetailPage() {
     setComments(prev => prev.map(c => c.id === id ? { ...c, showReplyBox: !c.showReplyBox } : c));
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen text-white flex items-center justify-center" style={{ backgroundColor: "#030B14" }}>
+        <div className="animate-pulse text-cyan-400 font-bold text-xl">Đang tải thông tin chi tiết...</div>
+      </div>
+    );
+  }
+
+  if (!listing) {
+    return (
+      <div className="min-h-screen text-white flex flex-col items-center justify-center gap-4" style={{ backgroundColor: "#030B14" }}>
+        <p className="text-xl">Không tìm thấy bài đăng hoặc bài đăng đã bị xóa.</p>
+        <button onClick={() => navigate(-1)} className="px-4 py-2 bg-cyan-600 rounded-lg">Quay lại</button>
+      </div>
+    );
+  }
+
   const crumbs = ["Trang chủ", "Thuê căn hộ", listing.title.length > 40 ? listing.title.slice(0, 40) + "…" : listing.title];
+  
+  const imageUrls = listing.images && listing.images.length > 0 
+    ? listing.images.map(img => img.imageUrl) 
+    : ["https://via.placeholder.com/800x600?text=Chua+Co+Anh"];
+
+  // Format giá tiền (8500000 -> 8.5 Triệu/tháng)
+  const formattedPrice = `${(listing.pricePerMonth / 1000000).toFixed(1)} Triệu/tháng`;
+
+  // Format ngày đăng
+  const postedDate = new Date(listing.createdAt).toLocaleDateString("vi-VN");
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: "#030B14" }}>
@@ -133,17 +214,19 @@ export function ListingDetailPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
           <div>
-            <ListingImageGallery images={images} activeIndex={activeImage} onSelect={setActiveImage} />
+            <ListingImageGallery images={imageUrls} activeIndex={activeImage} onSelect={setActiveImage} />
             <ListingInfoBlock
               title={listing.title}
-              price={listing.price}
-              area={listing.area}
-              type={listing.type}
-              address={listing.district}
-              updatedAt={listing.postedAt}
-              verified={listing.verified}
+              price={formattedPrice}
+              area={`${listing.apartment?.area || 0}m2`}
+              type={listing.apartment.type || "Căn hộ"}
+              address={listing.apartment?.fullAddress || listing.apartment?.district || "Đang cập nhật"}
+              updatedAt={`Đăng ngày ${postedDate}`}
+              verified={true}
               description={listing.description}
-              amenities={listing.amenities}
+              amenities={[
+                "Đang cập nhập"
+              ]}
             />
             <ListingRatingsSection
               averageRating={averageRating}
@@ -167,14 +250,15 @@ export function ListingDetailPage() {
           </div>
 
           <div className="lg:sticky lg:top-20">
+            {/* Agent Này không phải AI */}
             <ListingAgentCard
-              agentName={agent.name}
-              agentRole={agent.role}
-              isOnline={agent.isOnline}
-              listingCount={agent.listingCount}
-              yearsActive={agent.yearsActive}
-              responseRate={agent.responseRate}
-              phone={agent.phone}
+              agentName={listing.apartment?.owner?.name || "Chủ nhà"}
+              agentRole="Chính chủ"
+              isOnline={true}
+              listingCount={1}
+              yearsActive={1}
+              responseRate= {98}
+              phone={listing.apartment?.owner?.phone}
               quickReplies={QUICK_REPLIES}
             />
           </div>

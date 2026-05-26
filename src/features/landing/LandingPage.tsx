@@ -323,7 +323,7 @@ export function LandingPage() {
         setListingFilter={setListingFilter}
         selectedListings={selectedListings}
         toggleCompare={toggleCompare}
-        onContactListing={listing => navigate(`/listing/${listing.apartment.ownerId}`)}
+        onContactListing={listing => navigate(`/listing/${listing.id}`)}
         onGetStarted={openGetStarted}
         t={t}
       />
